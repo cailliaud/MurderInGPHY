@@ -16,7 +16,14 @@ public class Player extends Personage{
 	public void seeInventaire(){
 	}
 
-	//gives the name of the killer
-	public void giveKiller( String name){
+	
+	public void addItem(Item item)
+	{
+		
+	}
+	
+	public void removeItem(Item item)
+	{
+		
 	}
 }
