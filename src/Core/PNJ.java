@@ -1,3 +1,4 @@
+package Core;
 
 public class PNJ extends Personage{
 
