@@ -8,4 +8,7 @@ public abstract class Bolt {
 		locked = false; 
 	}
 	
+	public boolean checkState () {
+		return false;
+	}
 }
