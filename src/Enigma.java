@@ -6,7 +6,7 @@ public class Enigma {
 	private EnigmaItem item;
 	private String answer;
 	private String question;
-	private Item reward;
+	private Items reward;
 	private boolean isResolved;
 	private boolean itemWaited;  //Return true if an item is waited for the answer
 
@@ -43,7 +43,7 @@ public class Enigma {
 	}
 	
 	//Give a reward if the enigma is resolved
-	public Item rewarded(){
+	public Items rewarded(){
 		
 	}
 	
