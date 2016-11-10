@@ -1,9 +1,12 @@
 package Core;
 public class Player extends Personage{
 
-	private Items Owned;
+	private Owned inventory;
 	
-	public Player(){
+
+	public Player(String name, Room currentRoom, Boolean isKiller, Owned inventory){
+		super( name,  currentRoom,  isKiller);
+
 	}
 
 	public void move(){

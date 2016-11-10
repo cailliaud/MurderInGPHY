@@ -1,6 +1,6 @@
 package Core;
 
-public class Information {
+public class Information extends EnigmaItem{
 
 	//Attributes
 	private String description;
@@ -8,8 +8,9 @@ public class Information {
 	//Methods
 	
 	//Constructor
-	public Information (String descriptionInfo){
-		
+	public Information (String name, String descriptionInfo){
+		super(name);
+		description=descriptionInfo;
 	}
 	
 	
