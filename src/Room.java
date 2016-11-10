@@ -1,20 +1,46 @@
+import java.util.HashMap;
 
 public class Room {
 
-	public String description;
+	private String name;
+	private HashMap<String,Door> myExits = new HashMap<String,Door>();
 	
-	public Room(String description)
+	
+	//constructor
+	public Room(String nameRoom)
 	{
-		this.description = description;
-	}
-	
-	public String getDescription(){
-		return description;
-	}
-	
-	public void setExits(){
 		
 	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void addDoor(String direction, Door door) 
+    {
+    	
+    }
+    
+
+
+   
+    public Room getRoom() 
+    {
+    		return null;
+    }
+  
+    
+    
+    public String getExits()
+    {
+    	return null;
+    	
+    }
+    
+    public boolean exitsPossible(String direction)
+    {
+    	return false;
+    }
 
 	
 	

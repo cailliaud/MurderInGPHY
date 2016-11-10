@@ -1,9 +1,21 @@
-import java.util.HashMap;
+
 
 public class Door {
 
 	private boolean open;
-	private HashMap<String,Door> myExits = new HashMap<String,Door>();
-
+	private Room room1;
+	private Room room2;
+	
+	public Door (boolean openDoor, Room roomDoor1, Room roomDoor2){
+		
+	}
+	
+	public boolean getOpen(){
+		return false;
+	}
+	
+	public void setOpen(){
+		
+	}
 
 }
