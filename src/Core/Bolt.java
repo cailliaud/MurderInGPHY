@@ -4,7 +4,7 @@ public abstract class Bolt {
 
 	private boolean locked;
 	
-	public Bolt (){
+	public Bolt(){
 		locked = false; 
 	}
 	
