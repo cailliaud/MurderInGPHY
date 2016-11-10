@@ -1,5 +1,5 @@
 package Core;
 
-public class Items {
+public abstract class Items {
 
 }

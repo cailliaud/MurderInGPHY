@@ -9,16 +9,18 @@ public abstract class Personage {
 	public Personage(String name, Room currentRoom, Boolean isKiller){
 	}
 	
-	public void String getName(){
+	public String getName(){
 		
 	}
-	public void Boolean isKiller(){
+	public boolean isKiller(){
+		return false;
 		
 	}
-	public void String getRoom(){
+	public String getRoom(){
+		return null;
 		
 	}
-	public void setCurrentRoom(Room newRoom){
+	public  void setCurrentRoom(Room newRoom){
 	}
 	
 }
