@@ -65,6 +65,9 @@ public class Game {
 	
 	}
 
+	//gives the name of the killer
+	public void giveKiller( String name){
+	}
 	
 	private boolean quit(Command command) 
 	{
