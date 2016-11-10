@@ -1,4 +1,4 @@
-
+package Core;
 public class Player extends Personage{
 
 	private Items Owned;
