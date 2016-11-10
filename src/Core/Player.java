@@ -7,15 +7,12 @@ public class Player extends Personage{
 		super( name,  currentRoom,  isKiller);
 	}
 	  
-	public void move(){
-	}
-	public void openDoor(){
+	public void move( String direction){
 	}
 	public void seeInventaire(){
 	}
-	public void giveKiller(){
+	public void giveKiller( String name){
 	}
-	public void giveSolutionEnigma(){
-	}
+
 	
 }
