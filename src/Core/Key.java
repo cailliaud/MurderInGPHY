@@ -1,5 +1,5 @@
 package Core;
 
-public class Key extends Items {
+public class Key extends Item {
 
 }

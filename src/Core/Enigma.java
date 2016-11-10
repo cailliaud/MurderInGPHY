@@ -26,6 +26,7 @@ public class Enigma {
 	//Set the answer when it is an object
 	public void setAnswer (Objet item){
 		
+		
 	}
 	
 	//Set the answer when it is an information
@@ -45,7 +46,7 @@ public class Enigma {
 	
 	//Give a reward if the enigma is resolved
 	public Item rewarded(){
-		
+		return null;
 	}
 	
 	//Return true if enigma is already resolved and false if not
