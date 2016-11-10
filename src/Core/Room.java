@@ -1,5 +1,7 @@
 import java.util.HashMap;
 
+import Core.Door;
+
 public class Room {
 
 	private String name;
