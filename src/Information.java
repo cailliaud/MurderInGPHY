@@ -7,7 +7,7 @@ public class Information {
 	//Methods
 	
 	//Constructor
-	Information (String descriptionInfo){
+	public Information (String descriptionInfo){
 		
 	}
 	
