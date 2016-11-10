@@ -1,3 +1,4 @@
+package Core;
 
 public class Enigma {
 
@@ -44,7 +45,7 @@ public class Enigma {
 	
 	//Give a reward if the enigma is resolved
 	public Items rewarded(){
-		
+		return item;
 	}
 	
 	//Return true if enigma is already resolved and false if not

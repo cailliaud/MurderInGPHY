@@ -1,3 +1,4 @@
+package Core;
 /*
  * @author Group 8
  * Main of the project World of Zuul
