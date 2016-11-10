@@ -3,9 +3,9 @@ public class Player extends Personage{
 
 	private Items Owned;
 	
-	public Player(Items Owned){
+	public Player(){
 	}
-	  
+
 	public void move(){
 	}
 	public void openDoor(){

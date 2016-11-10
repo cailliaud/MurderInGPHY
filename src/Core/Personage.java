@@ -9,13 +9,14 @@ public abstract class Personage {
 	public Personage(String name, Room currentRoom, Boolean isKiller){
 	}
 	
-	public  String getName(String name){
+	public String getName(){
+	return name;
 	}
-	public Boolean getIsKiller(Boolean isKiller){
-		
+	public Boolean getIsKiller(){
+		return isKiller;
 	}
-	public String getRoom(String currentRoom){
-	
+	public String getRoom(){
+	 return Room;
 	}
 	public setCurrentRoom(Room newRoom){
 	}
