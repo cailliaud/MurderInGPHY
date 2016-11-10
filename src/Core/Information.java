@@ -8,8 +8,9 @@ public class Information extends EnigmaItem{
 	//Methods
 	
 	//Constructor
-	public Information (String descriptionInfo){
-		
+	public Information (String name, String descriptionInfo){
+		super(name);
+		description=descriptionInfo;
 	}
 	
 	
