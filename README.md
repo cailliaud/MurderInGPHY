@@ -5,7 +5,7 @@ Langage utilisé : Java IDE : Eclipse Mars
 
 Ce projet est développé par les étudiants :
 
-- Alexandre Cailliaud : Admin dev
+- Alexandre Cailliaud : Admin & dev
 - Claire Sousa Da Silva : Dev
 - Steve Fiolleau : Dev & Time Keeper
 - Constance Verjat : Dev
