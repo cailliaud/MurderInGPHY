@@ -2,7 +2,7 @@
 public class Information {
 
 	//Attributes
-	private String description
+	private String description;
 	
 	//Methods
 	
@@ -14,7 +14,7 @@ public class Information {
 	
 	//Return the description about the item
 	public String getDescription(){
-		
+		return ("Essai");
 	}
 	
 	
