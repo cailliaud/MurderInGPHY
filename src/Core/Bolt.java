@@ -9,6 +9,6 @@ public abstract class Bolt {
 	}
 	
 	public boolean checkState () {
-		return false;
+		return locked;
 	}
 }
