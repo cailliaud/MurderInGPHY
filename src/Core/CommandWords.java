@@ -11,7 +11,7 @@ public class CommandWords {
 
 	public boolean isCommand(String aString)
 	{
-
+		return false;
 		
 	}
 }

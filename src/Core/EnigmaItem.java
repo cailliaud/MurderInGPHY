@@ -1,18 +1,6 @@
 package Core;
 
-public class EnigmaItem extends Items {
+public abstract class  EnigmaItem extends Item {
 
-	//Attributes
-	
-	private Key cle;
-	private Objet object;
-	
-	//Methods 
-	
-	//Constructor
-	public EnigmaItem(){
-		
-	}
-	
-	
+
 }

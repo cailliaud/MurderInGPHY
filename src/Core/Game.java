@@ -11,8 +11,6 @@ public class Game {
 	
 	public Game() 
 	{
-		parser = new Parser();
-		myPlayer = new Player(outside);
 	}
 	
 	public void play()

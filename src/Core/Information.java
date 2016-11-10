@@ -1,6 +1,6 @@
 package Core;
 
-public class Information {
+public class Information extends EnigmaItem{
 
 	//Attributes
 	private String description;
