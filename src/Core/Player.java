@@ -5,14 +5,23 @@ public class Player extends Personage{
 	
 	public Player(String name, Room currentRoom, Boolean isKiller, Owned inventory){
 		super( name,  currentRoom,  isKiller);
+
 	}
-	  
-	public void move( String direction){
+
+	//allows player to move
+	public void move(){
 	}
+	
+	
+	//player can see his inventaire
 	public void seeInventaire(){
 	}
+	
+	//gives the name of the killer
 	public void giveKiller( String name){
 	}
+	
+
 
 	
 }
