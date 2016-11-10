@@ -13,7 +13,7 @@ public class Enigma {
 	//Methods
 		
 	//Constructor
-	Enigma (String quest) {
+	public Enigma (String quest) {
 		
 	}
 	
@@ -22,7 +22,7 @@ public class Enigma {
 		
 	}
 	
-	//Set the answer whant it is an object
+	//Set the answer when it is an object
 	public void setAnswer (Objet item){
 		
 	}
