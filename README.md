@@ -3,6 +3,8 @@ Projet de développement d'un jeu en java dans le cadre de l'unité de formation
 
 Langage utilisé : Java IDE : Eclipse Mars
 
+Site WEB / JavaDOC : https://cailliaud.github.io/MurderInGPHY/
+
 Ce projet est développé par les étudiants :
 
 - Alexandre Cailliaud : Admin & dev
@@ -18,4 +20,5 @@ GitIgnore:
 - .gitignore
 - .project
 - .classpath
+- /docs/
 - /doc/
