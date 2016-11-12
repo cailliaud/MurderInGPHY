@@ -12,3 +12,10 @@ Ce projet est développé par les étudiants :
 - François-Pierre Legeron : Dev
 - Yoline Robichon : Dev
 - Clarisse Moreau : Dev
+
+GitIgnore:
+- /bin/
+- .gitignore
+- .project
+- .classpath
+- /doc/
