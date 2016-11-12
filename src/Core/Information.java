@@ -2,22 +2,13 @@ package Core;
 
 public class Information extends EnigmaItem{
 
-	//Attributes
-	private String description;
-	
-	//Methods
-	
 	//Constructor
-	public Information (String name, String descriptionInfo){
-		super(name);
-		description=descriptionInfo;
+	public Information (String name, String information){
+		setName(name);
+		setInformation(information);
+		setWeight(0);
 	}
-	
-	
-	//Return the description about the item
-	public String getDescription(){
-		return ("Essai");
-	}
+
 	
 	
 	//Diplay the information
