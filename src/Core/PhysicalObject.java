@@ -1,9 +1,9 @@
 package Core;
 
-public class Objet extends EnigmaItem {
+public class PhysicalObject extends EnigmaItem {
 	private int slotSize;
 	
-	public Objet(String name, int slotSize ) {
+	public PhysicalObject(String name, int slotSize ) {
 		super(name);
 		this.slotSize=slotSize;
 		// TODO Auto-generated constructor stub
