@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project default="javadoc">
     <target name="javadoc">
-        <javadoc access="private" author="true" classpath="C:\Users\caill\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\caill\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar" destdir="docs" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="fr.mig,fr.mig.core,fr.mig.view,test.core" source="1.8" sourcepath="src;test" splitindex="true" use="true" version="true"/>
+        <javadoc access="private" author="true" classpath="C:\Users\caill\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\caill\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar" destdir="docs" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="fr.mig,fr.mig.core,view,fr.mig.view,core" source="1.8" sourcepath="src;test" splitindex="true" use="true" version="true"/>
     </target>
 </project>

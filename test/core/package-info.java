@@ -4,4 +4,4 @@
  * @author Group8
  *
  */
-package test.core;
+package core;
