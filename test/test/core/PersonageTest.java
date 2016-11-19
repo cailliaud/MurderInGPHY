@@ -1,33 +1,33 @@
-package fr.mig.test;
+package test.core;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-public class CommandTest {
+public class PersonageTest {
 
 	@Test
-	public void testCommand() {
+	public void testPersonage() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetCommandWord() {
+	public void testGetName() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetSecondWord() {
+	public void testGetIsKiller() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testIsUnknown() {
+	public void testGetRoom() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testHasSecondWord() {
+	public void testSetCurrentRoom() {
 		fail("Not yet implemented");
 	}
 

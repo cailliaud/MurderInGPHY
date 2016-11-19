@@ -1,7 +1,6 @@
-package fr.mig.test;
-import static org.junit.Assert.*;
+package test.core;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import fr.mig.core.Room;
@@ -13,7 +12,7 @@ public class RoomTest {
         Room tester = new Room("test"); // MyClass is tested
 
         // assert statements
-        assertEquals("test is the good name", "test", tester.getClass());
+        assertEquals("test is the good name", "test", tester.getName());
  
 	}
 	
