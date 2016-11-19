@@ -1,5 +1,5 @@
-core
-fr.mig
-fr.mig.core
-fr.mig.view
-view
+mig
+mig.core
+mig.view
+test.core
+test.view

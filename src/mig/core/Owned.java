@@ -1,0 +1,15 @@
+package mig.core;
+
+import java.util.ArrayList;
+
+public class Owned {
+
+
+	private int slots;
+	private ArrayList<Key> bunch;
+	private ArrayList<Information> notebook;
+	private ArrayList<Object> inventory;
+	
+	
+
+}
