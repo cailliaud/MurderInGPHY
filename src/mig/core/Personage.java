@@ -2,13 +2,12 @@ package mig.core;
 
 public abstract class Personage {
 
-	private String name;
-	private Room currentRoom;
-	private boolean isKiller;
+	protected String name;
+	protected boolean isKiller;
 	
-	//constructor of personage class
-	public Personage(String name, Room currentRoom, Boolean isKiller){
-	}
+
+	
+
 	
 	//return the name of the personage
 	public   String getName(String name){
@@ -20,14 +19,6 @@ public abstract class Personage {
 		return false;
 	}
 
-	//return the room where the character is
-	public String getRoom(String currentRoom){
-		return null;
-	}
 	
-	//go in a new room
-	public void setCurrentRoom(Room newRoom){
-		
-	}
-	
+
 }
