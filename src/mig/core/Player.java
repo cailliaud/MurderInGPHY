@@ -3,13 +3,14 @@ public class Player extends Personage{
 
 	private Owned inventory;
 	private Room currentRoom;
+	private final int inventorySize = 4;
 	
 
 	public Player(String name, Room currentRoom, Boolean isKiller){
 		this.name=name;
 		this.currentRoom=currentRoom;
 		this.isKiller=isKiller;
-		inventory = new Owned();
+		inventory = new Owned(inventorySize);
 		
 
 	}
