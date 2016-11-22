@@ -35,6 +35,12 @@ public class Door {
 	 */
 	private Room room2;
 	
+	/** 
+	 * Bolt of the Door
+	 */
+	
+	private Bolt bolt;
+	
 	/**
 	 * Default Constructor
 	 * @param openDoor
@@ -43,9 +49,11 @@ public class Door {
 	 * The First Door linked
 	 * @param roomDoor2
 	 * The Second Door linked
+	 * @param b Bolt on the door
+	 * If it is null, there will be as default an OpenedBolt
 	 */
-	public Door (boolean openDoor, Room roomDoor1, Room roomDoor2){
-		
+	public Door (Bolt b, Room roomDoor1, Room roomDoor2){
+		//TODO if b is null : create an OpenedBolt as default
 	}
 	
 	/**

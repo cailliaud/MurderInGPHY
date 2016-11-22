@@ -33,6 +33,7 @@ import java.util.Hashtable;
  */
 public class Room {
 
+	private DirectionWords directions;
 	/**
 	 * It is the name of the Room
 	 * It is set in the constructor and cannot be changed after 
@@ -77,6 +78,7 @@ public class Room {
 	public Room(String nameRoom)
 	{
 		this.name=nameRoom;
+		this.directions=new DirectionWords();
 	}
 
 	/** 
