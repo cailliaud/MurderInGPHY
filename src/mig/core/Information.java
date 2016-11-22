@@ -17,7 +17,7 @@ public class Information extends EnigmaItem{
 	 * The name cannot be null , if it is the name will be "unknown name"
 	 * The information cannot be null , as default it will be : "unknown information"
 	 * @param name The name of the information
-	 * @param information Information learned thanks to this object
+	 * @param info Information learned thanks to this object
 	 */
 	public Information (String name, String info){
 		super(name,info);
@@ -25,6 +25,7 @@ public class Information extends EnigmaItem{
 	}
 	/**
 	 * Method to display the text contained in this information 
+	 * @return Information displayed with a String
 	 */
 	public String displayInformation(){
 		return null;

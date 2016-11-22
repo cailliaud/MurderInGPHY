@@ -1,5 +1,15 @@
 package mig.core;
-
+/**
+ * <b> Class Item </b> 
+ * <p> This Class creates an Item. </p>
+ * <p> This Class is an abstract Class because it inherits 
+ * from Class EnigmaItem and Key
+ * This Class contain a name of the Item and a boolean to represent if the item
+ * exist or not </p>  
+ * 
+ * @author Group 8
+ * @version 22/11/16
+ */
 public abstract class Item
 {
 	/**

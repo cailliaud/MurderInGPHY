@@ -43,11 +43,9 @@ public class Door {
 	
 	/**
 	 * Default Constructor
-	 * @param openDoor
-	 * Boolean to indicate if the door is already opened or not
-	 * @param roomDoor1
+	 * @param room1
 	 * The First Door linked
-	 * @param roomDoor2
+	 * @param room2
 	 * The Second Door linked
 	 * @param b Bolt on the door
 	 * If it is null, there will be an exception
@@ -142,6 +140,7 @@ public class Door {
 	 * It will only possible if the Door is opened
 	 * And if the Room given is one of the two rooms linked to this door
 	 * It will return an exception if the door is closed
+	 * @param currentRoom the room where you are 
 	 * @return The Next room
 	 */
 	public Room getNextRoom(Room currentRoom){

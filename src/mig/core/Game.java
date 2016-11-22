@@ -13,6 +13,7 @@ public class Game {
 	private ArrayList<PNJ> listPNJ;
 	private ArrayList<Item> listItems;
 	private ArrayList<Enigma> listEnigma;
+	private boolean gameWin = false;
 	public Room hall,td1;
 	
 	public Game() 
@@ -38,8 +39,8 @@ public class Game {
 
 
 	/**
-	 * 
-	 * @param name
+	 * Method to give the name of the killer and to try to win the game
+	 * @param name Name of the PNJ who is the killer
 	 */
 	public void giveKiller(String name){
 	}

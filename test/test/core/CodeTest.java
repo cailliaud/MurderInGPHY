@@ -82,7 +82,7 @@ public class CodeTest
 	 public void testWrongCode()
 	 {
 		 thrown.expect(PasswordFailedException.class);
-		 thrown.expectMessage(JUnitMatchers.containsString("wrong password given"));
+		 thrown.expectMessage("wrong password given");
 		 myCode.opened("wrongpswd");
 	 }
 	 
