@@ -1,10 +1,21 @@
 package mig.core;
 
 /**
- * Code extends from Bolt
- * The class Code creates a lock with a password to unlock it.
+ * <b> Code is the class that creates a lock with a password to unlock it.</b>
+ * <b> Code extends from Bolt.</b>
+ * <p>
+ * A Code contains this element
+ * </p>
+ * <ul>
+ * <li>A password that is used to unlock the Chest</li>
+ * </ul>
+ * </p>
+ * 
+ * @see Bolt
+ * @see Chest
+ * 
  * @author Group 8
- *
+ * @version 22/11/2016
  */
 public class Code extends Bolt {
 	
@@ -35,6 +46,7 @@ public class Code extends Bolt {
 	
 	/**
 	 * Private Method to test if the password given is the same as the password of the Bolt
+	 * If the password given by the player is false, it returns an error message that tells the player the password is wrong
 	 * @param pass
 	 * Password given to try to unlock the chest
 	 * @return Boolean
