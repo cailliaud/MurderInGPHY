@@ -3,6 +3,7 @@ package test.core;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 import mig.core.DirectionWords;
 
@@ -11,10 +12,12 @@ public class DirectionWordsTest {
 	DirectionWords tester = new DirectionWords();
 
 
-
+	/**
+	 * Method to test a Wrong Direction
+	 */
 	@Test
-	public void testIsDirection() {
-		//assertEquals("This Word is not a good direction", false, tester.isDirection(test));
+	public void testUnknownDirection() {
+		assertEquals("This Word is not a good direction", false, tester.isDirection(test));
 	}
 
 }

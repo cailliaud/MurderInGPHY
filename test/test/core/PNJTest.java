@@ -8,7 +8,7 @@ import mig.core.PNJ;
 
 public class PNJTest {
 
-	PNJ p1= new PNJ ("Toto", false, null);
+	private PNJ p1= new PNJ ("Toto", false, null);
 	
 	
 	@Test
