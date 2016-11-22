@@ -21,9 +21,14 @@ public abstract class  EnigmaItem extends Item {
 
 	private String information;
 
-	public EnigmaItem(String name, String information){
+	public EnigmaItem(String name, String info){
 		super(name);
-		this.information=information;
+		//TODO valeurs défauts si les parametres donnés sont null
+		if ((info==null)||(info.isEmpty()))
+			this.information="unknown information";
+		else 
+			this.information=info;
+		
 	}
 	/**
 	 * getInformation is a method to get the different informations in the EnigmaItem
