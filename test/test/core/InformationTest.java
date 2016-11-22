@@ -4,9 +4,17 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import mig.core.DirectionWords;
 import mig.core.Information;
 import mig.core.Item;
 
+
+/**
+ * <b>JUnit test for the class Information</b>
+ * @see Information
+ * @author group8
+ *
+ */
 public class InformationTest {
 	private Information info ;
 	private Item name; 

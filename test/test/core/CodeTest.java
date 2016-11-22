@@ -10,16 +10,15 @@ import org.junit.matchers.JUnitMatchers;
 import org.junit.rules.ExpectedException;
 
 import mig.core.Code;
+import mig.core.Information;
 
 
 /**
- * The test class Code.
- * Unit tests of the C class
- * 
+ * <b>JUnit test for the class Code</b>
+ * @see Code
  * @author group8
- * @version 22/11/2016
+ *
  */
-
 public class CodeTest 
 {
 	private Code myCode;

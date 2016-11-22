@@ -3,8 +3,16 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import mig.core.Information;
 import mig.core.Room;
 
+
+/**
+ * <b>JUnit test for the class Room</b>
+ * @see Room
+ * @author group8
+ *
+ */
 public class RoomTest {
 
 	@Test

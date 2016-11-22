@@ -8,7 +8,12 @@ import org.junit.Test;
 import mig.core.Information;
 import mig.core.PhysicalObject;
 
-
+/**
+ * <b>JUnit test for the class PhysicalObject</b>
+ * @see PhysicalObject
+ * @author group8
+ *
+ */
 public class PhysicalObjectTest {
 	private PhysicalObject object ;
 	

@@ -3,17 +3,17 @@ package test.core;
 import static org.junit.Assert.*;
 import mig.core.Bolt;
 import mig.core.Code;
+import mig.core.Information;
 import mig.core.Key;
 import mig.core.Lock;
 
 import org.junit.Test;
 
 /**
- * The test class LockTest
- * Unit tests of the Lock class
- * 
- * @author Group8
- * @version 22/11/2016
+ * <b>JUnit test for the class Lock</b>
+ * @see Lock
+ * @author group8
+ *
  */
 public class LockTest {
 	Key k1= new Key("toto");

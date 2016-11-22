@@ -4,8 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import mig.core.Personage;
+import mig.core.Information;
 import mig.core.PNJ;
-
+/**
+ * <b>JUnit test for the class PNJ</b>
+ * @see PNJ
+ * @author group8
+ *
+ */
 public class PNJTest {
 
 	private PNJ p1= new PNJ ("Toto", null, null);
