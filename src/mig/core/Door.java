@@ -52,7 +52,11 @@ public class Door {
 	 * @param b Bolt on the door
 	 * If it is null, there will be as default an OpenedBolt
 	 */
-	public Door (Bolt b, Room roomDoor1, Room roomDoor2){
+	public Door (Bolt b, Room room1, Room room2){
+		this.bolt= b;
+		this.room1=room1;
+		this.room2=room2;
+		
 		//TODO if b is null : create an OpenedBolt as default
 	}
 	
@@ -62,7 +66,7 @@ public class Door {
 	 * True = opened , False = closed
 	 */
 	public boolean getOpen(){
-		return false;
+		return open;
 	}
 	
 	/**
