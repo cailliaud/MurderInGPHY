@@ -69,14 +69,16 @@ public class Door {
 	 * Method to put open to the value true
 	 * The door will stay opened.
 	 */
-	public void openDoor(){
+	public void openDoor(Key key_given){
+		
 		
 	}
+
 
 	/** Method to close the Door
 	 * open takes the value false
 	 */
-	public void closeDoor(){
+	public void closeDoor(Key key_given){
 		
 	}
 }

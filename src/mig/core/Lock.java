@@ -9,7 +9,11 @@ package mig.core;
  * </ul>
  * 
  * <p>
- * If 
+ * If the key is compatible with the lock, the lock is unlocked
+ * </p>
+ * 
+ * <p>
+ * If the key isn't compatible with the lock, the lock is locked
  * </p>
  * 
  * @see Bolt
@@ -46,7 +50,8 @@ public class Lock extends Bolt {
 	 */
 	private boolean checkKey(Key key_given)
 	{
-		return false;
+		if (key_given.equals(this.key)){ return true;}
+		else {return false;}
 	}
 
 	/**

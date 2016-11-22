@@ -16,7 +16,10 @@ public abstract class Item
 	
 	
 	public Item (String name){
-		this.name=name;
+		if ((name==null)||(name.isEmpty()))
+			this.name="unknown name";
+		else 
+			this.name=name;
 	}
 	
 	/**

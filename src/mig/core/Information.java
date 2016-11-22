@@ -14,16 +14,15 @@ public class Information extends EnigmaItem{
 
 	/**
 	 * Constructor of the class Information
-	 * The name cannot be null , if it is the name will be "unknown information"
-	 * The information cannot be null , as default it will be : "no information about this"
+	 * The name cannot be null , if it is the name will be "unknown name"
+	 * The information cannot be null , as default it will be : "unknown information"
 	 * @param name The name of the information
 	 * @param information Information learned thanks to this object
 	 */
-	public Information (String name, String information){
-		//TODO valeurs défauts si les parametres donnés sont null
-		super(name,information);
+	public Information (String name, String info){
+		super(name,info);
+		
 	}
-
 	/**
 	 * Method to display the text contained in this information 
 	 */
