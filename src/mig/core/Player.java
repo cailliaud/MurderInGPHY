@@ -1,36 +1,84 @@
 package mig.core;
+
+/**
+ * <b>Player is the class representing the user of the game. It is in inheritence class of Personage.</b>
+ * <p>
+The player has more functions than Personage and PNJ, because he is the most importance personage in the game.
+ * </p>
+ * <p>
+ * Personage contains these elements :
+ * </p>
+ * <ul>
+ * 		<li>A name, fixed when the game is created</li>
+ * 		<li>Is the personage is the killer</li>
+ * 		<li>He can move between rooms</li>
+ * 		<li>We can know in which room he is</li>
+ * 		<li>See which object he has in the inventory</li>
+ * 		<li>He can add an item in his inventory</li>
+ * 		<li>He also can remove an item of his inventary</li>
+ * </ul>
+ * 
+ * @see Personage
+ * 
+ * @author Group8
+ * @version 22/11/2016
+ */
+
 public class Player extends Personage{
 
+	/**
+	 * See the inventary of the player
+	 */
 	private Owned inventory;
+	
+	/**
+	 * Is the current room where is the player
+	 */
 	private Room currentRoom;
+	
+	/**
+	 * The inventary has maximum 4 items
+	 */
 	private final int inventorySize = 4;
 	
-
+	/**
+	 *Constructor, allows to create the player.
+	 *
+	 * @param name The name has to be in lower case for the security. So that there is no matter when we enter a name with upper case.
+	 * @param currentRoom, where is the player at this moment of the game
+	 */
 	public Player(String name, Room currentRoom){
 		super(name, false);
 		this.currentRoom=currentRoom;
-		inventory = new Owned(inventorySize);
-		
-
+		inventory = new Owned(inventorySize);	
 	}
 
-	//allows player to move
+
+	/**
+	 * Allows player to move between rooms
+	 * He can move following 8 orientations
+	 */
 	public void move(){
 	}
 	
-	//player can see his inventary
+	/**
+	 * Allows player to see his inventary, which items he has
+	 */
 	public void seeInventaire(){
 	}
 
-	
-	public void addItem(Item item)
-	{
-		
+	/**
+	 * Allows to add an item to the inventary
+	 * @param item is an object 
+	 */
+	public void addItem(Item item){	
 	}
 	
-	public void removeItem(Item item)
-	{
-		
+	/**
+	 * Allows to remove an item to the inventary
+	 * @param item is an object
+	 */
+	public void removeItem(Item item){
 	}
 	
 }

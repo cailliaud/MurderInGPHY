@@ -49,6 +49,7 @@ public class PNJ extends Personage{
 		//TODO exception if Enigma is null
 		super(name,isKiller);
 		this.alive=false;
+		this.enigma=enigma;
 	}
 	
 	//is the enigma of this PNJ

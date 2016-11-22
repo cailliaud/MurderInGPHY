@@ -32,6 +32,13 @@ public abstract class Personage {
 	 */
 	private boolean isKiller;
 	
+	/**
+	 * Constructor
+	 * If the name is null, it returns an exception
+	 * If isKiller is null, it returns false 
+	 * @param name of the personage
+	 * @param isKiller if he is the killer of the game 
+	 */
 	public Personage (String name, boolean isKiller){
 		this.name=name;
 		this.isKiller=isKiller;
