@@ -3,47 +3,78 @@ package test.core;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import mig.core.EnigmaItem;
 import mig.core.Information;
 import mig.core.PhysicalObject;
 
+
 public class PhysicalObjectTest {
-	protected EnigmaItem test,test2;
+	private PhysicalObject object ;
 	
-	@Before
-	public void setUp() throws Exception {
-		test = new PhysicalObject("pioche","Attention ça peut faire mal");
-		test2= new Information("toto", "Toto a dit avoir vu un meutre");
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	/**
-	 * Test for the ToString() method from the class PhysicalObject
+	 * Default constructor for test class PhysicalObjectTest
 	 */
-	@Test
-	public void testToString() {
-		String str = "This Item is a/an " +
-				"PhysicalObject, called pioche\n" 
-				+ "Information given is the following:\n" 
-				+ "Attention ça peut faire mal" ;
-		assertEquals(str, test.toString());
+	public PhysicalObjectTest()
+	{
 	}
 	
 	/**
-	 * Test to verify that PhysicalObject and Information are differents
+	 * Method testNameObject
+	 * <p>Checks if the name given as parameter in the constructor is correctly set to the attribute
 	 */
 	@Test
-	public void testValidClass() {
-		assertNotEquals(test.getClass(), test2.getClass());
+	public void testNameObject()
+
+	{
+		object = new PhysicalObject("Batterie", "Pour un ordinateur");
+		//The parameter "Batterie" must be set as the name attribute
+		assertEquals("Batterie", object.getName());
 	}
 	
+	/**
+	 * Method testInformationObject
+	 * <p>Checks if the information given as parameter in the constructor is correctly set to the attribute
+	 */
+	@Test
+	public void testInformationObject()
 
+	{
+		object = new PhysicalObject("Batterie", "Pour un ordinateur");
+		//The parameter "Pour un ordinateur" must be set as the information attribute
+		assertEquals("Pour un ordinateur", object.getInformation());
+	}
+	/**
+	 * Method testNotSetNoInfoObject
+	 * <p> Checks that do not set a name of the object is not possible </p>
+	 */
 
+	@Test
+	public void testNotSetNoInfoObject() {
+		object = new PhysicalObject("Objet",null);
+		//The information must be "unknown information".
+		assertEquals("unknown information", object.getInformation());	
+	}
+	
+	/**
+	 * Method testNotSetNoNameObject
+	 * <p> Checks that do not set a name of the Object is not possible </p>
+	 */
+	@Test
+	public void testNotSetNoNameObject() {
+		  object = new PhysicalObject(null,"rien");
+		//The name of the information must be "unknown name".
+		assertEquals("unknown name", object.getName());	
+	}
+	/**
+	 * Method testNotSetNoNameAndNoInfoObject
+	 * <p> Checks that not set a name and an information of the Object is not possible </p>
+	 */
+	@Test
+	public void testNotSetNoNameAndNoInfoObject() {
+		object = new PhysicalObject(null,null);
+		//The name of the information must be "unknown name" and "unknown information".
+		assertEquals("unknown name", object.getName());	
+		assertEquals("unknown information", object.getInformation());
+	}
 }
