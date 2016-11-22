@@ -43,11 +43,11 @@ public class PNJ extends Personage{
 	 *
 	 * @param name The name has to be in lower case for the security. So that there is no matter when we enter a name with upper case.
 	 * @param isKiller Is a boolean fixed in the beginning if the personage is the killer.
-	 * @param enigma Is the enigma of the PNJ for the player.
+	 * @param enigma Is the enigma of the PNJ for the player. It cannot be null
 	 */
 	public PNJ(String name,  Boolean isKiller, Enigma enigma){	
-		this.name=name;
-		this.isKiller=isKiller;
+		//TODO exception if Enigma is null
+		super(name,isKiller);
 		this.alive=false;
 	}
 	

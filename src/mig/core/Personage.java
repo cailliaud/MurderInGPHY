@@ -24,34 +24,35 @@ public abstract class Personage {
 	 * It is the name of the personage.
 	 * It is set in the constructor and cannot be changed after. 
 	 */
-	protected String name;
+	private String name;
 	
 	/**
 	 * It says if the personage is the killer.
 	 * It is set in the constructor and cannot be changed after 
 	 */
-	protected boolean isKiller;
+	private boolean isKiller;
 	
-
-	//return the name of the personage
+	public Personage (String name, boolean isKiller){
+		this.name=name;
+		this.isKiller=isKiller;
+	}
 	/**
 	 * 
-	 * @param name is the name of the personage
+	 * Getter for the parameter name
 	 * @return the name of the personage
 	 */
-	public   String getName(String name){
-		return null;
+	public  String getName(){
+		return name;
 	}
 
 	
-	//return the boolean if the character is the killer
 	/**
 	 * 
-	 * @param isKiller is a boolean fixed in the beginning if the personage is the killer.
+	 * Method to know if the player is the killer or not
 	 * @return  false if the personage is not the killer.
 	 */
-	public Boolean getIsKiller(Boolean isKiller){
-		return false;
+	public Boolean getIsKiller(){
+		return isKiller;
 	}
 
 	

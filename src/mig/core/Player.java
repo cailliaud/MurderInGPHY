@@ -6,10 +6,9 @@ public class Player extends Personage{
 	private final int inventorySize = 4;
 	
 
-	public Player(String name, Room currentRoom, Boolean isKiller){
-		this.name=name;
+	public Player(String name, Room currentRoom){
+		super(name, false);
 		this.currentRoom=currentRoom;
-		this.isKiller=isKiller;
 		inventory = new Owned(inventorySize);
 		
 
