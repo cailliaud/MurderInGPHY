@@ -30,7 +30,7 @@ public abstract class Personage {
 	 * It says if the personage is the killer.
 	 * It is set in the constructor and cannot be changed after 
 	 */
-	private boolean isKiller;
+	private Boolean isKiller;
 	
 	/**
 	 * Constructor
@@ -39,9 +39,10 @@ public abstract class Personage {
 	 * @param name of the personage
 	 * @param isKiller if he is the killer of the game 
 	 */
-	public Personage (String name, boolean isKiller){
+	public Personage (String name, Boolean isKiller){
 		this.name=name;
-		this.isKiller=isKiller;
+		if (isKiller==null) isKiller= false; 
+		else this.isKiller=isKiller;
 	}
 	/**
 	 * 

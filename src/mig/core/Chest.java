@@ -49,6 +49,23 @@ public class Chest {
 		
 	}
 	
+	
+	/**
+	 * Method to remove an item in the Chest
+	 * @param item Item to remove from the chest
+	 */
+	public void removeItem(Item item){
+		
+	}
+	
+	/**
+	 * Method to calculate and get the number of items in the Chest
+	 * @return number of items in the Chest
+	 */
+	public int numberOfItems(){
+		return 0;
+	}
+	
 	/** 
 	 * Method to get the reward contained in the Chest
 	 * @return containt The list of Items in the Chest

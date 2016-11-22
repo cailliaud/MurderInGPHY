@@ -3,6 +3,9 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class will be more detailed and implemented at the end
+ */
 public class Game {
 
 	private Player myPlayer;
@@ -16,48 +19,29 @@ public class Game {
 	{
 	}
 	
-	public void setKiller(PNJ killer){
-		
-	}
-	public void play()
+	/**
+	 * Methode to start the game
+	 */
+	public void start()
 	{
 	
 	}
-	
-	private void createItems(){
-		
-	}
-	private void createPNJ(){
-		
-	}
-	
-	private void createPlayer(){
-		
-	}
-	
-	private void createEnigma(){
-		
-	}
-	private void createRooms()
-	{
 
-	}
-
-
-
-
-	private void printHelp() 
-	{
+	/**
+	 * Method to stop the game 
+	 */
+	public void stop(){
 		
 	}
 
-	
 
 
 
-
-	//gives the name of the killer
-	public void giveKiller( String name){
+	/**
+	 * 
+	 * @param name
+	 */
+	public void giveKiller(String name){
 	}
 	
 
