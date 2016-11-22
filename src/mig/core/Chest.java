@@ -43,8 +43,7 @@ public class Chest {
 	
 	/**
 	 * Method to add an item in the Chest
-	 * @param item
-	 * Item to add in the Chest
+	 * @param item Item to add in the Chest
 	 */
 	public void addItem(Item item){
 		
@@ -52,8 +51,7 @@ public class Chest {
 	
 	/** 
 	 * Method to get the reward contained in the Chest
-	 * @return containt
-	 * The list of Items in the Chest
+	 * @return containt The list of Items in the Chest
 	 */
 	public ArrayList<Item> getContaintChest(){
 		return containt;

@@ -26,8 +26,7 @@ public class Code extends Bolt {
 
 	/**
 	 * Default constructor
-	 * @param mdp
-	 * Password to unlock the Bolt
+	 * @param mdp Password to unlock the Bolt
 	 * 
 	 * The Code is a Bolt locked as default.
 	 * If the password given is null, the password will be "42"
@@ -54,8 +53,7 @@ public class Code extends Bolt {
 	/**
 	 * Private Method to test if the password given is the same as the password of the Bolt
 	 * If the password given by the player is false, it returns an error message that tells the player the password is wrong
-	 * @param pass
-	 * Password given to try to unlock the chest
+	 * @param pass Password given to try to unlock the chest
 	 * @return Boolean
 	 * True if it is the same password or else false
 	 */
@@ -72,8 +70,7 @@ public class Code extends Bolt {
 
 	/**
 	 * The complete method to try to unlock the Bolt
-	 * @param mdp
-	 * Password given to try to unlock the chest
+	 * @param mdp Password given to try to unlock the chest
 	 */
 	public void opened(String mdp) 
 	{
