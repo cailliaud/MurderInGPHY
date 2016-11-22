@@ -2,10 +2,20 @@ package mig.core;
 
 
 /**
- * The Class Door
- * This class creates a Door that links 2 Rooms
+ * <b>Door is the class representing a door between 2 rooms.</b>
+ * 
+ * <p>
  * This door has a boolean that shows if it is opened or not.
+ * </p>
+ * 
+ * <p>
+ * If the door exits we can close or open this door.
+ * </p>
+ * 
+ * @see Room
+ * 
  * @author Group8
+ * @version 22/11/2016
  *
  */
 public class Door {

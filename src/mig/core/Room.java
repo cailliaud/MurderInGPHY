@@ -5,7 +5,7 @@ import java.util.Hashtable;
 /**
  * <b>Room is the class representing a room, in a building for example.</b>
  * <p>
- * A door contains these elements :
+ * A room contains these elements :
  * </p>
  * <ul>
  * <li>A name, fixed when the room is created</li>
