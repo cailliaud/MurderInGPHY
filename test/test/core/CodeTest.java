@@ -4,7 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.matchers.JUnitMatchers;
+import org.junit.rules.ExpectedException;
 
 import mig.core.Code;
 
@@ -56,7 +59,7 @@ public class CodeTest
 	@Test
 	public void testCodeGphy() 
 	{
-		// the parameter "42" (see setUp) must be set as the code attribute
+		// the parameter "gphy" (see setUp) must be set as the code attribute
 		assertEquals("gphy", myCode.getPass());
 	}
 
@@ -71,6 +74,21 @@ public class CodeTest
 		 assertEquals("42", x.getPass());
 	 }
 	
+	 
+	 @Rule 
+	 public ExpectedException thrown = ExpectedException.none();
+	 
+	 @Test
+	 public void testWrongCode()
+	 {
+		 thrown.expect(PasswordFailedException.class);
+		 thrown.expectMessage(JUnitMatchers.containsString("wrong password given"));
+		 myCode.opened("wrongpswd");
+	 }
+	 
+	 
+	 
+	 
 	@Test
 	public void testGetPass() 
 	{
