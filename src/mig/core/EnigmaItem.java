@@ -5,9 +5,8 @@ package mig.core;
  * The items which can be won after an Enigma are :
  * </p>
  * <ul>
- * <li>An information (from the class Information) </li>
- * <li>a physical object (from the class PhysicalObject) </li>
- * </li>
+ * 		<li>An information (from the class Information) </li>
+ * 		<li>a physical object (from the class PhysicalObject) </li>
  * </ul>
  * <p>
  * These two items, Information and PhysicalObject uses inheritance from this class EnigmaItem.
@@ -20,8 +19,12 @@ package mig.core;
  */
 public abstract class  EnigmaItem extends Item {
 
-	protected String information;
+	private String information;
 
+	public EnigmaItem(String name, String information){
+		super(name);
+		this.information=information;
+	}
 	/**
 	 * getInformation is a method to get the different informations in the EnigmaItem
 	 * @return information
@@ -32,7 +35,7 @@ public abstract class  EnigmaItem extends Item {
 
 	/**
 	 * String that contain the information given by the EnigmaItem
-	 * @param information
+	 * @param information It is the information given by the EnigmaItem
 	 * 
 	 * @see EnigmaItem#information
 	 */
@@ -50,7 +53,7 @@ public abstract class  EnigmaItem extends Item {
 	public String toString(){
 		String str = "This Item is a/an " +
 		this.getClass().getSimpleName() + ", called " 
-		+ this.name + "\nInformation given is the following:\n"
+		+ this.getName() + "\nInformation given is the following:\n"
 		+ this.information ;
 		return str;
 	}

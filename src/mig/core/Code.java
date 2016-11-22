@@ -9,7 +9,7 @@ package mig.core;
  * <ul>
  * <li>A password that is used to unlock the Chest</li>
  * </ul>
- * </p>
+ * 
  * 
  * @see Bolt
  * @see Chest
@@ -28,10 +28,17 @@ public class Code extends Bolt {
 	 * Default constructor
 	 * @param mdp
 	 * Password to unlock the Bolt
+	 * 
+	 * The Code is a Bolt locked as default.
+	 * If the password given is null, the password will be "42"
 	 */
 	public Code(String mdp){
-		password= mdp;
-		locked = true; 
+		super(true);
+		if (mdp.isEmpty())
+			{password= "42";}
+		else {
+			password= mdp;
+		}
 	}
 
 	/**

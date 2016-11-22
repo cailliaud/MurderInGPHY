@@ -10,9 +10,8 @@ package mig.core;
  * Personage contains these elements :
  * </p>
  * <ul>
- * <li>A name, fixed when the game is created</li>
- * <li>Is the personage is the killer</li>
- * </li>
+ * 		<li>A name, fixed when the game is created</li>
+ * 		<li>Is the personage is the killer</li>
  * </ul>
  * 
  * @author Group8

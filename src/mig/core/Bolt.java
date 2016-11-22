@@ -18,15 +18,17 @@ package mig.core;
 public abstract class Bolt {
 	 /**
 	  */
-	protected boolean locked;
+	private boolean locked;
 
 	/**
 	 * Default Constructor 
 	 * It is the state of the Bolt
 	 * Locked represent if the bolt is locked or not
+	 * 
+	 * @param b True if you want to lock the Bolt, False if you want to let it unlocked
 	 */
-	public Bolt(){
-		locked = false; 
+	public Bolt(boolean b){
+		this.locked = b; 
 	}
 
 	/**
@@ -36,5 +38,21 @@ public abstract class Bolt {
 	 */
 	public boolean checkState () {
 		return locked;
+	}
+	
+	/**
+	 * Method to lock the Bolt
+	 * It will set the private parameter locked to true
+	 */
+	protected void lockIt(){
+		
+	}
+
+	/**
+	 * Method to unlock the Bolt
+	 * It will set the private parameter locked to false
+	 */
+	protected void unlockIt(){
+		
 	}
 }

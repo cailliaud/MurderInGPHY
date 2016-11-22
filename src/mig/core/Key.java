@@ -13,12 +13,12 @@ public class Key extends Item {
 	
 	/**
 	 * Constructor of the Key 
-	 * The Weight is set at 0.
 	 * @param name Name of the Key
+	 * The name as default, if name = null = "unknown key"
 	 */
 	public Key (String name){
-		setName(name);
-		setWeight(0);
+		//TODO sécurité si name =null 
+		super(name);
 	}
 
 }

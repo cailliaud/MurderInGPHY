@@ -6,20 +6,18 @@ public abstract class Item
 	 * Name is a String Object.
 	 *It represents the name of the Item.
 	 */
-	protected String name;
-	
-	/**
-	 * slot is an integer.
-	 * It represents the weight of the object.
-	 */
-	protected int weight;
+	private String name;
 	
 	/**
 	 * Boolean to know if the object exist or not.
 	 * True if the item exist, false if it is not.
 	 */
-	protected boolean exist = false;
+	private boolean exist = false;
 	
+	
+	public Item (String name){
+		this.name=name;
+	}
 	
 	/**
 	 * Getter for the name of the item.
@@ -42,25 +40,6 @@ public abstract class Item
 		this.name = name;
 	}
 
-	/**
-	 * Getter for the weight of the object.
-	 * @return the value of the weight (integer)
-	 * 
-	 * @see Item#weight
-	 */
-	public int getWeight() {
-		return weight;
-	}
-
-	/**
-	 * Setter for the weight of the object.
-	 * @param weight the value of the weight (integer)
-	 * 
-	 * @see Item#weight
-	 */
-	protected void setWeight(int weight) {
-		this.weight = weight;
-	}
 	
 	/**
 	 * Getter to know if the object exist.

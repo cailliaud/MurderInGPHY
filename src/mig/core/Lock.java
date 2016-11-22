@@ -23,14 +23,22 @@ package mig.core;
 public class Lock extends Bolt {
 	private Key key;
 	
+	/**
+	 * Constructor of the Lock Class
+	 * The lock is locked when it is created
+	 * private locked parameter set to true
+	 * @param key The key associated to unlock the Lock
+	 * This parameter cannot be null
+	 */
 	public Lock ( Key key){
-		locked=true;
+		super(true);
+		//TODO prévoir Exception si clé null !
 		this.key = key;
 	}
 	
 	/**
 	 * Method for verifying that the key corresponds to the key compatible with the lock
-	 * @param key_given
+	 * @param key_given The key given to check if it is the good to unlock the Lock
 	 * @return true if the key fits into the lock
 	 * False if the key does not match the key opening the lock
 	 *
@@ -43,7 +51,7 @@ public class Lock extends Bolt {
 
 	/**
 	 * Method for opening the lock if the key is compatible with the lock
-	 * @param key_given
+	 * @param key_given The key given to check if it is the good to unlock the Lock
 	 * @return true if the key can into the lock, the lock is unlocked
 	 * false if the key don't open the lock.
 	 *
@@ -53,7 +61,7 @@ public class Lock extends Bolt {
 	public boolean opened(Key key_given) 
 	{
 		if (checkKey(key_given)){
-			locked=false;
+			this.unlockIt();
 			return true;
 		}
 		else{
@@ -63,7 +71,7 @@ public class Lock extends Bolt {
 	
 	/**
 	 * Method for closing the lock if the key is compatible with the lock
-	 * @param key_given
+	 * @param key_given The key given to check if it is the good to unlock the Lock
 	 * @return true if the key can into the lock, the lock is locked
 	 * false if the key can't close the lock.
 	 *
@@ -73,7 +81,7 @@ public class Lock extends Bolt {
 	public boolean closed(Key key_given) 
 	{
 		if (checkKey(key_given)){
-			locked=true;
+			this.lockIt();
 			return true;
 		}
 		else{

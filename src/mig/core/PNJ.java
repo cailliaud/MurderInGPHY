@@ -11,12 +11,11 @@ package mig.core;
  * PNJ contains these elements :
  * </p>
  * <ul>
- * <li>A name, fixed when the game is created. In inheritence with personage.</li>
- * <li>Is the personage is the killer</li>
- * <li>Is the PNJ is use in a room.</li>
- * <li>Have an enigma for the player.</li>
- * <li>Have clue or item for the player after enigma</li>
- * </li>
+ * 		<li>A name, fixed when the game is created. In inheritence with personage.</li>
+ * 		<li>Is the personage is the killer</li>
+ * 		<li>Is the PNJ is use in a room.</li>
+ * 		<li>Have an enigma for the player.</li>
+ * 		<li>Have clue or item for the player after enigma</li>
  * </ul>
  * 
  * @see Personage

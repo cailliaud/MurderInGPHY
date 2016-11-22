@@ -14,13 +14,13 @@ public class PhysicalObject extends EnigmaItem {
 	/**
 	 * Constructor of the class PhysicalObject
 	 * 
-	 * @param name
-	 * @param information
+	 * @param name Name of the Physical Object
+	 * @param information Information about the Physical Object
+	 * 
+	 * If name of information are null , there will be default value for them
 	 */
 	public PhysicalObject(String name, String information ) {
-		setName(name);
-		setInformation(information);
-		// TODO Auto-generated constructor stub
+		super(name,information);
 	}
 	
 	/**
