@@ -16,7 +16,7 @@ public class PhysicalObjectTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		test = new PhysicalObject("pioche", 5, "Attention ça peut faire mal");
+		test = new PhysicalObject("pioche","Attention ça peut faire mal");
 		test2= new Information("toto", "Toto a dit avoir vu un meutre");
 	}
 
