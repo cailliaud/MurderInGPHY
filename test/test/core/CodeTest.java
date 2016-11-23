@@ -84,24 +84,6 @@ public class CodeTest
 		 myCode.unlockIt();
 		 assertTrue(myCode.isLocked());
 	}
-	 
-	 
-	 
-	 /**
-	  * get the actual code
-	  */
-	@Test
-	public void testGetPass() 
-	{
-		
-	}
-
-	
-	
-	@Test
-	public void unlockIt() 
-	{
-		
-	}
+	 	 
 
 }
