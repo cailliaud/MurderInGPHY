@@ -99,7 +99,7 @@ public class CodeTest
 	
 	
 	@Test
-	public void testOpened() 
+	public void unlockIt() 
 	{
 		
 	}
