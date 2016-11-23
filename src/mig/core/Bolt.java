@@ -47,7 +47,8 @@ public abstract class Bolt {
 	 * It will set the private parameter locked to false
 	 */
 	public void unlockIt(){
-		
+		if (this.locked){
+		this.locked=false;}
 	}
 
 

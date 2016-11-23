@@ -1,13 +1,18 @@
 package test.core;
 
 import static org.junit.Assert.*;
+
+import org.junit.Rule;
+
 import mig.core.Bolt;
 import mig.core.Code;
 import mig.core.Information;
 import mig.core.Key;
 import mig.core.Lock;
+import mig.exceptions.*;
 
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 /**
  * <b>JUnit test for the class Lock</b>
@@ -17,14 +22,36 @@ import org.junit.Test;
  */
 public class LockTest {
 	Key k1= new Key("toto");
-	Lock lock = new Lock(k1);
+	Lock lock ;
+	Key k2 = new Key ("tata");
 	
 	/**
 	 * Default constructor
 	 */
 	public LockTest()
 	{
+		try {
+			lock= new Lock(k1);
+		} catch (KeyForgottenException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+
+	@Test
+	public void shouldTestExceptionMessage() throws KeyForgottenException {
+		
+		
+	    thrown.expect(KeyForgottenException.class);
+	    thrown.expectMessage("You try to instanciate a Bolt without a key, it is impossible.");
+	    Lock lock2 = new Lock(null);
+	}
+	
+	
+
 	
 	
 	/**
@@ -32,8 +59,10 @@ public class LockTest {
 	 */
 	@Test
 	public void testOpenBadKey() {
-		Key k2 = new Key ("tata");
-		assertFalse(lock.opened(k2));
+
+		lock.giveKey(k2);
+		lock.unlockIt();
+		assertTrue(lock.isLocked());
 	}
 	
 	/**
@@ -41,27 +70,12 @@ public class LockTest {
 	 */
 	@Test
 	public void testOpenGoodKey() {
-		assertTrue(lock.checkState());
-		assertTrue(lock.opened(k1));
+		lock.giveKey(k1);
+		lock.unlockIt();
+		assertFalse(lock.isLocked());
 	}
 	
-	/**
-	 * Method for test if the right key can locked the lock
-	 */
-	@Test
-	public void testCloseBadKey() {
-		Key k2 = new Key ("tata");
-		assertFalse(lock.closed(k2));
-	}
-	
-	/**
-	 * Method for test if the wrong key can locked the lock
-	 */
-	@Test
-	public void testCloseGoodKey() {
-		assertTrue(lock.checkState());
-		assertTrue(lock.opened(k1));
-	}
+
 	
 
 }

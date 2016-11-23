@@ -1,4 +1,7 @@
 package mig.core;
+
+import mig.exceptions.KeyForgottenException;
+
 /**
  * <b>Lock is the class that represents a key can unlocked a lock </b>
  * <p>
@@ -25,6 +28,7 @@ package mig.core;
  */
 
 public class Lock extends Bolt {
+
 	private Key key;
 	private boolean good_key =false ;
 	
@@ -35,8 +39,11 @@ public class Lock extends Bolt {
 	 * @param key The key associated to unlock the Lock
 	 * This parameter cannot be null
 	 */
-	public Lock ( Key key){
+	public Lock ( Key key)
+	throws KeyForgottenException
+	{
 		super(true);
+		if (key==null) throw new KeyForgottenException();
 		//TODO prévoir Exception si clé null !
 		this.key = key;
 	}
@@ -51,8 +58,12 @@ public class Lock extends Bolt {
 	 */
 	public void giveKey(Key key_given)
 	{
-		if (key_given.equals(this.key)){ good_key= true;}
-		else {good_key= false;}
+		if (key_given.equals(this.key)){
+			good_key= true;
+			}
+		else {
+			good_key= false;
+			}
 	}
 
 	/**
@@ -72,6 +83,8 @@ public class Lock extends Bolt {
 		}
 
 	}
+	
+
 	
 
 	
