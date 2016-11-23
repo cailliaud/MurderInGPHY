@@ -88,7 +88,9 @@ public class CodeTest
 	 
 	 
 	 
-	 
+	 /**
+	  * get the actual code
+	  */
 	@Test
 	public void testGetPass() 
 	{
