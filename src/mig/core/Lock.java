@@ -26,6 +26,7 @@ package mig.core;
 
 public class Lock extends Bolt {
 	private Key key;
+	private boolean good_key =false ;
 	
 	/**
 	 * Constructor of the Lock Class
@@ -48,10 +49,10 @@ public class Lock extends Bolt {
 	 *
 	 * @see Key
 	 */
-	private boolean checkKey(Key key_given)
+	private void giveKey(Key key_given)
 	{
-		if (key_given.equals(this.key)){ return true;}
-		else {return false;}
+		if (key_given.equals(this.key)){ good_key= true;}
+		else {good_key= false;}
 	}
 
 	/**
@@ -63,35 +64,16 @@ public class Lock extends Bolt {
 	 * @see Key
 	 * @see Bolt
 	 */
-	public boolean opened(Key key_given) 
+	public void unlockIt() 
 	{
-		if (checkKey(key_given)){
-			this.unlockIt();
-			return true;
+		if (good_key){
+			super.unlockIt();
+
 		}
-		else{
-			return false;
-		}
+
 	}
 	
-	/**
-	 * Method for closing the lock if the key is compatible with the lock
-	 * @param key_given The key given to check if it is the good to unlock the Lock
-	 * @return true if the key can into the lock, the lock is locked
-	 * false if the key can't close the lock.
-	 *
-	 * @see Key
-	 * @see Bolt
-	 */
-	public boolean closed(Key key_given) 
-	{
-		if (checkKey(key_given)){
-			this.lockIt();
-			return true;
-		}
-		else{
-			return false;
-		}
-	}
+
+	
 	
 }
