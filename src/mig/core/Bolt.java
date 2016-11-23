@@ -36,23 +36,19 @@ public abstract class Bolt {
 	 * @return locked 
 	 * Parameter of the class Bolt
 	 */
-	public boolean checkState () {
+	public boolean isLocked () {
 		return locked;
 	}
 	
-	/**
-	 * Method to lock the Bolt
-	 * It will set the private parameter locked to true
-	 */
-	protected void lockIt(){
-		
-	}
+
 
 	/**
 	 * Method to unlock the Bolt
 	 * It will set the private parameter locked to false
 	 */
-	protected void unlockIt(){
+	public void unlockIt(){
 		
 	}
+
+
 }

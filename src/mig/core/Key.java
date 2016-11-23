@@ -14,7 +14,7 @@ public class Key extends Item {
 	/**
 	 * Constructor of the Key 
 	 * @param name Name of the Key
-	 * The name as default, if name = null = "unknown key"
+	 * The name as default, if name = null will be "unknown key"
 	 */
 	public Key (String name){
 		//TODO sécurité si name =null 
