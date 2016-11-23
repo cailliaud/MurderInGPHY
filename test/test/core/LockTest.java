@@ -9,6 +9,7 @@ import mig.core.Code;
 import mig.core.Information;
 import mig.core.Key;
 import mig.core.Lock;
+import mig.exceptions.*;
 
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -21,7 +22,7 @@ import org.junit.rules.ExpectedException;
  */
 public class LockTest {
 	Key k1= new Key("toto");
-	Lock lock = new Lock(k1);
+	Lock lock ;
 	Key k2 = new Key ("tata");
 	
 	/**
@@ -29,17 +30,28 @@ public class LockTest {
 	 */
 	public LockTest()
 	{
+		try {
+			lock= new Lock(k1);
+		} catch (KeyForgottenException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	@Rule 
+	@Rule
 	public ExpectedException thrown = ExpectedException.none();
-	
-	@Test void lockwithoutKey(){
-		thrown.expect(KeyForgottenException.class);
-		thrown.expectMessage("You have to give  a key to create a Lock");
-		Lock lock2 = new Lock(null);
+
+	@Test
+	public void shouldTestExceptionMessage() throws KeyForgottenException {
 		
+		
+	    thrown.expect(KeyForgottenException.class);
+	    thrown.expectMessage("You try to instanciate a Bolt without a key, it is impossible.");
+	    Lock lock2 = new Lock(null);
 	}
+	
+	
+
 	
 	
 	/**
