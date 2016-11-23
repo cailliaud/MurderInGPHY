@@ -80,10 +80,10 @@ public class CodeTest
 	 @Test
 	 public void testWrongCode() 
 	 {
-		 thrown.expect(PasswordFailedException.class);
-		 thrown.expectMessage("wrong password given");
-		 myCode.opened("wrongpswd");
-	 }
+		 myCode.givePassword("wrongpswd");
+		 myCode.unlockIt();
+		 assertTrue(myCode.isLocked());
+	}
 	 
 	 
 	 

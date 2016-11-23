@@ -51,8 +51,12 @@ public class Lock extends Bolt {
 	 */
 	public void giveKey(Key key_given)
 	{
-		if (key_given.equals(this.key)){ good_key= true;}
-		else {good_key= false;}
+		if (key_given.equals(this.key)){
+			good_key= true;
+			}
+		else {
+			good_key= false;
+			}
 	}
 
 	/**
