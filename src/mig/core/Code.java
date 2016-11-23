@@ -58,7 +58,7 @@ public class Code extends Bolt {
 	 * @return Boolean
 	 * True if it is the same password or else false
 	 */
-	private void givePassword(String pass)
+	public void givePassword(String pass)
 	{
 		if (pass.equals(password))
 		{
