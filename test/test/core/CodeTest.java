@@ -78,7 +78,7 @@ public class CodeTest
 	 public ExpectedException thrown = ExpectedException.none();
 	 
 	 @Test
-	 public void testWrongCode()
+	 public void testWrongCode() 
 	 {
 		 thrown.expect(PasswordFailedException.class);
 		 thrown.expectMessage("wrong password given");

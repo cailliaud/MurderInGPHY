@@ -23,6 +23,7 @@ public class Code extends Bolt {
 	 * String that contains the password to unlock he Bolt
 	 */
 	private String password;
+	private boolean good_pass =false ;
 
 	/**
 	 * Default constructor
@@ -57,14 +58,14 @@ public class Code extends Bolt {
 	 * @return Boolean
 	 * True if it is the same password or else false
 	 */
-	private boolean checkPassword(String pass)
+	private void givePassword(String pass)
 	{
 		if (pass.equals(password))
 		{
-			return true;
+			this.good_pass= true;
 		}
 		else {
-			return false;
+			this.good_pass= false;
 		}
 	}
 
@@ -73,15 +74,13 @@ public class Code extends Bolt {
 	 * @param mdp Password given to try to unlock the chest
 	 * throw an exception
 	 */
-	public void open(String mdp) 
+	@Override
+	public void unlockIt() 
 	{
+		if (good_pass) {
+			super.unlockIt();
+		}
 	}
 	
-	/**
-	 * The complete method to lock a Code
-	 * A code does not need to give the password to be closed
-	 */
-	public void close(){
-		
-	}
+
 }

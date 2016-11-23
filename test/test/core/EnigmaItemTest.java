@@ -8,7 +8,6 @@ import mig.core.EnigmaItem;
 import mig.core.Information;
 import mig.core.PhysicalObject;
 
-
 /**
  * JUnit test for the class EnigmeItem
  * @see EnigmaItem

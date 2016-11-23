@@ -11,7 +11,7 @@ package mig.core;
 public class OpenedBolt extends Bolt {
 
 	/**
-	 * ConStructor of the OpenedBolt
+	 * Constructor of the OpenedBolt
 	 * The Opened Door is unlocked forever 
 	 * It is defined in the constructor 
 	 */
