@@ -31,9 +31,9 @@ public class OpenedBoltTest {
 	public void testBoltOpen()
 
 	{
-		OpenedBolt boltopen = new OpenedBolt(false);
+		OpenedBolt boltopen = new OpenedBolt();
 		//The state of the bolt must be "false"
-		assertEquals("false", boltopen.checkState());
+		assertEquals(false, boltopen.isLocked());
 	}
 	
 }
