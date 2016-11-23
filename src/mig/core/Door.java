@@ -23,7 +23,7 @@ public class Door {
 	/**
 	 * Open represents if the door is opened or not
 	 */
-	private boolean open;
+	private boolean opened;
 	
 	/**
 	 * room1 is the first Room linked to this door
@@ -43,21 +43,19 @@ public class Door {
 	
 	/**
 	 * Default Constructor
-	 * @param openDoor
-	 * Boolean to indicate if the door is already opened or not
-	 * @param roomDoor1
+	 * @param room1
 	 * The First Door linked
-	 * @param roomDoor2
+	 * @param room2
 	 * The Second Door linked
 	 * @param b Bolt on the door
-	 * If it is null, there will be as default an OpenedBolt
+	 * If it is null, there will be an exception
 	 */
 	public Door (Bolt b, Room room1, Room room2){
 		this.bolt= b;
 		this.room1=room1;
 		this.room2=room2;
 		
-		//TODO if b is null : create an OpenedBolt as default
+		//TODO if b is null create an exception
 	}
 	
 	/**
@@ -65,24 +63,98 @@ public class Door {
 	 * @return boolean
 	 * True = opened , False = closed
 	 */
-	public boolean getOpen(){
-		return open;
+	public boolean isOpened(){
+		return opened;
 	}
 	
 	/**
-	 * Method to put open to the value true
+	 * <p>Method to open a door with a lock that needs a key to be opened</p>
+	 * There is a test of the bolt, because only an Lock can be opened with a key
+	 * If it is not the good class there will be an exception
+	 * @param key_given Key tested to open the door
 	 * The door will stay opened.
+	 * This method will not work if the door is already opened
 	 */
 	public void openDoor(Key key_given){
+		if(bolt instanceof Lock){
+			
+		}
 		
-		
+	}
+	
+	/**
+	 * <p>Method to open the Door with a password Code </p> 
+	 * There is a test of the bolt, because only an Code can be opened with a password
+	 * If it is not the good class there will be an exception
+	 * @param password Pass tested to unlock the code of the door
+	 * The door will stay opened.
+	 * This method will not work if the door is already opened
+	 */
+	public void openDoor (String password){
+		if(bolt instanceof Code){
+			
+		}
+	}
+	
+	
+	/**
+	 * <p>Method to open a door with an OpenedLock </p>
+	 * There is a test of the bolt, because only an OpenedBolt can be opened without parameters
+	 * If it is not the good class there will be an exception
+	 * The door will stay opened.
+	 * This method will not work if the door is already opened
+	 */
+	public void openDoor (){
+		if(bolt instanceof OpenedBolt){
+			
+		}
 	}
 
 
-	/** Method to close the Door
-	 * open takes the value false
+	/** Method to close the Door with a key
+	 * There is a test of the bolt, because only a Lock can be closed with a key
+	 * If it is not the good class there will be an exception
+	 * @param key_given Key tested to close the door
+	 * opened takes the value false
+	 * This method will not work if the door is already closed
 	 */
 	public void closeDoor(Key key_given){
-		
+		if(bolt instanceof Lock){
+			
+		}
 	}
+	
+	/**
+	 * Method to close the Door without anything
+	 * If it is not the good class there will be an exception
+	 * There is a test of the bolt, because OpenedBolt and Code class can be closed without parameters
+	 */
+	public void closeDoor(){
+		if((bolt instanceof Lock)||(bolt instanceof OpenedBolt)){
+			
+		}
+	}
+	
+	/**
+	 * Method to get the nextRoom according to the room where you are
+	 * It will only possible if the Door is opened
+	 * And if the Room given is one of the two rooms linked to this door
+	 * It will return an exception if the door is closed
+	 * @param currentRoom the room where you are 
+	 * @return The Next room
+	 */
+	public Room getNextRoom(Room currentRoom){
+		if (opened) return null;
+		else return null ;
+	}
+	
+	/**
+	 * Method to test if the Room is linked to this door.
+	 * @param room The room tested
+	 * @return True if this room is linked to this Door
+	 */
+	private boolean exist(Room room){
+		return false;
+	}
+	
 }

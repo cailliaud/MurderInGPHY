@@ -45,7 +45,7 @@ public class PNJ extends Personage{
 	 * @param isKiller Is a boolean fixed in the beginning if the personage is the killer.
 	 * @param enigma Is the enigma of the PNJ for the player. It cannot be null
 	 */
-	public PNJ(String name,  Boolean isKiller, Enigma enigma){	
+	public PNJ(String name,  Boolean isKiller , Enigma enigma){	
 		//TODO exception if Enigma is null
 		super(name,isKiller);
 		this.alive=false;

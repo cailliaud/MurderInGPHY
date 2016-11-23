@@ -69,10 +69,19 @@ public class Code extends Bolt {
 	}
 
 	/**
-	 * The complete method to try to unlock the Bolt
+	 * The complete method to try to unlock the Code
 	 * @param mdp Password given to try to unlock the chest
+	 * throw an exception
 	 */
-	public void opened(String mdp) 
+	public void open(String mdp) 
 	{
+	}
+	
+	/**
+	 * The complete method to lock a Code
+	 * A code does not need to give the password to be closed
+	 */
+	public void close(){
+		
 	}
 }

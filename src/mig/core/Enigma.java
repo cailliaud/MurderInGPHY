@@ -1,15 +1,26 @@
 package mig.core;
 
 /**
- * Class Enigme
- * This Class creates an Enigma.
+ * <b> Class Enigme </b>
+ * <p> This Class creates an Enigma.
  * This enigma gives a question 
- * The question can asks an Item or a String
- * If the question is well answered there will be a reward
- * The reward i an Item.
+ * The question can asks an Item or a String 
+ * If the question is well answered there will be a reward 
+ * The reward i an Item </p>
+ * <p>This Class contain :</p>
+ * <ul> 
+ * <li> Item : EnigmaItem </li>
+ * <li> Answer : String </li> 
+ * <li> Question : String </li>
+ * <li> Reward : Item </li>
+ * <li> isResolved :boolean </li>
+ * <li> itemWaited : boolean </li>
+ * </ul>
+ * 
  * @author Group 8
- *
+ * @version 22/11/16
  */
+
 public class Enigma {
 
 	/**
@@ -46,7 +57,7 @@ public class Enigma {
 	private boolean itemWaited;  
 
 	/**
-	 * Default Construcot
+	 * Default Constructor
 	 * @param quest
 	 * String pronounced by the PNJ when the player will engage the Enigma
 	 */
@@ -64,6 +75,7 @@ public class Enigma {
 		
 	}
 
+	
 	/**
 	 * set the Answer if it is an EnigmaItem 
 	 * ItemWaited will be false
@@ -74,7 +86,6 @@ public class Enigma {
 
 	}
 	
-
 
 	/**
 	 * resolve the Enigma if it is a String 
@@ -112,7 +123,6 @@ public class Enigma {
 	 * @return boolean
 	 * True if it is already resolved
 	 */
-	//Return true if enigma is already resolved and false if not
 	public boolean alreadyResolved(){
 		return false;
 	}

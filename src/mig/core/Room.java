@@ -131,7 +131,7 @@ public class Room {
 	 */
 	public void addDoor(String direction, Door door) 
 	{
-
+		
 	}
 	
 	/**
