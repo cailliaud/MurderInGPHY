@@ -23,7 +23,6 @@ public abstract class  EnigmaItem extends Item {
 
 	public EnigmaItem(String name, String info){
 		super(name);
-		//TODO valeurs défauts si les parametres donnés sont null
 		if ((info==null)||(info.isEmpty()))
 			this.information="unknown information";
 		else 
