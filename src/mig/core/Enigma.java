@@ -62,7 +62,17 @@ public class Enigma {
 	 * String pronounced by the PNJ when the player will engage the Enigma
 	 */
 	public Enigma (String quest) {
-
+		if ((quest==null) || (quest.isEmpty())){
+			this.question="Hello, i can not talk to you. I'm really busy !";
+		}
+		else
+		{
+			this.question=quest;
+		}
+	}
+	
+	public String getQuest(){
+		return question;
 	}
 
 	/**

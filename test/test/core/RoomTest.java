@@ -1,5 +1,5 @@
 package test.core;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -44,8 +44,8 @@ public class RoomTest {
 	{
 		PNJ pnj = new PNJ("djjf", null, null);
 		Room r1 = new Room("desk");
-		r1 = addPNJ(pnj);
-		assertTrue("test", r1.isPresent(pnj));
+		r1.addPNJ(pnj);
+		assertTrue(r1.isPresent(pnj));
 		
 	}
 	
