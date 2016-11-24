@@ -1,5 +1,8 @@
 package mig.core;
 
+import mig.exceptions.FailedResolvEnigma;
+import mig.exceptions.NullQuestionException;
+
 /**
  * <b> Class Enigme </b>
  * <p> This Class creates an Enigma.
@@ -55,46 +58,105 @@ public class Enigma {
 	 * ItemWaited represents if the Enigma wants an Item or a String to solve it
 	 */
 	private boolean itemWaited;  
-
+	
 	/**
 	 * Default Constructor
-	 * @param quest
-	 * String pronounced by the PNJ when the player will engage the Enigma
+	 * This Enigma is just a simple sentence
+	 * There is no answer waited , and the isResolved is set True
+	 * 
+	 * Example: the PNJ will only tell a default sentence : Hello, i can not talk to you. I'm really busy ! "
 	 */
-	public Enigma (String quest) {
-		if ((quest==null) || (quest.isEmpty())){
-			this.question="Hello, i can not talk to you. I'm really busy !";
-		}
-		else
-		{
-			this.question=quest;
-		}
+	public Enigma (){
+		this.question="Hello, i can not talk to you. I'm really busy !";
+		this.isResolved = true;
 	}
 	
+	/**
+	 * Default Constructor
+	 * This Enigma is just a simple sentence
+	 * There is no answer waited , and the isResolved is set True
+	 * @param text It is the text that you want the enigma told
+	 * 
+	 */
+	public Enigma (String text) {
+		if ((text==null) || (text.isEmpty())){
+			this.question="Hello, i can not talk to you. I'm really busy !";
+					}
+		else
+		{
+			this.question=text;
+		}
+		this.isResolved = true;
+		
+	}
+	
+	/**
+	 * Constructor for an Enigma with an Item as answer
+	 * @param quest the question asked by the Enigma
+	 * @param item the item waited to answer the enigme
+	 * @param reward The item won if the enigma is resolved
+	 * @throws NullQuestionException if the question String is empty
+	 * @throws NullPointerException if the item or the reward are null.
+	 * 
+	 * The boolean itemWaited will be true because it is an item waited as answer
+	 * the enigma is set as not resolved.
+	 */
+	public Enigma(String quest,EnigmaItem item, Item reward) throws NullQuestionException{
+		// Security if the quest String is not correct
+		if((quest==null) || (quest.isEmpty())) throw new NullQuestionException();
+		this.question = quest;
+		
+		// Security if the item given is null
+		if (item==null) throw new NullPointerException();
+		
+		// Security if the reward item given is null
+		if (reward==null) throw new NullPointerException();
+		
+		this.itemWaited = true;
+		this.item= item;
+		this.reward=reward;
+		this.isResolved = false;
+		
+		
+	}
+	
+	/**
+	 * Constructor for an Enigma with a String as answer
+	 * @param quest the question asked by the Enigma
+	 * @param answer the String waited to answer the Enigma
+	 * @param reward The item won if the Enigma is resolved
+	 * @throws NullQuestionException if the question String is empty
+	 * @throws NullPointerException if the item or the reward are null.
+	 * 
+	 * The boolean itemWaited will be false because it is a String waited as answer
+	 * the enigma is set as not resolved.
+	 */
+	public Enigma (String quest,String answer, Item reward) throws NullQuestionException{
+		// Security if the quest String is not correct
+		if((quest==null) || (quest.isEmpty())) throw new NullQuestionException();
+		this.question = quest;
+		
+		// Security if the item given is null
+		if (answer==null) throw new NullPointerException();
+		
+		// Security if the reward item given is null
+		if (reward==null) throw new NullPointerException();
+		this.answer= answer;
+		this.reward=reward;
+		this.itemWaited = false;
+		this.isResolved = false;
+		
+	}
+	
+	
+	/**
+	 * Getter for the question given by the Enigma
+	 * @return The String of the question
+	 */
 	public String getQuest(){
 		return question;
 	}
 
-	/**
-	 * set the Answer if it is a String 
-	 * ItemWaited will be false
-	 * @param reponse
-	 * Answer Waited : String version
-	 */
-	public void setAnswer (String reponse){
-		
-	}
-
-	
-	/**
-	 * set the Answer if it is an EnigmaItem 
-	 * ItemWaited will be false
-	 * @param item
-	 * Answer Waited : EnigmaItem version
-	 */
-	public void setAnswer (EnigmaItem item){
-
-	}
 	
 
 	/**
@@ -104,8 +166,21 @@ public class Enigma {
 	 * @return boolean
 	 * True if it is the good String or else false
 	 */
-	public boolean resolveEnigma (String answer){
-		return false; 
+	public Item resolveEnigma (String answer) throws FailedResolvEnigma{
+		if ((!isResolved)&&(!itemWaited)){
+			if (answer==this.answer)
+			{
+				return rewarded();
+			
+			}else {
+				throw new FailedResolvEnigma(isResolved); 
+			}
+		} else {
+			throw new FailedResolvEnigma(isResolved); 
+		}
+			
+		
+		
 	}
 
 	/**
@@ -115,8 +190,18 @@ public class Enigma {
 	 * @return boolean
 	 * True if it is the good EnigmaItem or else false
 	 */
-	public boolean resolveEnigma (EnigmaItem item){
-		return false;
+	public Item resolveEnigma (EnigmaItem item) throws FailedResolvEnigma{
+		if ((!isResolved)&&(itemWaited)){
+			if (item.equals(this.item)){
+				return rewarded();
+			
+			}else {
+				throw new FailedResolvEnigma(isResolved); 
+			}
+		} else {
+			throw new FailedResolvEnigma(isResolved); 
+		}
+		
 	}
 
 	/**
@@ -124,8 +209,12 @@ public class Enigma {
 	 * @return Item
 	 * The Item won
 	 */
-	public Item rewarded(){
-		return null;
+	private Item rewarded(){
+		this.question="You had your reward, now let me alone , i'm too busy.";
+		isResolved=true;
+		return this.reward;
+		
+	
 	}
 
 	/**
@@ -134,8 +223,10 @@ public class Enigma {
 	 * True if it is already resolved
 	 */
 	public boolean alreadyResolved(){
-		return false;
+		return isResolved;
 	}
 
 
 }
+
+

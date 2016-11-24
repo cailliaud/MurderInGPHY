@@ -1,9 +1,20 @@
 package test.core;
 
 import static org.junit.Assert.*;
+
+import org.junit.*;
+
 import mig.core.Enigma;
+import mig.core.EnigmaItem;
+import mig.core.Information;
+import mig.core.Item;
+import mig.core.Key;
+import mig.core.PhysicalObject;
+import mig.exceptions.FailedResolvEnigma;
+import mig.exceptions.NullQuestionException;
 
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 /**
  * JUnit test for the class Enigma
@@ -15,81 +26,92 @@ import org.junit.Test;
 
 public class EnigmaTest {
 	private Enigma enigma ;
-//	private PhysicalObject object;
-//	private Information info;
-//	private Item item;
-//	private Item item2; 
-//	private boolean isResolved = false;
+	private EnigmaItem object;
+	private EnigmaItem info;
+	private Item key;
+	private EnigmaItem item;
 
+	public EnigmaTest() {
+		key = new Key("porte du fond");
+		info= new Information("La salle sombre","Elle contient un mystère.");
+		object = new PhysicalObject("pioche", "une pioche des plus commune");
+	}
+	
 	/** 
 	 * Default constructor for test class Enigma
 	 */
 	@Test
 	public void testEnigmaNull() {	
-		enigma= new Enigma(null);
+		enigma= new Enigma();
 		assertEquals("Hello, i can not talk to you. I'm really busy !", enigma.getQuest());
 	}
+	
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+	@Test 
+	public void create_Enigma_with_Null_ItemReward() 
+			throws NullPointerException,NullQuestionException{
+		thrown.expect(NullPointerException.class);
+		enigma = new Enigma("la quête ?",item, key);
+	
+	}
+	
+	@Test
+	public void createGoodEnigma() 
+			throws NullQuestionException{
+		enigma = new Enigma("la quête ?",info, key);
+	
+	}
+	
+	@Test 
+	public void create_Enigma_withItem_withoutQuestion() 
+			throws NullQuestionException{
+		thrown.expect(NullQuestionException.class);
+		enigma = new Enigma("",info,key);
+	}
+	
+
+	
+	@Test
+	public void solveEnigma() 
+			throws NullQuestionException, FailedResolvEnigma{
+		Item reward;
+		enigma = new Enigma ("Quelle salle est incroyable ?", info , key);
+		try {
+			reward= enigma.resolveEnigma(info);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		assertTrue(enigma.alreadyResolved());
+	}
+	
+	@Test
+	public void badAnswerToResolveEnigma() 
+			throws NullQuestionException, FailedResolvEnigma{
+		Item reward;
+		enigma = new Enigma ("Quelle salle est incroyable ?", info , key);
+		thrown.expect(FailedResolvEnigma.class);
+		reward= enigma.resolveEnigma(object);
+
+	}
+	
+	
+	@Test
+	public void solveEnigmawithItem_GivingString()
+			throws NullQuestionException, FailedResolvEnigma{
+		Item reward;
+		enigma = new Enigma ("Quelle salle est incroyable ?", info , key);
+		thrown.expect(FailedResolvEnigma.class);
+		reward= enigma.resolveEnigma("Elle contient un mystère.");
+	}
+	
+	@Test
+	public void solveEnigmawithString_GivingItem()
+			throws NullQuestionException, FailedResolvEnigma{
+		Item reward;
+		enigma = new Enigma ("Quelle salle est incroyable ?", "Elle contient un mystère." , key);
+		thrown.expect(FailedResolvEnigma.class);
+		reward= enigma.resolveEnigma(info);
+	}
+	
 }
-//
-//	/**
-//	 * Method testSetAnswerString
-//	 * <p>Checks if the response given as parameter in a String </p>
-//	 */
-//	@Test
-//	public void testSetAnswerString() {
-//		info= new Information("Answer","My response is blabla");
-//		assertEquals("Answers", info.getName()); 
-//	}
-//
-//	/**
-//	 * Method testSetAnswerEnigmaItem
-//	 * <p> Checks if the response given as parameter is an EnigmaItem </p>
-//	 */
-//	@Test
-//	public void testSetAnswerEnigmaItem() {
-//		object= new PhysicalObject ("Book", "For ADA code");
-//		assertEquals("Book", object.getName()); 
-//	}
-//
-//	/**
-//	 * Method testResolveEnigmaString
-//	 * <p> Return false if the Enigma is not resolved if the response is a String </p>
-//	 */
-//	@Test
-//	public void testResolveEnigmaString() {
-//		info= new Information ("Answer", "My response is toto");
-//		assertEquals (false, info.getExist());
-//	}
-//
-//	/**
-//	 * Method testResolveEnigmaItem
-//	 * <p> Return false if the Enigma is not resolved if the response is an PhysicalObject </p> 
-//	 */
-//	@Test
-//	public void testResolveEnigmaEnigmaItem() {
-//		object = new PhysicalObject("Book", "For Java code");
-//		assertEquals (false, object.getExist());
-//	}
-//
-//	/**
-//	 * Method testRewarded
-//	 * <p> Return null when the Enigma is not resolved </p>
-//	 */
-//	@Test
-//	public void testRewarded() {
-//		item = new Information("Next room", "To find murder");
-//		item2 = new PhysicalObject ("Key", "For open door");
-//		assertEquals (null, item.getName());
-//		assertEquals (null, item2.getName());
-//	}
-//
-//	/**
-//	 * Method testAlreadyResolved
-//	 * <p> Return false if the Enigma is not resolved </p> 
-//	 */
-//	@Test
-//	public void testAlreadyResolved() {
-//		assertEquals (false, isResolved.getExist());
-//	}
-//
-//}
