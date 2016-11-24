@@ -4,9 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import mig.core.DirectionWords;
 import mig.core.Information;
-import mig.core.Item;
 
 
 /**
@@ -17,7 +15,6 @@ import mig.core.Item;
  */
 public class InformationTest {
 	private Information info ;
-	private Item name; 
 	
 	/**
 	 * Default constructor for test class InformationTest

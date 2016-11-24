@@ -27,7 +27,7 @@ public class Chest {
 	 * ArrayList of all items contained in this Chest
 	 * A chest can contains a maximum of 4 items
 	 */
-	private ArrayList<Item> containt;
+	private ArrayList<Item> containt = new ArrayList<Item>();
 	
 	/**
 	 * Bolt of the Chest
@@ -46,7 +46,7 @@ public class Chest {
 	 * @param item Item to add in the Chest
 	 */
 	public void addItem(Item item){
-		
+		if (!containt.contains(item)) containt.add(item); 
 	}
 	
 	
@@ -55,7 +55,7 @@ public class Chest {
 	 * @param item Item to remove from the chest
 	 */
 	public void removeItem(Item item){
-		
+		if (containt.contains(item)) containt.remove(item);
 	}
 	
 	/**
@@ -63,7 +63,7 @@ public class Chest {
 	 * @return number of items in the Chest
 	 */
 	public int numberOfItems(){
-		return 0;
+		return containt.size();
 	}
 	
 	/** 
@@ -73,5 +73,4 @@ public class Chest {
 	public ArrayList<Item> getContaintChest(){
 		return containt;
 	}
-
 }
