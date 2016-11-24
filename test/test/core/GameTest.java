@@ -4,10 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import mig.core.Code;
+import mig.core.Enigma;
+import mig.core.Game;
 import mig.core.PNJ;
+import mig.exceptions.GameOver;
 
 /**
  * <b>JUnit test for the class Game</b>
@@ -18,58 +23,58 @@ import mig.core.PNJ;
 
 public class GameTest 
 {
-	private PNJ killer = new PNJ ("fantomas", true, null);
+	private Enigma nothing = new Enigma();
+	
+	private PNJ fantomas = new PNJ ("fantomas", true, nothing);
+	private PNJ bobby = new PNJ ("bobby", false, nothing);
+	private Game game ;
 	
 	/**
 	 * default constructor for the test class CodeTest
 	 */
 	
-	public void GameTest()
+	public GameTest()
 	{
+		game =  new Game ("Dr Watson");
+		game.setKiller(fantomas);
 	}
 	
-	/**
-	 * Sets up the test fixture
-	 * <p> called before every test case method. </p>
-	 * <p> initialize one code for each test, which is "42" </p>
-	 */
-	@Before
-	public void setUp()
-	{
-		
-	}
-	
-	/**
-	 * Tears down the test fixture.
-	 *<p> Called after every test case method. Nothing to do in this case </p>
-	 */
-	@After
-	public void tearDown()
-	{
-	}
-	
+	@Rule public ExpectedException thrown = ExpectedException.none();
 
-
+	
 	@Test
-	public void testStop() 
-	{
-		
+	public void testGame_PlayerNameGiven(){
+		assertEquals("Dr Watson", game.myPlayer.getName());
 	}
+	
+	@Test
+	public void testGame_PlayerNameEmpty(){
+		Game game2 = new Game("");
+		assertEquals("Sherlock", game2.myPlayer.getName());
+	}
+	
 
-	/**
-	 * <p> check if the name given for the killer as parameter is correctly set to the attribute </p>
-	 */
+	
 	@Test
 	public void testNameKiller() 
 	{
-		assertEquals("fantomas", killer.getName());
+		assertEquals(fantomas, game.getKiller());
 	}
 	
 	@Test
-	public void testGiveKiller()
+	public void testGiveGoodKiller() throws GameOver
 	{
-		assertEquals(true, killer.getIsKiller());
+		game.giveKiller(fantomas);
+		assertEquals(true, game.isWin());
 	}
+	
+	@Test
+	public void testGiveWrongKiller() throws GameOver {
+		thrown.expect(GameOver.class);
+		game.giveKiller(bobby);
+
+	}
+	
 	
 
 }
