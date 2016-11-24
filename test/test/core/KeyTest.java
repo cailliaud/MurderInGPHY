@@ -60,6 +60,7 @@ public void testNameCléForgée() {
 public void Assert() {
 	assertNotNull("CléForgée", myKey);
 }
+
 }
 
 
