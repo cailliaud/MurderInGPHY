@@ -2,16 +2,11 @@ package test.core;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
-import org.junit.After;
 import org.junit.Test;
 
-import mig.core.Bolt;
 import mig.core.Chest;
-import mig.core.Lock;
-import mig.core.Code;
-import mig.core.Item;
-
+import mig.core.Information;
+import mig.core.Key;
 
 /**
  * <b>JUnit test for the class Chest</b>
@@ -20,42 +15,26 @@ import mig.core.Item;
  *
  */
 public class ChestTest {
-	private Item test1; 
-	private Item test2;
-	private Item test3;
-	private Item test4;
-	private Item test5; 
+	private Key key1 = new Key("toto"); 
+	private Key key2 = new Key("tata"); 
+	private Key key3  = new Key("t"); 
+	private Key key4  = new Key("roro"); 
+	private Information info5  = new Information("Nicolas","is the killer"); 
+	private Chest chest1;
 	
 	/**
 	 * Default constructor for test class ChestTest
 	 */
 	public ChestTest()
 	{
+		chest1 = new Chest (); 
+		chest1.addItem(key1); 
+		chest1.addItem(key2); 
+		chest1.addItem(key3); 
+		chest1.addItem(key4); 
+		chest1.addItem(info5);
 	}
-	/**
-	 * Sets up the text fixture. 
-	 * <p> Called before every test case method. </p>
-	 * <p> Initialize the chest with 4 items, test1, test2, test3 and test4 </p>
-	 */
-	
-	@Before 
-	public void setUp(){
-		Chest chest1 = new Chest (); 
-		chest1.addItem(test1); 
-		chest1.addItem(test2); 
-		chest1.addItem(test3); 
-		chest1.addItem(test4); 
-	}
-	
-	/**
-	 * Tears down the test fixture
-	 * <p> Called after every test case method. Nothing to do in this case </p>
-	 */
-	@After
-	public void tearDown()
-	{
-	}
-	
+
 	/**
 	 * Method addItemTest
 	 * <p> Checks if a item is well added to a chest </p>
@@ -63,8 +42,51 @@ public class ChestTest {
 	@Test 
 	public void addItemTest(){
 		Chest chest2 = new Chest (); 
-		chest2.addItem(test1); 
+		chest2.addItem(key1); 
 		//The method "getContaintChest()" must return test1
-		assertEquals(test1, chest2.getContaintChest());	
+		assertTrue( chest2.getContaintChest().contains(key1));	
+	}
+	
+	/**
+	 * Method numberOfItemsTest
+	 * <p> Checks if the number of items in the array is correct </p>
+	 */
+	@Test 
+	public void numberOfItemTest(){ 
+		//The method "numberOfItem()" must return 4
+		assertEquals(5, chest1.numberOfItems());	
+	}
+	
+	/**
+	 * Method removeItemTest
+	 * <p> Checks if a item is well removed from the chest </p>
+	 */
+	@Test 
+	public void removeItemTest(){
+		int total = chest1.numberOfItems();
+		chest1.removeItem(key1); 
+		//The method "removeItemTest()" must return a number of items equals to the total
+		assertEquals(total-1,chest1.numberOfItems());	
+	}
+	
+	/**
+	 * Method removeTheGoodItem
+	 * <p> Checks if the good item is well removed from the chest </p>
+	 */
+	@Test 
+	public void removeTheGoodItem(){
+		chest1.removeItem(key1); 
+		//The method "removeTheGoodItem()" must return the name of the item deleted 
+		assertNotEquals(key1, chest1.getContaintChest());	
+	}
+	/**
+	 * Method addItemAlreadyPresent
+	 * <p> Checks if we can add an item already present in the Chest </p>
+	 */
+	@Test
+	public void addItemAlreadyPresent(){
+		int total = chest1.numberOfItems();
+		chest1.addItem(info5);
+		assertEquals(total,chest1.numberOfItems());	
 	}
 }
