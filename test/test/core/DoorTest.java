@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import mig.core.DirectionWords;
 import mig.core.Door;
+import mig.core.Room;
 
 
 /**
@@ -14,11 +15,15 @@ import mig.core.Door;
  * @author group8
  *
  */
-public class DoorTest {
 
+public class DoorTest 
+{
+	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void test() 
+	{
+		Room r1 = new Room("ok");
+		Room r2 = new Room("ko");
 	}
 
 }

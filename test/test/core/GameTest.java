@@ -10,7 +10,7 @@ import mig.core.Code;
 import mig.core.PNJ;
 
 /**
- * <b>JUnit test for the class Code</b>
+ * <b>JUnit test for the class Game</b>
  * @see Code
  * @author group8
  *@version 24/11/2016
@@ -57,7 +57,7 @@ public class GameTest
 	}
 
 	/**
-	 * <p> check if the name given for the killer as parameter is correctly set to the attribute
+	 * <p> check if the name given for the killer as parameter is correctly set to the attribute </p>
 	 */
 	@Test
 	public void testNameKiller() 

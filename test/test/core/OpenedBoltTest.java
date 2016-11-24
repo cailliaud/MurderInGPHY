@@ -22,11 +22,11 @@ public class OpenedBoltTest {
 	{
 	}
 	
+	
 	/**
 	 * Method testBoltOpen
 	 * <p>Checks if the new bolt created is well open
-	 */
-	 
+	 */ 
 	@Test
 	public void testBoltOpen()
 
