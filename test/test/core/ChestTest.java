@@ -8,7 +8,6 @@ import mig.core.Chest;
 import mig.core.Information;
 import mig.core.Key;
 
-
 /**
  * <b>JUnit test for the class Chest</b>
  * @see Information
