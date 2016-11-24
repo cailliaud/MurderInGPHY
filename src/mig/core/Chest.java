@@ -1,5 +1,6 @@
 package mig.core;
 import java.util.ArrayList;
+import mig.core.Code;
 
 /**
  * <b>Chest is the class representing a chest with a bolt.</b>
@@ -34,11 +35,17 @@ public class Chest {
 	 * It can be a key or a password
 	 */
 	private Bolt bolt;
+
 	
 	/**
 	 * Default Constructor
 	 */
-	public Chest (){
+	public Chest (Bolt bolt){
+		this.bolt=bolt;
+	}
+	
+	public boolean isLocked(){
+		return bolt.isLocked();
 	}
 	
 	/**
@@ -72,5 +79,19 @@ public class Chest {
 	 */
 	public ArrayList<Item> getContaintChest(){
 		return containt;
+	}
+	
+	/** 
+	 * Method to get the reward contained in the Chest
+	 * @return containt The list of Items in the Chest
+	 */
+	public void OpenChest(String pass){
+		if (bolt instanceof Code) {
+		((Code) bolt).givePassword(pass);
+		bolt.unlockIt();
+			
+		}
+
+		
 	}
 }

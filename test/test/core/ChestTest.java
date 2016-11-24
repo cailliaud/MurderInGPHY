@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import mig.core.Bolt;
 import mig.core.Chest;
+import mig.core.Code;
 import mig.core.Information;
 import mig.core.Key;
 
@@ -21,13 +23,14 @@ public class ChestTest {
 	private Key key4  = new Key("roro"); 
 	private Information info5  = new Information("Nicolas","is the killer"); 
 	private Chest chest1;
+	private Bolt bolt_code = new Code("vendee");
 	
 	/**
 	 * Default constructor for test class ChestTest
 	 */
 	public ChestTest()
 	{
-		chest1 = new Chest (); 
+		chest1 = new Chest (bolt_code); 
 		chest1.addItem(key1); 
 		chest1.addItem(key2); 
 		chest1.addItem(key3); 
@@ -41,7 +44,7 @@ public class ChestTest {
 	 */
 	@Test 
 	public void addItemTest(){
-		Chest chest2 = new Chest (); 
+		Chest chest2 = new Chest (bolt_code); 
 		chest2.addItem(key1); 
 		//The method "getContaintChest()" must return test1
 		assertTrue( chest2.getContaintChest().contains(key1));	
@@ -53,7 +56,7 @@ public class ChestTest {
 	 */
 	@Test 
 	public void numberOfItemTest(){ 
-		//The method "numberOfItem()" must return 4
+		//The method "numberOfItem()" must return 5
 		assertEquals(5, chest1.numberOfItems());	
 	}
 	
@@ -88,5 +91,19 @@ public class ChestTest {
 		int total = chest1.numberOfItems();
 		chest1.addItem(info5);
 		assertEquals(total,chest1.numberOfItems());	
+	}
+	
+	@Test
+	public void openWithGoodPassChest(){
+		String pass = "vendee";
+		chest1.OpenChest(pass);
+		assertFalse(chest1.isLocked());
+	}
+	
+	@Test
+	public void openWithBadPassChest(){
+		String pass = "toto";
+		chest1.OpenChest(pass);
+		assertTrue(chest1.isLocked());
 	}
 }
