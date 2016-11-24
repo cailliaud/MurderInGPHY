@@ -33,7 +33,7 @@ import java.util.Hashtable;
  */
 public class Room {
 
-	private DirectionWords directions;
+	private DirectionWords directions = new DirectionWords();
 	/**
 	 * It is the name of the Room
 	 * It is set in the constructor and cannot be changed after 
@@ -78,7 +78,12 @@ public class Room {
 	public Room(String nameRoom)
 	{
 		this.name=nameRoom;
-		this.directions=new DirectionWords();
+		this.description = "No information about this room";
+	}
+	
+	public Room(String nameRoom, String description){
+		this.name=nameRoom;
+		this.description = description;
 	}
 
 	/** 
@@ -131,7 +136,9 @@ public class Room {
 	 */
 	public void addDoor(String direction, Door door) 
 	{
-		
+		if(directions.isDirection(direction)){
+			myExits.put(direction, door);
+		}
 	}
 	
 	/**
@@ -141,6 +148,10 @@ public class Room {
 	 */
 	public void removeDoor(String direction)
 	{
+		if(directions.isDirection(direction)){
+			myExits.remove(myExits.get(direction));
+		} 
+		
 		
 	}
 
@@ -167,7 +178,7 @@ public class Room {
 	 */
 	public String displayExits()
 	{
-		return null;
+		return myExits.toString();
 
 	}
 
@@ -181,7 +192,7 @@ public class Room {
 	 */
 	public boolean exitsPossible(String direction)
 	{
-		if (checkDirection(direction )){
+		if (myExits.containsKey(direction)){
 			return true;
 		}
 		else {
@@ -234,6 +245,10 @@ public class Room {
 	 */
 	public void addPNJ(PNJ newPNJ)
 	{
+		if (!newPNJ.isAlive()){
+			occupants.add(newPNJ);
+			newPNJ.setAlive(true);
+		}
 		
 	}
 	
@@ -247,7 +262,10 @@ public class Room {
 	 */
 	public void removePNJ(PNJ pnjRemoved)
 	{
-		
+		if ((pnjRemoved.isAlive())&&isPresent(pnjRemoved)){
+			occupants.remove(pnjRemoved);
+			pnjRemoved.setAlive(false);
+		}
 	}
 
 	
@@ -261,7 +279,10 @@ public class Room {
 	 */
 	public void addItem(Item newItem)
 	{
-		
+		if (!newItem.getExist()){
+			clues.add(newItem);
+			newItem.setExist(true);;
+		}
 	}
 	
 	/**
@@ -275,7 +296,10 @@ public class Room {
 	 */
 	public void removeItem(Item itemRemoved)
 	{
-		
+		if ((itemRemoved.getExist())&&(isPresent(itemRemoved))){
+			clues.remove(itemRemoved);
+			itemRemoved.setExist(false);;
+		}
 	}
 	
 	/**
@@ -290,6 +314,7 @@ public class Room {
 	 * @param itemName The name of the Item
 	 * @return the item if it is present in the room
 	 */
+	
 	public Item getItem(String itemName){
 		//TODO trouver l'objet dans le jeu portant ce nom (class comportant les objets existants)
 		//TODO récupérer l'objet avec ce nom et tester si il est dans la Room

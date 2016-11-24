@@ -14,21 +14,27 @@ import mig.core.PNJ;
  */
 public class PNJTest {
 
-	private PNJ p1= new PNJ ("Toto", null, null);
-	
+	private PNJ p1= new PNJ ("Toto", false, null);
+	private PNJ p2= new PNJ ("Titi", true, null);
 	
 	@Test
 	public void testGetName() {
 		assertEquals("Toto",p1.getName() );
 	}
 	
+	@Test
 	public void testGetKiller() {
-		assertEquals(false,p1.getIsKiller());
+		assertFalse(p1.getIsKiller());
 	}
 	
-	public void testLower() {
-		assertNotEquals("toto",p1.getName());
+	@Test
+	public void testKiller() 
+	{
+		assertTrue(p2.getIsKiller());
 	}
+	
+	
+
 	
 
 }

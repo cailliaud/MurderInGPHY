@@ -41,8 +41,7 @@ public abstract class Personage {
 	 */
 	public Personage (String name, Boolean isKiller){
 		this.name=name;
-		if (isKiller==null) isKiller= false; 
-		else this.isKiller=isKiller;
+		this.isKiller=false;
 	}
 	/**
 	 * 
