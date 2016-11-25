@@ -27,7 +27,7 @@ public class Information extends EnigmaItem{
 	 * Method to display the text contained in this information 
 	 * @return Information displayed with a String
 	 */
-	public String displayInformation(){
+	public String toString(){
 		return null;
 		// TODO Approfondir la méthode 
 	}

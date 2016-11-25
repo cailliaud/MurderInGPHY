@@ -42,16 +42,16 @@ public abstract class Item
 		return name;
 	}
 
-	/**
-	 * Setter for the name of the item.
-	 * @param name The name of the Item.
-	 * Protected because the name can be changed only in the class .
-	 * 
-	 * @see Item#name
-	 */
-	protected void setName(String name) {
-		this.name = name;
-	}
+//	/**
+//	 * Setter for the name of the item.
+//	 * @param name The name of the Item.
+//	 * Protected because the name can be changed only in the class .
+//	 * 
+//	 * @see Item#name
+//	 */
+//	protected void setName(String name) {
+//		this.name = name;
+//	}
 
 	
 	/**
@@ -72,6 +72,14 @@ public abstract class Item
 	 */
 	public void setExist(boolean exist){
 		this.exist=exist;
+	}
+	
+	public void existNow(){
+		this.exist=true;
+	}
+	
+	public void notExist(){
+		this.exist=false;
 	}
 	
 	/**

@@ -20,10 +20,6 @@ package mig.core;
  */
 public class Door {
 
-	/**
-	 * Open represents if the door is opened or not
-	 */
-	private boolean opened;
 	
 	/**
 	 * room1 is the first Room linked to this door
@@ -63,8 +59,8 @@ public class Door {
 	 * @return boolean
 	 * True = opened , False = closed
 	 */
-	public boolean isOpened(){
-		return opened;
+	public boolean isLocked(){
+		return bolt.isLocked();
 	}
 	
 	/**
@@ -124,16 +120,16 @@ public class Door {
 		}
 	}
 	
-	/**
-	 * Method to close the Door without anything
-	 * If it is not the good class there will be an exception
-	 * There is a test of the bolt, because OpenedBolt and Code class can be closed without parameters
-	 */
-	public void closeDoor(){
-		if((bolt instanceof Lock)||(bolt instanceof OpenedBolt)){
-			
-		}
-	}
+//	/**
+//	 * Method to close the Door without anything
+//	 * If it is not the good class there will be an exception
+//	 * There is a test of the bolt, because OpenedBolt and Code class can be closed without parameters
+//	 */
+//	public void closeDoor(){
+//		if((bolt instanceof Lock)||(bolt instanceof OpenedBolt)){
+//			
+//		}
+//	}
 	
 	/**
 	 * Method to get the nextRoom according to the room where you are
@@ -144,7 +140,7 @@ public class Door {
 	 * @return The Next room
 	 */
 	public Room getNextRoom(Room currentRoom){
-		if (opened) return null;
+		if (isLocked()) return null;
 		else return null ;
 	}
 	

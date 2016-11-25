@@ -41,15 +41,15 @@ public class Code extends Bolt {
 		}
 	}
 
-	/**
-	 * Method to get the password 
-	 * @return password
-	 * The password of the bolt
-	 */
-	public String getPass()
-	{
-		return password;
-	}
+//	/**
+//	 * Method to get the password 
+//	 * @return password
+//	 * The password of the bolt
+//	 */
+//	public String getPass()
+//	{
+//		return password;
+//	}
 	
 	/**
 	 * Private Method to test if the password given is the same as the password of the Bolt

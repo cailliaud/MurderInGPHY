@@ -122,34 +122,34 @@ public class Owned {
 	public void removeObject (String name){
 		
 	}
+//	
+//	/**
+//	 * Remove a key from the bunch
+//	 * We does not authorize to remove a key from another class
+//	 * @param key Key that you want to remove
+//	 * There is a test to check if the key exists in the bunch
+//	 * 
+//	 * @see Owned#exist(Key)
+//	 * @see Owned#bunch
+//	 * @see Key
+//	 */
+//	private void removeKey (Key key){
+//		
+//	}
 	
-	/**
-	 * Remove a key from the bunch
-	 * We does not authorize to remove a key from another class
-	 * @param key Key that you want to remove
-	 * There is a test to check if the key exists in the bunch
-	 * 
-	 * @see Owned#exist(Key)
-	 * @see Owned#bunch
-	 * @see Key
-	 */
-	private void removeKey (Key key){
-		
-	}
-	
-	/**
-	 * Remove an Information from the notebook
-	 * We does not authorize to remove a information from another class
-	 * @param info Information that you want to remove
-	 * There is a test to check if the information exists in the notebook
-	 * 
-	 * @see Owned#exist(Information)
-	 * @see Owned#notebook
-	 * @see Information
-	 */
-	private void removeInformation (Information info){
-		
-	}
+//	/**
+//	 * Remove an Information from the notebook
+//	 * We does not authorize to remove a information from another class
+//	 * @param info Information that you want to remove
+//	 * There is a test to check if the information exists in the notebook
+//	 * 
+//	 * @see Owned#exist(Information)
+//	 * @see Owned#notebook
+//	 * @see Information
+//	 */
+//	private void removeInformation (Information info){
+//		
+//	}
 	
 	/**
 	 * Method to test if a key exists in the bunch
@@ -160,7 +160,7 @@ public class Owned {
 	 * @see Owned#bunch
 	 * @see Key
 	 */
-	public boolean exist (Key key){
+	public boolean exist(Key key){
 		return false;
 	}
 	
@@ -202,6 +202,17 @@ public class Owned {
 	//TODO prévoir une exception si l'object n'existe pas : @throws
 	public PhysicalObject getObject(String name){
 		return null;
+		
+	}
+	
+	public Information getInfo(String name){
+		return null;
+		
+	}
+	
+	public Information getInfo(String name){
+		return null;
+		
 	}
 	
 	
