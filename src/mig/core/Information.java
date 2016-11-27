@@ -28,8 +28,8 @@ public class Information extends EnigmaItem{
 	 * @return Information displayed with a String
 	 */
 	public String toString(){
-		return null;
-		// TODO Approfondir la méthode 
+		String str =this.getName()+" : "+this.getInformation();
+		return str;
 	}
 	
 }

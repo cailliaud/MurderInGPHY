@@ -30,6 +30,7 @@ public class PNJ extends Personage{
 	/** 
 	 * a PNJ has an enigma to ask to the player.
 	 */
+	@SuppressWarnings("unused")
 	private Enigma enigma;
 	/**
 	 * It represents if the personage is alive or not. If he is already use in a room. A PNJ can't be used in two different rooms.

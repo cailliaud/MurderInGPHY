@@ -47,7 +47,7 @@ public class ChestTest {
 		Chest chest2 = new Chest (bolt_code); 
 		chest2.addItem(key1); 
 		//The method "getContaintChest()" must return test1
-		assertTrue( chest2.getContaintChest().contains(key1));	
+		assertTrue(chest2.isPresent(key1));	
 	}
 	
 	/**
@@ -80,7 +80,7 @@ public class ChestTest {
 	public void removeTheGoodItem(){
 		chest1.removeItem(key1); 
 		//The method "removeTheGoodItem()" must return the name of the item deleted 
-		assertNotEquals(key1, chest1.getContaintChest());	
+		assertFalse(chest1.isPresent(key1));	
 	}
 	/**
 	 * Method addItemAlreadyPresent

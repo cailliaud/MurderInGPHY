@@ -1,6 +1,10 @@
 package mig.core;
 import java.util.ArrayList;
+import java.util.Iterator;
+
 import mig.core.Code;
+import mig.exceptions.ErrorNameGiven;
+import mig.exceptions.ErrorObjectClosed;
 
 /**
  * <b>Chest is the class representing a chest with a bolt.</b>
@@ -29,42 +33,44 @@ public class Chest {
 	 * A chest can contains a maximum of 4 items
 	 */
 	private ArrayList<Item> containt = new ArrayList<Item>();
-	
+
 	/**
 	 * Bolt of the Chest
 	 * It can be a key or a password
 	 */
 	private Bolt bolt;
 
-	
+
 	/**
 	 * Default Constructor
 	 */
 	public Chest (Bolt bolt){
 		this.bolt=bolt;
 	}
-	
+
 	public boolean isLocked(){
 		return bolt.isLocked();
 	}
-	
+
 	/**
 	 * Method to add an item in the Chest
 	 * @param item Item to add in the Chest
 	 */
 	public void addItem(Item item){
 		if (!containt.contains(item)) containt.add(item); 
+		item.existNow();;
 	}
-	
-	
+
+
 	/**
 	 * Method to remove an item in the Chest
 	 * @param item Item to remove from the chest
 	 */
 	public void removeItem(Item item){
 		if (containt.contains(item)) containt.remove(item);
+		item.notExist();;
 	}
-	
+
 	/**
 	 * Method to calculate and get the number of items in the Chest
 	 * @return number of items in the Chest
@@ -72,26 +78,76 @@ public class Chest {
 	public int numberOfItems(){
 		return containt.size();
 	}
-	
+
 	/** 
 	 * Method to get the reward contained in the Chest
 	 * @return containt The list of Items in the Chest
 	 */
-	public ArrayList<Item> getContaintChest(){
-		return containt;
+	public ArrayList<Item> getContaintChest() throws ErrorObjectClosed
+	{
+		if (isLocked()){
+			return containt;}
+		else {throw new ErrorObjectClosed();}
+
 	}
-	
-	/** 
-	 * Method to get the reward contained in the Chest
-	 * @return containt The list of Items in the Chest
+
+	/**
+	 * Method to open the Chest with a Password
+	 * @param pass The password given to open the chest
+	 * @see Code
 	 */
 	public void OpenChest(String pass){
-		if (bolt instanceof Code) {
-		((Code) bolt).givePassword(pass);
-		bolt.unlockIt();
-			
+		if ((bolt instanceof Code)&&(bolt.isLocked())) {
+			((Code) bolt).givePassword(pass);
+			bolt.unlockIt();
+
+		}
+	}
+
+	/**
+	 * Method to open the Chest with a Key
+	 * @param key The key given to open the chest
+	 * @see Lock
+	 */
+	public void OpenChest(Key key){
+		if ((bolt instanceof Lock)&&(bolt.isLocked())) {
+			((Lock) bolt).giveKey(key);
+			bolt.unlockIt();
+
+		}
+	}
+
+	/**
+	 * Method to know if an item is present or not in the chest
+	 * @param item The item tested
+	 * @return True if the item is present, false if it is not
+	 */
+	public boolean isPresent (Item item){
+		return containt.contains(item);
+	}
+
+	/**
+	 * Method to get an item from the Chest
+	 * @param name The name of the item needed
+	 * @return the Item from the chest
+	 * 
+	 * The item is removed from the chest 
+	 */
+	public Item getItem(String name)
+	throws ErrorNameGiven
+	{
+		for (Item item : containt) {
+			if (item.getName()==name) 
+			{
+				containt.remove(item);
+				return item;
+			}
+
 		}
 
-		
+		throw new ErrorNameGiven();
 	}
+
+
+
 }

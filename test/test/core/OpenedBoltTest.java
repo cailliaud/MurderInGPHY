@@ -3,13 +3,11 @@ package test.core;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import mig.core.Bolt;
 import mig.core.OpenedBolt;
 
 
 /**
  * <b>JUnit test for the class OpenedBolt</b>
- * @see Information
  * @author group8
  *
  */

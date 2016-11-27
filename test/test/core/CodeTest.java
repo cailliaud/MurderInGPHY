@@ -6,11 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.matchers.JUnitMatchers;
 import org.junit.rules.ExpectedException;
 
 import mig.core.Code;
-import mig.core.Information;
 
 
 /**
@@ -52,15 +50,6 @@ public class CodeTest
 	}
 
 	
-	/**
-	 * <p> check if the code given as parameter in the constructor is correctly set to the attribute </p>
-	 */
-	@Test
-	public void testCodeGphy() 
-	{
-		// the parameter "gphy" (see setUp) must be set as the code attribute
-		assertEquals("gphy", myCode.getPass());
-	}
 
 	/**
 	 * <p> check that the default code is "42", if the given code is empty
@@ -70,7 +59,9 @@ public class CodeTest
 	 {
 		 Code x = new Code("");
 		 // Assuming that an empty code result in giving "42" as a default code
-		 assertEquals("42", x.getPass());
+		 x.givePassword("42");
+		 x.unlockIt();
+		 assertFalse(x.isLocked());
 	 }
 	
 	 

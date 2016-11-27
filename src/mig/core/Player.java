@@ -1,5 +1,7 @@
 package mig.core;
 
+import mig.exceptions.ErrorNameGiven;
+
 /**
  * <b>Player is the class representing the user of the game. It is in inheritence class of Personage.</b>
  * <p>
@@ -29,7 +31,7 @@ public class Player extends Personage{
 	/**
 	 * See the inventory of the player
 	 */
-	private Owned inventory;
+	private Owned owned;
 	
 	/**
 	 * Is the current room where is the player
@@ -50,36 +52,81 @@ public class Player extends Personage{
 	public Player(String name, Room currentRoom){
 		super(name, false);
 		this.currentRoom=currentRoom;
-		inventory = new Owned(inventorySize);	
+		owned = new Owned(inventorySize);	
 	}
 
 
 	/**
 	 * Allows player to move between rooms
 	 * He can move following 8 orientations
-	 * @param direction The direction takes to move
+	 * @param nextRoom the room which will replace the currentRoom
 	 */
-	public void move(String direction){
+	public void move(Room nextRoom){
+		if (currentRoom!= nextRoom)this.currentRoom=nextRoom;
 	}
 	
 	/**
-	 * Allows player to see his inventory, which items he has
+	 * Allows player to see his notebook,
+	 * @return The description of all information in the notebook
 	 */
-	public void seeInventaire(){
+	public String seeNotebook(){
+		return owned.displayNotebook();
 	}
+	
+	public String seeInventory(){
+		return owned.displayInventory();
+	}
+	
+	public String seeBunch(){
+		return owned.displayBunch();
+	}
+	
+
 
 	/**
-	 * Allows to add an item to the inventory
-	 * @param item is an object 
+	 * Method to add an item in the player inventory
+	 * @param item the item added
+	 * @return a string explaining what it has be done
 	 */
-	public void addItem(Item item){	
+	public String addItem(Item item){	
+		if (item instanceof Information) {
+			owned.addInformation((Information) item);
+			return ("the information called "+item.getName()+" has been added to your notebook.\n");
+			
+		} else if (item instanceof Key ){
+			owned.addKey((Key) item);
+			return ("the key called "+item.getName()+" has been added to your bunch.\n");
+		}
+		else
+			if (owned.getSize()<inventorySize)
+			{
+			owned.addObject((PhysicalObject) item);
+			return ("the Object called "+item.getName()+" has been added to your inventory.\n");
+			}
+			else {
+				return ("Your inventory is full. \n");
+			}
 	}
 	
 	/**
-	 * Allows to remove an item to the inventory
-	 * @param item is an object
+	 * Allows to remove an item from the inventory
+	 * It will be let in the current Room
+	 * Only PhysicalObject can be removed from the inventory
+	 * @param name The name of the Object
+	 * @throws ErrorNameGiven Return a mistake if the name given is wrong
+	 * @see Owned
 	 */
-	public void removeItem(Item item){
+	public void removePhysicalObject(String name) throws ErrorNameGiven{
+		currentRoom.addItem(owned.removeObject(name));
+		
+	}
+	
+	/**
+	 * Method to know which is the current room
+	 * @return the current Room
+	 */
+	public Room getCurrentRoom(){
+		return currentRoom;
 	}
 	
 }

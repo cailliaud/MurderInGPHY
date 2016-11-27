@@ -4,9 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Rule;
 
-import mig.core.Bolt;
-import mig.core.Code;
-import mig.core.Information;
+
 import mig.core.Key;
 import mig.core.Lock;
 import mig.exceptions.*;

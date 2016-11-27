@@ -16,7 +16,7 @@ public abstract class Item
 	 * Name is a String Object.
 	 *It represents the name of the Item.
 	 */
-	private String name;
+	private final String name;
 	
 	/**
 	 * Boolean to know if the object exist or not.
@@ -42,16 +42,6 @@ public abstract class Item
 		return name;
 	}
 
-//	/**
-//	 * Setter for the name of the item.
-//	 * @param name The name of the Item.
-//	 * Protected because the name can be changed only in the class .
-//	 * 
-//	 * @see Item#name
-//	 */
-//	protected void setName(String name) {
-//		this.name = name;
-//	}
 
 	
 	/**
@@ -65,19 +55,17 @@ public abstract class Item
 	}
 	
 	/**
-	 * Setter for exist parameter.
-	 * @param exist True if the item exist
-	 * 
-	 * @see Item#exist
+	 * Set the value of exist to True
+	 * The item is contained in something or is somewhere
 	 */
-	public void setExist(boolean exist){
-		this.exist=exist;
-	}
-	
 	public void existNow(){
 		this.exist=true;
 	}
 	
+	/**
+	 * set the value of exist to False
+	 * The object does not exist anymore, it becomes virtual.
+	 */
 	public void notExist(){
 		this.exist=false;
 	}

@@ -39,12 +39,12 @@ public class Room {
 	 * It is set in the constructor and cannot be changed after 
 	 */
 	private String name;
-	
+
 	/**
 	 * It is the description of the Room
 	 */
 	private String description;
-	
+
 	/**
 	 * It is the list of the exits enabled in the Room
 	 * HashTable is used because null value is not authorized.
@@ -52,7 +52,7 @@ public class Room {
 	 * @see Hashtable
 	 */
 	private Hashtable<String,Door> myExits = new Hashtable<String,Door>();
-	
+
 	/**
 	 * It is the list of PNJ present in the Room
 	 * This list does not contain null value
@@ -60,7 +60,7 @@ public class Room {
 	 */
 	//TODO faire une classe héritière de arrayList et @override add() & addAll() OU sécurité dans les methodes utilisants l'ArrayList
 	private ArrayList<PNJ> occupants = new ArrayList<PNJ>();
-	
+
 	/**
 	 * It is the list of items present in the Room
 	 * This list does not contain null value
@@ -68,7 +68,7 @@ public class Room {
 	 */
 	//TODO Même choser que pour la liste de PNJ : override plus interessant à ce moment là ???
 	private ArrayList<Item> clues = new ArrayList<Item>();
-	
+
 	/** 
 	 * Constructor of the Room
 	 * @param nameRoom is the name of the Room (String)
@@ -80,7 +80,7 @@ public class Room {
 		this.name=nameRoom;
 		this.description = "No information about this room";
 	}
-	
+
 	public Room(String nameRoom, String description){
 		this.name=nameRoom;
 		this.description = description;
@@ -95,15 +95,8 @@ public class Room {
 	public String getName(){
 		return name;
 	}
-	
-	/**
-	 * Private method to set the Name of the room
-	 * @param aString new Name for the Room
-	 * It is private because we does not allow another class to change the name of an object after its creation
-	 */
-	private void setName(String aString){
-		
-	}
+
+
 
 	/**
 	 * Getter for the description of the Room
@@ -140,7 +133,7 @@ public class Room {
 			myExits.put(direction, door);
 		}
 	}
-	
+
 	/**
 	 * Method to remove a door in the room
 	 * @param direction It is the direction of the door you want to remove
@@ -151,23 +144,8 @@ public class Room {
 		if(directions.isDirection(direction)){
 			myExits.remove(myExits.get(direction));
 		} 
-		
-		
-	}
 
-	/**
-	 * Method to test if the direction given is in the validDirections list
-	 * @param direction : String which contained the name of the direction
-	 * @return boolean : true if the direction exists in the list, false if not.
-	 * 
-	 * @see DirectionWords
-	 * @see DirectionWords#validDirections
-	 */
-	private boolean checkDirection (String direction)
-	{
-		// Uses of the Class DirectionWords
-		DirectionWords tester = new DirectionWords();
-		return tester.isDirection(direction);
+
 	}
 
 	/**
@@ -188,7 +166,6 @@ public class Room {
 	 * @return true if a door is enabled in this direction
 	 * False if it is not
 	 * 
-	 * @see Room#checkDirection(String)
 	 */
 	public boolean exitsPossible(String direction)
 	{
@@ -196,10 +173,10 @@ public class Room {
 			return true;
 		}
 		else {
-		return false;
+			return false;
 		}
 	}
-	
+
 	/**
 	 * Method to know if a PNJ given is in the Room
 	 * @param pnj It is the PNJ that you want to know if he is in or not.
@@ -209,16 +186,16 @@ public class Room {
 	 */
 	public boolean isPresent (PNJ pnj){
 		if (!pnj.isAlive())
-		return false;
+			return false;
 		else {
 			//TODO test sa présence dans le ArrayList<PNJ>
 			return true;
 		}
-		
-	
-		
+
+
+
 	}
-	
+
 	/**
 	 * Method to know if an Item given is present in the room
 	 * @param item The item tested
@@ -232,10 +209,10 @@ public class Room {
 			//TODO test sa présence dans le ArrayList<Item>
 			return true;
 		}
-		
+
 	}
-	
-	
+
+
 	/**
 	 * Method to add a PNJ in the Room
 	 * This PNJ cannot be null or already in another Room 
@@ -249,9 +226,9 @@ public class Room {
 			occupants.add(newPNJ);
 			newPNJ.setAlive(true);
 		}
-		
+
 	}
-	
+
 	/**
 	 * Method to remove a PNJ from the room.
 	 * Test before if the PNJ is in the Room.
@@ -268,8 +245,8 @@ public class Room {
 		}
 	}
 
-	
-	
+
+
 	/**
 	 * Method to add an Item in the Room
 	 * This Item cannot be null or  already in another Room 
@@ -281,10 +258,10 @@ public class Room {
 	{
 		if (!newItem.getExist()){
 			clues.add(newItem);
-			newItem.setExist(true);;
+			newItem.existNow();;;
 		}
 	}
-	
+
 	/**
 	 * Method to remove an Item from the room.
 	 * Test before if the Item is in the Room.
@@ -298,10 +275,10 @@ public class Room {
 	{
 		if ((itemRemoved.getExist())&&(isPresent(itemRemoved))){
 			clues.remove(itemRemoved);
-			itemRemoved.setExist(false);;
+			itemRemoved.notExist();;
 		}
 	}
-	
+
 	/**
 	 * Method to get the Item in the Room
 	 * This method will 
@@ -314,12 +291,22 @@ public class Room {
 	 * @param itemName The name of the Item
 	 * @return the item if it is present in the room
 	 */
-	
+
 	public Item getItem(String itemName){
 		//TODO trouver l'objet dans le jeu portant ce nom (class comportant les objets existants)
 		//TODO récupérer l'objet avec ce nom et tester si il est dans la Room
 		//TODO si oui retourner l'objet et le retirer de la room proprement, tout en conservant le fait qu'il existe.
 		return null  ;
+	}
+
+	/**
+	 * Method to get the door in the direction
+	 * It consideres that the direction is valid
+	 * @param direction the direction of the door in the room
+	 * @return the door concerned
+	 */
+	public Door goInDirection(String direction){
+		return myExits.get(direction);
 	}
 
 

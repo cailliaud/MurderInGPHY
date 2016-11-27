@@ -1,8 +1,7 @@
 package mig.core;
-import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import java.util.Scanner;
 
+import mig.exceptions.ErrorObjectClosed;
 import mig.exceptions.GameOver;
 
 /**
@@ -17,7 +16,7 @@ public class Game {
 	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
 	public Room hall,td1;
-	
+
 	public Game(String name) 
 	{
 		hall = new Room("hall");
@@ -31,28 +30,48 @@ public class Game {
 		listPNJ=new ArrayList<PNJ>();
 		listItems= new ArrayList<Item>();
 		listEnigma =  new ArrayList<Enigma>();
-		
+
 	}
-	
+
 	public void setKiller(PNJ thekiller){
 		if (this.killer==null){
 			this.killer=thekiller;
 		}
 	}
-	
-	/**
-	 * Methode to start the game
-	 */
-	public void start()
-	{
+
+	public void speakPNJ(PNJ pnj){
 
 	}
 
-	/**
-	 * Method to stop the game 
-	 */
-	public void stop(){
-		
+	public void resolveEnigma(PNJ pnj){
+
+	}
+
+	//	/**
+	//	 * Method to move in a direction
+	//	 * @param direction the direction taken
+	//	 * @return the statement of the action
+	//	 */
+	//	public String move(String direction){
+	//		Room currentRoom =myPlayer.getCurrentRoom();
+	//		if (currentRoom.exitsPossible(direction))
+	//		{
+	//			Door door =currentRoom.goInDirection(direction);
+	//			try {
+	//				myPlayer.move(door.getNextRoom(currentRoom));
+	//				return ("You are know in the "+myPlayer.getCurrentRoom().getName());
+	//			} catch (ErrorObjectClosed e) {
+	//				
+	//			}
+	//					
+	//		}else {
+	//			return ("There is no door in this direction");
+	//		}
+	//		
+	//	}
+
+	public void search(){
+
 	}
 
 
@@ -61,7 +80,7 @@ public class Game {
 	public PNJ getKiller(){
 		return killer;
 	}
-	
+
 	public boolean isWin(){
 		return gameWin;
 	}
@@ -75,10 +94,10 @@ public class Game {
 		}else{
 			throw new GameOver();			
 		}
-			
+
 	}
-	
-	
-	
+
+
+
 
 }

@@ -24,13 +24,13 @@ public abstract class Personage {
 	 * It is the name of the personage.
 	 * It is set in the constructor and cannot be changed after. 
 	 */
-	private String name;
+	private final String name;
 	
 	/**
 	 * It says if the personage is the killer.
 	 * It is set in the constructor and cannot be changed after 
 	 */
-	private Boolean isKiller;
+	private final Boolean isKiller;
 	
 	/**
 	 * Constructor

@@ -1,10 +1,9 @@
 package test.core;
 
-import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import mig.core.DirectionWords;
+
 import mig.core.Door;
 import mig.core.Room;
 

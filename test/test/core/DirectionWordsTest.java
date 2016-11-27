@@ -1,12 +1,10 @@
 package test.core;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 import mig.core.DirectionWords;
-import mig.core.Information;
+
 
 /**
  * <b>JUnit test for the class DirectionWords</b>
