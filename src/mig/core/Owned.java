@@ -260,6 +260,9 @@ public class Owned {
 		return str;
 	}
 
+	public ArrayBlockingQueue<PhysicalObject> getInventory(){
+		return inventory;
+	}
 
 
 

@@ -12,22 +12,29 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import mig.core.Game;
+
 public class Window extends JFrame {
 
 	private JPanel screen = new JPanel();
 	private ConsoleArea consoleArea = new ConsoleArea();
 	private Bunch bunch = new Bunch();
 	private Notebook notebook = new Notebook();
-	private PlanView planView = new PlanView();
-	private BackPack backPack = new BackPack();
+	private PlanView planView ;
+	private BackPack backPack ;
 	private DirectionPanel directionPanel = new DirectionPanel();
 	
 	private CheckButton check = new CheckButton();
 	private SpeakButton speak =new SpeakButton();
 	private LetDownButton letDown = new LetDownButton();
 	private DenounceButton denounce = new DenounceButton();
+	
+	private Game game ;
 
-	public Window(){
+	public Window(Game game){
+		this.game = game; 
+		this.planView= new PlanView(game.myPlayer.getCurrentRoom().getImagePlan());
+		this.backPack = new BackPack(game.myPlayer.getOwned());
 		this.setTitle("Murder in GPHY V0.2");
 		this.setSize(600, 600);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -86,7 +93,7 @@ public class Window extends JFrame {
 	    gbc.gridx = 1;
 	    gbc.gridy = 2;
 	    gbc.gridheight = 7;
-	    screen.add(new JLabel(new ImageIcon ("resources/couloir_500.jpg")),gbc);
+	    screen.add(new JLabel(game.myPlayer.getCurrentRoom().getImage()),gbc);
 	    
 	   
 		

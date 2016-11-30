@@ -11,8 +11,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		myWindow = new Window();
-//		mygame = new Game(args);
+		mygame = new Game("Nicolas");
+		myWindow = new Window(mygame);
+//		
 	}
 }
 

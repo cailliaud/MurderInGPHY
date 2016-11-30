@@ -15,17 +15,30 @@ public class Game {
 	private ArrayList<Item> listItems;
 	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
-	public Room hall,td1;
+	public Room hall,lab;
 
 	public Game(String name) 
 	{
-		hall = new Room("hall");
+		lab = new Room("lab","le lab du B2","resources/lab.jpg","resources/plan_Lab.png");
+		hall = new Room("hall","le hall du B2","resources/mlp_puzzle.jpg","resources/plan_Hall.png");
 		if ((name==null)||(name.isEmpty())) {
 			this.myPlayer = new Player("Sherlock", hall);
 		}
 		else
 		{
 			this.myPlayer= new Player(name, hall);
+			this.myPlayer.addItem(
+					new PhysicalObject("café", "un café chaud", "resources/coffee-cup.png")
+					);
+			this.myPlayer.addItem(
+					new PhysicalObject("grenade", "une grenade qui pète fort", "resources/grenade.png")
+					);
+			this.myPlayer.addItem(
+					new PhysicalObject("gun", "a real gun", "resources/gun.png")
+					);
+			this.myPlayer.addItem(
+					new PhysicalObject("martini", "a cocktail", "resources/martini.png")
+					);
 		}
 		listPNJ=new ArrayList<PNJ>();
 		listItems= new ArrayList<Item>();

@@ -129,4 +129,8 @@ public class Player extends Personage{
 		return currentRoom;
 	}
 	
+	public Owned getOwned(){
+		return this.owned;
+	}
+	
 }
