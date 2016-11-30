@@ -26,22 +26,17 @@ public abstract class Personage {
 	 */
 	private final String name;
 	
-	/**
-	 * It says if the personage is the killer.
-	 * It is set in the constructor and cannot be changed after 
-	 */
-	private final Boolean isKiller;
+
 	
 	/**
 	 * Constructor
 	 * If the name is null, it returns an exception
-	 * If isKiller is null, it returns false 
 	 * @param name of the personage
 	 * @param isKiller if he is the killer of the game 
 	 */
-	public Personage (String name, Boolean isKiller){
-		this.name=name;
-		this.isKiller=false;
+	public Personage (String name){
+		if ((name!=null)&&(!name.isEmpty()))this.name=name;
+		else throw new NullPointerException();
 	}
 	/**
 	 * 
@@ -53,14 +48,7 @@ public abstract class Personage {
 	}
 
 	
-	/**
-	 * 
-	 * Method to know if the player is the killer or not
-	 * @return  false if the personage is not the killer.
-	 */
-	public Boolean getIsKiller(){
-		return isKiller;
-	}
+
 
 	
 

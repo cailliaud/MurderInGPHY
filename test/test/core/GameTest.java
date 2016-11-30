@@ -23,8 +23,8 @@ public class GameTest
 {
 	private Enigma nothing = new Enigma();
 	
-	private PNJ fantomas = new PNJ ("fantomas", true, nothing);
-	private PNJ bobby = new PNJ ("bobby", false, nothing);
+	private PNJ fantomas = new PNJ ("fantomas", nothing);
+	private PNJ bobby = new PNJ ("bobby", nothing);
 	private Game game ;
 	
 	/**

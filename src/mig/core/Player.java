@@ -50,7 +50,7 @@ public class Player extends Personage{
 	 * @param currentRoom, where is the player at this moment of the game
 	 */
 	public Player(String name, Room currentRoom){
-		super(name, false);
+		super(name);
 		this.currentRoom=currentRoom;
 		owned = new Owned(inventorySize);	
 	}

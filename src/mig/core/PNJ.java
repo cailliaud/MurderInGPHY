@@ -30,15 +30,14 @@ public class PNJ extends Personage{
 	/** 
 	 * a PNJ has an enigma to ask to the player.
 	 */
-	@SuppressWarnings("unused")
 	private Enigma enigma;
+	
 	/**
 	 * It represents if the personage is alive or not. If he is already use in a room. A PNJ can't be used in two different rooms.
 	 */
 	private boolean alive;
 	
 	
-	//constructor
 	/**
 	 *Constructor of the PNJ. Allows to create the PNJ.
 	 *
@@ -46,14 +45,13 @@ public class PNJ extends Personage{
 	 * @param isKiller Is a boolean fixed in the beginning if the personage is the killer.
 	 * @param enigma Is the enigma of the PNJ for the player. It cannot be null
 	 */
-	public PNJ(String name,  Boolean isKiller , Enigma enigma){	
+	public PNJ(String name,   Enigma enigma){	
 		//TODO exception if Enigma is null
-		super(name,isKiller);
+		super(name);
 		this.alive=false;
 		this.enigma=enigma;
 	}
 	
-	//is the enigma of this PNJ
 	/**
 	 * Allows to add an enigma for a PNJ
 	 * 
@@ -62,15 +60,15 @@ public class PNJ extends Personage{
 	public void addEnigma(Enigma enigma){
 	}
 	
-	//PNJ gives a clue to the player
+
 	/**
 	 * PNJ gives a clue to the player. If the answer is correct, he gives a clue to the player.
 	 * @param answer Is the answer of the enigma
 	 */
 	public void resolveEnigma(String answer){	
 	}
+
 	
-	//PNJ gives an item the the player
 	/**
 	 * PNJ gives an item the the player, after the correct answer.
 	 * @param item Is the item given to the player.

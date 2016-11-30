@@ -12,8 +12,8 @@ import mig.core.PNJ;
  */
 public class PNJTest {
 
-	private PNJ p1= new PNJ ("Toto", false, null);
-	private PNJ p2= new PNJ ("Titi", true, null);
+	private PNJ p1= new PNJ ("Toto",  null);
+	private PNJ p2= new PNJ ("Titi",  null);
 	
 	@Test
 	public void testGetName() {
