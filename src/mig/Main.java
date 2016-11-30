@@ -1,6 +1,10 @@
 package mig;
 
 
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import mig.core.Game;
 import mig.view.Window;
 
@@ -11,6 +15,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
+		
 		mygame = new Game("Nicolas");
 		mygame.testGame();
 		myWindow = new Window(mygame);

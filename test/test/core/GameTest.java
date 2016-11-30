@@ -9,7 +9,7 @@ import org.junit.rules.ExpectedException;
 import mig.core.Code;
 import mig.core.Enigma;
 import mig.core.Game;
-import mig.core.PNJ;
+import mig.core.NPC;
 import mig.exceptions.GameOver;
 
 /**
@@ -23,8 +23,8 @@ public class GameTest
 {
 	private Enigma nothing = new Enigma();
 	
-	private PNJ fantomas = new PNJ ("fantomas", nothing);
-	private PNJ bobby = new PNJ ("bobby", nothing);
+	private NPC fantomas = new NPC ("fantomas", nothing);
+	private NPC bobby = new NPC ("bobby", nothing);
 	private Game game ;
 	
 	/**

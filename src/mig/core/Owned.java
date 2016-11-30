@@ -46,8 +46,10 @@ public class Owned {
 	 * Contains all the PhysicalObject get by the personage
 	 * Its size is defined.
 	 */
-	private ArrayBlockingQueue<PhysicalObject> inventory;
+	private ArrayList<PhysicalObject> inventory;
 
+	
+	private final int slots;
 	/**
 	 * Constructor
 	 * @param slots It represents the maximum items contained in the inventory (integer)
@@ -57,7 +59,8 @@ public class Owned {
 	 * @see Owned#bunch
 	 */
 	public Owned (int slots){
-		this.inventory=new ArrayBlockingQueue<PhysicalObject>(slots);
+		this.slots=slots;
+		this.inventory=new ArrayList<PhysicalObject>();
 		this.notebook = new ArrayList<Information>();
 		this.bunch= new ArrayList<Key>();
 	}
@@ -111,7 +114,7 @@ public class Owned {
 	 * @see PhysicalObject
 	 */
 	public void addObject (PhysicalObject object){
-		if(!inventory.contains(object)) inventory.add(object);
+		if((!inventory.contains(object))&&(inventory.size()<slots)) inventory.add(object);
 		object.existNow();
 
 	}
@@ -260,8 +263,8 @@ public class Owned {
 		return str;
 	}
 
-	public ArrayBlockingQueue<PhysicalObject> getInventory(){
-		return inventory;
+	public PhysicalObject getObject(int index){
+		return inventory.get(index);
 	}
 
 

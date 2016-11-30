@@ -11,8 +11,8 @@ import mig.view.Window;
 public class Game {
 
 	public Player myPlayer;
-	private PNJ killer ;
-	private ArrayList<PNJ> listPNJ;
+	private NPC killer ;
+	private ArrayList<NPC> listPNJ;
 	private ArrayList<Item> listItems;
 	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
@@ -30,7 +30,7 @@ public class Game {
 			this.myPlayer= new Player(name, hall);
 			
 		}
-		listPNJ=new ArrayList<PNJ>();
+		listPNJ=new ArrayList<NPC>();
 		listItems= new ArrayList<Item>();
 		listEnigma =  new ArrayList<Enigma>();
 
@@ -60,17 +60,17 @@ public class Game {
 //				);
 	}
 
-	public void setKiller(PNJ thekiller){
+	public void setKiller(NPC thekiller){
 		if (this.killer==null){
 			this.killer=thekiller;
 		}
 	}
 
-	public void speakPNJ(PNJ pnj){
+	public void speakPNJ(NPC npc){
 
 	}
 
-	public void resolveEnigma(PNJ pnj){
+	public void resolveEnigma(NPC npc){
 
 	}
 
@@ -104,7 +104,7 @@ public class Game {
 
 
 
-	public PNJ getKiller(){
+	public NPC getKiller(){
 		return killer;
 	}
 
@@ -115,8 +115,8 @@ public class Game {
 	 * Method to give the name of the killer and to try to win the game
 	 * @param name Name of the PNJ who is the killer
 	 */
-	public void giveKiller(PNJ pnj) throws GameOver{
-		if (pnj.equals(killer)){
+	public void giveKiller(NPC npc) throws GameOver{
+		if (npc.equals(killer)){
 			gameWin=true;
 		}else{
 			throw new GameOver();			

@@ -70,7 +70,7 @@ public class Room {
 	 * This list does not contain null value
 	 * @see ArrayList
 	 */
-	private ArrayList<PNJ> occupants = new ArrayList<PNJ>();
+	private ArrayList<NPC> occupants = new ArrayList<NPC>();
 
 	/**
 	 * It is the list of items present in the Room
@@ -208,13 +208,13 @@ public class Room {
 
 	/**
 	 * Method to know if a PNJ given is in the Room
-	 * @param pnj It is the PNJ that you want to know if he is in or not.
+	 * @param npc It is the PNJ that you want to know if he is in or not.
 	 * @return true if it he is present in the room 
 	 * false if it is not present;
 	 * 
 	 */
-	public boolean isPresent (PNJ pnj){
-		if (!pnj.isAlive())
+	public boolean isPresent (NPC npc){
+		if (!npc.isAlive())
 			return false;
 		else {
 			//TODO test sa présence dans le ArrayList<PNJ>
@@ -247,9 +247,9 @@ public class Room {
 	 * This PNJ cannot be null or already in another Room 
 	 * @param newPNJ The PNJ added in the Room
 	 * 
-	 * @see PNJ
+	 * @see NPC
 	 */
-	public void addPNJ(PNJ newPNJ)
+	public void addPNJ(NPC newPNJ)
 	{
 		if (!newPNJ.isAlive()){
 			occupants.add(newPNJ);
@@ -264,9 +264,9 @@ public class Room {
 	 * The PNJ won't exist after he will be removed.
 	 * @param pnjRemoved The PNJ that you want to remove
 	 * 
-	 * @see PNJ
+	 * @see NPC
 	 */
-	public void removePNJ(PNJ pnjRemoved)
+	public void removePNJ(NPC pnjRemoved)
 	{
 		if ((pnjRemoved.isAlive())&&isPresent(pnjRemoved)){
 			occupants.remove(pnjRemoved);

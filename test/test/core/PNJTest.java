@@ -8,12 +8,12 @@ import org.junit.rules.ExpectedException;
 
 import mig.core.Enigma;
 import mig.core.Lock;
-import mig.core.PNJ;
+import mig.core.NPC;
 import mig.core.Room;
 import mig.exceptions.KeyForgottenException;
 /**
  * <b>JUnit test for the class PNJ</b>
- * @see PNJ
+ * @see NPC
  * @author group8
  *
  */
@@ -26,7 +26,7 @@ public class PNJTest {
 	 */
 	@Test
 	public void testGetName() {
-		PNJ p1= new PNJ ("Toto",  null);
+		NPC p1= new NPC ("Toto",  null);
 		assertEquals("Toto",p1.getName() );
 	}
 	
@@ -37,8 +37,8 @@ public class PNJTest {
 	@Test 
 	public void getEnigmaWithNullEnigmaInConstructor()
 	{
-		PNJ pnj = new PNJ ("nicolas",null);
-		assertNotNull(pnj.getEgnime());
+		NPC npc = new NPC ("nicolas",null);
+		assertNotNull(npc.getEgnime());
 	}
 	
 	/**
@@ -56,7 +56,7 @@ public class PNJTest {
 		
 		
 	    thrown.expect(NullPointerException.class);
-	    PNJ pnj = new PNJ ("",null);
+	    NPC npc = new NPC ("",null);
 	}
 	
 	/**
@@ -65,8 +65,8 @@ public class PNJTest {
 	@Test
 	public void getEnigmaExisting(){
 		Enigma enigma = new Enigma();
-		PNJ pnj = new PNJ ("jones",enigma);
-		assertEquals(enigma, pnj.getEgnime());
+		NPC npc = new NPC ("jones",enigma);
+		assertEquals(enigma, npc.getEgnime());
 	}
 	
 	/**
@@ -75,9 +75,9 @@ public class PNJTest {
 	@Test
 	public void testIfPnjisAlive_InRoom(){
 		Room room = new Room("laboratoire");
-		PNJ pnj = new PNJ("jones",null);
-		room.addPNJ(pnj);
-		assertEquals(true, pnj.isAlive());
+		NPC npc = new NPC("jones",null);
+		room.addPNJ(npc);
+		assertEquals(true, npc.isAlive());
 		
 	}
 	
@@ -87,10 +87,10 @@ public class PNJTest {
 	@Test
 	public void TestIfPnjIsAlive_RemovedFromRoom(){
 		Room room = new Room("laboratoire");
-		PNJ pnj = new PNJ("jones",null);
-		room.addPNJ(pnj);
-		room.removePNJ(pnj);
-		assertNotEquals(true, pnj.isAlive());
+		NPC npc = new NPC("jones",null);
+		room.addPNJ(npc);
+		room.removePNJ(npc);
+		assertNotEquals(true, npc.isAlive());
 	}
 	
 	

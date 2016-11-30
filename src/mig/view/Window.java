@@ -32,6 +32,7 @@ public class Window extends JFrame {
 	private Game game ;
 
 	public Window(Game game){
+		
 		this.game = game; 
 		check = new CheckButton(game.myPlayer.getCurrentRoom());
 		speak =new SpeakButton(game.myPlayer.getCurrentRoom());

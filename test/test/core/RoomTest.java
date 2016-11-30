@@ -8,7 +8,7 @@ import mig.core.Door;
 import mig.core.Item;
 import mig.core.Key;
 import mig.core.OpenedBolt;
-import mig.core.PNJ;
+import mig.core.NPC;
 import mig.core.Room;
 
 
@@ -79,10 +79,10 @@ public class RoomTest {
 	@Test
 	public void testPresentPNG()
 	{
-		PNJ pnj = new PNJ("djjf", null);
+		NPC npc = new NPC("djjf", null);
 		Room r1 = new Room("desk");
-		r1.addPNJ(pnj);
-		assertTrue(r1.isPresent(pnj));
+		r1.addPNJ(npc);
+		assertTrue(r1.isPresent(npc));
 	}
 	
 	/**
@@ -93,11 +93,11 @@ public class RoomTest {
 	public void testRemovePNG()
 	
 	{
-		PNJ pnj = new PNJ("djjf", null);
+		NPC npc = new NPC("djjf", null);
 		Room r1 = new Room("desk");
-		r1.addPNJ(pnj);
-		r1.removePNJ(pnj);
-		assertFalse(r1.isPresent(pnj));
+		r1.addPNJ(npc);
+		r1.removePNJ(npc);
+		assertFalse(r1.isPresent(npc));
 	}
 	
 	/**

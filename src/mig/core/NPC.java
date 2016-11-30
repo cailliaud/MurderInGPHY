@@ -25,7 +25,7 @@ package mig.core;
  * @version 22/11/2016
  */
 
-public class PNJ extends Personage{
+public class NPC extends Personage{
 
 	/** 
 	 * a PNJ has an enigma to ask to the player.
@@ -39,14 +39,14 @@ public class PNJ extends Personage{
 	
 	
 	/**
-	 *Constructor of the PNJ. Allows to create the PNJ.
+	 *Constructor of the NPC. Allows to create the NPC.
 	 *
 	 * @param name The name has to be in lower case for the security. 
 	 * So that there is no matter when we enter a name with upper case.
-	 * @param enigma Is the enigma of the PNJ for the player.
+	 * @param enigma Is the enigma of the NPC for the player.
 	 * It cannot be null
 	 */
-	public PNJ(String name,   Enigma enigma){	
+	public NPC(String name,   Enigma enigma){	
 		
 		super(name);
 		this.alive=false;
@@ -61,7 +61,7 @@ public class PNJ extends Personage{
 	 * Method to know if the Personage is alive or not 
 	 * @return true if the personage is alive or false if it is not 
 	 * 
-	 * @see PNJ#alive
+	 * @see NPC#alive
 	 */
 	public boolean isAlive() {
 		return alive;
@@ -71,7 +71,7 @@ public class PNJ extends Personage{
 	 * Method to set if the personage is alive or not 
 	 * @param alive true if alive and false if it is not 
 	 * 
-	 * @see PNJ#alive
+	 * @see NPC#alive
 	 */
 	public void setAlive(boolean alive) {
 		this.alive = alive;

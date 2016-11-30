@@ -3,6 +3,7 @@ package mig.view;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
 
 import javax.swing.ImageIcon;
@@ -15,46 +16,21 @@ import mig.core.Owned;
 import mig.core.PhysicalObject;
 
 public class BackPack extends JPanel {
-	private JLabel item1, item2 , item 3, item 4;
-	private ArrayBlockingQueue<PhysicalObject> inventory;
+	private JLabel item1, item2 , item3, item4;
 	
 	public BackPack(Owned owned){
-		this.inventory= owned.getInventory();
 		this.setLayout(new GridLayout(1,0));
-		item1 = new JLabel(inventory..getImage());
-		item1.setTransferHandler(new TransferHandler("my button"));
-
-		item1.addMouseListener(new MouseAdapter() {
-	      public void mousePressed(MouseEvent evt) {
-	        JComponent comp = (JComponent) evt.getSource();
-	        TransferHandler th = comp.getTransferHandler();
-
-	        th.exportAsDrag(comp, evt, TransferHandler.COPY);
-	      }
-	    });
+		item1 = new JLabel(owned.getObject(0).getImage());
+		item2 = new JLabel(owned.getObject(1).getImage());
+		item3 = new JLabel(owned.getObject(2).getImage());
+		item4 = new JLabel(owned.getObject(3).getImage());
+		
+ 
 		this.add(item1);
-//		for (PhysicalObject physicalObject : inventory) {
-//			item = new JLabel(physicalObject.getImage());
-//			item.setTransferHandler(new TransferHandler("my button"));
-//
-//			item.addMouseListener(new MouseAdapter() {
-//		      public void mousePressed(MouseEvent evt) {
-//		        JComponent comp = (JComponent) evt.getSource();
-//		        TransferHandler th = comp.getTransferHandler();
-//
-//		        th.exportAsDrag(comp, evt, TransferHandler.COPY);
-//		      }
-//		    });
-//			this.add(item);
-//		}
+		this.add(item2);
+		this.add(item3);
+		this.add(item4);
 //		
-//	    item2 = new JLabel(slot);
-//	    item3 = new JLabel(slot);
-//	    item4 = new JLabel(slot);
-//	    this.add(item1);
-//	    this.add(item2);
-//	    this.add(item3);
-//	    this.add(item4);
 	}
 
 }
