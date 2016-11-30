@@ -46,6 +46,11 @@ public class EnigmaTest {
 		assertEquals("Hello, i can not talk to you. I'm really busy !", enigma.getQuest());
 	}
 	
+	/**
+	 * This test create an enigma with a null ItemReward
+	 * @throws NullPointerException return a message if the pointer is null
+	 * @throws NullQuestionException return a message if the question is null
+	 */
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 	@Test 
@@ -56,6 +61,10 @@ public class EnigmaTest {
 	
 	}
 	
+	/**
+	 * This test create a good enigma
+	 * @throws NullQuestionException return a message if the question is null
+	 */
 	@Test
 	public void createGoodEnigma() 
 			throws NullQuestionException{
@@ -63,6 +72,10 @@ public class EnigmaTest {
 	
 	}
 	
+	/**
+	 * This test create an enigma with an Item and without a question
+	 * @throws NullQuestionException return a message if the question is null
+	 */
 	@Test 
 	public void create_Enigma_withItem_withoutQuestion() 
 			throws NullQuestionException{
@@ -71,7 +84,11 @@ public class EnigmaTest {
 	}
 	
 
-	
+	/**
+	 * This test looked if the enigma is solved or not
+	 * @throws NullQuestionException return a message if the question is null
+	 * @throws FailedResolvEnigma return a message if the enigma is not resolved
+	 */
 	@Test
 	public void solveEnigma() 
 			throws NullQuestionException, FailedResolvEnigma{
@@ -85,6 +102,11 @@ public class EnigmaTest {
 		assertTrue(enigma.alreadyResolved());
 	}
 	
+	/**
+	 * This test looked if it is possible to resolved an enigma with a bad answer
+	 * @throws NullQuestionException return a message if the question is null
+	 * @throws FailedResolvEnigma return a message if the enigma is not resolved
+	 */
 	@Test
 	public void badAnswerToResolveEnigma() 
 			throws NullQuestionException, FailedResolvEnigma{
@@ -95,7 +117,11 @@ public class EnigmaTest {
 
 	}
 	
-	
+	/**
+	 * This test looked if it is possible to resolved an enigma with an Item and a given  String
+	 * @throws NullQuestionException return a message if the question is null
+	 * @throws FailedResolvEnigma return a message if the enigma is not resolved
+	 */
 	@Test
 	public void solveEnigmawithItem_GivingString()
 			throws NullQuestionException, FailedResolvEnigma{
@@ -105,6 +131,11 @@ public class EnigmaTest {
 		reward= enigma.resolveEnigma("Elle contient un mystère.");
 	}
 	
+	/**
+	 * This test looked if it is possible to resolved an enigma with a String and a given Item
+	 * @throws NullQuestionException return a message if the question is null
+	 * @throws FailedResolvEnigma return a message if the enigma is not resolved
+	 */
 	@Test
 	public void solveEnigmawithString_GivingItem()
 			throws NullQuestionException, FailedResolvEnigma{
