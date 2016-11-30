@@ -16,7 +16,7 @@ import mig.exceptions.ErrorObjectClosed;
  * @see Room
  * 
  * @author Group8
- * @version 22/11/2016
+ * @version 30/11/2016
  *
  */
 public class Door {
@@ -66,7 +66,7 @@ public class Door {
 
 	/**
 	 * <p>Method to open a door with a lock that needs a key to be opened</p>
-	 * There is a test of the bolt, because only an Lock can be opened with a key
+	 * There is a test of the bolt, because only a Lock can be opened with a key
 	 * If it is not the good class there will be an exception
 	 * @param key_given Key tested to open the door
 	 * The door will stay opened.
@@ -84,7 +84,7 @@ public class Door {
 
 	/**
 	 * <p>Method to open the Door with a password Code </p> 
-	 * There is a test of the bolt, because only an Code can be opened with a password
+	 * There is a test of the bolt, because only a Code can be opened with a password
 	 * If it is not the good class there will be an exception
 	 * @param password Pass tested to unlock the code of the door
 	 * The door will stay opened.
