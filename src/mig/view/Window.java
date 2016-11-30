@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 import mig.core.Game;
 
-public class Window extends JFrame {
+public class Window extends JPanel {
 
 	private JPanel screen = new JPanel();
 	private ConsoleArea consoleArea = new ConsoleArea();
@@ -38,11 +38,7 @@ public class Window extends JFrame {
 		speak =new SpeakButton(game.myPlayer.getCurrentRoom());
 		this.planView= new PlanView(game.myPlayer.getCurrentRoom().getImagePlan());
 		this.backPack = new BackPack(game.myPlayer.getOwned());
-		this.setTitle("Murder in GPHY V0.2");
-		this.setSize(600, 600);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLocationRelativeTo(null);
-		this.setResizable(true);
+		
 	
 
 
@@ -154,9 +150,7 @@ public class Window extends JFrame {
 	    
 		
 	    this.add(screen);
-	    this.pack();
-
-		this.setVisible(true);		
+	    	
 
 
 	}

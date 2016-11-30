@@ -20,10 +20,10 @@ public class BackPack extends JPanel {
 	
 	public BackPack(Owned owned){
 		this.setLayout(new GridLayout(1,0));
-		item1 = new JLabel(owned.getObject(0).getImage());
-		item2 = new JLabel(owned.getObject(1).getImage());
-		item3 = new JLabel(owned.getObject(2).getImage());
-		item4 = new JLabel(owned.getObject(3).getImage());
+		if(owned.getObject(0)!=null)item1 = new JLabel(owned.getObject(0).getImage());
+		if(owned.getObject(1)!=null)item2 = new JLabel(owned.getObject(1).getImage());
+		if(owned.getObject(2)!=null)item3 = new JLabel(owned.getObject(2).getImage());
+		if(owned.getObject(3)!=null)item4 = new JLabel(owned.getObject(3).getImage());
 		
  
 		this.add(item1);
