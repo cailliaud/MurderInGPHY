@@ -2,6 +2,8 @@ package mig.core;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import javax.swing.ImageIcon;
+
 /**
  * <b>Room is the class representing a room, in a building for example.</b>
  * <p>
@@ -46,6 +48,16 @@ public class Room {
 	private String description;
 
 	/**
+	 * Image of the Room
+	 */
+	private final ImageIcon image;
+	
+	/**
+	 * Image of the room in the plan of the building
+	 */
+	private final ImageIcon image_plan;
+	
+	/**
 	 * It is the list of the exits enabled in the Room
 	 * HashTable is used because null value is not authorized.
 	 * 
@@ -58,7 +70,6 @@ public class Room {
 	 * This list does not contain null value
 	 * @see ArrayList
 	 */
-	//TODO faire une classe héritière de arrayList et @override add() & addAll() OU sécurité dans les methodes utilisants l'ArrayList
 	private ArrayList<PNJ> occupants = new ArrayList<PNJ>();
 
 	/**
@@ -66,7 +77,6 @@ public class Room {
 	 * This list does not contain null value
 	 * @see ArrayList
 	 */
-	//TODO Même choser que pour la liste de PNJ : override plus interessant à ce moment là ???
 	private ArrayList<Item> clues = new ArrayList<Item>();
 
 	/** 
@@ -79,11 +89,15 @@ public class Room {
 	{
 		this.name=nameRoom;
 		this.description = "No information about this room";
+		this.image = new ImageIcon("resources/couloir_500.jpg");
+		this.image_plan = new ImageIcon("resources/plan.png");
 	}
 
-	public Room(String nameRoom, String description){
+	public Room(String nameRoom, String description, String image, String image_plan){
 		this.name=nameRoom;
 		this.description = description;
+		this.image = new ImageIcon(image);
+		this.image_plan= new ImageIcon(image_plan);
 	}
 
 	/** 
@@ -108,6 +122,21 @@ public class Room {
 		return description;
 	}
 
+	/**
+	 * Method to get the image of the room
+	 * @return
+	 */
+	public ImageIcon getImage(){
+		return this.image;
+	}
+	
+	/**
+	 * Method to get the image of the room in the plan
+	 * @return
+	 */
+	public ImageIcon getImagePlan(){
+		return this.image_plan;
+	}
 	/**
 	 * Setter for the description of the Room
 	 * @param newDescription It is the new description of the Room

@@ -1,4 +1,7 @@
 package mig.core;
+
+import javax.swing.ImageIcon;
+
 /**
  * <b> Class Item </b> 
  * <p> This Class creates an Item. </p>
@@ -24,13 +27,21 @@ public abstract class Item
 	 */
 	private boolean exist = false;
 	
-	
+
+	/**
+	 * Constructor for the Item Class
+	 * @param name The name of the item
+	 * As default , it wil be "unknown name"
+	 */
 	public Item (String name){
 		if ((name==null)||(name.isEmpty()))
 			this.name="unknown name";
 		else 
 			this.name=name;
+		
 	}
+
+
 	
 	/**
 	 * Getter for the name of the item.

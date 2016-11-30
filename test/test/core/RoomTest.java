@@ -91,6 +91,7 @@ public class RoomTest {
 	 */
 	@Test
 	public void testRemovePNG()
+	
 	{
 		PNJ pnj = new PNJ("djjf", null);
 		Room r1 = new Room("desk");
@@ -124,6 +125,8 @@ public class RoomTest {
 		r1.removeItem(item1);
 		assertFalse(r1.isPresent(item1));
 	}
+	
+	
 	
 	
 }
