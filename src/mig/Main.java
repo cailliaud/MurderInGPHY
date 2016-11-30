@@ -12,6 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		mygame = new Game("Nicolas");
+		mygame.testGame();
 		myWindow = new Window(mygame);
 //		
 	}

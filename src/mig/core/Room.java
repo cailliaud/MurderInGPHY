@@ -338,6 +338,23 @@ public class Room {
 		return myExits.get(direction);
 	}
 
+	/**
+	 * Method to know if the room is empty
+	 * @return True if there are no items here
+	 * else Return false
+	 */
+	public boolean noItemHere(){
+		return clues.isEmpty();
+	}
+	
+	/**
+	 * Method to know if there is no one here
+	 * @return True if there is nobody  
+	 * else return false
+	 */
+	public boolean noOneHere(){
+		return occupants.isEmpty();
+	}
 
 
 }

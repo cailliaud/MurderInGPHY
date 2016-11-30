@@ -24,8 +24,8 @@ public class Window extends JFrame {
 	private BackPack backPack ;
 	private DirectionPanel directionPanel = new DirectionPanel();
 	
-	private CheckButton check = new CheckButton();
-	private SpeakButton speak =new SpeakButton();
+	private CheckButton check ;
+	private SpeakButton speak ;
 	private LetDownButton letDown = new LetDownButton();
 	private DenounceButton denounce = new DenounceButton();
 	
@@ -33,6 +33,8 @@ public class Window extends JFrame {
 
 	public Window(Game game){
 		this.game = game; 
+		check = new CheckButton(game.myPlayer.getCurrentRoom());
+		speak =new SpeakButton(game.myPlayer.getCurrentRoom());
 		this.planView= new PlanView(game.myPlayer.getCurrentRoom().getImagePlan());
 		this.backPack = new BackPack(game.myPlayer.getOwned());
 		this.setTitle("Murder in GPHY V0.2");

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import mig.exceptions.ErrorObjectClosed;
 import mig.exceptions.GameOver;
+import mig.view.Window;
 
 /**
  * This class will be more detailed and implemented at the end
@@ -19,31 +20,44 @@ public class Game {
 
 	public Game(String name) 
 	{
-		lab = new Room("lab","le lab du B2","resources/lab.jpg","resources/plan_Lab.png");
-		hall = new Room("hall","le hall du B2","resources/mlp_puzzle.jpg","resources/plan_Hall.png");
+		
+		hall = new Room("hall","le hall du B2","resources/couloir_500.jpg","resources/plan_Hall.png");
 		if ((name==null)||(name.isEmpty())) {
 			this.myPlayer = new Player("Sherlock", hall);
 		}
 		else
 		{
 			this.myPlayer= new Player(name, hall);
-			this.myPlayer.addItem(
-					new PhysicalObject("café", "un café chaud", "resources/coffee-cup.png")
-					);
-			this.myPlayer.addItem(
-					new PhysicalObject("grenade", "une grenade qui pète fort", "resources/grenade.png")
-					);
-			this.myPlayer.addItem(
-					new PhysicalObject("gun", "a real gun", "resources/gun.png")
-					);
-			this.myPlayer.addItem(
-					new PhysicalObject("martini", "a cocktail", "resources/martini.png")
-					);
+			
 		}
 		listPNJ=new ArrayList<PNJ>();
 		listItems= new ArrayList<Item>();
 		listEnigma =  new ArrayList<Enigma>();
 
+	}
+	
+	public void testGame(){
+		lab = new Room("lab","le lab du B2","resources/lab.jpg","resources/plan_Lab.png");
+		this.myPlayer.addItem(
+				new PhysicalObject("café", "un café chaud", "resources/coffee-cup.png")
+				);
+		this.myPlayer.addItem(
+				new PhysicalObject("grenade", "une grenade qui pète fort", "resources/grenade.png")
+				);
+		this.myPlayer.addItem(
+				new PhysicalObject("gun", "a real gun", "resources/gun.png")
+				);
+		this.myPlayer.addItem(
+				new PhysicalObject("martini", "a cocktail", "resources/martini.png")
+				);
+		this.myPlayer.move(lab);
+		
+//		this.myPlayer.getCurrentRoom().addItem(
+//				new PhysicalObject("grenade",
+//						"tomate",
+//						"resources/martini.png")
+//
+//				);
 	}
 
 	public void setKiller(PNJ thekiller){
