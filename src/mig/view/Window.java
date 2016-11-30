@@ -1,37 +1,154 @@
 package mig.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel; 
- 
-public class Window extends JFrame{
-	private Inventory inventory = new Inventory();
-	private ActionBar actionBar= new ActionBar();
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Window extends JFrame {
+
+	private JPanel screen = new JPanel();
 	private ConsoleArea consoleArea = new ConsoleArea();
+	private Bunch bunch = new Bunch();
+	private Notebook notebook = new Notebook();
 	private PlanView planView = new PlanView();
+	private BackPack backPack = new BackPack();
+	private DirectionPanel directionPanel = new DirectionPanel();
 	
-  public Window(){
-    this.setTitle("Murder In GPHY");
-    this.setSize(600, 600);
-    this.setResizable(true);
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setLocationRelativeTo(null);
-    //On définit le layout à utiliser sur le content pane
-    this.setLayout(new BorderLayout());
-    //On ajoute le bouton au content pane de la JFrame
-    //Au centre
-    this.getContentPane().add(new JLabel(new ImageIcon ("resources/couloir.jpg")), BorderLayout.CENTER);
-    //Au nord
-    this.getContentPane().add(inventory, BorderLayout.NORTH);
-    //Au sud
-    this.getContentPane().add(consoleArea, BorderLayout.SOUTH);
-    //À l'ouest
-    this.getContentPane().add(actionBar, BorderLayout.EAST);
-    //À l'est
-    this.getContentPane().add(planView, BorderLayout.WEST);
-    this.setVisible(true);
-  }      
+	private CheckButton check = new CheckButton();
+	private SpeakButton speak =new SpeakButton();
+	private LetDownButton letDown = new LetDownButton();
+	private DenounceButton denounce = new DenounceButton();
+
+	public Window(){
+		this.setTitle("Murder in GPHY V0.2");
+		this.setSize(600, 600);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		this.setResizable(true);
+	
+
+
+		screen.setLayout(new GridBagLayout());
+		//screen.setBorder();
+		screen.setBackground(new Color(107, 106, 104));
+
+		//L'objet servant à positionner les composants
+		GridBagConstraints gbc = new GridBagConstraints();
+
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 2;
+		gbc.insets = new Insets(10, 10, 10, 10);
+		screen.add(new JLabel(new ImageIcon ("resources/murder_120.png")),gbc);
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 1;
+		gbc.gridy = 0;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 2;
+		gbc.fill = GridBagConstraints.BOTH;
+		gbc.anchor = GridBagConstraints.CENTER;
+		screen.add(backPack, gbc);
+		
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 2;
+		gbc.gridy = 0;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.anchor = GridBagConstraints.SOUTH;
+		screen.add(bunch,gbc);
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 2;
+		gbc.gridy = 1;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.anchor = GridBagConstraints.NORTH;
+		screen.add(notebook,gbc);
+		
+	    gbc = new GridBagConstraints();
+	    gbc.gridx = 0;
+	    gbc.gridy = 2;
+	    gbc.gridheight = 7;
+	    screen.add(planView,gbc);
+	    
+	    gbc = new GridBagConstraints();
+	    gbc.gridx = 1;
+	    gbc.gridy = 2;
+	    gbc.gridheight = 7;
+	    screen.add(new JLabel(new ImageIcon ("resources/couloir_500.jpg")),gbc);
+	    
+	   
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 2;
+		gbc.gridy = 3;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.ipady = 20;
+		gbc.insets = new Insets(10, 10, 10, 10);
+		screen.add(speak,gbc);
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 2;
+		gbc.gridy = 4;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.ipady = 20;
+		gbc.insets = new Insets(10, 10, 10, 10);
+		screen.add(check,gbc);
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 2;
+		gbc.gridy = 5;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.ipady = 20;
+		gbc.insets = new Insets(10, 10, 10, 10);
+		screen.add(letDown,gbc);
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 2;
+		gbc.gridy = 6;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		gbc.ipady = 20;
+		gbc.insets = new Insets(10, 10, 10, 10);
+		screen.add(denounce,gbc);
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 2;
+		gbc.gridy = 7;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 2;
+		gbc.ipady = 20;
+		gbc.insets = new Insets(10, 10, 10, 10);
+		screen.add(directionPanel,gbc);
+		
+		gbc = new GridBagConstraints();
+		gbc.gridx = 0;
+		gbc.gridy = 9;
+		gbc.gridwidth = 4;
+		gbc.gridheight = 2;
+		screen.add(consoleArea,gbc);
+	    
+		
+	    this.add(screen);
+	    this.pack();
+
+		this.setVisible(true);		
+
+
+	}
+
 }
