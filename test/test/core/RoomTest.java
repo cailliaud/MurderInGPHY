@@ -79,7 +79,7 @@ public class RoomTest {
 	@Test
 	public void testPresentPNG()
 	{
-		PNJ pnj = new PNJ("djjf", false, null);
+		PNJ pnj = new PNJ("djjf", null);
 		Room r1 = new Room("desk");
 		r1.addPNJ(pnj);
 		assertTrue(r1.isPresent(pnj));
@@ -92,7 +92,7 @@ public class RoomTest {
 	@Test
 	public void testRemovePNG()
 	{
-		PNJ pnj = new PNJ("djjf", false, null);
+		PNJ pnj = new PNJ("djjf", null);
 		Room r1 = new Room("desk");
 		r1.addPNJ(pnj);
 		r1.removePNJ(pnj);

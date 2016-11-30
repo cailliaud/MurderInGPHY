@@ -20,17 +20,8 @@ public class PNJTest {
 		assertEquals("Toto",p1.getName() );
 	}
 	
-	@Test
-	public void testGetKiller() {
-		assertFalse(p1.getIsKiller());
-	}
 	
-	@Test
-	public void testKiller() 
-	{
-		assertTrue(p2.getIsKiller());
-	}
-	
+
 	
 
 	

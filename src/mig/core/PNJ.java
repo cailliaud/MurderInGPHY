@@ -41,39 +41,20 @@ public class PNJ extends Personage{
 	/**
 	 *Constructor of the PNJ. Allows to create the PNJ.
 	 *
-	 * @param name The name has to be in lower case for the security. So that there is no matter when we enter a name with upper case.
-	 * @param isKiller Is a boolean fixed in the beginning if the personage is the killer.
-	 * @param enigma Is the enigma of the PNJ for the player. It cannot be null
+	 * @param name The name has to be in lower case for the security. 
+	 * So that there is no matter when we enter a name with upper case.
+	 * @param enigma Is the enigma of the PNJ for the player.
+	 * It cannot be null
 	 */
 	public PNJ(String name,   Enigma enigma){	
-		//TODO exception if Enigma is null
+		
 		super(name);
 		this.alive=false;
-		this.enigma=enigma;
+		if (enigma==null) this.enigma= new Enigma();
+		else this.enigma=enigma;
 	}
-	
-	/**
-	 * Allows to add an enigma for a PNJ
-	 * 
-	 * @param enigma Is the enigma of the PNJ
-	 */
-	public void addEnigma(Enigma enigma){
-	}
-	
-
-	/**
-	 * PNJ gives a clue to the player. If the answer is correct, he gives a clue to the player.
-	 * @param answer Is the answer of the enigma
-	 */
-	public void resolveEnigma(String answer){	
-	}
-
-	
-	/**
-	 * PNJ gives an item the the player, after the correct answer.
-	 * @param item Is the item given to the player.
-	 */
-	public void resolveEnigma(EnigmaItem item){	
+	public Enigma getEgnime(){
+		return this.enigma;
 	}
 	
 	/**
