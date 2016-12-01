@@ -60,7 +60,7 @@ public class Window extends JPanel {
 		gbc.gridwidth = 1;
 		gbc.gridheight = 2;
 		gbc.insets = new Insets(10, 10, 10, 10);
-		screen.add(planView,gbc);
+		screen.add(new JLabel(new ImageIcon("resources/murder_120.png") ),gbc);
 		
 		gbc = new GridBagConstraints();
 		gbc.gridx = 1;
