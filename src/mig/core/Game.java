@@ -125,8 +125,8 @@ public class Game {
 	 * Method to give the name of the killer and to try to win the game
 	 * @param name Name of the PNJ who is the killer
 	 */
-	public void giveKiller(NPC npc) throws GameOver{
-		if (npc.equals(killer)){
+	public void giveKiller(String name) throws GameOver{
+		if (name.equals(killer.getName())){
 			gameWin=true;
 		}else{
 			throw new GameOver();			
