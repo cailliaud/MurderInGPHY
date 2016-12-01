@@ -11,6 +11,7 @@ public class CheckButton extends JButton {
 		this.setText("Check The Room");
 		if (currentRoom.noItemHere()) this.setEnabled(false);
 		
+		
 	}
 	
 	public void update(){

@@ -35,7 +35,7 @@ public class PrincipalWindow extends JFrame {
 			myGame = new Game("Nicolas");
 		}
 		
-		myGame.testGame();
+	
 		window = new Window(myGame);
 		
 		this.add(window);

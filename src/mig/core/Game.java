@@ -16,7 +16,6 @@ public class Game {
 	private ArrayList<Item> listItems;
 	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
-	public Room hall,lab;
 	
 	private Room hall1RDC = new Room("Hall RDC");
 	private Room deskAnnie = new Room("Annie desk");
@@ -112,16 +111,17 @@ public class Game {
 	private Door aegp_corridor6Floor= new Door(openbolt, aegp, corridor6Floor);
 	private Door toilet_corridor6Floor= new Door(openbolt, toilet, corridor6Floor);
 	
+
 	public Game(String name) 
 	{
 		
-		hall = new Room("hall","le hall du B2","resources/couloir_500.jpg","resources/plan_Hall.png");
+		
 		if ((name==null)||(name.isEmpty())) {
-			this.myPlayer = new Player("Sherlock", hall);
+			this.myPlayer = new Player("Sherlock", hall1RDC);
 		}
 		else
 		{
-			this.myPlayer= new Player(name, hall);
+			this.myPlayer= new Player(name, hall1RDC);
 			
 		}
 		listPNJ=new ArrayList<NPC>();
@@ -195,29 +195,33 @@ public class Game {
 
 	}
 	
-	public void testGame(){
-		lab = new Room("lab","le lab du B2","resources/lab.jpg","resources/plan_Lab.png");
-		this.myPlayer.addItem(
-				new PhysicalObject("café", "un café chaud", "resources/coffee-cup.png")
-				);
-		this.myPlayer.addItem(
-				new PhysicalObject("grenade", "une grenade qui pète fort", "resources/grenade.png")
-				);
-		this.myPlayer.addItem(
-				new PhysicalObject("gun", "a real gun", "resources/gun.png")
-				);
-		this.myPlayer.addItem(
-				new PhysicalObject("martini", "a cocktail", "resources/martini.png")
-				);
-		this.myPlayer.move(lab);
-		
-//		this.myPlayer.getCurrentRoom().addItem(
-//				new PhysicalObject("grenade",
-//						"tomate",
-//						"resources/martini.png")
-//
+//	public void testGame(){
+//		lab = new Room("lab","le lab du B2","resources/lab.jpg","resources/plan_Lab.png");
+//		couloirHautHall = new Room( "Haut de l'escalier" ,
+//				"couloir en montant l'escalier à partir du hall",
+//				"resources/rooms/Haut_escalier_entreeB2.JPG",
+//				"resources/plan_Lab.png");
+//		hall_haut= new Door (code, hall,couloirHautHall );
+//		haut_lab = new Door (openbolt, couloirHautHall, lab);
+//		hall.addDoor("up", hall_haut);
+//		couloirHautHall.addDoor("down", hall_haut);
+//		couloirHautHall.addDoor("north", haut_lab);
+//		lab.addDoor("south", haut_lab);
+//		this.myPlayer.addItem(
+//				new PhysicalObject("café", "un café chaud", "resources/coffee-cup.png")
 //				);
-	}
+//		this.myPlayer.addItem(
+//				new PhysicalObject("grenade", "une grenade qui pète fort", "resources/grenade.png")
+//				);
+//		this.myPlayer.addItem(
+//				new PhysicalObject("gun", "a real gun", "resources/gun.png")
+//				);
+//		this.myPlayer.addItem(
+//				new PhysicalObject("martini", "a cocktail", "resources/martini.png")
+//				);
+		
+//
+//	}
 
 	public void setKiller(NPC thekiller){
 		if (this.killer==null){
@@ -274,8 +278,8 @@ public class Game {
 	 * Method to give the name of the killer and to try to win the game
 	 * @param name Name of the PNJ who is the killer
 	 */
-	public void giveKiller(NPC npc) throws GameOver{
-		if (npc.equals(killer)){
+	public void giveKiller(String name) throws GameOver{
+		if (name.equals(killer.getName())){
 			gameWin=true;
 		}else{
 			throw new GameOver();			
