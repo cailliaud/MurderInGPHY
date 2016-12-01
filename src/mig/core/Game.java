@@ -17,40 +17,118 @@ public class Game {
 	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
 	
-	private Room hall1RDC = new Room("Hall RDC");
-	private Room deskAnnie = new Room("Annie desk");
-	private Room corridor1RDC = new Room("Corridor of the RDC");
-	private Room corridor2RDC = new Room("Corridor of the RDC");
+	private Room hall1RDC = new Room("Hall","Hall of B2", "resources/rooms/Hall.JPG", "resources/plans/RDC.JPG");
+	private Room deskAnnie = new Room("Annie desk", "This is the desk of Annie", "resources/rooms/BureauAnnie.JPG","resources/plans/RDC.JPG" );
+	private Room corridor1RDC = new Room("Corridor of the RDC", 
+			"This is the corridor of the RDC",
+			"resources/rooms/Couloir_vue_hall_salleAnnieTD1.JPG",
+			"resources/plans/RDC.JPG");
+	private Room corridor2RDC = new Room("Corridor of the RDC", 
+			"This is the corridor of the RDC",
+			"resources/rooms/Couloir_vue_salleCafet.JPG",
+			"resources/plans/RDC.JPG");
 	private Room corridor3RDC = new Room("Corridor of the RDC");
-	private Room corridor4RDC = new Room("Corridor of the RDC");
-	private Room corridor5RDC = new Room("Corridor of the RDC");
-	private Room td1 = new Room("TD1");
-	private Room meeting = new Room("Meeting room");
-	private Room cafet = new Room("Cafeteria room'");
+	private Room corridor4RDC = new Room("Corridor of the RDC",
+			"This is the corridor of the RDC",
+			"resources/rooms/Couloir_vue_TD4.JPG",
+			"resources/plans/RDC.JPG");
+	private Room corridor5RDC = new Room("Corridor of the RDC",
+			"This is the corridor of the RDC",
+			"resources/rooms/Escalier_du_Font.JPG",
+			"resources/plans/RDC.JPG");
+	private Room td1 = new Room("TD1",
+			"This is the room TD1",
+			"resources/rooms/TD1.JPG",
+			"resources/plans/RDC.JPG" );
+	private Room meeting = new Room("Meeting room", 
+			"This is the room for the meeting", 
+			"resources/rooms/SalleReunion.JPG",
+			"resources/plans/RDC.JPG");
+	private Room cafet = new Room("Cafeteria room", 
+			"This is the room for the cafet", 
+			"resources/rooms/Salle_cafet.JPG",
+			"resources/plans/RDC.JPG");
 	private Room deskPgDom = new Room("PG and dominique desk");
 	private Room deskAllan = new Room("Allan desk");
-	private Room td4 = new Room("TD4");
+	private Room td4 = new Room("TD4", 
+			"This is the room TD4", 
+			"resources/rooms/TD4.JPG",
+			"resources/plans/RDC.JPG");
 	private Room deskSecretary = new Room("Secretary desk");
-	private Room tp1 = new Room("TP1");
-	private Room classroom = new Room("Classroom");
-	private Room corridor1Floor= new Room("Corridor of the floor");
-	private Room corridor2Floor= new Room("Corridor of the floor");
-	private Room corridor3Floor= new Room("Corridor of the floor");
-	private Room corridor4Floor= new Room("Corridor of the floor");
-	private Room corridor5Floor= new Room("Corridor of the floor");
-	private Room corridor6Floor= new Room("Corridor of the floor");
-	private Room hallFloor = new Room("Hall of the floor");
-	private Room tp2 = new Room("TP2");
-	private Room td2 = new Room("TD2");
+	private Room tp1 = new Room("TP1",
+			"This is the room TP1", 
+			"resources/rooms/TP1.JPG",
+			"resources/plans/Etage_TP1.JPG");
+	private Room classroom = new Room("Classroom",
+			"This is the Classroom", 
+			"resources/rooms/Cours.JPG",
+			"resources/plans/Etage_salleCours.JPG");
+	private Room corridor1Floor= new Room("Corridor of the floor", 
+			"This is the corridor of the floor",
+			"resources/rooms/Couloir_vue_salleCours.JPG",
+			"resources/plans/Etage_Couloir_vue_SalleCoursTP2.JPG");
+	private Room corridor2Floor= new Room("Corridor of the floor",
+			"This is the corridor of the floor",
+			"resources/rooms/Couloir_vue_TD2.JPG",
+			"resources/plans/Etage_Couloir_vue_TD2.JPG");
+	private Room corridor3Floor= new Room("Corridor of the floor",
+			"This is the corridor of the floor",
+			"resources/rooms/Couloir_vue_TD3.JPG",
+			"resources/plans/Etage_Couloir_vue_TD3.JPG");
+	private Room corridor4Floor= new Room("Corridor of the floor",
+			"This is the corridor of the floor",
+			"resources/rooms/Couloir_vue_info1.JPG",
+			"resources/plans/Etage_Couloir_vue_Info1.JPG");
+	private Room corridor5Floor= new Room("Corridor of the floor",
+			"This is the corridor of the floor",
+			"resources/rooms/Couloir_vue_ENT1.JPG",
+			"resources/plans/Etage_Couloir_vue_Info1.JPG");
+	private Room corridor6Floor= new Room("Corridor of the floor",
+			"This is the corridor of the floor",
+			"resources/rooms/Couloir_vue_toilettesHautB2.JPG",
+			"resources/plans/Etage_Couloir_vue_ToilettesHaut.JPG");
+	private Room hallFloor = new Room("Hall of the floor",
+			"This is the corridor of the floor",
+			"resources/rooms/Haut_escalier_entreeB2.JPG",
+			"resources/plans/Etage_Haut_Escalier.JPG");
+	private Room tp2 = new Room("TP2",
+			"This is the room TP2",
+			"resources/rooms/TP2.JPG",
+			"resources/plans/Etage_TP2.JPG");
+	private Room td2 = new Room("TD2",
+			"This is the room TD2",
+			"resources/rooms/TD2.JPG",
+			"resources/plans/Etage_TD2.JPG");
 	private Room lp1 = new Room("LP1");
-	private Room td3 = new Room("TD3");
+	private Room td3 = new Room("TD3",
+			"This is the room TP3",
+			"resources/rooms/TD3.JPG",
+			"resources/plans/Etage_TD3.JPG");
 	private Room lp2 = new Room("LP2");
-	private Room info1 = new Room("Info1");
-	private Room ent1 = new Room("ENT1");
-	private Room tp3 = new Room("TP3");
-	private Room ent3 = new Room("ENT3");
-	private Room aegp = new Room("AEGP");
-	private Room toilet = new Room("Toilet");
+	private Room info1 = new Room("Info1",
+			"This is the room Info1",
+			"resources/rooms/Info1.JPG",
+			"resources/plans/Etage_ENT1.JPG");
+	private Room ent1 = new Room("ENT1",
+			"This is the room ENT1",
+			"resources/rooms/ENT.JPG",
+			"resources/plans/Etage_ENT1.JPG");
+	private Room tp3 = new Room("TP3",
+			"This is the room TP3",
+			"resources/rooms/TP3.JPG",
+			"resources/plans/Etage_TP3.JPG");
+	private Room ent3 = new Room("ENT3",
+			"This is the room ENT3",
+			"resources/rooms/ENT3.JPG",
+			"resources/plans/Etage_ENT3.JPG");
+	private Room aegp = new Room("AEGP",
+			"This is the room AEGP",
+			"resources/rooms/Salle_AEGP.JPG",
+			"resources/plans/Etage_AEGP.JPG");
+	private Room toilet = new Room("Toilet", 
+			"This is the toilet",
+			"resources/rooms/Toilettes_haut_B2.JPG",
+			"resources/plans/Etage_ToilettesHaut.JPG");
 	
 	private Key keyTD1 = new Key("Key TD1");
 	private Lock lockTD1 = new Lock(keyTD1);
