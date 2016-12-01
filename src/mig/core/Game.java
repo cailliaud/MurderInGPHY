@@ -27,7 +27,10 @@ public class Game {
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_salleCafet.JPG",
 			"resources/plans/RDC.JPG");
-	private Room corridor3RDC = new Room("Corridor of the RDC");
+	private Room corridor3RDC = new Room("Corridor of the RDC",
+			"This is the corridor of the RDC",
+			"resources/rooms/Couloir_BureauxPG_Allan.JPG",
+			"resources/plans/RDC.JPG");
 	private Room corridor4RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_TD4.JPG",
@@ -49,7 +52,10 @@ public class Game {
 			"resources/rooms/Salle_cafet.JPG",
 			"resources/plans/RDC.JPG");
 	private Room deskPgDom = new Room("PG and dominique desk");
-	private Room deskAllan = new Room("Allan desk");
+	private Room deskAllan = new Room("Allan desk",
+			"This is the desk of Allan",
+			"resources/rooms/BureauAllan.JPG",
+			"resources/plans/RDC.JPG");
 	private Room td4 = new Room("TD4", 
 			"This is the room TD4", 
 			"resources/rooms/TD4.JPG",
@@ -81,8 +87,8 @@ public class Game {
 			"resources/plans/Etage_Couloir_vue_Info1.JPG");
 	private Room corridor5Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
-			"resources/rooms/Couloir_vue_ENT1.JPG",
-			"resources/plans/Etage_Couloir_vue_Info1.JPG");
+			"resources/rooms/Couloir_vue_TP3.JPG",
+			"resources/plans/Etage_Couloir_vue_TP3.JPG");
 	private Room corridor6Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
 			"resources/rooms/Couloir_vue_toilettesHautB2.JPG",
