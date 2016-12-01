@@ -29,10 +29,11 @@ public class Window extends JPanel {
 	private SpeakButton speak ;
 	private LetDownButton letDown ;
 	private DenounceButton denounce ;
+	private PrincipalWindow prinwindow;
 	
 	private Game game ;
 
-	public Window(Game game){
+	public Window(PrincipalWindow principal_window, Game game){
 		
 		this.game = game; 
 		this.check = new CheckButton(game.myPlayer.getCurrentRoom());
@@ -44,7 +45,7 @@ public class Window extends JPanel {
 		this.planView= new  JLabel(game.myPlayer.getCurrentRoom().getImagePlan());
 		this.backPack = new BackPack(game.myPlayer.getOwned());
 		this.consoleArea = new ConsoleArea(game);
-		
+		this.prinwindow=principal_window;
 	
 
 
@@ -165,6 +166,7 @@ public class Window extends JPanel {
 	public void updateRoomImage(){
 		roomView.setIcon(game.myPlayer.getCurrentRoom().getImage());
 		planView.setIcon(game.myPlayer.getCurrentRoom().getImagePlan()); 
+		prinwindow.updateTitle();
 	}
 
 

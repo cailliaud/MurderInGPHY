@@ -36,11 +36,21 @@ public class PrincipalWindow extends JFrame {
 		}
 		
 	
-		window = new Window(myGame);
-		
+		window = new Window(this,myGame);
+		this.setTitle("Murder in GPHY V0.2      Player : " 
+		+ myGame.myPlayer.getName() + 
+		"               Current Room:" 
+		+ myGame.myPlayer.getCurrentRoom().getName());
 		this.add(window);
 		this.pack();
 
 		this.setVisible(true);	
+	}
+	
+	public void updateTitle(){
+		this.setTitle("Murder in GPHY V0.2      Player : " 
+				+ myGame.myPlayer.getName() + 
+				"               Current Room:" 
+				+ myGame.myPlayer.getCurrentRoom().getName());
 	}
 }
