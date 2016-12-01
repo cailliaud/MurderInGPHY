@@ -24,14 +24,6 @@ public class DenounceButton extends JButton {
 						
 					}
 					
-//					if(rep.equals(game.g)){
-//						den2.showMessageDialog(null, "GOOD JOB !!", "You win" , JOptionPane.INFORMATION_MESSAGE);
-//						//gameWin=true;
-//					}
-//					else{
-//						den2.showMessageDialog(null, "GAME OVER !!! ", "Sorry" , JOptionPane.INFORMATION_MESSAGE);
-//						//throw new GameOver();	
-//					}
 				}
 				);
 
