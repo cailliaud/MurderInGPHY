@@ -16,12 +16,18 @@ public class Game {
 	private ArrayList<Item> listItems;
 	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
-	public Room hall,lab;
+	public Room hall,couloirHautHall,lab;
+	private OpenedBolt openbolt = new OpenedBolt();
+	private Code code = new Code("");
+	private Door hall_haut, haut_lab;
 
 	public Game(String name) 
 	{
 		
-		hall = new Room("hall","le hall du B2","resources/couloir_500.jpg","resources/plan_Hall.png");
+		hall = new Room("hall","le hall du B2",
+				"resources/rooms/Hall.JPG",
+				"resources/plan.png"
+				);
 		if ((name==null)||(name.isEmpty())) {
 			this.myPlayer = new Player("Sherlock", hall);
 		}
@@ -38,26 +44,30 @@ public class Game {
 	
 	public void testGame(){
 		lab = new Room("lab","le lab du B2","resources/lab.jpg","resources/plan_Lab.png");
+		couloirHautHall = new Room( "Haut de l'escalier" ,
+				"couloir en montant l'escalier à partir du hall",
+				"resources/rooms/Haut_escalier_entreeB2.JPG",
+				"resources/plan_Lab.png");
+		hall_haut= new Door (code, hall,couloirHautHall );
+		haut_lab = new Door (openbolt, couloirHautHall, lab);
+		hall.addDoor("up", hall_haut);
+		couloirHautHall.addDoor("down", hall_haut);
+		couloirHautHall.addDoor("north", haut_lab);
+		lab.addDoor("south", haut_lab);
 		this.myPlayer.addItem(
 				new PhysicalObject("café", "un café chaud", "resources/coffee-cup.png")
 				);
-		this.myPlayer.addItem(
-				new PhysicalObject("grenade", "une grenade qui pète fort", "resources/grenade.png")
-				);
-		this.myPlayer.addItem(
-				new PhysicalObject("gun", "a real gun", "resources/gun.png")
-				);
-		this.myPlayer.addItem(
-				new PhysicalObject("martini", "a cocktail", "resources/martini.png")
-				);
-		this.myPlayer.move(lab);
-		
-//		this.myPlayer.getCurrentRoom().addItem(
-//				new PhysicalObject("grenade",
-//						"tomate",
-//						"resources/martini.png")
-//
+//		this.myPlayer.addItem(
+//				new PhysicalObject("grenade", "une grenade qui pète fort", "resources/grenade.png")
 //				);
+//		this.myPlayer.addItem(
+//				new PhysicalObject("gun", "a real gun", "resources/gun.png")
+//				);
+//		this.myPlayer.addItem(
+//				new PhysicalObject("martini", "a cocktail", "resources/martini.png")
+//				);
+		
+
 	}
 
 	public void setKiller(NPC thekiller){

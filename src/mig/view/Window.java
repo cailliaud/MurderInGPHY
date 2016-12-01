@@ -17,27 +17,33 @@ import mig.core.Game;
 public class Window extends JPanel {
 
 	private JPanel screen = new JPanel();
-	private ConsoleArea consoleArea = new ConsoleArea();
+	private JLabel roomView ;
+	private ConsoleArea consoleArea;
 	private Bunch bunch = new Bunch();
-	private Notebook notebook = new Notebook();
+	private Notebook notebook;
 	private PlanView planView ;
 	private BackPack backPack ;
-	private DirectionPanel directionPanel = new DirectionPanel();
+	private DirectionPanel directionPanel ;
 	
 	private CheckButton check ;
 	private SpeakButton speak ;
-	private LetDownButton letDown = new LetDownButton();
-	private DenounceButton denounce = new DenounceButton();
+	private LetDownButton letDown ;
+	private DenounceButton denounce ;
 	
 	private Game game ;
 
 	public Window(Game game){
 		
 		this.game = game; 
-		check = new CheckButton(game.myPlayer.getCurrentRoom());
-		speak =new SpeakButton(game.myPlayer.getCurrentRoom());
+		this.check = new CheckButton(game.myPlayer.getCurrentRoom());
+		this.speak =new SpeakButton(game.myPlayer.getCurrentRoom());
+		this.letDown= new LetDownButton();
+		this.denounce= new DenounceButton();
+		this.notebook=   new Notebook();
+		this.directionPanel =  new DirectionPanel(this,game);
 		this.planView= new PlanView(game.myPlayer.getCurrentRoom().getImagePlan());
 		this.backPack = new BackPack(game.myPlayer.getOwned());
+		this.consoleArea = new ConsoleArea(game);
 		
 	
 
@@ -92,7 +98,8 @@ public class Window extends JPanel {
 	    gbc.gridx = 1;
 	    gbc.gridy = 2;
 	    gbc.gridheight = 7;
-	    screen.add(new JLabel(game.myPlayer.getCurrentRoom().getImage()),gbc);
+	    roomView = new JLabel(game.myPlayer.getCurrentRoom().getImage());
+	    screen.add(roomView,gbc);
 	    
 	   
 		
@@ -154,5 +161,10 @@ public class Window extends JPanel {
 
 
 	}
+	
+	public void updateRoomImage(){
+		roomView.setIcon(game.myPlayer.getCurrentRoom().getImage());
+	}
+
 
 }

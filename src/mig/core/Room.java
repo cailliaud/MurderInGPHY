@@ -79,6 +79,11 @@ public class Room {
 	 */
 	private ArrayList<Item> clues = new ArrayList<Item>();
 
+	/**
+	 * 
+	 */
+	private Chest chest ;
+	
 	/** 
 	 * Constructor of the Room
 	 * @param nameRoom is the name of the Room (String)
@@ -100,6 +105,23 @@ public class Room {
 		this.image_plan= new ImageIcon(image_plan);
 	}
 
+	
+	/**
+	 * Constructor for the class Room if you want to add a chest in
+	 * @param nameRoom The name of the room
+	 * @param description the description of the room
+	 * @param image the path of the room image
+	 * @param image_plan the path of the room plan image
+	 * @param chest the chest present in the room
+	 */
+	public Room(String nameRoom, String description, String image, String image_plan, Chest chest){
+		this.name=nameRoom;
+		this.description = description;
+		this.image = new ImageIcon(image);
+		this.image_plan= new ImageIcon(image_plan);
+		this.chest=chest;
+	}
+	
 	/** 
 	 * Getter for the name of the Room
 	 * @return Name of the Room
@@ -356,5 +378,16 @@ public class Room {
 		return occupants.isEmpty();
 	}
 
-
+	/**
+	 * Method to get the chest of the room
+	 * @return the chest 
+	 */
+	public Chest getChest(){
+		if (chest != null){
+			return(chest);
+		}
+		else {
+			throw new NullPointerException();
+		}
+	}
 }
