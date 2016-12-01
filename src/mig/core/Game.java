@@ -17,49 +17,55 @@ public class Game {
 	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
 	
-	private Room hall1RDC = new Room("Hall","Hall of B2", "resources/rooms/Hall.JPG", "resources/plans/RDC.JPG");
-	private Room deskAnnie = new Room("Annie desk", "This is the desk of Annie", "resources/rooms/BureauAnnie.JPG","resources/plans/RDC.JPG" );
+	private Room hall1RDC = new Room("Hall",
+			"Hall of B2",
+			"resources/rooms/Hall.JPG",
+			"resources/plans/RDC_hall.JPG");
+	private Room deskAnnie = new Room("Annie desk",
+			"This is the desk of Annie",
+			"resources/rooms/BureauAnnie.JPG",
+			"resources/plans/RDC_BureauAnnie.JPG" );
 	private Room corridor1RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_hall_salleAnnieTD1.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_Couloir_vue_BureauAnnie.JPG");
 	private Room corridor2RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_salleCafet.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_Couloir_vue_Cafet_Reunion.JPG");
 	private Room corridor3RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_BureauxPG_Allan.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_Couloir_vue_BureauxPG_Allan.JPG");
 	private Room corridor4RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_TD4.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_Couloir_vue_TD4.JPG");
 	private Room corridor5RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"resources/rooms/Escalier_du_Font.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_Escalier.JPG");
 	private Room td1 = new Room("TD1",
 			"This is the room TD1",
 			"resources/rooms/TD1.JPG",
-			"resources/plans/RDC.JPG" );
+			"resources/plans/RDC_TD1.JPG" );
 	private Room meeting = new Room("Meeting room", 
 			"This is the room for the meeting", 
 			"resources/rooms/SalleReunion.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_SalleReunion.JPG");
 	private Room cafet = new Room("Cafeteria room", 
 			"This is the room for the cafet", 
 			"resources/rooms/Salle_cafet.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_SalleCafet.JPG");
 	private Room deskPgDom = new Room("PG and dominique desk");
 	private Room deskAllan = new Room("Allan desk",
 			"This is the desk of Allan",
 			"resources/rooms/BureauAllan.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_BureauAllan.JPG");
 	private Room td4 = new Room("TD4", 
 			"This is the room TD4", 
 			"resources/rooms/TD4.JPG",
-			"resources/plans/RDC.JPG");
+			"resources/plans/RDC_TD4.JPG");
 	private Room deskSecretary = new Room("Secretary desk");
 	private Room tp1 = new Room("TP1",
 			"This is the room TP1", 
