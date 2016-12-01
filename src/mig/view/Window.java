@@ -20,7 +20,7 @@ public class Window extends JPanel {
 	private JLabel roomView ;
 	private JLabel planView;
 	private ConsoleArea consoleArea;
-	private Bunch bunch = new Bunch();
+	private Bunch bunch ;
 	private Notebook notebook;
 	private BackPack backPack ;
 	private DirectionPanel directionPanel ;
@@ -36,6 +36,7 @@ public class Window extends JPanel {
 	public Window(PrincipalWindow principal_window, Game game){
 		
 		this.game = game; 
+		this.bunch = new Bunch(game);
 		this.check = new CheckButton(game.myPlayer.getCurrentRoom());
 		this.speak =new SpeakButton(game.myPlayer.getCurrentRoom());
 		this.letDown= new LetDownButton();

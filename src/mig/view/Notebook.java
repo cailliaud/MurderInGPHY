@@ -46,6 +46,9 @@ public class Notebook extends JButton {
 		for (Information information : notebook) {
 			infodisplayed.add(new JLabel(information.getName() + " : " + information.getInformation()));
 		}
+		if (notebook.isEmpty()){
+			infodisplayed.add(new JLabel("Currently, you have no information.",CENTER));
+		}
 		window.add(infodisplayed);
 		
 		

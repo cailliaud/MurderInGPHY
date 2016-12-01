@@ -28,7 +28,7 @@ public class Game {
 	private Room corridor1RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_hall_salleAnnieTD1.JPG",
-			"resources/plans/RDC_BureauAnnie.JPG");
+			"resources/plans/RDC_Couloir_vue_TD1_Annie.JPG");
 	private Room corridor2RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_salleCafet.JPG",
