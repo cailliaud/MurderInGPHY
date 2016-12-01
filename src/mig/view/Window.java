@@ -18,10 +18,10 @@ public class Window extends JPanel {
 
 	private JPanel screen = new JPanel();
 	private JLabel roomView ;
+	private JLabel planView;
 	private ConsoleArea consoleArea;
 	private Bunch bunch = new Bunch();
 	private Notebook notebook;
-	private PlanView planView ;
 	private BackPack backPack ;
 	private DirectionPanel directionPanel ;
 	
@@ -41,7 +41,7 @@ public class Window extends JPanel {
 		this.denounce= new DenounceButton(game);
 		this.notebook=   new Notebook();
 		this.directionPanel =  new DirectionPanel(this,game);
-		this.planView= new PlanView(game.myPlayer.getCurrentRoom().getImagePlan());
+		this.planView= new  JLabel(game.myPlayer.getCurrentRoom().getImagePlan());
 		this.backPack = new BackPack(game.myPlayer.getOwned());
 		this.consoleArea = new ConsoleArea(game);
 		
@@ -60,7 +60,7 @@ public class Window extends JPanel {
 		gbc.gridwidth = 1;
 		gbc.gridheight = 2;
 		gbc.insets = new Insets(10, 10, 10, 10);
-		screen.add(new JLabel(new ImageIcon ("resources/murder_120.png")),gbc);
+		screen.add(planView,gbc);
 		
 		gbc = new GridBagConstraints();
 		gbc.gridx = 1;
@@ -164,6 +164,7 @@ public class Window extends JPanel {
 	
 	public void updateRoomImage(){
 		roomView.setIcon(game.myPlayer.getCurrentRoom().getImage());
+		planView.setIcon(game.myPlayer.getCurrentRoom().getImagePlan()); 
 	}
 
 
