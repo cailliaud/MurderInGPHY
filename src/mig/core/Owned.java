@@ -268,7 +268,9 @@ public class Owned {
 	}
 
 
-
+	public ArrayList<Information> getNotebook(){
+		return this.notebook;
+	}
 
 
 }

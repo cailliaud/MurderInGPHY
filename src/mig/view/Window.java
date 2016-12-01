@@ -40,7 +40,7 @@ public class Window extends JPanel {
 		this.speak =new SpeakButton(game.myPlayer.getCurrentRoom());
 		this.letDown= new LetDownButton();
 		this.denounce= new DenounceButton(game);
-		this.notebook=   new Notebook();
+		this.notebook=   new Notebook(game);
 		this.directionPanel =  new DirectionPanel(this,game);
 		this.planView= new  JLabel(game.myPlayer.getCurrentRoom().getImagePlan());
 		this.backPack = new BackPack(game.myPlayer.getOwned());

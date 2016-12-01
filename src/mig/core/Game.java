@@ -28,7 +28,7 @@ public class Game {
 	private Room corridor1RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_hall_salleAnnieTD1.JPG",
-			"resources/plans/RDC_Couloir_vue_BureauAnnie.JPG");
+			"resources/plans/RDC_BureauAnnie.JPG");
 	private Room corridor2RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_salleCafet.JPG",
@@ -36,11 +36,11 @@ public class Game {
 	private Room corridor3RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_BureauxPG_Allan.JPG",
-			"resources/plans/RDC_Couloir_vue_BureauxPG_Allan.JPG");
+			"resources/plans/RDC_Couloir_BureauxPG_Allan.JPG");
 	private Room corridor4RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"resources/rooms/Couloir_vue_TD4.JPG",
-			"resources/plans/RDC_Couloir_vue_TD4.JPG");
+			"resources/plans/RDC_Couloir_TD4.JPG");
 	private Room corridor5RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"resources/rooms/Escalier_du_Font.JPG",
