@@ -126,4 +126,8 @@ public class Door {
 		return ((room==room1 || room==room2)? true : false);
 	}
 
+	
+	public String getTypeLock(){
+		return bolt.getClass().getSimpleName();
+	}
 }

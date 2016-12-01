@@ -27,7 +27,7 @@ public class PrincipalWindow extends JFrame {
 
 
 		int begin = JOptionPane.showConfirmDialog(null, selectNom, 
-				"Welcome, Give us the name of your two teams !", JOptionPane.OK_CANCEL_OPTION);
+				"Welcome, What's your name ?", JOptionPane.OK_CANCEL_OPTION);
 		if (begin == JOptionPane.OK_OPTION) {
 			myGame=new Game(xField.getText());
 		}

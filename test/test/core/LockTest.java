@@ -28,26 +28,9 @@ public class LockTest {
 	 */
 	public LockTest()
 	{
-		try {
 			lock= new Lock(k1);
-		} catch (KeyForgottenException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	@Rule
-	public ExpectedException thrown = ExpectedException.none();
 
-	@Test
-	public void shouldTestExceptionMessage() throws KeyForgottenException {
-		
-		
-	    thrown.expect(KeyForgottenException.class);
-	    thrown.expectMessage("You try to instanciate a Bolt without a key, it is impossible.");
-	    Lock lock2 = new Lock(null);
 	}
-	
 	
 
 	

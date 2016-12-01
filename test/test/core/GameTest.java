@@ -62,14 +62,14 @@ public class GameTest
 	@Test
 	public void testGiveGoodKiller() throws GameOver
 	{
-		game.giveKiller(fantomas);
+		game.giveKiller("fantomas");
 		assertEquals(true, game.isWin());
 	}
 	
 	@Test
 	public void testGiveWrongKiller() throws GameOver {
 		thrown.expect(GameOver.class);
-		game.giveKiller(bobby);
+		game.giveKiller("bobby");
 
 	}
 	

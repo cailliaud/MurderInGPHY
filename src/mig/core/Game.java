@@ -43,13 +43,15 @@ public class Game {
 	}
 	
 	public void testGame(){
+		Key key = new Key("Hall_Key");
+		Lock lock = new Lock(key);
 		lab = new Room("lab","le lab du B2","resources/lab.jpg","resources/plan_Lab.png");
 		couloirHautHall = new Room( "Haut de l'escalier" ,
 				"couloir en montant l'escalier à partir du hall",
 				"resources/rooms/Haut_escalier_entreeB2.JPG",
 				"resources/plan_Lab.png");
 		hall_haut= new Door (code, hall,couloirHautHall );
-		haut_lab = new Door (openbolt, couloirHautHall, lab);
+		haut_lab = new Door (lock, couloirHautHall, lab);
 		hall.addDoor("up", hall_haut);
 		couloirHautHall.addDoor("down", hall_haut);
 		couloirHautHall.addDoor("north", haut_lab);

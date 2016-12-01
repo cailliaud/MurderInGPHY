@@ -37,14 +37,11 @@ public class Lock extends Bolt {
 	 * The lock is locked when it is created
 	 * private locked parameter set to true
 	 * @param key The key associated to unlock the Lock
-	 * This parameter cannot be null
+	 * We consider that the user won't forget to give a key
 	 */
 	public Lock ( Key key)
-	throws KeyForgottenException
 	{
 		super(true);
-		if (key==null) throw new KeyForgottenException();
-		//TODO prévoir Exception si clé null !
 		this.key = key;
 	}
 	

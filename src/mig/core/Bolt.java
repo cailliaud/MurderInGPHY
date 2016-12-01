@@ -50,6 +50,8 @@ public abstract class Bolt {
 		if (this.locked){
 		this.locked=false;}
 	}
+	
+	
 
 
 }

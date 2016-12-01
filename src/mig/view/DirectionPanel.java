@@ -131,16 +131,35 @@ public class DirectionPanel extends JPanel {
 	}
 
 	public void openDoor(Door door){
-		JOptionPane jop = new JOptionPane(), jop2 = new JOptionPane();
-		String pass = jop.showInputDialog(null, "Give the password to go forward : ", "A password is needed", JOptionPane.QUESTION_MESSAGE);
-		door.openDoor(pass);
-		try {
-			game.myPlayer.move(door.getNextRoom(game.myPlayer.getCurrentRoom()));
-			jop2.showMessageDialog(null, "Well Done you can go forward", "Good Password", JOptionPane.INFORMATION_MESSAGE);
-			
-		} catch (Exception e1) {
-			jop2.showMessageDialog(null, "An Error Occured, Try again", "Wrong Password", JOptionPane.INFORMATION_MESSAGE);
+		switch (door.getTypeLock()) {
+		case "Code":
+			JOptionPane jop = new JOptionPane(), jop2 = new JOptionPane();
+			String pass = jop.showInputDialog(null, "Give the password to go forward : ", "A password is needed", JOptionPane.QUESTION_MESSAGE);
+			door.openDoor(pass);
+			try {
+				game.myPlayer.move(door.getNextRoom(game.myPlayer.getCurrentRoom()));
+				jop2.showMessageDialog(null, "Well Done you can go forward", "Good Password", JOptionPane.INFORMATION_MESSAGE);
+				
+			} catch (Exception e1) {
+				jop2.showMessageDialog(null, "An Error Occured, Try again", "Wrong Password", JOptionPane.INFORMATION_MESSAGE);
+			}
+			break;
+		case "Lock" :
+//			JOptionPane jop = new JOptionPane(), jop2 = new JOptionPane();
+//			String pass = jop.showInputDialog(null, "Give the password to go forward : ", "A password is needed", JOptionPane.QUESTION_MESSAGE);
+//			door.openDoor(pass);
+//			try {
+//				game.myPlayer.move(door.getNextRoom(game.myPlayer.getCurrentRoom()));
+//				jop2.showMessageDialog(null, "Well Done you can go forward", "Good Password", JOptionPane.INFORMATION_MESSAGE);
+//				
+//			} catch (Exception e1) {
+//				jop2.showMessageDialog(null, "An Error Occured, Try again", "Wrong Password", JOptionPane.INFORMATION_MESSAGE);
+//			}
+			break;
+		default:
+			break;
 		}
+		
 		updateAccess();
 		this.window.updateRoomImage();
 	}
