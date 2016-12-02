@@ -18,6 +18,11 @@ public class Game {
 	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
 	
+	
+	/**
+	 * Creation of all the room of the game
+	 */
+	
 	private Room hall1RDC = new Room("Hall",
 			"Hall of B2",
 			"resources/rooms/Hall.JPG",
@@ -143,23 +148,27 @@ public class Game {
 			"resources/rooms/Toilettes_haut_B2.JPG",
 			"resources/plans/Etage_ToilettesHaut.JPG");
 	
-	private Key keyTD1 = new Key("Key TD1");
-	private Lock lockTD1 = new Lock(keyTD1);
+	/**
+	 * Creation of all the keys of the game
+	 */
+	
+	private Key woodenKey = new Key("Key TD1");
+	private Lock lockTD1 = new Lock(woodenKey);
 	private Door td1_corridor1RDC= new Door(lockTD1, td1, corridor1RDC);
 	
 	private Key keyTD4 = new Key("Key TD4");
 	private Lock lockTD4 = new Lock(keyTD4);
 	private Door td4_corridor4 = new Door(lockTD4, td4, corridor4RDC);
 	
-	private Key keyTP3 = new Key("Key TP3");
-	private Lock lockTP3 = new Lock(keyTP3);
+	private Key copperKey = new Key("Key TP3");
+	private Lock lockTP3 = new Lock(copperKey);
 	private Door tp3_corridor5Floor = new Door(lockTP3, tp3, corridor5Floor);
 	
-	private Key keyEnt1 = new Key("Key ENT1");
-	private Lock lockENT1 = new Lock(keyEnt1);
+	private Key ironKey = new Key("Key ENT1");
+	private Lock lockENT1 = new Lock(ironKey);
 	private Door ent1_corridor4 = new Door(lockENT1, ent1, corridor4Floor);
 	
-	private Key keyTD3 = new Key("Key TD3");
+	private Key keyTD3 = new Key("Key TD3");  //salle TD3 c'est un password
 	private Lock lockTD3 = new Lock(keyTD3);
 	private Door td3_corridor3 = new Door(lockTD3, td3, corridor3Floor);
 	
@@ -167,16 +176,21 @@ public class Game {
 	private Lock lockTD2 = new Lock(keyTD2);
 	private Door td2_corridor2 = new Door(lockTD2, td2, corridor2Floor);
 	
-	private Key keyCours = new Key("Key Cours");
+	private Key keyCours = new Key("Key Cours"); //salle cours c'est un password
 	private Lock lockCours = new Lock(keyCours);
 	private Door Cours_corridor1 = new Door(lockCours, classroom, corridor1Floor);
 	
-	private Key Keyinfo1 = new Key("Key info 1");
-	private Lock lockInfo1 = new Lock(Keyinfo1);
+	private Key longKey = new Key("Key info 1");
+	private Lock lockInfo1 = new Lock(longKey);
 	private Door info1_corridor4 = new Door(lockInfo1, info1, corridor4Floor);
 	
+	private Key silverKey = new Key("Useless key");
 	
 	private OpenedBolt openbolt = new OpenedBolt();
+	
+	/**
+	 * Creation of all the doors of the game
+	 */
 	
 	private Door hall1RDC_hallFloor = new Door(openbolt, hall1RDC, hallFloor);
 	private Door hall1RDC_corridor1RDC= new Door(openbolt, hall1RDC, corridor1RDC);
@@ -202,8 +216,66 @@ public class Game {
 	private Door aegp_corridor6Floor= new Door(openbolt, aegp, corridor6Floor);
 	private Door toilet_corridor6Floor= new Door(openbolt, toilet, corridor6Floor);
 	
-
+	/**
+	 * Creation of all the objects of the game
+	 */
+	
 	private PhysicalObject pioche = new PhysicalObject("pioche", "une pioche violente");
+	private PhysicalObject laptopCharger = new PhysicalObject("laptopCharger", "Astemir's laptop charger", "resources/PhysicalObjects_Icon/Laptop_charger.PNG");
+	private PhysicalObject fourtyCents = new PhysicalObject("fourtyCents", "40 cents of euro", "resources/PhysicalObjects_Icon/40_euro_cents.PNG");
+	private PhysicalObject hotChocolate = new PhysicalObject("hotChocolate", "a cup of hot chocolate", "resources/PhysicalObjects_Icon/Hot_chocolate.PNG");
+	private PhysicalObject briocheVendeenne = new PhysicalObject("briocheVendeenne", "a brioche vendeenne", "resources/PhysicalObjects_Icon/Brioche_vendéenne.PNG");
+	private PhysicalObject tennisRacket = new PhysicalObject("tennisRacket", "a tennis racket", "resources/PhysicalObjects_Icon/Tennis_racket.PNG");
+	private PhysicalObject toiletPaperRoll = new PhysicalObject("toiletPaperRoll", "a toilet paper roll", "resources/PhysicalObjects_Icon/Toilet_paper_roll.PNG");
+	private PhysicalObject lighter = new PhysicalObject("lighter", "a lighter", "resources/PhysicalObjects_Icon/Lighter.PNG");
+	private PhysicalObject coilOfWire = new PhysicalObject("coilOfWire", "a coil of wire", "resources/PhysicalObjects_Icon/Coil_of_wire.PNG");
+	private PhysicalObject cartonOfSoup = new PhysicalObject("cartonOfSoup", "a carton of soup", "resources/PhysicalObjects_Icon/Soup_Carton.PNG");
+	private PhysicalObject sushi = new PhysicalObject("sushi", "a sushi", "resources/PhysicalObjects_Icon/Sushi.PNG");
+	private PhysicalObject hairpin = new PhysicalObject("hairpin", "a hairpin", "resources/PhysicalObjects_Icon/Hairpin.PNG");
+	private PhysicalObject bikeWheel = new PhysicalObject("bikeWheel", "a bike wheel", "resources/PhysicalObjects_Icon/Bike_wheel.PNG");
+	private PhysicalObject pikachuCuddlyToy = new PhysicalObject("pikachuCuddlyToy", "a pikachu cuddly toy", "resources/PhysicalObjects_Icon/Pikachu_cuddly_toy.PNG");
+	private PhysicalObject scarf = new PhysicalObject("scarf", "a scarf", "resources/PhysicalObjects_Icon/Scarf.PNG");
+	private PhysicalObject chineseChopsticks = new PhysicalObject("chineseChopsticks", "a pair of chinese chopsticks", "resources/PhysicalObjects_Icon/Chinese_chopsticks.PNG");
+	
+	
+	/**
+	 * Creation of all the NPC of the game
+	 */
+	
+	private NPC steve = new NPC("Steve", null);
+	private NPC babujhi = new NPC("Babujhi", null);
+	private NPC claire = new NPC("Delphine", null);
+	private NPC delphine = new NPC("Steve", null);
+	private NPC annie = new NPC("Annie", null);
+	private NPC patrick = new NPC("Patrick", null);
+	private NPC allan = new NPC("Allan", null);
+	private NPC chloe = new NPC("Chloé", null);
+	private NPC astemir = new NPC("Astemir", null);
+	private NPC simon = new NPC("Simon", null);
+	private NPC fp = new NPC("FP", null);
+	private NPC agathe = new NPC("Agathe", null);
+	private NPC fabien = new NPC("Fabien", null);
+	private NPC gcell1 = new NPC("Gcell1", null);
+	private NPC gcell2 = new NPC("Gcell2", null);
+	private NPC marin = new NPC("Marin", null);
+	private NPC antoine = new NPC("Antoine", null);
+	private NPC nicolas = new NPC("Nicolas", null);
+	
+	
+	/**
+	 * Creation of all the information of the game
+	 */
+	
+	private Information annieInfo = new Information("Annie's Info", "There is only one killer.");
+	private Information patrickInfo = new Information("patrick's Info", "The killer is not Simon because he was absent the day of the murder.");
+	private Information astemirInfo = new Information("astemir's Info", "There was an AEGP office meeting the day before the murder and the atmosphere was extremely tense.");
+	private Information antoineInfo = new Information("antoine's Info", "The killer is not a girl from the AEGP office");
+	private Information nicolasInfo = new Information("nicolas's Info", "The killer is from the AEGP.");
+	private Information aegpRoomInfo = new Information("aegpRoom 's Info", "The safe is open and empty.");
+	private Information aegpToiletInfo = new Information("aegpToilet's Info", "Blood stains in the sink.");
+	
+	
+	
 	public Game(String name) 
 	{
 		
