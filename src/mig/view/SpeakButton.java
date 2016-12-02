@@ -20,8 +20,6 @@ public class SpeakButton extends JButton {
 		this.game=game;
 		this.setText("Speak");
 		update();
-		
-
 			this.addActionListener(
 					ae->{
 						
