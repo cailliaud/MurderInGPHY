@@ -48,7 +48,7 @@ public class Owned {
 	 */
 	private ArrayList<PhysicalObject> inventory;
 
-	
+
 	private final int slots;
 	/**
 	 * Constructor
@@ -129,16 +129,10 @@ public class Owned {
 	 * @see Owned#inventory
 	 * @see PhysicalObject
 	 */
-	public PhysicalObject removeObject (String name) throws ErrorNameGiven{
-		for (PhysicalObject obj : inventory) {
-			if (obj.getName()==name) 
-			{
-				inventory.remove(obj);
-				return(obj);
-			}
+	public PhysicalObject removeObject (PhysicalObject obj) {
+		inventory.remove(obj);
+		return(obj);
 
-		}
-		throw new ErrorNameGiven();
 
 	}
 
@@ -208,7 +202,7 @@ public class Owned {
 
 	}
 
-	
+
 	/**
 	 * Method to get an Information from the inventory
 	 * @param name Name of the info
@@ -233,33 +227,33 @@ public class Owned {
 		throw new ErrorNameGiven();
 
 	}
-	
 
-	
+
+
 	public String displayNotebook(){
 		String str ="This all the information that i have currently in my notebook :\n";
 		for (Information info : notebook) {
 			str+=info+"\n";
 		}
-		
+
 		return str;
 	}
-	
+
 	public String displayInventory(){
 		String str ="This all the Object that i have in my bag :\n";
 		for (PhysicalObject obj : inventory) {
 			str+=obj+"\n";
 		}
-		
+
 		return str;
 	}
-	
+
 	public String displayBunch(){
 		String str ="This all the keys that i have currently in my bunch :\n";
 		for (Key key : bunch) {
 			str+=key+"\n";
 		}
-		
+
 		return str;
 	}
 
@@ -271,9 +265,13 @@ public class Owned {
 	public ArrayList<Information> getNotebook(){
 		return this.notebook;
 	}
-	
+
 	public ArrayList<Key> getBunch(){
 		return this.bunch;
+	}
+
+	public ArrayList<PhysicalObject> getInventory(){
+		return this.inventory;
 	}
 
 

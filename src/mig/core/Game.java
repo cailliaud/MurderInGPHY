@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import mig.exceptions.ErrorObjectClosed;
 import mig.exceptions.GameOver;
+import mig.exceptions.InventoryFull;
 import mig.view.Window;
 
 /**
@@ -202,6 +203,7 @@ public class Game {
 	private Door toilet_corridor6Floor= new Door(openbolt, toilet, corridor6Floor);
 	
 
+	private PhysicalObject pioche = new PhysicalObject("pioche", "une pioche violente");
 	public Game(String name) 
 	{
 		
@@ -281,8 +283,12 @@ public class Game {
 		ent3.addDoor("east", ent3_corridor6Floor);
 		aegp.addDoor("south", aegp_corridor6Floor);
 		toilet.addDoor("west", toilet_corridor6Floor);
-		
-
+		try {
+			myPlayer.addItem(pioche);
+		} catch (InventoryFull e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 //	public void testGame(){

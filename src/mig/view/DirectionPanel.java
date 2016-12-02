@@ -31,13 +31,14 @@ public class DirectionPanel extends JPanel {
 					try {
 						Room nextRoom= door.getNextRoom(game.myPlayer.getCurrentRoom());
 						game.myPlayer.move(nextRoom);
-						this.window.updateRoomImage();
+						this.window.update();
 						this.updateAccess();
 					} catch (ErrorObjectClosed e) {
 						openDoor(door);
 					}
 				}
 				);
+		
 		
 		// button South
 		south = new JButton(new ImageIcon("resources/south_arrow.png"));
@@ -48,7 +49,7 @@ public class DirectionPanel extends JPanel {
 						
 						Room nextRoom= door.getNextRoom(game.myPlayer.getCurrentRoom());
 						game.myPlayer.move(nextRoom);
-						this.window.updateRoomImage();
+						this.window.update();
 						this.updateAccess();
 					} catch (ErrorObjectClosed e) {
 						openDoor(door);
@@ -65,7 +66,7 @@ public class DirectionPanel extends JPanel {
 						
 						Room nextRoom= door.getNextRoom(game.myPlayer.getCurrentRoom());
 						game.myPlayer.move(nextRoom);
-						this.window.updateRoomImage();
+						this.window.update();
 						this.updateAccess();
 					} catch (ErrorObjectClosed e) {
 						openDoor(door);
@@ -82,7 +83,7 @@ public class DirectionPanel extends JPanel {
 						
 						Room nextRoom= door.getNextRoom(game.myPlayer.getCurrentRoom());
 						game.myPlayer.move(nextRoom);
-						this.window.updateRoomImage();
+						this.window.update();
 						this.updateAccess();
 					} catch (ErrorObjectClosed e) {
 						openDoor(door);
@@ -102,7 +103,7 @@ public class DirectionPanel extends JPanel {
 					try {
 						Room nextRoom= door.getNextRoom(game.myPlayer.getCurrentRoom());
 						game.myPlayer.move(nextRoom);
-						this.window.updateRoomImage();
+						this.window.update();
 						this.updateAccess();
 					} catch (ErrorObjectClosed e) {
 						openDoor(door);
@@ -161,7 +162,7 @@ public class DirectionPanel extends JPanel {
 		}
 		
 		updateAccess();
-		this.window.updateRoomImage();
+		this.window.update();
 	}
 	
 	public void updateAccess(){

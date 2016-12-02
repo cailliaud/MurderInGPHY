@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import mig.core.Room;
 import mig.exceptions.ErrorNameGiven;
+import mig.exceptions.InventoryFull;
 import mig.core.Item;
 import mig.core.Owned;
 import mig.core.PhysicalObject;
@@ -33,35 +34,67 @@ public class PlayerTest {
 	@Test
 	public void testAddItem(){
 		PhysicalObject item = new PhysicalObject("batte","blablabla");
-		myPlayer.addItem(item);
+		try {
+			myPlayer.addItem(item);
+		} catch (InventoryFull e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertEquals(1,myPlayer.getOwned().getSize());
 	}
 
 	@Test
 	public void testRemovePhysicalObject(){
 		PhysicalObject item2 = new PhysicalObject("livre","blablabla");
-		myPlayer.addItem(item2);
 		try {
-			myPlayer.removePhysicalObject("livre");
-		} catch (ErrorNameGiven e) {
+			myPlayer.addItem(item2);
+		} catch (InventoryFull e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+			myPlayer.removePhysicalObject(item2);
+		
 		assertEquals(0,myPlayer.getOwned().getSize());
 	}
 	
 	@Test
 	public void testTooMuchItem(){
 		PhysicalObject item = new PhysicalObject("batte","blablabla");
-		myPlayer.addItem(item);
+		try {
+			myPlayer.addItem(item);
+		} catch (InventoryFull e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		PhysicalObject item2 = new PhysicalObject("livre","blablabla");
-		myPlayer.addItem(item2);
+		try {
+			myPlayer.addItem(item2);
+		} catch (InventoryFull e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		PhysicalObject item3 = new PhysicalObject("ballon","blablabla");
-		myPlayer.addItem(item3);
+		try {
+			myPlayer.addItem(item3);
+		} catch (InventoryFull e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		PhysicalObject item4 = new PhysicalObject("bouteille","blablabla");
-		myPlayer.addItem(item4);
+		try {
+			myPlayer.addItem(item4);
+		} catch (InventoryFull e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		PhysicalObject item5 = new PhysicalObject("ordi","blablabla");
-		myPlayer.addItem(item5);
+		try {
+			myPlayer.addItem(item5);
+		} catch (InventoryFull e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertNotEquals(5,myPlayer.getOwned().getSize());
 	}
 	

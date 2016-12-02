@@ -1,6 +1,7 @@
 package mig.core;
 
 import mig.exceptions.ErrorNameGiven;
+import mig.exceptions.InventoryFull;
 
 /**
  * <b>Player is the class representing the user of the game. It is in inheritence class of Personage.</b>
@@ -88,23 +89,26 @@ public class Player extends Personage{
 	 * @param item the item added
 	 * @return a string explaining what it has be done
 	 */
-	public String addItem(Item item){	
+	public String addItem(Item item) throws InventoryFull{	
 		if (item instanceof Information) {
 			owned.addInformation((Information) item);
+			currentRoom.removeItem(item);
 			return ("the information called "+item.getName()+" has been added to your notebook.\n");
 			
 		} else if (item instanceof Key ){
 			owned.addKey((Key) item);
+			currentRoom.removeItem(item);
 			return ("the key called "+item.getName()+" has been added to your bunch.\n");
 		}
 		else
 			if (owned.getSize()<inventorySize)
 			{
 			owned.addObject((PhysicalObject) item);
+			currentRoom.removeItem(item);
 			return ("the Object called "+item.getName()+" has been added to your inventory.\n");
 			}
 			else {
-				return ("Your inventory is full. \n");
+				throw new InventoryFull();
 			}
 	}
 	
@@ -116,8 +120,8 @@ public class Player extends Personage{
 	 * @throws ErrorNameGiven Return a mistake if the name given is wrong
 	 * @see Owned
 	 */
-	public void removePhysicalObject(String name) throws ErrorNameGiven{
-		currentRoom.addItem(owned.removeObject(name));
+	public void removePhysicalObject(PhysicalObject obj) {
+		currentRoom.addItem(owned.removeObject(obj));
 		
 	}
 	

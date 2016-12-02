@@ -43,11 +43,4 @@ public class PhysicalObject extends EnigmaItem {
 		return this.image;
 	}
 	
-
-	/**
-	 * Method that allows the user to use a physical object
-	 */
-	public void useObject(){
-		// TODO Approfondir la méthode 
-	}
 }

@@ -307,11 +307,9 @@ public class Room {
 	 */
 	public void addItem(Item newItem)
 	{
-		if (!newItem.getExist()){
 			clues.add(newItem);
-			newItem.existNow();;;
-		}
 	}
+	
 
 	/**
 	 * Method to remove an Item from the room.
@@ -330,24 +328,10 @@ public class Room {
 		}
 	}
 
-	/**
-	 * Method to get the Item in the Room
-	 * This method will 
-	 * <ul>
-	 * <li>Test if the Item exist in the Room</li>
-	 * <li>remove the item from the Room</li>
-	 * <li>Set true for the parameter exist from the Item </li>
-	 * </ul>
-	 * 
-	 * @param itemName The name of the Item
-	 * @return the item if it is present in the room
-	 */
 
-	public Item getItem(String itemName){
-		//TODO trouver l'objet dans le jeu portant ce nom (class comportant les objets existants)
-		//TODO récupérer l'objet avec ce nom et tester si il est dans la Room
-		//TODO si oui retourner l'objet et le retirer de la room proprement, tout en conservant le fait qu'il existe.
-		return null  ;
+
+	public Item getItem(int index){
+		return clues.get(index)  ;
 	}
 
 	/**
@@ -389,5 +373,18 @@ public class Room {
 		else {
 			throw new NullPointerException();
 		}
+	}
+	
+	public int getNumberItem(){
+		return clues.size();
+	}
+	
+	public String[] getlistOfItem(){
+		String[] str = new String[getNumberItem()];
+		int i =0;
+		for (Item item : clues) {
+			str[i]=item.getName();
+		}
+		return str;
 	}
 }

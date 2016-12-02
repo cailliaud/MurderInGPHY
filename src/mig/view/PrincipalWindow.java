@@ -32,7 +32,7 @@ public class PrincipalWindow extends JFrame {
 			myGame=new Game(xField.getText());
 		}
 		else {
-			myGame = new Game("Nicolas");
+			System.exit(0);
 		}
 		
 	

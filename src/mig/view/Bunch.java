@@ -37,19 +37,23 @@ public class Bunch extends JButton {
 		window = new JFrame();
 		window.setVisible(true);
 		window.setTitle("My Bunch");
-		window.setSize(300, 300);
+		window.setSize(500, 500);
 		window.setResizable(false);
 		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		window.setLocationRelativeTo(null);
 		keydisplayed = new JPanel();
+		String HTMLlabelStr = "<html><center><h1>This is your bunch of keys.</h1></center></br><ul>";
 		ArrayList<Key> bunch = this.game.myPlayer.getOwned().getBunch();
 		for (Key key : bunch) {
-			keydisplayed.add(new JLabel(key.getName()));
+			HTMLlabelStr+="<li>"+key.getName()+"</li></br>";
 		}
 		if (bunch.isEmpty()){
-			keydisplayed.add(new JLabel("Currently, you have no keys.",CENTER));
+			HTMLlabelStr+="<center>Currently, you have no keys.</center>";
 		}
+		HTMLlabelStr+= "</ul></br><center> End of your Bunch<center></html>";
+		keydisplayed.add(new JLabel(HTMLlabelStr));
 		window.add(keydisplayed);
+
 		
 		
 

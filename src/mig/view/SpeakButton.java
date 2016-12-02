@@ -2,20 +2,24 @@ package mig.view;
 
 import javax.swing.JButton;
 
+import mig.core.Game;
 import mig.core.Room;
 
 public class SpeakButton extends JButton {
-	private Room currentRoom;
+	private Game game;
+	private Window window;
 	
-	public SpeakButton(Room room){
-		this.currentRoom=room;
+	public SpeakButton(Window window, Game game){
+		this.window=window;
+		this.game=game;
 		this.setText("Speak");
-		if (currentRoom.noOneHere()) this.setEnabled(false);
+		update();
+		
 		
 	}
 	
 	public void update(){
-		if (currentRoom.noOneHere()) this.setEnabled(false);
+		if (game.myPlayer.getCurrentRoom().noOneHere()) this.setEnabled(false);
 		else this.setEnabled(true);
 	}
 

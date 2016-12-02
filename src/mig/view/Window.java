@@ -22,7 +22,7 @@ public class Window extends JPanel {
 	private ConsoleArea consoleArea;
 	private Bunch bunch ;
 	private Notebook notebook;
-	private BackPack backPack ;
+	public BackPack backPack ;
 	private DirectionPanel directionPanel ;
 	
 	private CheckButton check ;
@@ -37,14 +37,14 @@ public class Window extends JPanel {
 		
 		this.game = game; 
 		this.bunch = new Bunch(game);
-		this.check = new CheckButton(game.myPlayer.getCurrentRoom());
-		this.speak =new SpeakButton(game.myPlayer.getCurrentRoom());
-		this.letDown= new LetDownButton();
+		this.check = new CheckButton(this,game);
+		this.speak =new SpeakButton(this,game);
+		this.letDown= new LetDownButton(this,game);
 		this.denounce= new DenounceButton(game);
 		this.notebook=   new Notebook(game);
 		this.directionPanel =  new DirectionPanel(this,game);
 		this.planView= new  JLabel(game.myPlayer.getCurrentRoom().getImagePlan());
-		this.backPack = new BackPack(game.myPlayer.getOwned());
+		this.backPack = new BackPack(game);
 		this.consoleArea = new ConsoleArea(game);
 		this.prinwindow=principal_window;
 	
@@ -164,11 +164,25 @@ public class Window extends JPanel {
 
 	}
 	
-	public void updateRoomImage(){
+	private void updateRoomImage(){
 		roomView.setIcon(game.myPlayer.getCurrentRoom().getImage());
 		planView.setIcon(game.myPlayer.getCurrentRoom().getImagePlan()); 
 		prinwindow.updateTitle();
 	}
+	
+	public void update (){
+		backPack.update();
+		check.update();
+		letDown.update();
+		
+		updateRoomImage();
+	}
+	
+
+	
+
+	
+
 
 
 }
