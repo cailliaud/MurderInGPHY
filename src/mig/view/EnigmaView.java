@@ -4,9 +4,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -31,9 +34,9 @@ public class EnigmaView extends JDialog {
 
   public EnigmaView(JFrame parent, String title, boolean modal){
     super(parent, title, modal);
-    this.setSize(450, 400);
+    this.setSize(600, 400);
     this.setLocationRelativeTo(null);
-    //this.setResizable(false);
+    this.setResizable(false);
     this.initComponent();
   }
 
@@ -97,29 +100,59 @@ public class EnigmaView extends JDialog {
     content.setBackground(Color.white);
     content.add(enigme); 
     
+   //Creation of the different panels for the buttons
     JPanel p2 = new JPanel();
-    p2.setLayout(new GridLayout(3,2));
+    JPanel p3 = new JPanel();
+    p3.setPreferredSize(new Dimension(60, 40));
+    JPanel p4 = new JPanel();    
+    p4.setPreferredSize(new Dimension(60, 40));
+    JPanel p5 = new JPanel(); 
+    p4.setPreferredSize(new Dimension(60, 40));
+    JPanel p6 = new JPanel(); 
+    JPanel p7 = new JPanel(); 
+    p7.setBackground(Color.white);
+    JPanel p8 = new JPanel(); 
+    p8.setBackground(Color.white);
     
-    p2.add(panTextAnsw);
-    p2.add(okTextBouton);
-    p2.add(panItem);
-    p2.add(okItemBouton);
-    p2.add(panInfo);
-    p2.add(okInfoBouton);
+    //Adding of of the buttons in the panels 
+    p3.add(okTextBouton);
+    p3.setBackground(Color.white);
+    p4.add(okItemBouton);
+    p4.setBackground(Color.white);
+    p5.add(okInfoBouton);
+    p5.setBackground(Color.white);
     
-    content.add(p2);
+    //Creation of the GridLayout
+    p2.setLayout(new GridLayout(3,1));
+    p2.setBackground(Color.white);
 
-    JPanel control = new JPanel();
+    p2.add(panTextAnsw);
+    p2.add(panItem);
+    p2.add(panInfo);
+    
+    
+    p6.setLayout(new GridLayout(5,1));
+    p6.setBackground(Color.white);
+    p6.add(p3,BorderLayout.NORTH);
+    p6.add(p7,BorderLayout.NORTH);
+    p6.add(p4,BorderLayout.CENTER);
+    p6.add(p8,BorderLayout.NORTH);
+    p6.add(p5,BorderLayout.SOUTH);
+    
+    
+    content.add(p2, BorderLayout.CENTER);
+    content.add(p6, BorderLayout.CENTER);
+
 
     okTextBouton.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent arg0) {     
     	  JOptionPane eni = new JOptionPane();
     	  if(rep.getText().equals("Vendée")){
-	    		eni.showMessageDialog(null, "Bien joué !!", "BIIIEN !!" , JOptionPane.INFORMATION_MESSAGE);
+	    		eni.showMessageDialog(null, "Good Job ! Take it, it is for you : " , "Well done" , JOptionPane.INFORMATION_MESSAGE);
 	    		dispose();
     	  }
 	    	else{
-	    		eni.showMessageDialog(null, "RATE !!! ", "Dommage" , JOptionPane.INFORMATION_MESSAGE);
+	    		eni.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, try again ! ", "Sorry" , JOptionPane.INFORMATION_MESSAGE);
 	    	}
       }
       
@@ -129,11 +162,11 @@ public class EnigmaView extends JDialog {
         public void actionPerformed(ActionEvent arg0) {     
       	  JOptionPane eni = new JOptionPane();
       	  if(items.getSelectedItem().equals("Brioche")){
-  	    		eni.showMessageDialog(null, "Bien joué !!", "BIIIEN !!" , JOptionPane.INFORMATION_MESSAGE);
+  	    		eni.showMessageDialog(null, "Good Job ! Take it, it is for you : ", "Well done" , JOptionPane.INFORMATION_MESSAGE);
   	    		dispose();
       	  }
   	    	else{
-  	    		eni.showMessageDialog(null, "RATE !!! ", "Dommage" , JOptionPane.INFORMATION_MESSAGE);
+  	    		eni.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, try again ! ", "Sorry" , JOptionPane.INFORMATION_MESSAGE);
   	    	}
         }
       });
@@ -142,16 +175,16 @@ public class EnigmaView extends JDialog {
         public void actionPerformed(ActionEvent arg0) {     
       	  JOptionPane eni = new JOptionPane();
       	  if(infos.getSelectedItem().equals("La Bruffière")){
-  	    		eni.showMessageDialog(null, "Bien joué !!", "BIIIEN !!" , JOptionPane.INFORMATION_MESSAGE);
+  	    		eni.showMessageDialog(null, "Good Job ! Take it, it is for you : ", "Well done" , JOptionPane.INFORMATION_MESSAGE);
   	    		dispose();
       	  }
   	    	else{
-  	    		eni.showMessageDialog(null, "RATE !!! ", "Dommage" , JOptionPane.INFORMATION_MESSAGE);
+  	    		eni.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, try again ! ", "Sorry" , JOptionPane.INFORMATION_MESSAGE);
   	    	}
         }
         
       });
+
     this.getContentPane().add(content, BorderLayout.CENTER);
-    this.getContentPane().add(control, BorderLayout.SOUTH);
   } 
 }
