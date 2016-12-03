@@ -9,15 +9,17 @@ import javax.swing.JPanel;
 
 import mig.core.Door;
 import mig.core.Game;
-import mig.core.Player;
 import mig.core.Room;
 import mig.exceptions.ErrorObjectClosed;
 
+@SuppressWarnings("serial")
 public class DirectionPanel extends JPanel {
 	private JButton north , south, east , west , up_down;
 	private Game game;
 	private Window window;
 	private Door door;
+	private GiveKey keyGiven;
+
 
 	public DirectionPanel(Window window, Game game){
 		this.game =game;
@@ -134,28 +136,19 @@ public class DirectionPanel extends JPanel {
 	public void openDoor(Door door){
 		switch (door.getTypeLock()) {
 		case "Code":
-			JOptionPane jop = new JOptionPane(), jop2 = new JOptionPane();
-			String pass = jop.showInputDialog(null, "Give the password to go forward : ", "A password is needed", JOptionPane.QUESTION_MESSAGE);
+			
+			String pass = JOptionPane.showInputDialog(null, "Give the password to go forward : ", "A password is needed", JOptionPane.QUESTION_MESSAGE);
 			door.openDoor(pass);
 			try {
 				game.myPlayer.move(door.getNextRoom(game.myPlayer.getCurrentRoom()));
-				jop2.showMessageDialog(null, "Well Done you can go forward", "Good Password", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Well Done you can go forward", "Good Password", JOptionPane.INFORMATION_MESSAGE);
 				
 			} catch (Exception e1) {
-				jop2.showMessageDialog(null, "An Error Occured, Try again", "Wrong Password", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "An Error Occured, Try again", "Wrong Password", JOptionPane.INFORMATION_MESSAGE);
 			}
 			break;
 		case "Lock" :
-//			JOptionPane jop = new JOptionPane(), jop2 = new JOptionPane();
-//			String pass = jop.showInputDialog(null, "Give the password to go forward : ", "A password is needed", JOptionPane.QUESTION_MESSAGE);
-//			door.openDoor(pass);
-//			try {
-//				game.myPlayer.move(door.getNextRoom(game.myPlayer.getCurrentRoom()));
-//				jop2.showMessageDialog(null, "Well Done you can go forward", "Good Password", JOptionPane.INFORMATION_MESSAGE);
-//				
-//			} catch (Exception e1) {
-//				jop2.showMessageDialog(null, "An Error Occured, Try again", "Wrong Password", JOptionPane.INFORMATION_MESSAGE);
-//			}
+			keyGiven = new GiveKey(null, "Give a Key", "Select the Key that you want to give", game, window, door);
 			break;
 		default:
 			break;

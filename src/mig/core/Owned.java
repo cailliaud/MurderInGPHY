@@ -201,7 +201,7 @@ public class Owned {
 		throw new ErrorNameGiven();
 
 	}
-
+	
 
 	/**
 	 * Method to get an Information from the inventory
@@ -260,6 +260,15 @@ public class Owned {
 	public PhysicalObject getObject(int index){
 		return inventory.get(index);
 	}
+	
+	/**
+	 * 
+	 * @param name
+	 * @return
+	 */
+	public Key getKey(int  idx){
+		return bunch.get(idx);
+	}
 
 
 	public ArrayList<Information> getNotebook(){
@@ -284,4 +293,23 @@ public class Owned {
 		return str;
 	}
 
+	public String[] getBunchToString(){
+		String[] str = new String[getSize()];
+		int i =0;
+		for (Key key : bunch) {
+			str[i]=key.getName();
+			i++;
+		}
+		return str;
+	}
+	
+	public String[] getNotebookToString(){
+		String[] str = new String[getSize()];
+		int i =0;
+		for (Information info : notebook) {
+			str[i]=info.getName();
+			i++;
+		}
+		return str;
+	}
 }

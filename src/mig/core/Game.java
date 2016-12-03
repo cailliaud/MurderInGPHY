@@ -291,7 +291,7 @@ public class Game {
 		hall1RDC.addItem(scarf);
 		hall1RDC.addItem(bikeWheel);
 		hall1RDC.addItem(hotChocolate);
-
+		hall1RDC.addItem(keyTD2);
 		
 		try {
 			myPlayer.addItem(chineseChopsticks);

@@ -175,6 +175,7 @@ public class Window extends JPanel {
 		check.update();
 		letDown.update();
 		updateRoomImage();
+		directionPanel.updateAccess();
 
 	}
 	
