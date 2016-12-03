@@ -294,7 +294,7 @@ public class Owned {
 	}
 
 	public String[] getBunchToString(){
-		String[] str = new String[getSize()];
+		String[] str = new String[bunch.size()];
 		int i =0;
 		for (Key key : bunch) {
 			str[i]=key.getName();
@@ -304,7 +304,7 @@ public class Owned {
 	}
 	
 	public String[] getNotebookToString(){
-		String[] str = new String[getSize()];
+		String[] str = new String[notebook.size()];
 		int i =0;
 		for (Information info : notebook) {
 			str[i]=info.getName();

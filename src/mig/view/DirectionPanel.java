@@ -148,13 +148,12 @@ public class DirectionPanel extends JPanel {
 			}
 			break;
 		case "Lock" :
+			System.out.println("pouet");
 			if (game.myPlayer.getOwned().getBunch().size()>0){
 			keyGiven = new GiveKey(null, "Give a Key", "Select the Key that you want to give", game, window, door);}
 			else {
 				JOptionPane.showMessageDialog(null, "You have no key currently.", "Bunch Empty", JOptionPane.INFORMATION_MESSAGE);	
 			}
-			break;
-		default:
 			break;
 		}
 		
