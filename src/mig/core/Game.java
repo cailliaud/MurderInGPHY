@@ -303,14 +303,6 @@ public class Game {
 	    aegp.addItem(aegpRoomInfo);
 	    
 		
-		try {
-			myPlayer.addItem(chineseChopsticks);
-		} catch (InventoryFull e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
 		
 		
 	}
