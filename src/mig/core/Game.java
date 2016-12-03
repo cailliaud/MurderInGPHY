@@ -1,10 +1,9 @@
 package mig.core;
-import java.util.ArrayList;
 
-import mig.exceptions.ErrorObjectClosed;
+
 import mig.exceptions.GameOver;
 import mig.exceptions.InventoryFull;
-import mig.view.Window;
+
 
 /**
  * This class will be more detailed and implemented at the end

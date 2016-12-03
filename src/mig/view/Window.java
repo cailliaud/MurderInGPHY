@@ -1,20 +1,20 @@
 package mig.view;
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import mig.core.Game;
 
+@SuppressWarnings("serial")
 public class Window extends JPanel {
+
 
 	private JPanel screen = new JPanel();
 	private JLabel roomView ;

@@ -3,7 +3,6 @@ package mig.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.Point;
 
 import javax.swing.BorderFactory;
@@ -22,20 +21,17 @@ import mig.core.Item;
 import mig.core.PhysicalObject;
 import mig.exceptions.InventoryFull;
 
+@SuppressWarnings("serial")
 public class SelectItemRoom extends JDialog {
 	private JButton select, cancel;
 	private JPanel panItem;
 	private Item itemgot;
-	private JOptionPane jop ;
 	private Game game;
 	private JComboBox<String> items;
 	private Window window;
 	private String message;
 	private JLabel objectLabel = new JLabel(new ImageIcon ("resources/default_item.png"),JLabel.CENTER);
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
 
 	public SelectItemRoom(JFrame parent, String title, String message , Game game, Window window){
 		super(parent,title);
@@ -75,12 +71,11 @@ public class SelectItemRoom extends JDialog {
 				ae ->{
 					int itemIdx = (int)items.getSelectedIndex();
 					itemgot = game.myPlayer.getCurrentRoom().getItem(itemIdx);
-					jop= new JOptionPane();
 					try {
 						game.myPlayer.addItem(itemgot);
-						jop.showMessageDialog(null, "Item added in your Inventory", "You get : "+itemgot.getName(), JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Item added in your Inventory", "You get : "+itemgot.getName(), JOptionPane.INFORMATION_MESSAGE);
 					} catch (InventoryFull e) {
-						jop.showMessageDialog(null, "Inventory Fulled", "You are fulled, let down an item before to get it.", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Inventory Fulled", "You are fulled, let down an item before to get it.", JOptionPane.INFORMATION_MESSAGE);
 					}
 					
 					
