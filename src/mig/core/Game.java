@@ -125,7 +125,7 @@ public class Game {
 			"resources/plans/Etage_ENT1.JPG");
 	private Room ent1 = new Room("ENT1",
 			"This is the room ENT1",
-			"resources/rooms/ENT.JPG",
+			"resources/rooms/ENT1.JPG",
 			"resources/plans/Etage_ENT1.JPG");
 	private Room tp3 = new Room("TP3",
 			"This is the room TP3",
