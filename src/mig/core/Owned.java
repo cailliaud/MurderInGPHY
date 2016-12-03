@@ -274,5 +274,14 @@ public class Owned {
 		return this.inventory;
 	}
 
+	public String[] getInventoryToString(){
+		String[] str = new String[getSize()];
+		int i =0;
+		for (PhysicalObject object : inventory) {
+			str[i]=object.getName();
+			i++;
+		}
+		return str;
+	}
 
 }

@@ -92,19 +92,19 @@ public class Player extends Personage{
 	public String addItem(Item item) throws InventoryFull{	
 		if (item instanceof Information) {
 			owned.addInformation((Information) item);
-			currentRoom.removeItem(item);
+			currentRoom.removeItem((Item)item);
 			return ("the information called "+item.getName()+" has been added to your notebook.\n");
 			
 		} else if (item instanceof Key ){
 			owned.addKey((Key) item);
-			currentRoom.removeItem(item);
+			currentRoom.removeItem((Item)item);
 			return ("the key called "+item.getName()+" has been added to your bunch.\n");
 		}
 		else
 			if (owned.getSize()<inventorySize)
 			{
 			owned.addObject((PhysicalObject) item);
-			currentRoom.removeItem(item);
+			currentRoom.removeItem((Item)item);
 			return ("the Object called "+item.getName()+" has been added to your inventory.\n");
 			}
 			else {

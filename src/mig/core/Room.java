@@ -384,6 +384,7 @@ public class Room {
 		int i =0;
 		for (Item item : clues) {
 			str[i]=item.getName();
+			i++;
 		}
 		return str;
 	}

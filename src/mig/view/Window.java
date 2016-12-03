@@ -174,8 +174,8 @@ public class Window extends JPanel {
 		backPack.update();
 		check.update();
 		letDown.update();
-		
 		updateRoomImage();
+
 	}
 	
 

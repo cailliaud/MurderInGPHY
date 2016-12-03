@@ -1,24 +1,18 @@
 package mig.view;
 
-
-
-import java.util.Arrays;
-
 import javax.swing.JButton;
-
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-
-
 import mig.core.Game;
-import mig.core.PhysicalObject;
-
 
 
 public class LetDownButton extends JButton {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Window myWindow;
 	private Game game;
+	@SuppressWarnings("unused")
+	private SelectItemInventory letDownItem ;
 
 
 
@@ -38,24 +32,8 @@ public class LetDownButton extends JButton {
 
 
 
-	public void leaveItem(){
-		//game.myPlayer.getOwned().getSize()
-		//game.myPlayer.getOwned().getInventory()
-
-
-		String[] listObject = new String[game.myPlayer.getOwned().getSize()];
-		int i =0;
-		for (PhysicalObject object : game.myPlayer.getOwned().getInventory()) {
-			listObject[i]=object.getName();
-		}
-
-		JList list = new JList(listObject);
-		JOptionPane.showMessageDialog(
-				null, list, "Item that you want to remove !", JOptionPane.YES_NO_OPTION);
-
-		PhysicalObject object= game.myPlayer.getOwned().getObject(list.getSelectedIndex());
-		game.myPlayer.removePhysicalObject(object);
-		update();
+	private void leaveItem(){
+		letDownItem = new SelectItemInventory(null, "Let Down an item", "Item present currently in your inventory!", game, myWindow);
 		myWindow.update();
 	
 

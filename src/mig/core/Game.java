@@ -13,9 +13,6 @@ public class Game {
 
 	public Player myPlayer;
 	private NPC killer ;
-	private ArrayList<NPC> listPNJ;
-	private ArrayList<Item> listItems;
-	private ArrayList<Enigma> listEnigma;
 	private boolean gameWin = false;
 	
 	
@@ -220,7 +217,7 @@ public class Game {
 	 * Creation of all the objects of the game
 	 */
 	
-	private PhysicalObject pioche = new PhysicalObject("pioche", "une pioche violente");
+
 	private PhysicalObject laptopCharger = new PhysicalObject("laptopCharger", "Astemir's laptop charger", "resources/PhysicalObjects_Icon/Laptop_charger.PNG");
 	private PhysicalObject fourtyCents = new PhysicalObject("fourtyCents", "40 cents of euro", "resources/PhysicalObjects_Icon/40_euro_cents.PNG");
 	private PhysicalObject hotChocolate = new PhysicalObject("hotChocolate", "a cup of hot chocolate", "resources/PhysicalObjects_Icon/Hot_chocolate.PNG");
@@ -288,11 +285,28 @@ public class Game {
 			this.myPlayer= new Player(name, hall1RDC);
 			
 		}
-		listPNJ=new ArrayList<NPC>();
-		listItems= new ArrayList<Item>();
-		listEnigma =  new ArrayList<Enigma>();
-		
+		setDoor();
 
+		hall1RDC.addItem(annieInfo);
+		hall1RDC.addItem(fourtyCents);
+		hall1RDC.addItem(scarf);
+		hall1RDC.addItem(bikeWheel);
+		hall1RDC.addItem(hotChocolate);
+
+		
+		try {
+			myPlayer.addItem(chineseChopsticks);
+		} catch (InventoryFull e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
+	
+	private void setDoor(){
 		hall1RDC.addDoor("north", hall1RDC_corridor1RDC);
 		hall1RDC.addDoor("up", hall1RDC_hallFloor);
 		corridor1RDC.addDoor("east", annieDesk_corridor1RDC);
@@ -355,31 +369,7 @@ public class Game {
 		ent3.addDoor("east", ent3_corridor6Floor);
 		aegp.addDoor("south", aegp_corridor6Floor);
 		toilet.addDoor("west", toilet_corridor6Floor);
-		try {
-			myPlayer.addItem(pioche);
-		} catch (InventoryFull e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
-
-//	public void testGame(){
-//		Key key = new Key("Hall_Key");
-//		Lock lock = new Lock(key);
-//		lab = new Room("lab","le lab du B2","resources/lab.jpg","resources/plan_Lab.png");
-//		couloirHautHall = new Room( "Haut de l'escalier" ,
-//				"couloir en montant l'escalier à partir du hall",
-//				"resources/rooms/Haut_escalier_entreeB2.JPG",
-//				"resources/plan_Lab.png");
-//		hall_haut= new Door (code, hall,couloirHautHall );
-//		haut_lab = new Door (lock, couloirHautHall, lab);
-//		hall.addDoor("up", hall_haut);
-//		couloirHautHall.addDoor("down", hall_haut);
-//		couloirHautHall.addDoor("north", haut_lab);
-//		lab.addDoor("south", haut_lab);
-//		this.myPlayer.addItem(
-//				new PhysicalObject("café", "un café chaud", "resources/coffee-cup.png")
-//				);
 
 
 	public void setKiller(NPC thekiller){
@@ -388,44 +378,6 @@ public class Game {
 		}
 	}
 
-	public void speakPNJ(NPC npc){
-
-	}
-
-	public void resolveEnigma(NPC npc){
-
-	}
-
-	//	/**
-	//	 * Method to move in a direction
-	//	 * @param direction the direction taken
-	//	 * @return the statement of the action
-	//	 */
-	//	public String move(String direction){
-	//		Room currentRoom =myPlayer.getCurrentRoom();
-	//		if (currentRoom.exitsPossible(direction))
-	//		{
-	//			Door door =currentRoom.goInDirection(direction);
-	//			try {
-	//				myPlayer.move(door.getNextRoom(currentRoom));
-	//				return ("You are know in the "+myPlayer.getCurrentRoom().getName());
-	//			} catch (ErrorObjectClosed e) {
-	//				
-	//			}
-	//					
-	//		}else {
-	//			return ("There is no door in this direction");
-	//		}
-	//		
-	//	}
-
-	public void search(){
-
-	}
-
-
-
-
 	public NPC getKiller(){
 		return killer;
 	}
@@ -433,6 +385,7 @@ public class Game {
 	public boolean isWin(){
 		return gameWin;
 	}
+	
 	/**
 	 * Method to give the name of the killer and to try to win the game
 	 * @param name Name of the PNJ who is the killer
