@@ -56,7 +56,7 @@ public class Game {
 			"resources/rooms/SalleReunion.JPG",
 			"resources/plans/RDC_SalleReunion.JPG");
 	private Room cafet = new Room("Cafeteria room", 
-			"This is the room for the cafet", 
+			"This is the room for the cafeteria", 
 			"resources/rooms/Salle_cafet.JPG",
 			"resources/plans/RDC_SalleCafet.JPG");
 	private Room deskPgDom = new Room("PG and dominique desk");
@@ -286,12 +286,22 @@ public class Game {
 		}
 		setDoor();
 
-		hall1RDC.addItem(annieInfo);
-		hall1RDC.addItem(fourtyCents);
-		hall1RDC.addItem(scarf);
-		hall1RDC.addItem(bikeWheel);
-		hall1RDC.addItem(hotChocolate);
-		hall1RDC.addItem(keyTD2);
+		hall1RDC.addItem(woodenKey);
+		meeting.addItem(lighter);
+		meeting.addItem(ironKey);
+	    deskPgDom.addItem(pikachuCuddlyToy);
+	    deskAllan.addItem(coilOfWire);
+	    tp2.addItem(scarf);
+	    td2.addItem(tennisRacket);
+	    info1.addItem(laptopCharger);
+	    ent1.addItem(fourtyCents);
+	    ent1.addItem(hairpin);
+	    tp3.addItem(chineseChopsticks);
+	    ent3.addItem(sushi);
+	    toilet.addItem(toiletPaperRoll);
+	    toilet.addItem(aegpToiletInfo);
+	    aegp.addItem(aegpRoomInfo);
+	    
 		
 		try {
 			myPlayer.addItem(chineseChopsticks);
