@@ -232,7 +232,7 @@ public class Game {
 	private PhysicalObject pikachuCuddlyToy = new PhysicalObject("pikachuCuddlyToy", "a pikachu cuddly toy", "resources/PhysicalObjects_Icon/Pikachu_cuddly_toy.PNG");
 	private PhysicalObject scarf = new PhysicalObject("scarf", "a scarf", "resources/PhysicalObjects_Icon/Scarf.PNG");
 	private PhysicalObject chineseChopsticks = new PhysicalObject("chineseChopsticks", "a pair of chinese chopsticks", "resources/PhysicalObjects_Icon/Chinese_chopsticks.PNG");
-	
+	private PhysicalObject banknote = new PhysicalObject("banknote", "a simple banknote to pay something" , "resources/PhysicalObjects_Icon/banknote.PNG");
 	/**
 	 * Creation of all the information of the game
 	 */
@@ -351,7 +351,7 @@ public class Game {
 	private Enigma marinEnigma = new Enigma("You like Enigmas? Answer this one : "
 			+ "In which country there is the biggest amount of redhead people ?", 
 			"Scotland", 
-			"You find the right answer. And so  what ? You want a cookie ? Get out of here, I got nothing for you !", null);
+			"You find the right answer. And so  what ? You want a cookie ? Get out of here, I got nothing for you !", banknote);
 	
 	private Enigma antoineEnigma = new Enigma("So, do you learned you genetics lesson or you spend the whole night playing video games ? "
 			+ "What is the name of the sequencing technique using the luciferin as a substrate ?", 
@@ -367,6 +367,8 @@ public class Game {
 			+ "because he or she got the key to open the AEGP office. I heard him or her open it, "
 			+ "I was on the other side of the wall.", 
 			nicolasInfo);
+	
+	private Enigma gcelll2Enigma = new Enigma(" Leave me alone, I don’t have time for you, I have too much work to do.");
 	
 	/**
 	 * Creation of all the NPC of the game
@@ -386,7 +388,7 @@ public class Game {
 	private NPC agathe = new NPC("Agathe", agatheEnigma);
 	private NPC fabien = new NPC("Fabien", fabienEnigma);
 	private NPC gcell1 = new NPC("Gcell1", gcell1Enigma);
-	//private NPC gcell2 = new NPC("Gcell2", null);
+	private NPC gcell2 = new NPC("Gcell2", null);
 	private NPC marin = new NPC("Marin", marinEnigma);
 	private NPC antoine = new NPC("Antoine", antoineEnigma);
 	private NPC nicolas = new NPC("Nicolas", nicolasEnigma);
@@ -409,7 +411,7 @@ public class Game {
 		setDoor();
 		putItemsInRoom();
 		setKiller(babujhi);
-		hall1RDC.addPNJ(steve);
+		putNPCInRoom();
 		
 	    
 		
@@ -517,7 +519,7 @@ public class Game {
 		td3.addPNJ(fabien);
 		info1.addPNJ(marin);
 		ent1.addPNJ(gcell1);
-		//ent1.addPNJ(gcell2);
+		ent1.addPNJ(gcell2);
 		tp3.addPNJ(antoine);
 		ent3.addPNJ(nicolas);
 		
