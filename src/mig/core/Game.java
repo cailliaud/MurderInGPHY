@@ -2,7 +2,7 @@ package mig.core;
 
 
 import mig.exceptions.GameOver;
-import mig.exceptions.InventoryFull;
+
 
 
 /**
