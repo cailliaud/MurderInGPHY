@@ -153,8 +153,9 @@ public class Window extends JPanel {
 		gbc = new GridBagConstraints();
 		gbc.gridx = 0;
 		gbc.gridy = 9;
-		gbc.gridwidth = 4;
+		gbc.gridwidth = 6;
 		gbc.gridheight = 2;
+		gbc.fill = GridBagConstraints.BOTH;
 		screen.add(consoleArea,gbc);
 	    
 		
