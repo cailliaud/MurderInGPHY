@@ -174,6 +174,7 @@ public class Window extends JPanel {
 		backPack.update();
 		check.update();
 		letDown.update();
+		speak.update();
 		updateRoomImage();
 		directionPanel.updateAccess();
 

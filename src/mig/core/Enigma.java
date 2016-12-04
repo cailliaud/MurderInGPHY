@@ -146,7 +146,7 @@ public class Enigma {
 
 		// Security if the reward item given is null
 		if (reward==null) throw new NullPointerException();
-		this.answer= answer;
+		this.answer=answer;
 		this.reward=reward;
 		this.npcText=npctext;
 		this.itemWaited = false;
@@ -180,7 +180,7 @@ public class Enigma {
 	 */
 	public void resolveEnigma (String answer) throws FailedResolvEnigma,ErrorTypeAnswer{
 		if (!itemWaited){
-			if (answer==this.answer)
+			if (answer.equals(this.answer))
 			{
 				isResolved=true;
 

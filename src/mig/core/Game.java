@@ -233,12 +233,16 @@ public class Game {
 	private PhysicalObject scarf = new PhysicalObject("scarf", "a scarf", "resources/PhysicalObjects_Icon/Scarf.PNG");
 	private PhysicalObject chineseChopsticks = new PhysicalObject("chineseChopsticks", "a pair of chinese chopsticks", "resources/PhysicalObjects_Icon/Chinese_chopsticks.PNG");
 	
+	/**
+	 * 
+	 */
 	
+	private Enigma steveEnigma = new Enigma("Hey, do you want that i lend you money for a coffee ?","yes", "These 40 cents for you my bro", fourtyCents);
 	/**
 	 * Creation of all the NPC of the game
 	 */
 	
-	private NPC steve = new NPC("Steve", null);
+	private NPC steve = new NPC("Steve", steveEnigma);
 	private NPC babujhi = new NPC("Babujhi", null);
 	private NPC claire = new NPC("Delphine", null);
 	private NPC delphine = new NPC("Steve", null);
@@ -287,6 +291,7 @@ public class Game {
 		setDoor();
 		putItemsInRoom();
 		setKiller(babujhi);
+		hall1RDC.addPNJ(steve);
 		
 	    
 		

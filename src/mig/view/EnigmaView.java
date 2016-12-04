@@ -46,7 +46,7 @@ public class EnigmaView extends JDialog {
 		this.npc = npc;
 		this.enigma=npc.getEgnime();
 		this.game=game;
-		this.setSize(600, 400);
+		this.setSize(700, 400);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 
@@ -57,8 +57,7 @@ public class EnigmaView extends JDialog {
 	}
 
 	private void createEnigmaQuestion(){
-		JTextField rep;
-		
+
 		
 		// Asked enigma 
 		enigme = new JLabel(enigma.getQuest());
@@ -90,6 +89,9 @@ public class EnigmaView extends JDialog {
 		panItem.add(itemLabel);
 		panItem.add(items);
 		okItemBouton = new JButton("OK");
+		if (game.myPlayer.getOwned().getSize()==0){
+			okItemBouton.setEnabled(false);
+		}else okItemBouton.setEnabled(true);
 
 		//For informations
 		panInfo = new JPanel();
@@ -104,6 +106,9 @@ public class EnigmaView extends JDialog {
 		panInfo.add(infoLabel);
 		panInfo.add(infos);
 		okInfoBouton = new JButton("OK");
+		if (game.myPlayer.getOwned().getNotebook().isEmpty()){
+			okInfoBouton.setEnabled(false);
+		}else okInfoBouton.setEnabled(true);
 
 		//Creation of the panel with the 3 fields for the answer
 		content = new JPanel();
@@ -163,9 +168,11 @@ public class EnigmaView extends JDialog {
 		okTextBouton.addActionListener(
 				ae ->{
 					try {
-						enigma.resolveEnigma(rep.getText());
+						String answer = (String)rep.getText();
+						
+						enigma.resolveEnigma(answer);
 						Item reward= enigma.rewarded();
-						rewardManagement( reward);
+						rewardManagement(reward);
 						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
@@ -177,6 +184,7 @@ public class EnigmaView extends JDialog {
 					finally {
 					window.update();
 					this.dispose();
+				
 					}
 				}
 
@@ -187,6 +195,7 @@ public class EnigmaView extends JDialog {
 					try {
 						PhysicalObject object = game.myPlayer.getOwned().getObject(items.getSelectedIndex());
 						enigma.resolveEnigma((PhysicalObject)object);
+						game.myPlayer.getOwned().removeObject(object);
 						Item reward= enigma.rewarded();
 						rewardManagement(reward);
 						
@@ -199,6 +208,7 @@ public class EnigmaView extends JDialog {
 					}finally {
 						window.update();
 						this.dispose();
+					
 						}
 				}
 
@@ -221,6 +231,7 @@ public class EnigmaView extends JDialog {
 					}finally {
 						window.update();
 						this.dispose();
+					
 					}
 				}
 
@@ -240,17 +251,18 @@ public class EnigmaView extends JDialog {
 			message += "</br> "
 					+ "<p>You get : "+reward.getName()+"</p>"
 					+ "</html> ";
-			JOptionPane.showMessageDialog(null,"Item added in your Inventory",message , JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null,message,"Item added in your Inventory" , JOptionPane.INFORMATION_MESSAGE);
 		} catch (InventoryFull e) {
 			message += "</br> "
 					+"<p>You are fulled, the reward is let down !"
 					+ "</br> Check to find : "+reward.getName()+"</p>"
 					+ "</html> ";
-			JOptionPane.showMessageDialog(null, "Inventory Fulled",message , JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, message,"Inventory Fulled" , JOptionPane.ERROR_MESSAGE);
 			game.myPlayer.getCurrentRoom().addItem(reward);
 		}finally {
 			window.update();
 			this.dispose();
+
 		}
 	}
 	
