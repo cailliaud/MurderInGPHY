@@ -1,18 +1,12 @@
 package mig.view;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-
 import mig.core.Game;
-import mig.core.Room;
-import mig.core.Enigma;
-import mig.view.EnigmaView;
+
 
 public class SpeakButton extends JButton {
 	private Game game;
 	private Window window;
+	private SelectNPC selectNPC;
 	
 
 	public SpeakButton(Window window, Game game){
@@ -22,10 +16,8 @@ public class SpeakButton extends JButton {
 		update();
 			this.addActionListener(
 					ae->{
-						
-		    	  EnigmaView ev = new EnigmaView(null, "Enigma", true);
-		    	  Enigma answ = ev.EnigmaViewDialog(); 
-		    	  ev.dispose();
+						selectNPC = new SelectNPC(null, "Who do you want to speak with ?", "Select the person", game, window);
+//		    	 
 					}
 					);
 	}

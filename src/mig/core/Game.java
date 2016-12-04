@@ -145,7 +145,7 @@ public class Game {
 			"resources/plans/Etage_ToilettesHaut.JPG");
 	
 	/**
-	 * Creation of all the keys of the game
+	 * Creation of all the keys of the game with doors linked to these keys
 	 */
 	
 	private Key woodenKey = new Key("Key TD1");
@@ -285,22 +285,10 @@ public class Game {
 			
 		}
 		setDoor();
+		putItemsInRoom();
+		setKiller(babujhi);
 
-		hall1RDC.addItem(woodenKey);
-		meeting.addItem(lighter);
-		meeting.addItem(ironKey);
-	    deskPgDom.addItem(pikachuCuddlyToy);
-	    deskAllan.addItem(coilOfWire);
-	    tp2.addItem(scarf);
-	    td2.addItem(tennisRacket);
-	    info1.addItem(laptopCharger);
-	    ent1.addItem(fourtyCents);
-	    ent1.addItem(hairpin);
-	    tp3.addItem(chineseChopsticks);
-	    ent3.addItem(sushi);
-	    toilet.addItem(toiletPaperRoll);
-	    toilet.addItem(aegpToiletInfo);
-	    aegp.addItem(aegpRoomInfo);
+		
 	    
 		
 		
@@ -370,19 +358,55 @@ public class Game {
 		ent3.addDoor("east", ent3_corridor6Floor);
 		aegp.addDoor("south", aegp_corridor6Floor);
 		toilet.addDoor("west", toilet_corridor6Floor);
+		
+	}
+	
+	private void putItemsInRoom(){
+		hall1RDC.addItem(woodenKey);
+		meeting.addItem(lighter);
+		meeting.addItem(ironKey);
+	    deskPgDom.addItem(pikachuCuddlyToy);
+	    deskAllan.addItem(coilOfWire);
+	    tp2.addItem(scarf);
+	    td2.addItem(tennisRacket);
+	    info1.addItem(laptopCharger);
+	    ent1.addItem(fourtyCents);
+	    ent1.addItem(hairpin);
+	    tp3.addItem(chineseChopsticks);
+	    ent3.addItem(sushi);
+	    toilet.addItem(toiletPaperRoll);
+	    toilet.addItem(aegpToiletInfo);
+	    aegp.addItem(aegpRoomInfo);
+	}
+	
+	private void initEnigmas(){
+		
 	}
 
-
+	/**
+	 * Method to set the NPC who is the killer
+	 * The killer cannot be set more than one time
+	 * @param thekiller
+	 */
 	public void setKiller(NPC thekiller){
 		if (this.killer==null){
 			this.killer=thekiller;
 		}
 	}
 
+	/**
+	 * Accessor to get the killer
+	 * @return the Killer of the game
+	 * @see NPC
+	 */
 	public NPC getKiller(){
 		return killer;
 	}
 
+	/**
+	 * Accessor to get if the game is win or not
+	 * @return boolean True if win, and false if it is not
+	 */
 	public boolean isWin(){
 		return gameWin;
 	}

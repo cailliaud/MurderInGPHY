@@ -333,6 +333,10 @@ public class Room {
 	public Item getItem(int index){
 		return clues.get(index)  ;
 	}
+	
+	public NPC getNPC(int index){
+		return occupants.get(index);
+	}
 
 	/**
 	 * Method to get the door in the direction
@@ -380,12 +384,22 @@ public class Room {
 	}
 	
 	public String[] getlistOfItem(){
-		String[] str = new String[getNumberItem()];
+		String[] str = new String[clues.size()];
 		int i =0;
 		for (Item item : clues) {
 			str[i]=item.getName();
 			i++;
 		}
+		return str;
+	}
+	
+	public String[] getNameofOccupants(){
+		String[] str = new String[occupants.size()];
+		int i = 0 ;
+		for (NPC npc : occupants) {
+			str[i]=npc.getName();
+			i++;
+		} 
 		return str;
 	}
 }
