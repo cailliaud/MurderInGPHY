@@ -234,35 +234,6 @@ public class Game {
 	private PhysicalObject chineseChopsticks = new PhysicalObject("chineseChopsticks", "a pair of chinese chopsticks", "resources/PhysicalObjects_Icon/Chinese_chopsticks.PNG");
 	
 	/**
-	 * 
-	 */
-	
-	private Enigma steveEnigma = new Enigma("Hey, do you want that i lend you money for a coffee ?","yes", "These 40 cents for you my bro", fourtyCents);
-	/**
-	 * Creation of all the NPC of the game
-	 */
-	
-	private NPC steve = new NPC("Steve", steveEnigma);
-	private NPC babujhi = new NPC("Babujhi", null);
-	private NPC claire = new NPC("Delphine", null);
-	private NPC delphine = new NPC("Steve", null);
-	private NPC annie = new NPC("Annie", null);
-	private NPC patrick = new NPC("Patrick", null);
-	private NPC allan = new NPC("Allan", null);
-	private NPC chloe = new NPC("Chloé", null);
-	private NPC astemir = new NPC("Astemir", null);
-	private NPC simon = new NPC("Simon", null);
-	private NPC fp = new NPC("FP", null);
-	private NPC agathe = new NPC("Agathe", null);
-	private NPC fabien = new NPC("Fabien", null);
-	private NPC gcell1 = new NPC("Gcell1", null);
-	private NPC gcell2 = new NPC("Gcell2", null);
-	private NPC marin = new NPC("Marin", null);
-	private NPC antoine = new NPC("Antoine", null);
-	private NPC nicolas = new NPC("Nicolas", null);
-	
-	
-	/**
 	 * Creation of all the information of the game
 	 */
 	
@@ -273,6 +244,153 @@ public class Game {
 	private Information nicolasInfo = new Information("nicolas's Info", "The killer is from the AEGP.");
 	private Information aegpRoomInfo = new Information("aegpRoom 's Info", "The safe is open and empty.");
 	private Information aegpToiletInfo = new Information("aegpToilet's Info", "Blood stains in the sink.");
+	private Information chloeInfo = new Information("Chloe's Info", "password for TD3 room is the capital city of Australia");
+	private Information delphineInfo = new Information("Delphine's Info", "password for cours room is Pikachu");
+	
+	
+	/**
+	 * Creation of all the enigmas of the game
+	 */
+	
+	private Enigma steveEnigma = new Enigma("Hey ! You come late, there is no more coffee. "
+			+ "Do you want a hot chocolate instead ? it's 40 cents.", fourtyCents , 
+			"Take it. Beware it's hot", hotChocolate);
+	
+	private Enigma claireEnigma = new Enigma("Ah, i’m so tired, I worked until way too late at night yesterday. "
+			+ "Luckily, I got some brioche vendéenne with me! You want some? What? Alex, killed? "
+			+ "Oh, you almost got me. You make a good actor you know. But I think you shouldn’t joke with those kind of things. "
+			+ "You are really pale, take some to regain strength! If you want your reward, answer this question : "
+			+ "What is the best department in France ?", 
+			"Vendee", "You’re damn right! Take it. My pleasure", 
+			briocheVendeenne);
+	
+	private Enigma babujhiEnigma = new Enigma("It’s so sad what happened to Alexandre."
+			+ "I really want to help you to find the killer. Take that key if you answer my question correctly, "
+			+ "I don’t know what room it opens but I hope it will help you in your investigation."
+			+ "If you want your reward, answer this question : “What does GFP mean ?", 
+			"Green fluorescent protein", 
+			"Yeah man, that's right", 
+			silverKey);
+	
+	private Enigma delphineEnigma = new Enigma("Hello young detective, if you give me the good answer to this question, "
+			+ "then i will give you a clue. But be careful, for that you will have to get back to your L3 physiology courses"
+			+ "and the answer has to be in hexadecimal :  What is the first property of the cardiac function ?", 
+			"4175746f6d617469736d",
+			"Well done, you are a true physiologist", delphineInfo);
+	
+	private Enigma annieEnigma = new Enigma("Hello, you came for a clue i guess ? Well ok, but i don’t give it that easily !"
+			+ "Here is my question : From which historical character comes from the first computer language you learned in L3 ?", 
+			"Ada lovelace", "GOOOOOOD !!! I know who is the killer but I am too scared to tell anything."
+			+ "The only clue i can give you is that there is only one killer and I spread 8 clues hidden "
+			+ "in 8 different rooms.You will have to discover them all and gather them for a vital clue.", 
+			annieInfo);
+	
+	private Enigma patrickEnigma = new Enigma("So you are attempting to find the coward that killed Alexandre? "
+			+ "Of course I can help you but can you help me before? I got that dawn riddle a former GPhy sent me this morning. "
+			+ "If I don’t find the solution quickly, he will begin to taunt me : "
+			+ "I am an Indian Ocean island,"
+			+ "Bali nearly touches my sand."
+			+ "I house the Indonesian capital city,"
+			+ "What is the name Ramayana gave me?", 
+			"Java", "Hum you find the answer, good", 
+			patrickInfo);
+	
+	private Enigma allanEnigma = new Enigma("Brrr ! It’s so cold outside ! I wish I have something to warm me up ! "
+			+ "Do you have something for me ?", 
+			hotChocolate, 
+			"Oooh thank you so much! Well, Annie told me you try to find who killed Alexandre. "
+			+ "I don’t know if it will help you but take this. Good luck.", keyTD4);
+	
+	private Enigma chloeEnigma = new Enigma("Ahh I’m so hungry !!! Wouldn’t you have something to eat by any chance ???" ,
+			briocheVendeenne, "ALLLLL RIIIIIGHT !!! Thank you so much! Well, what can I give you in exchange? "
+			+ "Oh, I know! Do you  know how to open the TD3 room door? "
+			+ "You can open it with a password which is the capital city of Australia. Be sure to write it well.", 
+			chloeInfo);
+	
+	private Enigma astemirEnigma = new Enigma("Hey ! Damn I have to work with Simon on his computer because i’m running out of battery. "
+			+ "I wish i could recharge my laptop.", 
+			laptopCharger, 
+			"Thanks. You know I’m a bit sad : There was a meeting of the office of the AEGP yesterday afternoon and the atmosphere was tense…", 
+			astemirInfo);
+	
+	private Enigma simonEnigma = new Enigma("Hey you ! How’s it going ? For me, it could be better. As you can see, "
+			+ "I broke my leg and lost my tennis racket. I know it’s a GPhy student who brought it back in the B2 "
+			+ "but i don’t know where and I don’t want to move. Can you find it for me please ?", 
+			tennisRacket, 
+			"Oh great! I was afraid it was lost. Thank you very much! Take that key.", 
+			copperKey);
+	
+	private Enigma agatheEnigma = new Enigma("Hey there ! How’s it going ? I’m so hungryyy ! I could eat a whole cow ! "
+			+ "I know you are looking for Alex’s killer. It happened that I got a key for you even if I have no freaking idea which door it open. "
+			+ "Just answer this question : Tell me what you can bought at the cafeteria and have a female name?", 
+			"Amandine", 
+			"That’s right! The key is yours.", 
+			longKey);
+	
+	private Enigma fpEnigma = new Enigma("AAAaaaah, I can’t wait for the holidays ! I want to travel, it’s been a long time. "
+			+ "So, now i’m a student again, i won’t go that far.  I need to choose a place in France to stay. "
+			+ "By the way, do you know with which country the France has its longest border ? You will earn TD 2 key so think well.", 
+			"Brasil", 
+			"That’s Correct. Never forget the overseas bro! Take the key. I hope that you will find what you are looking for", 
+			keyTD2);
+	
+	private Enigma fabienEnigma = new Enigma("Hey you, are you going round and round in circles to find the killer ? "
+			+ "Well it turns out that I have an object for you if you answer correctly to this question. "
+			+ "How many gold coins I found during my treasure hunt with my fellow friend Steve ?", 
+			"0", 
+			"Yes… zero… What a shame… Anyway, you answered well so take the item.", 
+			bikeWheel);
+	
+	private Enigma gcell1Enigma = new Enigma("Oh my god I’m so stressed! Will I find a job after my master's degree ?", 
+			"No", 
+			"There is no need to rub salt in the wound! Take that soup carton and leave! I can’t eat one more of this.", 
+			cartonOfSoup);
+	
+	//private Enigma gcell2Enigma = new Enigma("Leave me alone, I don’t have time for you, I have too much work to do.", null, null, null);
+	
+	private Enigma marinEnigma = new Enigma("You like Enigmas? Answer this one : "
+			+ "In which country there is the biggest amount of redhead people ?", 
+			"Scotland", 
+			"You find the right answer. And so  what ? You want a cookie ? Get out of here, I got nothing for you !", null);
+	
+	private Enigma antoineEnigma = new Enigma("So, do you learned you genetics lesson or you spend the whole night playing video games ? "
+			+ "What is the name of the sequencing technique using the luciferin as a substrate ?", 
+			"Pyrosequencing", 
+			"The killer is not a girl of the AEGP office, because I was with Claire and caroline working on the annual project the night of the murder.", 
+			antoineInfo);
+	
+	private Enigma nicolasEnigma = new Enigma("I hope you learned your GB lessons ! "
+			+ "What is the radioactive transformation allowing an excited nucleus to go to a weaker energy level "
+			+ "or to join its fundamental state by transferring its excess of energy to an electron ?", 
+			"Internal conversion", "Wow! To be honest, I did not expect you to answer that. "
+			+ "Well, I did not see the killer but he or she is necessarily someone from AEGP "
+			+ "because he or she got the key to open the AEGP office. I heard him or her open it, "
+			+ "I was on the other side of the wall.", 
+			nicolasInfo);
+	
+	/**
+	 * Creation of all the NPC of the game
+	 */
+	
+	private NPC steve = new NPC("Steve", steveEnigma);
+	private NPC babujhi = new NPC("Babujhi", babujhiEnigma);
+	private NPC claire = new NPC("Claire", claireEnigma);
+	private NPC delphine = new NPC("Delphine", delphineEnigma);
+	private NPC annie = new NPC("Annie", annieEnigma);
+	private NPC patrick = new NPC("Patrick", patrickEnigma);
+	private NPC allan = new NPC("Allan", allanEnigma);
+	private NPC chloe = new NPC("Chloé", chloeEnigma);
+	private NPC astemir = new NPC("Astemir", astemirEnigma);
+	private NPC simon = new NPC("Simon", simonEnigma);
+	private NPC fp = new NPC("FP", fpEnigma);
+	private NPC agathe = new NPC("Agathe", agatheEnigma);
+	private NPC fabien = new NPC("Fabien", fabienEnigma);
+	private NPC gcell1 = new NPC("Gcell1", gcell1Enigma);
+	//private NPC gcell2 = new NPC("Gcell2", null);
+	private NPC marin = new NPC("Marin", marinEnigma);
+	private NPC antoine = new NPC("Antoine", antoineEnigma);
+	private NPC nicolas = new NPC("Nicolas", nicolasEnigma);
+	
 	
 	
 	
@@ -381,6 +499,28 @@ public class Game {
 	    toilet.addItem(toiletPaperRoll);
 	    toilet.addItem(aegpToiletInfo);
 	    aegp.addItem(aegpRoomInfo);
+	}
+	
+	
+	private void putNPCInRoom(){
+		hall1RDC.addPNJ(steve);
+		hall1RDC.addPNJ(claire);
+		hall1RDC.addPNJ(babujhi);
+		td1.addPNJ(delphine);
+		deskAnnie.addPNJ(annie);
+		deskPgDom.addPNJ(patrick);
+		deskAllan.addPNJ(allan);
+		tp1.addPNJ(simon);
+		tp1.addPNJ(astemir);
+		classroom.addPNJ(fp);
+		tp2.addPNJ(agathe);
+		td3.addPNJ(fabien);
+		info1.addPNJ(marin);
+		ent1.addPNJ(gcell1);
+		//ent1.addPNJ(gcell2);
+		tp3.addPNJ(antoine);
+		ent3.addPNJ(nicolas);
+		
 	}
 	
 	private void initEnigmas(){
