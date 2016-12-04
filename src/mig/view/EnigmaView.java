@@ -165,14 +165,7 @@ public class EnigmaView extends JDialog {
 					try {
 						enigma.resolveEnigma(rep.getText());
 						Item reward= enigma.rewarded();
-						try {
-							game.myPlayer.addItem(reward);
-							JOptionPane.showMessageDialog(null, "Item added in your Inventory", "You get : "+reward.getName(), JOptionPane.INFORMATION_MESSAGE);
-						} catch (InventoryFull e) {
-							JOptionPane.showMessageDialog(null, "Inventory Fulled", "You are fulled, let down an item before to get it.", JOptionPane.INFORMATION_MESSAGE);
-						}finally {
-							window.update();
-						}
+						rewardManagement( reward);
 						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
@@ -183,6 +176,7 @@ public class EnigmaView extends JDialog {
 					}
 					finally {
 					window.update();
+					this.dispose();
 					}
 				}
 
@@ -194,14 +188,7 @@ public class EnigmaView extends JDialog {
 						PhysicalObject object = game.myPlayer.getOwned().getObject(items.getSelectedIndex());
 						enigma.resolveEnigma((PhysicalObject)object);
 						Item reward= enigma.rewarded();
-						try {
-							game.myPlayer.addItem(reward);
-							JOptionPane.showMessageDialog(null, "Item added in your Inventory", "You get : "+reward.getName(), JOptionPane.INFORMATION_MESSAGE);
-						} catch (InventoryFull e) {
-							JOptionPane.showMessageDialog(null, "Inventory Fulled", "You are fulled, let down an item before to get it.", JOptionPane.INFORMATION_MESSAGE);
-						}finally {
-							window.update();
-						}
+						rewardManagement(reward);
 						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
@@ -211,6 +198,7 @@ public class EnigmaView extends JDialog {
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}finally {
 						window.update();
+						this.dispose();
 						}
 				}
 
@@ -222,14 +210,7 @@ public class EnigmaView extends JDialog {
 						Information object = game.myPlayer.getOwned().getInfo(items.getSelectedIndex());
 						enigma.resolveEnigma((Information)object);
 						Item reward= enigma.rewarded();
-						try {
-							game.myPlayer.addItem(reward);
-							JOptionPane.showMessageDialog(null, "Item added in your Inventory", "You get : "+reward.getName(), JOptionPane.INFORMATION_MESSAGE);
-						} catch (InventoryFull e) {
-							JOptionPane.showMessageDialog(null, "Inventory Fulled", "You are fulled, let down an item before to get it.", JOptionPane.INFORMATION_MESSAGE);
-						}finally {
-							window.update();
-						}
+						rewardManagement( reward);
 						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
@@ -239,10 +220,38 @@ public class EnigmaView extends JDialog {
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}finally {
 						window.update();
-						}
+						this.dispose();
+					}
 				}
 
 				);
+	}
+	
+	private void rewardManagement(Item reward){
+		String message;
+		try {
+			message="<html><h1>Well Done !</h1> <p> "+this.enigma.getNpcText()+"</p>";
+		} catch (FailedResolvEnigma e1) {
+			// TODO Auto-generated catch block
+			message="<html><h1>Well Done !</h1>";
+		}
+		try {
+			game.myPlayer.addItem(reward);
+			message += "</br> "
+					+ "<p>You get : "+reward.getName()+"</p>"
+					+ "</html> ";
+			JOptionPane.showMessageDialog(null,"Item added in your Inventory",message , JOptionPane.INFORMATION_MESSAGE);
+		} catch (InventoryFull e) {
+			message += "</br> "
+					+"<p>You are fulled, the reward is let down !"
+					+ "</br> Check to find : "+reward.getName()+"</p>"
+					+ "</html> ";
+			JOptionPane.showMessageDialog(null, "Inventory Fulled",message , JOptionPane.ERROR_MESSAGE);
+			game.myPlayer.getCurrentRoom().addItem(reward);
+		}finally {
+			window.update();
+			this.dispose();
+		}
 	}
 	
 
