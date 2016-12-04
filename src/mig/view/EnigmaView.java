@@ -15,7 +15,13 @@ import javax.swing.JTextField;
 
 import mig.core.Enigma;
 import mig.core.Game;
+import mig.core.Information;
+import mig.core.Item;
 import mig.core.NPC;
+import mig.core.PhysicalObject;
+import mig.exceptions.ErrorTypeAnswer;
+import mig.exceptions.FailedResolvEnigma;
+import mig.exceptions.InventoryFull;
 
 import javax.swing.JOptionPane;
 
@@ -26,7 +32,12 @@ public class EnigmaView extends JDialog {
 	private NPC npc;
 	private Game game;
 	private Window window;
-
+	private JButton okInfoBouton,okTextBouton, okItemBouton;
+	private JPanel panTextAnsw, panItem , panInfo, content;
+	private JTextField rep;
+	private JLabel enigme,nomLabel,itemLabel, infoLabel;
+	private Font font;
+	private JComboBox<String> items, infos ;
 
 
 	public EnigmaView(JFrame parent, String title, Game game, NPC npc, Window window){
@@ -41,32 +52,33 @@ public class EnigmaView extends JDialog {
 
 	
 		this.createEnigmaQuestion();
+		this.addActions();
 		this.setVisible(true);
 	}
 
 	private void createEnigmaQuestion(){
 		JTextField rep;
-		JComboBox<String> items, infos;
+		
 		
 		// Asked enigma 
-		JLabel enigme = new JLabel(enigma.getQuest());
-		Font font = new Font ("Arial", Font.BOLD, 25);
+		enigme = new JLabel(enigma.getQuest());
+		font = new Font ("Arial", Font.BOLD, 25);
 		enigme.setFont(font);
 
 		//text answer
-		JPanel panTextAnsw = new JPanel();
+		panTextAnsw = new JPanel();
 		panTextAnsw.setBackground(Color.white);
 		panTextAnsw.setPreferredSize(new Dimension(220, 80));
 		rep = new JTextField();
 		rep.setPreferredSize(new Dimension(100, 25));
 		panTextAnsw.setBorder(BorderFactory.createTitledBorder("Enter a text answer"));
-		JLabel nomLabel = new JLabel("Enter a text answer : ");
+		nomLabel = new JLabel("Enter a text answer : ");
 		panTextAnsw.add(nomLabel);
 		panTextAnsw.add(rep);
-		JButton okTextBouton = new JButton("OK");
+		okTextBouton = new JButton("OK");
 
 		//For an item
-		JPanel panItem = new JPanel();
+		panItem = new JPanel();
 		panItem.setBackground(Color.white);
 		panItem.setPreferredSize(new Dimension(220, 80));
 		panItem.setBorder(BorderFactory.createTitledBorder("Choose an item to answer: "));
@@ -74,13 +86,13 @@ public class EnigmaView extends JDialog {
 		for (String itemName : game.myPlayer.getOwned().getInventoryToString()) {
 			items.addItem(itemName);
 		}
-		JLabel itemLabel = new JLabel("Item Choosen: ");
+		itemLabel = new JLabel("Item Choosen: ");
 		panItem.add(itemLabel);
 		panItem.add(items);
-		JButton okItemBouton = new JButton("OK");
+		okItemBouton = new JButton("OK");
 
 		//For informations
-		JPanel panInfo = new JPanel();
+		panInfo = new JPanel();
 		panInfo.setBackground(Color.white);
 		panInfo.setPreferredSize(new Dimension(220, 80));
 		panInfo.setBorder(BorderFactory.createTitledBorder("Choisir une Information"));
@@ -88,13 +100,13 @@ public class EnigmaView extends JDialog {
 		for (String info : game.myPlayer.getOwned().getNotebookToString()) {
 			infos.addItem(info);
 		}
-		JLabel infoLabel = new JLabel("Information choosen : ");
+		infoLabel = new JLabel("Information choosen : ");
 		panInfo.add(infoLabel);
 		panInfo.add(infos);
-		JButton okInfoBouton = new JButton("OK");
+		okInfoBouton = new JButton("OK");
 
 		//Creation of the panel with the 3 fields for the answer
-		JPanel content = new JPanel();
+		content = new JPanel();
 		content.setBackground(Color.white);
 		content.add(enigme); 
 
@@ -142,46 +154,96 @@ public class EnigmaView extends JDialog {
 		content.add(p6, BorderLayout.CENTER);
 
 
+		
+
+		this.getContentPane().add(content, BorderLayout.CENTER);
+	} 
+	
+	private void addActions(){
 		okTextBouton.addActionListener(
 				ae ->{
-					if(rep.getText().equals("Vendée")){
-						JOptionPane.showMessageDialog(null, "Good Job ! Take it, it is for you : " , "Well done" , JOptionPane.INFORMATION_MESSAGE);
-						this.dispose();
+					try {
+						enigma.resolveEnigma(rep.getText());
+						Item reward= enigma.rewarded();
+						try {
+							game.myPlayer.addItem(reward);
+							JOptionPane.showMessageDialog(null, "Item added in your Inventory", "You get : "+reward.getName(), JOptionPane.INFORMATION_MESSAGE);
+						} catch (InventoryFull e) {
+							JOptionPane.showMessageDialog(null, "Inventory Fulled", "You are fulled, let down an item before to get it.", JOptionPane.INFORMATION_MESSAGE);
+						}finally {
+							window.update();
+						}
+						
+					} catch (FailedResolvEnigma e) {
+						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
-					else{
-						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, try again ! ", "Sorry" , JOptionPane.INFORMATION_MESSAGE);
+					catch (ErrorTypeAnswer e){
+						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
+					}
+					finally {
+					window.update();
 					}
 				}
 
 				);
 
 		okItemBouton.addActionListener(
-				ae-> {   
-					if(items.getSelectedItem().equals("Brioche")){
-						JOptionPane.showMessageDialog(null, "Good Job ! Take it, it is for you : ", "Well done" , JOptionPane.INFORMATION_MESSAGE);
-						this.dispose();
+				ae ->{
+					try {
+						PhysicalObject object = game.myPlayer.getOwned().getObject(items.getSelectedIndex());
+						enigma.resolveEnigma((PhysicalObject)object);
+						Item reward= enigma.rewarded();
+						try {
+							game.myPlayer.addItem(reward);
+							JOptionPane.showMessageDialog(null, "Item added in your Inventory", "You get : "+reward.getName(), JOptionPane.INFORMATION_MESSAGE);
+						} catch (InventoryFull e) {
+							JOptionPane.showMessageDialog(null, "Inventory Fulled", "You are fulled, let down an item before to get it.", JOptionPane.INFORMATION_MESSAGE);
+						}finally {
+							window.update();
+						}
+						
+					} catch (FailedResolvEnigma e) {
+						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
-					else{
-						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, try again ! ", "Sorry" , JOptionPane.INFORMATION_MESSAGE);
-					}
+					catch (ErrorTypeAnswer e){
+						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
+					}finally {
+						window.update();
+						}
 				}
+
 				);
 
 		okInfoBouton.addActionListener(
-				ae-> {    
-					if(infos.getSelectedItem().equals("La Bruffière")){
-						JOptionPane.showMessageDialog(null, "Good Job ! Take it, it is for you : ", "Well done" , JOptionPane.INFORMATION_MESSAGE);
-						this.dispose();
+				ae ->{
+					try {
+						Information object = game.myPlayer.getOwned().getInfo(items.getSelectedIndex());
+						enigma.resolveEnigma((Information)object);
+						Item reward= enigma.rewarded();
+						try {
+							game.myPlayer.addItem(reward);
+							JOptionPane.showMessageDialog(null, "Item added in your Inventory", "You get : "+reward.getName(), JOptionPane.INFORMATION_MESSAGE);
+						} catch (InventoryFull e) {
+							JOptionPane.showMessageDialog(null, "Inventory Fulled", "You are fulled, let down an item before to get it.", JOptionPane.INFORMATION_MESSAGE);
+						}finally {
+							window.update();
+						}
+						
+					} catch (FailedResolvEnigma e) {
+						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
-					else{
-						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, try again ! ", "Sorry" , JOptionPane.INFORMATION_MESSAGE);
-					}
+					catch (ErrorTypeAnswer e){
+						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
+					}finally {
+						window.update();
+						}
 				}
 
 				);
-
-		this.getContentPane().add(content, BorderLayout.CENTER);
-	} 
+	}
 	
 
 	

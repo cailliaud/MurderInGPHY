@@ -10,8 +10,9 @@ import mig.core.Information;
 import mig.core.Item;
 import mig.core.Key;
 import mig.core.PhysicalObject;
+import mig.exceptions.ErrorTypeAnswer;
 import mig.exceptions.FailedResolvEnigma;
-import mig.exceptions.NullQuestionException;
+
 
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -55,9 +56,9 @@ public class EnigmaTest {
 	public ExpectedException thrown = ExpectedException.none();
 	@Test 
 	public void create_Enigma_with_Null_ItemReward() 
-			throws NullPointerException,NullQuestionException{
+			throws NullPointerException{
 		thrown.expect(NullPointerException.class);
-		enigma = new Enigma("la quête ?",item, key);
+		enigma = new Enigma("la quête ?",item,"coucou", key);
 	
 	}
 	
@@ -66,22 +67,12 @@ public class EnigmaTest {
 	 * @throws NullQuestionException return a message if the question is null
 	 */
 	@Test
-	public void createGoodEnigma() 
-			throws NullQuestionException{
-		enigma = new Enigma("la quête ?",info, key);
+	public void createGoodEnigma(){
+		enigma = new Enigma("la quête ?",info,"coucou", key);
 	
 	}
 	
-	/**
-	 * This test create an enigma with an Item and without a question
-	 * @throws NullQuestionException return a message if the question is null
-	 */
-	@Test 
-	public void create_Enigma_withItem_withoutQuestion() 
-			throws NullQuestionException{
-		thrown.expect(NullQuestionException.class);
-		enigma = new Enigma("",info,key);
-	}
+
 	
 
 	/**
@@ -91,11 +82,10 @@ public class EnigmaTest {
 	 */
 	@Test
 	public void solveEnigma() 
-			throws NullQuestionException, FailedResolvEnigma{
-		Item reward;
-		enigma = new Enigma ("Quelle salle est incroyable ?", info , key);
+			throws FailedResolvEnigma{
+		enigma = new Enigma ("Quelle salle est incroyable ?", info ,"coucou", key);
 		try {
-			reward= enigma.resolveEnigma(info);
+			enigma.resolveEnigma(info);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -106,29 +96,29 @@ public class EnigmaTest {
 	 * This test looked if it is possible to resolved an enigma with a bad answer
 	 * @throws NullQuestionException return a message if the question is null
 	 * @throws FailedResolvEnigma return a message if the enigma is not resolved
+	 * @throws ErrorTypeAnswer 
 	 */
 	@Test
 	public void badAnswerToResolveEnigma() 
-			throws NullQuestionException, FailedResolvEnigma{
-		Item reward;
-		enigma = new Enigma ("Quelle salle est incroyable ?", info , key);
+			throws FailedResolvEnigma, ErrorTypeAnswer{
+		enigma = new Enigma ("Quelle salle est incroyable ?", info ,"coucou", key);
 		thrown.expect(FailedResolvEnigma.class);
-		reward= enigma.resolveEnigma(object);
+		enigma.resolveEnigma(object);
 
 	}
 	
 	/**
 	 * This test looked if it is possible to resolved an enigma with an Item and a given  String
-	 * @throws NullQuestionException return a message if the question is null
-	 * @throws FailedResolvEnigma return a message if the enigma is not resolved
+	 * @throws ErrorTypeAnswer return a message if the enigma is not resolved
+	 * @throws FailedResolvEnigma 
 	 */
 	@Test
 	public void solveEnigmawithItem_GivingString()
-			throws NullQuestionException, FailedResolvEnigma{
+			throws ErrorTypeAnswer, FailedResolvEnigma {
 		Item reward;
-		enigma = new Enigma ("Quelle salle est incroyable ?", info , key);
-		thrown.expect(FailedResolvEnigma.class);
-		reward= enigma.resolveEnigma("Elle contient un mystère.");
+		enigma = new Enigma ("Quelle salle est incroyable ?", info ,"coucou", key);
+		thrown.expect(ErrorTypeAnswer.class);
+		enigma.resolveEnigma("Elle contient un mystère.");
 	}
 	
 	/**
@@ -138,11 +128,10 @@ public class EnigmaTest {
 	 */
 	@Test
 	public void solveEnigmawithString_GivingItem()
-			throws NullQuestionException, FailedResolvEnigma{
-		Item reward;
-		enigma = new Enigma ("Quelle salle est incroyable ?", "Elle contient un mystère." , key);
-		thrown.expect(FailedResolvEnigma.class);
-		reward= enigma.resolveEnigma(info);
+			throws  ErrorTypeAnswer,FailedResolvEnigma{
+		enigma = new Enigma ("Quelle salle est incroyable ?", "Elle contient un mystère." ,"coucou", key);
+		thrown.expect(ErrorTypeAnswer.class);
+		enigma.resolveEnigma(info);
 	}
 	
 }

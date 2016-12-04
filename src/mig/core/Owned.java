@@ -261,6 +261,10 @@ public class Owned {
 		return inventory.get(index);
 	}
 	
+	public Information getInfo(int index){
+		return notebook.get(index);
+	}
+	
 	/**
 	 * 
 	 * @param name
