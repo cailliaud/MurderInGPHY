@@ -163,18 +163,18 @@ public class Game {
 	private Key ironKey = new Key("Key ENT1");
 	private Lock lockENT1 = new Lock(ironKey);
 	private Door ent1_corridor4 = new Door(lockENT1, ent1, corridor4Floor);
+
 	
-	private Key keyTD3 = new Key("Key TD3");  //salle TD3 c'est un password
-	private Lock lockTD3 = new Lock(keyTD3);
-	private Door td3_corridor3 = new Door(lockTD3, td3, corridor3Floor);
+	private Code codeTD3 = new Code ("Canberra");
+	private Door td3_corridor3 = new Door(codeTD3, td3, corridor3Floor);
 	
 	private Key keyTD2 = new Key("Key TD2");
 	private Lock lockTD2 = new Lock(keyTD2);
 	private Door td2_corridor2 = new Door(lockTD2, td2, corridor2Floor);
 	
-	private Key keyCours = new Key("Key Cours"); //salle cours c'est un password
-	private Lock lockCours = new Lock(keyCours);
-	private Door Cours_corridor1 = new Door(lockCours, classroom, corridor1Floor);
+
+	private Code codeCours = new Code ("Pikachu");
+	private Door Cours_corridor1 = new Door(codeCours, classroom, corridor1Floor);
 	
 	private Key longKey = new Key("Key info 1");
 	private Lock lockInfo1 = new Lock(longKey);
