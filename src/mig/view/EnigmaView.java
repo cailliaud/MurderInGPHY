@@ -58,10 +58,10 @@ public class EnigmaView extends JDialog {
 
 	private void createEnigmaQuestion(){
 
-		
+		this.setLayout( new GridLayout(0, 1));
 		// Asked enigma 
-		enigme = new JLabel(enigma.getQuest());
-		font = new Font ("Arial", Font.BOLD, 25);
+		enigme = new JLabel("<html>"+enigma.getQuest()+"<html>");
+		font = new Font ("Arial", Font.BOLD,15);
 		enigme.setFont(font);
 
 		//text answer
@@ -157,11 +157,11 @@ public class EnigmaView extends JDialog {
 
 		content.add(p2, BorderLayout.CENTER);
 		content.add(p6, BorderLayout.CENTER);
-
+		this.add(content);
 
 		
 
-		this.getContentPane().add(content, BorderLayout.CENTER);
+		//this.getContentPane().add(content, BorderLayout.CENTER);
 	} 
 	
 	private void addActions(){
