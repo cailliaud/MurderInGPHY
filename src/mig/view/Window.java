@@ -178,6 +178,8 @@ public class Window extends JPanel {
 		speak.update();
 		updateRoomImage();
 		directionPanel.updateAccess();
+		denounce.update();
+		consoleArea.update();
 
 	}
 	

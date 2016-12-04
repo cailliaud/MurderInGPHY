@@ -25,6 +25,7 @@ public class DenounceButton extends JButton {
 		message2.setFont(new Font("Calibri",Font.BOLD,25));
 		this.setText("Denounce");
 		this.game=game;
+		update();
 		this.addActionListener(
 				ae -> {
 					JOptionPane den = new JOptionPane(), den2 = new JOptionPane();
@@ -44,5 +45,13 @@ public class DenounceButton extends JButton {
 				}
 				);
 
+	}
+	public void update(){
+
+		if (game.myPlayer.getOwned().getNotebook().size()>=5){
+			this.setEnabled(true);
+		}
+		else this.setEnabled(false);
+		this.repaint();
 	}
 }

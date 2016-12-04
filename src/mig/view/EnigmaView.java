@@ -50,7 +50,7 @@ public class EnigmaView extends JDialog {
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 
-	
+
 		this.createEnigmaQuestion();
 		this.addActions();
 		this.setVisible(true);
@@ -60,9 +60,10 @@ public class EnigmaView extends JDialog {
 
 		this.setLayout( new GridLayout(0, 1));
 		// Asked enigma 
-		enigme = new JLabel("<html>"+enigma.getQuest()+"<html>");
-		font = new Font ("Arial", Font.BOLD,15);
-		enigme.setFont(font);
+		String str = "<html> "+enigma.getQuest()+" </html>";
+		enigme = new JLabel(str);
+		//		font = new Font ("Arial", Font.BOLD,11);
+		//		enigme.setFont(font);
 
 		//text answer
 		panTextAnsw = new JPanel();
@@ -159,21 +160,21 @@ public class EnigmaView extends JDialog {
 		content.add(p6, BorderLayout.CENTER);
 		this.add(content);
 
-		
+
 
 		//this.getContentPane().add(content, BorderLayout.CENTER);
 	} 
-	
+
 	private void addActions(){
 		okTextBouton.addActionListener(
 				ae ->{
 					try {
 						String answer = (String)rep.getText();
-						
+
 						enigma.resolveEnigma(answer);
 						Item reward= enigma.rewarded();
 						rewardManagement(reward);
-						
+
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
@@ -182,9 +183,9 @@ public class EnigmaView extends JDialog {
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
 					finally {
-					window.update();
-					this.dispose();
-				
+						window.update();
+						this.dispose();
+
 					}
 				}
 
@@ -198,7 +199,7 @@ public class EnigmaView extends JDialog {
 						game.myPlayer.getOwned().removeObject(object);
 						Item reward= enigma.rewarded();
 						rewardManagement(reward);
-						
+
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
@@ -208,8 +209,8 @@ public class EnigmaView extends JDialog {
 					}finally {
 						window.update();
 						this.dispose();
-					
-						}
+
+					}
 				}
 
 				);
@@ -221,7 +222,7 @@ public class EnigmaView extends JDialog {
 						enigma.resolveEnigma((Information)object);
 						Item reward= enigma.rewarded();
 						rewardManagement( reward);
-						
+
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
@@ -231,31 +232,40 @@ public class EnigmaView extends JDialog {
 					}finally {
 						window.update();
 						this.dispose();
-					
+
 					}
 				}
 
 				);
 	}
-	
+
 	private void rewardManagement(Item reward){
 		String message;
+		String nameObject;
+		if (reward instanceof PhysicalObject) {
+			PhysicalObject object = (PhysicalObject) reward;
+			nameObject = object.getInformation();
+
+		}else{
+			nameObject = reward.getName();}
+
 		try {
 			message="<html><h1>Well Done !</h1> <p> "+this.enigma.getNpcText()+"</p>";
 		} catch (FailedResolvEnigma e1) {
 			// TODO Auto-generated catch block
 			message="<html><h1>Well Done !</h1>";
 		}
+
 		try {
 			game.myPlayer.addItem(reward);
 			message += "</br> "
-					+ "<p>You get : "+reward.getName()+"</p>"
+					+ "<p>You get : "+nameObject+"</p>"
 					+ "</html> ";
 			JOptionPane.showMessageDialog(null,message,"Item added in your Inventory" , JOptionPane.INFORMATION_MESSAGE);
 		} catch (InventoryFull e) {
 			message += "</br> "
 					+"<p>You are fulled, the reward is let down !"
-					+ "</br> Check to find : "+reward.getName()+"</p>"
+					+ "</br> Check to find : "+nameObject+"</p>"
 					+ "</html> ";
 			JOptionPane.showMessageDialog(null, message,"Inventory Fulled" , JOptionPane.ERROR_MESSAGE);
 			game.myPlayer.getCurrentRoom().addItem(reward);
@@ -265,8 +275,8 @@ public class EnigmaView extends JDialog {
 
 		}
 	}
-	
 
-	
-	
+
+
+
 }
