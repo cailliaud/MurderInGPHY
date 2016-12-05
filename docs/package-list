@@ -2,5 +2,3 @@ mig
 mig.core
 mig.exceptions
 mig.view
-test.core
-test.view

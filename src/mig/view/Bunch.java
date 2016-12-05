@@ -1,5 +1,6 @@
 package mig.view;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -16,11 +17,13 @@ public class Bunch extends JButton {
 	private JFrame window;
 	private JPanel keydisplayed;
 	private Game game;
+	private final URL url = BackPack.class.getResource("resources/three-keys_60x60.png");
+	private final ImageIcon default_icon = new ImageIcon(url);
 
 
 	public Bunch(Game game){
 		this.game = game;
-		this.setIcon(new ImageIcon("resources/three-keys_60x60.png"));
+		this.setIcon(default_icon);
 		this.addActionListener(
 				ae -> {
 					createFrame();

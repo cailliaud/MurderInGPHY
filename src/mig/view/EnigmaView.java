@@ -170,7 +170,7 @@ public class EnigmaView extends JDialog {
 				ae ->{
 					try {
 						String answer = (String)rep.getText();
-
+						answer=answer.toLowerCase();
 						enigma.resolveEnigma(answer);
 						Item reward= enigma.rewarded();
 						rewardManagement(reward);

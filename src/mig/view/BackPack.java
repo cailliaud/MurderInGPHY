@@ -3,6 +3,7 @@ package mig.view;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
 
@@ -18,7 +19,8 @@ import mig.core.PhysicalObject;
 
 public class BackPack extends JPanel {
 	private JLabel labels[] = new JLabel[4];
-	private final ImageIcon default_icon = new ImageIcon("resources/default_item.png");
+	private final URL url = BackPack.class.getResource("resources/default_item.png");
+	private final ImageIcon default_icon = new ImageIcon(url);
 
 	private Game game;
 

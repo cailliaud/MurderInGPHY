@@ -22,128 +22,128 @@ public class Game {
 
 	private Room hall1RDC = new Room("Hall",
 			"Hall of B2",
-			"resources/rooms/Hall.JPG",
-			"resources/plans/RDC_hall.JPG");
+			"Hall.jpg",
+			"RDC_hall.jpg");
 	private Room deskAnnie = new Room("Annie desk",
 			"This is the desk of Annie",
-			"resources/rooms/BureauAnnie.JPG",
-			"resources/plans/RDC_BureauAnnie.JPG" );
+			"BureauAnnie.JPG",
+			"RDC_BureauAnnie.jpg" );
 	private Room corridor1RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
-			"resources/rooms/Couloir_vue_hall_salleAnnieTD1.JPG",
-			"resources/plans/RDC_Couloir_vue_TD1_Annie.JPG");
+			"Couloir_vue_hall_salleAnnieTD1.JPG",
+			"RDC_Couloir_vue_TD1_Annie.jpg");
 	private Room corridor2RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
-			"resources/rooms/Couloir_vue_salleCafet.JPG",
-			"resources/plans/RDC_Couloir_vue_Cafet_Reunion.JPG");
+			"Couloir_vue_salleCafet.JPG",
+			"RDC_Couloir_vue_Cafet_Reunion.jpg");
 	private Room corridor3RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
-			"resources/rooms/Couloir_BureauxPG_Allan.JPG",
-			"resources/plans/RDC_Couloir_BureauxPG_Allan.JPG");
+			"Couloir_BureauxPG_Allan.JPG",
+			"RDC_Couloir_BureauxPG_Allan.jpg");
 	private Room corridor4RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
-			"resources/rooms/Couloir_vue_TD4.JPG",
-			"resources/plans/RDC_Couloir_TD4.JPG");
+			"Couloir_vue_TD4.JPG",
+			"RDC_Couloir_TD4.jpg");
 	private Room corridor5RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
-			"resources/rooms/Escalier_du_Font.JPG",
-			"resources/plans/RDC_Escalier.JPG");
+			"Escalier_du_Font.JPG",
+			"RDC_Escalier.jpg");
 	private Room td1 = new Room("TD1",
 			"This is the room TD1",
-			"resources/rooms/TD1.JPG",
-			"resources/plans/RDC_TD1.JPG" );
+			"TD1.JPG",
+			"RDC_TD1.jpg" );
 	private Room meeting = new Room("Meeting room", 
 			"This is the room for the meeting", 
-			"resources/rooms/SalleReunion.JPG",
-			"resources/plans/RDC_SalleReunion.JPG");
+			"SalleReunion.JPG",
+			"RDC_SalleReunion.jpg");
 	private Room cafet = new Room("Cafeteria room", 
 			"This is the room for the cafeteria", 
-			"resources/rooms/Salle_cafet.JPG",
-			"resources/plans/RDC_SalleCafet.JPG");
+			"Salle_cafet.JPG",
+			"RDC_SalleCafet.jpg");
 	private Room deskPgDom = new Room("PG and dominique desk");
 	private Room deskAllan = new Room("Allan desk",
 			"This is the desk of Allan",
-			"resources/rooms/BureauAllan.JPG",
-			"resources/plans/RDC_BureauAllan.JPG");
+			"BureauAllan.JPG",
+			"RDC_BureauAllan.jpg");
 	private Room td4 = new Room("TD4", 
 			"This is the room TD4", 
-			"resources/rooms/TD4.JPG",
-			"resources/plans/RDC_TD4.JPG");
+			"TD4.JPG",
+			"RDC_TD4.jpg");
 	private Room deskSecretary = new Room("Secretary desk");
 	private Room tp1 = new Room("TP1",
 			"This is the room TP1", 
-			"resources/rooms/TP1.JPG",
-			"resources/plans/Etage_TP1.JPG");
+			"TP1.JPG",
+			"Etage_TP1.jpg");
 	private Room classroom = new Room("Classroom",
 			"This is the Classroom", 
-			"resources/rooms/Cours.JPG",
-			"resources/plans/Etage_salleCours.JPG");
+			"Cours.JPG",
+			"Etage_SalleCours.jpg");
 	private Room corridor1Floor= new Room("Corridor of the floor", 
 			"This is the corridor of the floor",
-			"resources/rooms/Couloir_vue_salleCours.JPG",
-			"resources/plans/Etage_Couloir_vue_SalleCoursTP2.JPG");
+			"Couloir_vue_salleCours.JPG",
+			"Etage_Couloir_vue_SalleCoursTP2.jpg");
 	private Room corridor2Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
-			"resources/rooms/Couloir_vue_TD2.JPG",
-			"resources/plans/Etage_Couloir_vue_TD2.JPG");
+			"Couloir_vue_TD2.JPG",
+			"Etage_Couloir_vue_TD2.jpg");
 	private Room corridor3Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
-			"resources/rooms/Couloir_vue_TD3.JPG",
-			"resources/plans/Etage_Couloir_vue_TD3.JPG");
+			"Couloir_vue_TD3.JPG",
+			"Etage_Couloir_vue_TD3.jpg");
 	private Room corridor4Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
-			"resources/rooms/Couloir_vue_info1.JPG",
-			"resources/plans/Etage_Couloir_vue_Info1.JPG");
+			"Couloir_vue_info1.JPG",
+			"Etage_Couloir_vue_Info1.jpg");
 	private Room corridor5Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
-			"resources/rooms/Couloir_vue_TP3.JPG",
-			"resources/plans/Etage_Couloir_vue_TP3.JPG");
+			"Couloir_vue_TP3.JPG",
+			"Etage_Couloir_vue_TP3.jpg");
 	private Room corridor6Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
-			"resources/rooms/Couloir_vue_toilettesHautB2.JPG",
-			"resources/plans/Etage_Couloir_vue_ToilettesHaut.JPG");
+			"Couloir_vue_toilettesHautB2.JPG",
+			"Etage_Couloir_vue_ToilettesHaut.jpg");
 	private Room hallFloor = new Room("Hall of the floor",
 			"This is the corridor of the floor",
-			"resources/rooms/Haut_escalier_entreeB2.JPG",
-			"resources/plans/Etage_Haut_Escalier.JPG");
+			"Haut_escalier_entreeB2.JPG",
+			"Etage_Haut_Escalier.jpg");
 	private Room tp2 = new Room("TP2",
 			"This is the room TP2",
-			"resources/rooms/TP2.JPG",
-			"resources/plans/Etage_TP2.JPG");
+			"TP2.JPG",
+			"Etage_TP2.jpg");
 	private Room td2 = new Room("TD2",
 			"This is the room TD2",
-			"resources/rooms/TD2.JPG",
-			"resources/plans/Etage_TD2.JPG");
+			"TD2.JPG",
+			"Etage_TD2.jpg");
 	private Room lp1 = new Room("LP1");
 	private Room td3 = new Room("TD3",
 			"This is the room TP3",
-			"resources/rooms/TD3.JPG",
-			"resources/plans/Etage_TD3.JPG");
+			"TD3.jpg",
+			"Etage_TD3.jpg");
 	private Room lp2 = new Room("LP2");
 	private Room info1 = new Room("Info1",
 			"This is the room Info1",
-			"resources/rooms/Info1.JPG",
-			"resources/plans/Etage_ENT1.JPG");
+			"Info1.JPG",
+			"Etage_ENT1.jpg");
 	private Room ent1 = new Room("ENT1",
 			"This is the room ENT1",
-			"resources/rooms/ENT1.JPG",
-			"resources/plans/Etage_ENT1.JPG");
+			"ENT1.JPG",
+			"Etage_ENT1.jpg");
 	private Room tp3 = new Room("TP3",
 			"This is the room TP3",
-			"resources/rooms/TP3.JPG",
-			"resources/plans/Etage_TP3.JPG");
+			"TP3.JPG",
+			"Etage_TP3.jpg");
 	private Room ent3 = new Room("ENT3",
 			"This is the room ENT3",
-			"resources/rooms/ENT3.JPG",
-			"resources/plans/Etage_ENT3.JPG");
+			"ENT3.JPG",
+			"Etage_ENT3.jpg");
 	private Room aegp = new Room("AEGP",
 			"This is the room AEGP",
-			"resources/rooms/Salle_AEGP.JPG",
-			"resources/plans/Etage_AEGP.JPG");
+			"Salle_AEGP.JPG",
+			"Etage_AEGP.jpg");
 	private Room toilet = new Room("Toilet", 
 			"This is the toilet",
-			"resources/rooms/Toilettes_haut_B2.JPG",
-			"resources/plans/Etage_ToilettesHaut.JPG");
+			"Toilettes_haut_B2.JPG",
+			"Etage_ToilettesHaut.jpg");
 
 	/**
 	 * Creation of all the keys of the game with doors linked to these keys
@@ -218,22 +218,22 @@ public class Game {
 	 */
 
 
-	private PhysicalObject laptopCharger = new PhysicalObject("laptopCharger", "Astemir's laptop charger", "resources/PhysicalObjects_Icon/Laptop_charger.PNG");
-	private PhysicalObject fourtyCents = new PhysicalObject("fourtyCents", "40 cents of euro", "resources/PhysicalObjects_Icon/40_euro_cents.PNG");
-	private PhysicalObject hotChocolate = new PhysicalObject("hotChocolate", "a cup of hot chocolate", "resources/PhysicalObjects_Icon/Hot_chocolate.PNG");
-	private PhysicalObject briocheVendeenne = new PhysicalObject("briocheVendeenne", "a brioche vendeenne", "resources/PhysicalObjects_Icon/Brioche_vendeenne.png");
-	private PhysicalObject tennisRacket = new PhysicalObject("tennisRacket", "a tennis racket", "resources/PhysicalObjects_Icon/Tennis_racket.PNG");
-	private PhysicalObject toiletPaperRoll = new PhysicalObject("toiletPaperRoll", "a toilet paper roll", "resources/PhysicalObjects_Icon/Toilet_paper_roll.PNG");
-	private PhysicalObject lighter = new PhysicalObject("lighter", "a lighter", "resources/PhysicalObjects_Icon/Lighter.PNG");
-	private PhysicalObject coilOfWire = new PhysicalObject("coilOfWire", "a coil of wire", "resources/PhysicalObjects_Icon/Coil_of_wire.PNG");
-	private PhysicalObject cartonOfSoup = new PhysicalObject("cartonOfSoup", "a carton of soup", "resources/PhysicalObjects_Icon/Soup_Carton.PNG");
-	private PhysicalObject sushi = new PhysicalObject("sushi", "a sushi", "resources/PhysicalObjects_Icon/Sushi.PNG");
-	private PhysicalObject hairpin = new PhysicalObject("hairpin", "a hairpin", "resources/PhysicalObjects_Icon/Hairpin.PNG");
-	private PhysicalObject bikeWheel = new PhysicalObject("bikeWheel", "a bike wheel", "resources/PhysicalObjects_Icon/Bike_wheel.PNG");
-	private PhysicalObject pikachuCuddlyToy = new PhysicalObject("pikachuCuddlyToy", "a pikachu cuddly toy", "resources/PhysicalObjects_Icon/Pikachu_cuddly_toy.PNG");
-	private PhysicalObject scarf = new PhysicalObject("scarf", "a scarf", "resources/PhysicalObjects_Icon/Scarf.PNG");
-	private PhysicalObject chineseChopsticks = new PhysicalObject("chineseChopsticks", "a pair of chinese chopsticks", "resources/PhysicalObjects_Icon/Chinese_chopsticks.PNG");
-	private PhysicalObject banknote = new PhysicalObject("banknote", "a simple banknote to pay something" , "resources/PhysicalObjects_Icon/banknote.PNG");
+	private PhysicalObject laptopCharger = new PhysicalObject("laptopCharger", "Astemir's laptop charger", "Laptop_charger.png");
+	private PhysicalObject fourtyCents = new PhysicalObject("fourtyCents", "40 cents of euro", "40_euro_cents.png");
+	private PhysicalObject hotChocolate = new PhysicalObject("hotChocolate", "a cup of hot chocolate", "Hot_chocolate.png");
+	private PhysicalObject briocheVendeenne = new PhysicalObject("briocheVendeenne", "a brioche vendeenne", "Brioche_vendeenne.png");
+	private PhysicalObject tennisRacket = new PhysicalObject("tennisRacket", "a tennis racket", "Tennis_racket.png");
+	private PhysicalObject toiletPaperRoll = new PhysicalObject("toiletPaperRoll", "a toilet paper roll", "Toilet_paper_roll.png");
+	private PhysicalObject lighter = new PhysicalObject("lighter", "a lighter", "lighter.png");
+	private PhysicalObject coilOfWire = new PhysicalObject("coilOfWire", "a coil of wire", "Coil_of_wire.png");
+	private PhysicalObject cartonOfSoup = new PhysicalObject("cartonOfSoup", "a carton of soup", "Soup_Carton.png");
+	private PhysicalObject sushi = new PhysicalObject("sushi", "a sushi", "Sushi.png");
+	private PhysicalObject hairpin = new PhysicalObject("hairpin", "a hairpin", "Hairpin.png");
+	private PhysicalObject bikeWheel = new PhysicalObject("bikeWheel", "a bike wheel", "Bike_wheel.png");
+	private PhysicalObject pikachuCuddlyToy = new PhysicalObject("pikachuCuddlyToy", "a pikachu cuddly toy", "Pikachu_cuddly_toy.png");
+	private PhysicalObject scarf = new PhysicalObject("scarf", "a scarf", "Scarf.png");
+	private PhysicalObject chineseChopsticks = new PhysicalObject("chineseChopsticks", "a pair of chinese chopsticks", "Chinese_chopsticks.png");
+	private PhysicalObject banknote = new PhysicalObject("banknote", "a simple banknote to pay something" , "banknote.png");
 	/**
 	 * Creation of all the information of the game
 	 */
@@ -294,7 +294,7 @@ public class Game {
 			+ "Bali nearly touches my sand."
 			+ "I house the Indonesian capital city,</p>"
 			+ "<p>What is the name Ramayana gave me?</p>", 
-			"Java", "<p>Hum you find the answer, good.</p>"
+			"java", "<p>Hum you find the answer, good.</p>"
 					+ " <p>Now you have to make me a summary of what is Java !</p> ", 
 					patrickInfo);
 
@@ -333,7 +333,7 @@ public class Game {
 	private Enigma fpEnigma = new Enigma("<p>AAAaaaah, I can’t wait for the holidays !</p><p>I want to travel, it’s been a long time.</p> "
 			+ "<p>So, now i’m a student again, i won’t go that far.</p><p>I need to choose a place in France to stay.</p> "
 			+ "<p>By the way, do you know with which country the France has its longest border ? You will earn TD 2 key so think well.</p>", 
-			"Brasil", 
+			"brasil", 
 			"That’s Correct. Never forget the overseas bro! Take the key. I hope that you will find what you are looking for", 
 			keyTD2);
 
@@ -345,19 +345,19 @@ public class Game {
 			bikeWheel);
 
 	private Enigma gcell1Enigma = new Enigma("<p>Oh my god I’m so stressed!</p><p> Will I find a job after my master's degree ?</p>", 
-			"No", 
+			"no", 
 			"There is no need to rub salt in the wound! Take that soup carton and leave! I can’t eat one more of this.", 
 			cartonOfSoup);
 
 
 	private Enigma marinEnigma = new Enigma("<p>You like Enigmas?</p><p>Answer this one : "
 			+ "In which country there is the biggest amount of redhead people ?</p>", 
-			"Scotland", 
+			"scotland", 
 			"<p>You find the right answer.</p><p> And so  what ? You want a cookie ?</p><p> Get out of here !</p><p> *he throws on you a paper* !</p>", banknote);
 
 	private Enigma antoineEnigma = new Enigma("<p>So, do you learned you genetics lesson or you spend the whole night playing video games ?</p> "
 			+ "<p>What is the name of the sequencing technique using the luciferin as a substrate ?</p>", 
-			"Pyrosequencing", 
+			"pyrosequencing", 
 			"<p>The killer is not a girl of the AEGP office, because I was with Claire and caroline working on the annual project the night of the murder.</p>", 
 			antoineInfo);
 
@@ -482,6 +482,28 @@ public class Game {
 
 	}
 
+	/**
+	 * Method to put all item in the Hall of the B2
+	 * It is used to test all items
+	 * If their image are correctly displayed
+	 */
+	private void testPutAllIteminHall(){
+		hall1RDC.addItem(woodenKey);
+		hall1RDC.addItem(lighter);
+		hall1RDC.addItem(ironKey);
+		hall1RDC.addItem(pikachuCuddlyToy);
+		hall1RDC.addItem(coilOfWire);
+		hall1RDC.addItem(scarf);
+		hall1RDC.addItem(tennisRacket);
+		hall1RDC.addItem(laptopCharger);
+		hall1RDC.addItem(fourtyCents);
+		hall1RDC.addItem(hairpin);
+		hall1RDC.addItem(chineseChopsticks);
+		hall1RDC.addItem(sushi);
+		hall1RDC.addItem(toiletPaperRoll);
+		hall1RDC.addItem(aegpToiletInfo);
+		hall1RDC.addItem(aegpRoomInfo);
+	}
 	private void putItemsInRoom(){
 		hall1RDC.addItem(woodenKey);
 		meeting.addItem(lighter);

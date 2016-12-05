@@ -1,5 +1,7 @@
 package mig.core;
 
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 
 /**
@@ -28,14 +30,14 @@ public class PhysicalObject extends EnigmaItem {
 	 */
 	public PhysicalObject(String name, String information ) {
 		super(name,information);
-
-		this.image = new ImageIcon("resources/wooden-crate.png");
+		URL urlimage = PhysicalObject.class.getResource("resources/wooden-crate.png");
+		this.image = new ImageIcon(urlimage);
 	}
 	
 	public PhysicalObject (String name, String information , String image){ 	
 		super(name,information);
-
-		this.image = new ImageIcon(image);
+		URL urlimage = PhysicalObject.class.getResource("resources/PhysicalObjects_Icon/"+image);
+		this.image = new ImageIcon(urlimage);
 	
 	}
 	

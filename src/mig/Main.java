@@ -10,6 +10,7 @@ import mig.view.PrincipalWindow;
 import mig.view.Window;
 
 
+
 public class Main {
 	public static Game mygame;
 	public static Window myWindow;

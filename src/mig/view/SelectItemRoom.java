@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.net.URL;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -31,7 +32,10 @@ public class SelectItemRoom extends JDialog {
 	private Window window;
 	private String message;
 	private JLabel objectLabel = new JLabel(new ImageIcon ("resources/default_item.png"),JLabel.CENTER);
-
+	private final URL urlKey = BackPack.class.getResource("resources/three-keys_60x60.png");
+	private final ImageIcon iconKey = new ImageIcon(urlKey);
+	private final URL urlNote = BackPack.class.getResource("resources/notebook.png");
+	private final ImageIcon iconNote = new ImageIcon(urlNote);
 
 	public SelectItemRoom(JFrame parent, String title, String message , Game game, Window window){
 		super(parent,title);
@@ -116,10 +120,10 @@ public class SelectItemRoom extends JDialog {
 			imageObject = physicalGot.getImage();
 		}
 		else if (itemgot instanceof Information){
-			imageObject= new ImageIcon("resources/notebook.png");
+			imageObject= iconNote;
 			}
 		else{
-			imageObject= new ImageIcon("resources/three-keys_60x60.png");
+			imageObject= iconKey;
 			}
 		
 		objectLabel.setIcon(imageObject);

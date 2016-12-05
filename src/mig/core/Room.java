@@ -1,4 +1,5 @@
 package mig.core;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -94,15 +95,22 @@ public class Room {
 	{
 		this.name=nameRoom;
 		this.description = "No information about this room";
-		this.image = new ImageIcon("resources/couloir_500.jpg");
-		this.image_plan = new ImageIcon("resources/plan.png");
+		URL urlimage = Room.class.getResource(
+                "resources/couloir_500.jpg");
+		URL urlplan = Room.class.getResource(
+                "resources/plan.png");
+	
+		this.image = new ImageIcon(urlimage);
+		this.image_plan = new ImageIcon(urlplan);
 	}
 
 	public Room(String nameRoom, String description, String image, String image_plan){
 		this.name=nameRoom;
 		this.description = description;
-		this.image = new ImageIcon(image);
-		this.image_plan= new ImageIcon(image_plan);
+		URL urlimage = Room.class.getResource("resources/rooms/"+image);
+		URL urlplan = Room.class.getResource("resources/plans/"+image_plan);
+		this.image = new ImageIcon(urlimage);
+		this.image_plan= new ImageIcon(urlplan);
 	}
 
 	

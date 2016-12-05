@@ -1,6 +1,7 @@
 package mig.view;
 
 import java.awt.BorderLayout;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,6 +20,17 @@ public class DirectionPanel extends JPanel {
 	private Window window;
 	private Door door;
 	private GiveKey keyGiven;
+	private final URL urlNorth = BackPack.class.getResource("resources/north_arrow.png");
+	private final ImageIcon iconNorth = new ImageIcon(urlNorth);
+	private final URL urlSouth = BackPack.class.getResource("resources/south_arrow.png");
+	private final ImageIcon iconSouth = new ImageIcon(urlSouth);
+	private final URL urlEast = BackPack.class.getResource("resources/east_arrow.png");
+	private final ImageIcon iconEast = new ImageIcon(urlEast);
+	private final URL urlWest  = BackPack.class.getResource("resources/west_arrow.png");
+	private final ImageIcon iconWest = new ImageIcon(urlWest);
+	private final URL urlUpDown = BackPack.class.getResource("resources/up_arrow.png");
+	private final ImageIcon iconUpDown = new ImageIcon(urlUpDown);
+
 
 
 	public DirectionPanel(Window window, Game game){
@@ -26,7 +38,7 @@ public class DirectionPanel extends JPanel {
 		this.window = window;
 		
 		// Button north
-		north = new JButton(new ImageIcon("resources/north_arrow.png"));
+		north = new JButton(iconNorth);
 		north.addActionListener(
 				ae -> {
 					door = game.myPlayer.getCurrentRoom().goInDirection("north");
@@ -43,7 +55,7 @@ public class DirectionPanel extends JPanel {
 		
 		
 		// button South
-		south = new JButton(new ImageIcon("resources/south_arrow.png"));
+		south = new JButton(iconSouth);
 		south.addActionListener(
 				ae -> {
 					door = game.myPlayer.getCurrentRoom().goInDirection("south");
@@ -60,7 +72,7 @@ public class DirectionPanel extends JPanel {
 				);
 		
 		// Button East
-		east = new JButton(new ImageIcon("resources/east_arrow.png"));
+		east = new JButton(iconEast);
 		east.addActionListener(
 				ae -> {
 					door = game.myPlayer.getCurrentRoom().goInDirection("east");
@@ -77,7 +89,7 @@ public class DirectionPanel extends JPanel {
 				);
 		
 		// Button West
-		west = new JButton(new ImageIcon("resources/west_arrow.png"));
+		west = new JButton(iconWest);
 		west.addActionListener(
 				ae -> {
 					door = game.myPlayer.getCurrentRoom().goInDirection("west");
@@ -94,7 +106,7 @@ public class DirectionPanel extends JPanel {
 				);
 		
 		//Button Up Or Down
-		up_down = new JButton(new ImageIcon("resources/up_arrow.png"));
+		up_down = new JButton(iconUpDown);
 		up_down.addActionListener(
 				ae -> {
 					if (game.myPlayer.getCurrentRoom().exitsPossible("up"))
@@ -148,7 +160,6 @@ public class DirectionPanel extends JPanel {
 			}
 			break;
 		case "Lock" :
-			System.out.println("pouet");
 			if (game.myPlayer.getOwned().getBunch().size()>0){
 			keyGiven = new GiveKey(null, "Give a Key", "Select the Key that you want to give", game, window, door);}
 			else {

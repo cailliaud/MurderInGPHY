@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -15,7 +16,8 @@ import mig.core.Game;
 @SuppressWarnings("serial")
 public class Window extends JPanel {
 
-
+	private final URL urlLogoGame = BackPack.class.getResource("resources/murder_120.png");
+	private final ImageIcon logoGame = new ImageIcon(urlLogoGame);
 	private JPanel screen = new JPanel();
 	private JLabel roomView ;
 	private JLabel planView;
@@ -62,7 +64,7 @@ public class Window extends JPanel {
 		gbc.gridwidth = 1;
 		gbc.gridheight = 2;
 		gbc.insets = new Insets(10, 10, 10, 10);
-		screen.add(new JLabel(new ImageIcon("resources/murder_120.png") ),gbc);
+		screen.add(new JLabel(logoGame ),gbc);
 		
 		gbc = new GridBagConstraints();
 		gbc.gridx = 1;

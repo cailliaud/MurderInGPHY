@@ -1,6 +1,7 @@
 package mig.view;
 
 import java.awt.BorderLayout;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -20,7 +21,8 @@ public class Notebook extends JButton {
 	private Game game;
 	private JFrame window;
 	private JPanel infodisplayed;
-	private ImageIcon icon = new ImageIcon("resources/notebook.png");
+	private final URL urlNote = BackPack.class.getResource("resources/notebook.png");
+	private final ImageIcon icon = new ImageIcon(urlNote);
 	
 	
 	public Notebook(Game game){
