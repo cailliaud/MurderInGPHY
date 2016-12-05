@@ -1,9 +1,7 @@
 package mig;
 
 
-import javax.swing.Box;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 
 import mig.core.Game;
 import mig.view.PrincipalWindow;

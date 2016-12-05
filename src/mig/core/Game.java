@@ -60,7 +60,10 @@ public class Game {
 			"This is the room for the cafeteria", 
 			"Salle_cafet.JPG",
 			"RDC_SalleCafet.jpg");
-	private Room deskPgDom = new Room("PG and dominique desk");
+	private Room deskPgDom = new Room("PG and dominique desk",
+			"This is the desk of Patrick and Dominique",
+			"deskPGDom.jpg",
+			"RDC_BureauPG.jpg");
 	private Room deskAllan = new Room("Allan desk",
 			"This is the desk of Allan",
 			"BureauAllan.JPG",
@@ -138,7 +141,7 @@ public class Game {
 			"Etage_ENT3.jpg");
 	private Room aegp = new Room("AEGP",
 			"This is the room AEGP",
-			"Salle_AEGP.JPG",
+			"AEGP.jpg",
 			"Etage_AEGP.jpg");
 	private Room toilet = new Room("Toilet", 
 			"This is the toilet",
@@ -234,6 +237,26 @@ public class Game {
 	private PhysicalObject scarf = new PhysicalObject("scarf", "a scarf", "Scarf.png");
 	private PhysicalObject chineseChopsticks = new PhysicalObject("chineseChopsticks", "a pair of chinese chopsticks", "Chinese_chopsticks.png");
 	private PhysicalObject banknote = new PhysicalObject("banknote", "a simple banknote to pay something" , "banknote.png");
+	private PhysicalObject adaBook = new PhysicalObject("Ada for Dumbs" , "The best book to learn ada", "ada_for_dumbs.png");
+	private PhysicalObject surfBoard = new PhysicalObject("SurfBoard", "Constance's SurfBoard","surfboard.png" );
+	private PhysicalObject weddingRing = new PhysicalObject("Wedding Ring", "François-Pierre's Wedding Ring", "wedding_ring.png");
+	private PhysicalObject vendeanFlag = new PhysicalObject("Vendean Flag", "Vendean Flag foreach vendeans", "vendean_flag.png");
+	private PhysicalObject paperClip = new PhysicalObject("Paper Clip", "To avoid abandoned paper","paper_clip.png" );
+	private PhysicalObject goldLouis = new PhysicalObject("Louis d'or", "You have to make pancakes with it" , "louis_dor.png");
+	private PhysicalObject kingCard = new PhysicalObject("King Card", "A simple card with a king", "king_card.png");
+	private PhysicalObject highHeel = new PhysicalObject("Hight Heel" , "It's looking for its twin sister","high_heel.png");
+	private PhysicalObject fishingPole = new PhysicalObject("Fishing Rode", "The best to fish tuna" , "fishing_pole.png");
+	private PhysicalObject controler = new PhysicalObject("XBOX controler", "a simple controler","controler.png");
+	private PhysicalObject carKey = new PhysicalObject("Car Key", "Someone has again lose it", "car_key.png");
+	private PhysicalObject camera = new PhysicalObject("Camera", "THe best tool to take nude pictures", "camera.png");
+	private PhysicalObject boomrang = new PhysicalObject("Boomrang", "Where does it come back ?", "boomerang.png");
+	private PhysicalObject beerBottle = new PhysicalObject("Beer", "Quench your thirst", "beer_bottle.png");
+	private PhysicalObject mouse = new PhysicalObject("Mouse", "The power in your hand" , "mouse.png");
+	private PhysicalObject present = new PhysicalObject("A Present", "Chirstmas is coming ! like Winter !","present.png");
+	private PhysicalObject milkBottle = new PhysicalObject("A Bottle of milk", "Can have a good taste with chocolate", "milkBottle.png");
+	private PhysicalObject whoolBall = new PhysicalObject("A Whool Ball", "the best gift for a cat","whoolBall.png");
+	private PhysicalObject chocolatine = new PhysicalObject("Chocolatine", "A Rotten chocolatine better than a fresh chocolat bread", "chocolatine.png");
+	private PhysicalObject sqlBook = new PhysicalObject("Sql for dumbs", "the standard for sql", "sql_for_dumbs.png");
 	/**
 	 * Creation of all the information of the game
 	 */
@@ -247,8 +270,9 @@ public class Game {
 	private Information aegpToiletInfo = new Information("aegpToilet's Info", "Blood stains in the sink.");
 	private Information chloeInfo = new Information("Chloe's Info", "password for TD3 room is the capital city of Australia");
 	private Information delphineInfo = new Information("Delphine's Info", "password for cours room is Pikachu");
-
-
+	private Information marionInfo = new Information("Marion's Info","Maybe you will have wrong information");
+	private Information pierreInfo = new Information ("Pierre's Info","The killer has a car, i'm sure because i heard squeal sound this morning.");
+	private Information mathiasInfo = new Information("Mathias's info", "Dude, he killed himself trying to steal the association");
 	/**
 	 * Creation of all the enigmas of the game
 	 */
@@ -283,9 +307,10 @@ public class Game {
 			"4175746f6d617469736d",
 			"Well done, you are a true physiologist !", delphineInfo);
 
-	private Enigma annieEnigma = new Enigma("<p>Hello, you came for a clue i guess ?</p><p>Well ok, but i don’t give it that easily !</p>"
+	private Enigma annieEnigma = new Enigma("<p>Hello, you came for a clue i guess ?</p>"
+			+ "<p>Well ok, but i don’t give it that easily !</p>"
 			+ "<p>Here is my question :</p>"
-			+ "<p>From which historical character comes from the first computer language you learned in L3 ?</p>", 
+			+ "<p>From which historical character comes from</p><p>the first computer language you learned in L3 ?</p>", 
 			"ada lovelace",
 			"<p>GOOOOOOD !!!</p>"
 					+ "<p>I know who is the killer but I am too scared to tell anything.</p>"
@@ -294,11 +319,12 @@ public class Game {
 					annieInfo);
 
 	private Enigma patrickEnigma = new Enigma("<p>So you are attempting to find the coward that killed Alexandre? </p>"
-			+ "<p>Of course I can help you but can you help me before?</p><p> I got that dawn riddle a former GPhy sent me this morning.</p> "
+			+ "<p>Of course I can help you but can you help me before?</p>"
+			+ "<p> I got that dawn riddle a former GPhy sent me this morning.</p> "
 			+ "<p>If I don’t find the solution quickly, he will begin to taunt me :</p> "
-			+ "<p>I am an Indian Ocean island,"
-			+ "Bali nearly touches my sand."
-			+ "I house the Indonesian capital city,</p>"
+			+ "<p>I am an Indian Ocean island,</p>"
+			+ "<p>Bali nearly touches my sand.</p>"
+			+ "<p>I house the Indonesian capital city,</p>"
 			+ "<p>What is the name Ramayana gave me?</p>", 
 			"java", "<p>Hum you find the answer, good.</p>"
 					+ " <p>Now you have to make me a summary of what is Java !</p> ", 
@@ -337,14 +363,13 @@ public class Game {
 			longKey);
 
 	private Enigma fpEnigma = new Enigma(
-			"<p>AAAaaaah, I can’t wait for the holidays !</p>"
-			+ "<p>I want to travel, it’s been a long time.</p> "
-			+ "<p>So, now i’m a student again, i won’t go that far.</p><p>I need to choose a place in France to stay.</p> "
-			+ "<p>By the way, do you know with which country the France has its longest border ?</p>"
-			+ "<p> You will earn TD 2 key so think well.</p>", 
-			"brazil", 
-			"<p>That’s Correct. Never forget the overseas bro!</p><p> Take the key. I hope that you will find what you are looking for</p>", 
-			keyTD2);
+			"<p>AAAaaaah, My wife will kill me!</p>"
+					+ "<p>I really need to find my wedding ring</p> "
+					+ "<p>I lost it yesterday, when i ate my sandwich.</p>"
+					+ "<p>I already see the light at the end of the tunnel.</p> ",
+					weddingRing, 
+					"<p>Oh my god !!!.</p><p>I will never forget what you have done!</p><p> Take the key. I hope that you will find what you are looking for</p>", 
+					keyTD2);
 
 	private Enigma fabienEnigma = new Enigma("<p>Hey you, are you going round and round in circles to find the killer ?</p>"
 			+ "<p>Well it turns out that I have an object for you if you answer correctly to this question.</p> "
@@ -357,19 +382,19 @@ public class Game {
 			+ "<p>Will I pass my high school exams ?</p>", 
 			"no", 
 			"<p>There is no need to rub salt in the wound!</p>"
-			+ "<p>Take that soup carton and leave!</p>"
-			+ "<p>I can’t eat one more of this.</p>", 
-			cartonOfSoup);
+					+ "<p>Take that soup carton and leave!</p>"
+					+ "<p>I can’t eat one more of this.</p>", 
+					cartonOfSoup);
 
 
 	private Enigma marinEnigma = new Enigma("<p>You like Enigmas?</p><p>Answer this one :</p> "
 			+ "<p>In which country there is the biggest amount of redhead people ?</p>", 
 			"scotland", 
 			"<p>You find the right answer.</p>"
-			+ "<p> And so  what ? You want a cookie ?</p>"
-			+ "<p> Get out of here !</p>"
-			+ "<p> *he throws on you a paper* !</p>",
-			banknote);
+					+ "<p> And so  what ? You want a cookie ?</p>"
+					+ "<p> Get out of here !</p>"
+					+ "<p> *he throws on you a paper* !</p>",
+					banknote);
 
 	private Enigma antoineEnigma = new Enigma("<p>So, do you learned you genetics lesson or you spend the whole night playing video games ?</p> "
 			+ "<p>What is the name of the sequencing technique using the luciferin as a substrate ?</p>", 
@@ -388,7 +413,56 @@ public class Game {
 					nicolasInfo);
 
 	private Enigma gcelll2Enigma = new Enigma(" Leave me alone, I don’t have time for you, I have too much work to do.");
+	private Enigma jeanneEnigma = new Enigma("Another that dies in GPHY, ot should not become usual");
+	private Enigma marineGcellEnigma = new Enigma("<p>Hey, i'm bored.</p>"
+			+ "<p>If you answer me correctly i will give you a gift !</p>"
+			+ "<p>What is the latin name of a mice ?</p>",
+			"mus musculus",
+			"<p>Cute isn't it ?</p>"
+					+ "This a gphy mice model for you"
+					+ "<p>*blink*</p>",
+					mouse
+			);
+	private Enigma marionEnigma = new Enigma("<p>I'm sure , the murderer is a girl</p>",
+			antoineInfo,
+			"<p>Impossible, be careful about this information</p>",
+			marionInfo);
+	private Enigma jonathanEnigma = new Enigma("<p>BEEEEeeeerrrr !</p>"
+			+ "<p>*He looks like a pokemon*</p>",
+			beerBottle,
+			"<p>*Empty the beer in one shot*</p>"
+					+ "<p>*He throws on you a shiny object*",
+					weddingRing);
 
+	private Enigma clementEnigma = new Enigma("<p>Have you some tips to catch a girl ?</p>",
+			fishingPole,
+			"<p>This day is my day ! This is for you ! Thanks </p>",
+			paperClip
+			);
+
+	private Enigma pierreENigma = new Enigma("<p>Hey ! I know who is the killer but i don't give a shit.</p>",
+			toiletPaperRoll,
+			"<p> Ah ah ah so funny, faggot !</p>",
+			pierreInfo
+			);
+
+	private Enigma carolineEnigma = new Enigma("<p>*Cat eyes*</p>",
+			milkBottle,
+			"<p>Meowwww</p>",
+			whoolBall);
+
+	private Enigma mathiasEnigma = new Enigma(
+			"<p>What's up bro ?</p><p>Who is dead ?</p>",
+			"alexandre",
+			"<p>Holy shit!</p>",
+			mathiasInfo);
+	private Enigma dominiqueEnigma = new Enigma("<p>How many engineers does it take to change a lightbulb at Microsoft ?</p>",
+			"0",
+			"<p>Yes it is no one.</p>"
+			+ "<p>Everybody stay in the dark</p>"
+			+ "<p>And Billou decides that is a new standard !</p>",
+			sqlBook);
+	
 	/**
 	 * Creation of all the NPC of the game
 	 */
@@ -406,12 +480,20 @@ public class Game {
 	private NPC fp = new NPC("FP", fpEnigma);
 	private NPC agathe = new NPC("Agathe", agatheEnigma);
 	private NPC fabien = new NPC("Fabien", fabienEnigma);
-	private NPC gcell1 = new NPC("Gcell1", gcell1Enigma);
-	private NPC gcell2 = new NPC("Gcell2", gcelll2Enigma);
+	private NPC gcell1 = new NPC("Jackie", gcell1Enigma);
+	private NPC gcell2 = new NPC("Michele", gcelll2Enigma);
 	private NPC marin = new NPC("Marin", marinEnigma);
 	private NPC antoine = new NPC("Antoine", antoineEnigma);
 	private NPC nicolas = new NPC("Nicolas", nicolasEnigma);
-
+	private NPC marineGcell = new NPC("Marine",marineGcellEnigma);
+	private NPC jeanne = new NPC("Jeanne",jeanneEnigma);
+	private NPC marion = new NPC("Marion",marionEnigma);
+	private NPC jonathan = new NPC("Jonathan",jonathanEnigma);
+	private NPC clement = new NPC("Clément", clementEnigma);
+	private NPC pierre = new NPC("Pierre",pierreENigma);
+	private NPC caroline = new NPC("Caroline", carolineEnigma);
+	private NPC mathias = new NPC("Mathias", mathiasEnigma);
+	private NPC dominique = new NPC ("Dominique", dominiqueEnigma);
 
 
 
@@ -544,6 +626,17 @@ public class Game {
 		toilet.addItem(toiletPaperRoll);
 		toilet.addItem(aegpToiletInfo);
 		aegp.addItem(aegpRoomInfo);
+		ent3.addItem(camera);
+		aegp.addItem(surfBoard);
+		aegp.addItem(boomrang);
+		aegp.addItem(kingCard);
+		td1.addItem(goldLouis);
+		corridor2Floor.addItem(highHeel);
+		tp3.addItem(controler);
+		td1.addItem(carKey);
+		hall1RDC.addItem(present);
+		deskAnnie.addItem(adaBook);
+		hall1RDC.addItem(chocolatine);
 	}
 
 
@@ -566,7 +659,15 @@ public class Game {
 		tp3.addPNJ(antoine);
 		ent3.addPNJ(nicolas);
 		td4.addPNJ(chloe);
-
+		ent1.addPNJ(jeanne);
+		ent1.addPNJ(marineGcell);
+		info1.addPNJ(marion);
+		info1.addPNJ(jonathan);
+		info1.addPNJ(clement);
+		tp2.addPNJ(pierre);
+		tp2.addPNJ(caroline);
+		tp2.addPNJ(mathias);
+		deskPgDom.addPNJ(dominique);
 	}
 
 

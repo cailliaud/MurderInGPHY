@@ -218,7 +218,7 @@ public class EnigmaView extends JDialog {
 		okInfoBouton.addActionListener(
 				ae ->{
 					try {
-						Information object = game.myPlayer.getOwned().getInfo(items.getSelectedIndex());
+						Information object = game.myPlayer.getOwned().getInfo(infos.getSelectedIndex());
 						enigma.resolveEnigma((Information)object);
 						Item reward= enigma.rewarded();
 						rewardManagement( reward);

@@ -116,7 +116,7 @@ public class GiveKey extends JDialog {
 					door.openDoor(key);
 					try {
 						game.myPlayer.move(door.getNextRoom(game.myPlayer.getCurrentRoom()));
-						JOptionPane.showMessageDialog(null, "The door is know opened", "Good Key", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "The door is now opened", "Good Key", JOptionPane.INFORMATION_MESSAGE);
 						window.update();
 
 					} catch (Exception e1) {
