@@ -146,7 +146,7 @@ public class DirectionPanel extends JPanel {
 	}
 
 	public void openDoor(Door door){
-		switch (door.getTypeLock()) {
+		switch (door.getTypeBolt()) {
 		case "Code":
 			
 			String pass = JOptionPane.showInputDialog(null, "Give the password to go forward : ", "A password is needed", JOptionPane.QUESTION_MESSAGE);

@@ -32,7 +32,6 @@ public abstract class Personage {
 	 * Constructor
 	 * If the name is null, it returns an exception
 	 * @param name of the personage
-	 * @param isKiller if he is the killer of the game 
 	 */
 	public Personage (String name){
 		if ((name!=null)&&(!name.isEmpty()))this.name=name;

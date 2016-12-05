@@ -8,6 +8,7 @@ import mig.exceptions.KeyForgottenException;
  * A Lock contains these elements :
  * </p>
  * <ul>
+ * <li> Good_Gey the boolean that indicates if the key inserted is good or not</li>
  * <li>A key, can fit into the lock</li>
  * </ul>
  * 
@@ -16,7 +17,7 @@ import mig.exceptions.KeyForgottenException;
  * </p>
  * 
  * <p>
- * If the key isn't compatible with the lock, the lock is locked
+ * If the key isn't compatible with the lock, the lock stays locked
  * </p>
  * 
  * @see Bolt
@@ -29,7 +30,14 @@ import mig.exceptions.KeyForgottenException;
 
 public class Lock extends Bolt {
 
+	/**
+	 * The key to unlock the Lock
+	 */
 	private Key key;
+	
+	/**
+	 * The boolean to know if the key given is  the good one or not
+	 */
 	private boolean good_key =false ;
 	
 	/**
@@ -48,9 +56,7 @@ public class Lock extends Bolt {
 	/**
 	 * Method for verifying that the key corresponds to the key compatible with the lock
 	 * @param key_given The key given to check if it is the good to unlock the Lock
-	 * @return true if the key fits into the lock
-	 * False if the key does not match the key opening the lock
-	 *
+	 * It will set the parameter good_key to true if the key is the good one
 	 * @see Key
 	 */
 	public void giveKey(Key key_given)
@@ -65,10 +71,7 @@ public class Lock extends Bolt {
 
 	/**
 	 * Method for opening the lock if the key is compatible with the lock
-	 * @param key_given The key given to check if it is the good to unlock the Lock
-	 * @return true if the key can into the lock, the lock is unlocked
-	 * false if the key don't open the lock.
-	 *
+	 * It only works if the parameter good_key is true
 	 * @see Key
 	 * @see Bolt
 	 */
@@ -76,9 +79,7 @@ public class Lock extends Bolt {
 	{
 		if (good_key){
 			super.unlockIt();
-
 		}
-
 	}
 	
 

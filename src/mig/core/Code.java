@@ -8,6 +8,12 @@ package mig.core;
  * </p>
  * <ul>
  * <li>A password that is used to unlock the Chest</li>
+ * <li>A boolean to know if a good password has been given</li>
+ * </ul>
+ * <p>A code is opened in 2 times </p>
+ * <ul>
+ * <li> First : you have to give the password</li>
+ * <li> Second : you unlock the code if the pass given is good</li>
  * </ul>
  * 
  * 
@@ -23,6 +29,11 @@ public class Code extends Bolt {
 	 * String that contains the password to unlock he Bolt
 	 */
 	private String password;
+	
+	/**
+	 * boolean that will be false as default
+	 * It represents if a good password has been given
+	 */
 	private boolean good_pass =false ;
 
 	/**
@@ -41,22 +52,13 @@ public class Code extends Bolt {
 		}
 	}
 
-//	/**
-//	 * Method to get the password 
-//	 * @return password
-//	 * The password of the bolt
-//	 */
-//	public String getPass()
-//	{
-//		return password;
-//	}
+
 	
 	/**
-	 * Private Method to test if the password given is the same as the password of the Bolt
-	 * If the password given by the player is false, it returns an error message that tells the player the password is wrong
+	 * Public method to give the password
+	 * Pay attention the case is important
 	 * @param pass Password given to try to unlock the chest
-	 * @return Boolean
-	 * True if it is the same password or else false
+	 * It will set the boolean good_pass True if it is the same password or else false
 	 */
 	public void givePassword(String pass)
 	{
@@ -70,9 +72,9 @@ public class Code extends Bolt {
 	}
 
 	/**
-	 * The complete method to try to unlock the Code
-	 * @param mdp Password given to try to unlock the chest
-	 * throw an exception
+	 * Method to unlock the chest if the parameter good_pass is true
+	 * It is an Overriding of the unlockIt method from the parent class Bolt
+	 * @see Bolt#unlockIt()
 	 */
 	@Override
 	public void unlockIt() 

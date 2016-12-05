@@ -69,6 +69,7 @@ public class GiveKey extends JDialog {
 	 * @param message The message displayed to the player
 	 * @param game The game currently played
 	 * @param window The principal screen of the game (extends JPanel)
+	 * @param door the door concerned by this action
 	 */
 	public GiveKey(JFrame parent, String title, String message , Game game, Window window , Door door){
 		super(parent,title);

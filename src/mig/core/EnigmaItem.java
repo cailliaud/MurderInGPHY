@@ -19,8 +19,17 @@ package mig.core;
  */
 public abstract class  EnigmaItem extends Item {
 
+	/**
+	 * the information provides by the enigma item
+	 */
 	private String information;
 
+	/**
+	 * Constructor
+	 * @param name the name of the enigma item
+	 * @param info the information of the enigma item
+	 * If info is false there will have a default information : "unknown information"
+	 */
 	public EnigmaItem(String name, String info){
 		super(name);
 		if ((info==null)||(info.isEmpty()))
@@ -30,8 +39,8 @@ public abstract class  EnigmaItem extends Item {
 		
 	}
 	/**
-	 * getInformation is a method to get the different informations in the EnigmaItem
-	 * @return information
+	 * Accessor for the information parameter
+	 * @return information the information provides by the item
 	 */
 	public String getInformation() {
 		return information;

@@ -17,6 +17,8 @@ import javax.swing.ImageIcon;
  * 		<ul>
  * 			<li>A door : it brings to another room</li>
  * 			<li>A direction : it is where is the door in the room</li>
+ * 			<li>Image : the image of the room</li>
+ * 			<li>Plan Image: the image of the room in the plan</li>
  * 		</ul> 
  * </li>
  * </ul>
@@ -36,7 +38,11 @@ import javax.swing.ImageIcon;
  */
 public class Room {
 
+	/**
+	 * DirectionWords to verify that the direction for an exit is good or not
+	 */
 	private DirectionWords directions = new DirectionWords();
+	
 	/**
 	 * It is the name of the Room
 	 * It is set in the constructor and cannot be changed after 
@@ -81,14 +87,15 @@ public class Room {
 	private ArrayList<Item> clues = new ArrayList<Item>();
 
 	/**
-	 * 
+	 * Chest presents in the room
+	 * It can be null if there is no chest 
 	 */
 	private Chest chest ;
 	
 	/** 
 	 * Constructor of the Room
 	 * @param nameRoom is the name of the Room (String)
-	 * 
+	 * Image and ImagePlan will be set with default values
 	 * @see Room#name
 	 */
 	public Room(String nameRoom)
@@ -104,6 +111,13 @@ public class Room {
 		this.image_plan = new ImageIcon(urlplan);
 	}
 
+	/**
+	 * Complete constructor for the class room
+	 * @param nameRoom the name of the room
+	 * @param description the description of the room
+	 * @param image the image of the room
+	 * @param image_plan the image of the room in the plan
+	 */
 	public Room(String nameRoom, String description, String image, String image_plan){
 		this.name=nameRoom;
 		this.description = description;
@@ -154,7 +168,7 @@ public class Room {
 
 	/**
 	 * Method to get the image of the room
-	 * @return
+	 * @return the image of the room
 	 */
 	public ImageIcon getImage(){
 		return this.image;
@@ -162,7 +176,7 @@ public class Room {
 	
 	/**
 	 * Method to get the image of the room in the plan
-	 * @return
+	 * @return the image of the room in the plan
 	 */
 	public ImageIcon getImagePlan(){
 		return this.image_plan;
@@ -193,19 +207,19 @@ public class Room {
 		}
 	}
 
-	/**
-	 * Method to remove a door in the room
-	 * @param direction It is the direction of the door you want to remove
-	 * This method only allows to remove an existing Door 
-	 */
-	public void removeDoor(String direction)
-	{
-		if(directions.isDirection(direction)){
-			myExits.remove(myExits.get(direction));
-		} 
-
-
-	}
+//	/**
+//	 * Method to remove a door in the room
+//	 * @param direction It is the direction of the door you want to remove
+//	 * This method only allows to remove an existing Door 
+//	 */
+//	public void removeDoor(String direction)
+//	{
+//		if(directions.isDirection(direction)){
+//			myExits.remove(myExits.get(direction));
+//		} 
+//
+//
+//	}
 
 	/**
 	 * Method to display exits enabled in the room
@@ -247,7 +261,6 @@ public class Room {
 		if (!npc.isAlive())
 			return false;
 		else {
-			//TODO test sa présence dans le ArrayList<PNJ>
 			return true;
 		}
 
@@ -265,7 +278,7 @@ public class Room {
 		if (!item.getExist())
 			return false;
 		else {
-			//TODO test sa présence dans le ArrayList<Item>
+			
 			return true;
 		}
 
@@ -338,10 +351,22 @@ public class Room {
 
 
 
+	/**
+	 * Method to get an Item presents in the room with its index in the arraylist clues
+	 * @param index the index of the item in the arraylist clues
+	 * @return the Item
+	 * @see clues
+	 */
 	public Item getItem(int index){
 		return clues.get(index)  ;
 	}
 	
+	/**
+	 * Method to get an NPC presents in the room with its index in the arraylist occupants
+	 * @param index the index of the item in the arraylist occupants
+	 * @return the NPC
+	 * @see occupants
+	 */
 	public NPC getNPC(int index){
 		return occupants.get(index);
 	}
@@ -387,10 +412,18 @@ public class Room {
 		}
 	}
 	
+	/**
+	 * Method to know how many items there are in the room
+	 * @return the number of items in the arraylist clues
+	 */
 	public int getNumberItem(){
 		return clues.size();
 	}
 	
+	/**
+	 * Method to get a table containing name of items present in the room
+	 * @return String table with names of clues
+	 */
 	public String[] getlistOfItem(){
 		String[] str = new String[clues.size()];
 		int i =0;
@@ -401,6 +434,10 @@ public class Room {
 		return str;
 	}
 	
+	/**
+	 * Method to get a table containing name of NPC present in the room
+	 * @return String table with names of occupants
+	 */	
 	public String[] getNameofOccupants(){
 		String[] str = new String[occupants.size()];
 		int i = 0 ;

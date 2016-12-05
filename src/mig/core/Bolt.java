@@ -2,6 +2,7 @@ package mig.core;
 
 /**
  * <b>Bolt is the class representing a bolt, for a chest for example.</b>
+ * <b>This class is abstract, it will be impossible to instantiate it</b>
  * <b>The class Bolt allows an object to be locked in the game.</b>
  * <b>For example a chest or a door.</b>
  * <p>
@@ -9,6 +10,7 @@ package mig.core;
  * </p>
  * <ul>
  * <li>A state locked or not, it is a boolean fixed when the bolt is created.</li>
+ * <li>A Bolt can be unlocked but cannot be locked after being unlocked.</li>
  * </ul>
  * 
  * 
@@ -17,6 +19,7 @@ package mig.core;
  */
 public abstract class Bolt {
 	 /**
+	  * Boolean that will be true if the lock is locked and false if it is not
 	  */
 	private boolean locked;
 

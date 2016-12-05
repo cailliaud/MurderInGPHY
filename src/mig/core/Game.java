@@ -7,142 +7,280 @@ import mig.exceptions.InventoryFull;
 
 
 /**
- * This class will be more detailed and implemented at the end
+ * <b>The Class game is the principal class in the core</b>
+ * what do this class does :
+ * <ul>
+ * <li> instentiates all Items (PhysicalObject, Key, Information)</li>
+ * <li> instentiates all enigmas </li>
+ * <li> instentiates all Bolt and Door linked with </li>
+ * <li> instentiates all NPC</li>
+ * <li> instentiates all Room</li>
+ * </ul>
+ * 
+ * To win the game it has to give the good killer
+ * 
  */
 public class Game {
 
+	/**
+	 * The player of the game
+	 * It is public to access to it easily
+	 */
 	public Player myPlayer;
+
+	/**
+	 * The NPC who is the killer in the game
+	 */
 	private NPC killer ;
+
+	/**
+	 * Boolean to know if the game is won or not
+	 */
 	private boolean gameWin = false;
 
 
 	/**
-	 * Creation of all the room of the game
+	 * Creation of the room hall1RDC
 	 */
-
 	private Room hall1RDC = new Room("Hall",
 			"Hall of B2",
 			"Hall.jpg",
 			"RDC_hall.jpg");
+
+	/**
+	 * Creation of the room desk annie
+	 */
 	private Room deskAnnie = new Room("Annie desk",
 			"This is the desk of Annie",
 			"BureauAnnie.JPG",
 			"RDC_BureauAnnie.jpg" );
+
+	/**
+	 * Creation of the room corridor1RDC
+	 */
 	private Room corridor1RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
 			"Couloir_vue_hall_salleAnnieTD1.JPG",
 			"RDC_Couloir_vue_TD1_Annie.jpg");
+
+	/**
+	 * Creation of the room corridor2RDC
+	 */
 	private Room corridor2RDC = new Room("Corridor of the RDC", 
 			"This is the corridor of the RDC",
 			"Couloir_vue_salleCafet.JPG",
 			"RDC_Couloir_vue_Cafet_Reunion.jpg");
+
+	/**
+	 * Creation of the room corridor3RDC
+	 */
 	private Room corridor3RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"Couloir_BureauxPG_Allan.JPG",
 			"RDC_Couloir_BureauxPG_Allan.jpg");
+
+	/**
+	 * Creation of the room corridor4RDC
+	 */
 	private Room corridor4RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"Couloir_vue_TD4.JPG",
 			"RDC_Couloir_TD4.jpg");
+
+	/**
+	 * Creation of the room corridor5RDC
+	 */
 	private Room corridor5RDC = new Room("Corridor of the RDC",
 			"This is the corridor of the RDC",
 			"Escalier_du_Font.JPG",
 			"RDC_Escalier.jpg");
+	/**
+	 * Creation of the room TD1
+	 */
 	private Room td1 = new Room("TD1",
 			"This is the room TD1",
 			"TD1.JPG",
 			"RDC_TD1.jpg" );
+
+	/**
+	 * Creation of the room meeting
+	 */
 	private Room meeting = new Room("Meeting room", 
 			"This is the room for the meeting", 
 			"SalleReunion.JPG",
 			"RDC_SalleReunion.jpg");
+
+	/**
+	 * Creation of the room cefeteria
+	 */
 	private Room cafet = new Room("Cafeteria room", 
 			"This is the room for the cafeteria", 
 			"Salle_cafet.JPG",
 			"RDC_SalleCafet.jpg");
+
+	/**
+	 * Creation of the room desk of Patrick and Dominique
+	 */
 	private Room deskPgDom = new Room("PG and dominique desk",
 			"This is the desk of Patrick and Dominique",
 			"deskPGDom.jpg",
 			"RDC_BureauPG.jpg");
+
+	/**
+	 * Creation of the room desk of Allan
+	 */
 	private Room deskAllan = new Room("Allan desk",
 			"This is the desk of Allan",
 			"BureauAllan.JPG",
 			"RDC_BureauAllan.jpg");
+
+	/**
+	 * Creation of the room TD4
+	 */
 	private Room td4 = new Room("TD4", 
 			"This is the room TD4", 
 			"TD4.JPG",
 			"RDC_TD4.jpg");
-	private Room deskSecretary = new Room("Secretary desk");
+
+	/**
+	 * Creation of the room  TP1
+	 */
 	private Room tp1 = new Room("TP1",
 			"This is the room TP1", 
 			"TP1.JPG",
 			"Etage_TP1.jpg");
+
+	/**
+	 * Creation of the room classroom
+	 */
 	private Room classroom = new Room("Classroom",
 			"This is the Classroom", 
 			"Cours.JPG",
 			"Etage_SalleCours.jpg");
+
+	/**
+	 * Creation of the room of the corridor1floor
+	 */
 	private Room corridor1Floor= new Room("Corridor of the floor", 
 			"This is the corridor of the floor",
 			"Couloir_vue_salleCours.JPG",
 			"Etage_Couloir_vue_SalleCoursTP2.jpg");
+
+	/**
+	 * Creation of the room of the corridor2floor
+	 */
 	private Room corridor2Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
 			"Couloir_vue_TD2.JPG",
 			"Etage_Couloir_vue_TD2.jpg");
+
+	/**
+	 * Creation of the room of the corridor 3 floor
+	 */
 	private Room corridor3Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
 			"Couloir_vue_TD3.JPG",
 			"Etage_Couloir_vue_TD3.jpg");
+
+	/**
+	 * Creation of the room of the corridor 4 floor
+	 */
 	private Room corridor4Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
 			"Couloir_vue_info1.JPG",
 			"Etage_Couloir_vue_Info1.jpg");
+
+	/**
+	 * Creation of the room of the corridor 5 floor
+	 */
 	private Room corridor5Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
 			"Couloir_vue_TP3.JPG",
 			"Etage_Couloir_vue_TP3.jpg");
+
+	/**
+	 * Creation of the room of the corridor 6 floor
+	 */
 	private Room corridor6Floor= new Room("Corridor of the floor",
 			"This is the corridor of the floor",
 			"Couloir_vue_toilettesHautB2.JPG",
 			"Etage_Couloir_vue_ToilettesHaut.jpg");
+
+	/**
+	 * Creation of the room of the hall in the floor
+	 */
 	private Room hallFloor = new Room("Hall of the floor",
 			"This is the corridor of the floor",
 			"Haut_escalier_entreeB2.JPG",
 			"Etage_Haut_Escalier.jpg");
+
+	/**
+	 * Creation of the room of the TP2
+	 */
 	private Room tp2 = new Room("TP2",
 			"This is the room TP2",
 			"TP2.JPG",
 			"Etage_TP2.jpg");
+
+	/**
+	 * Creation of the room of the TD2
+	 */
 	private Room td2 = new Room("TD2",
 			"This is the room TD2",
 			"TD2.JPG",
 			"Etage_TD2.jpg");
-	private Room lp1 = new Room("LP1");
+
+	/**
+	 * Creation of the room of the TD3
+	 */
 	private Room td3 = new Room("TD3",
 			"This is the room TP3",
 			"TD3.jpg",
 			"Etage_TD3.jpg");
-	private Room lp2 = new Room("LP2");
+
+	/**
+	 * Creation of the room of the info 1
+	 */
 	private Room info1 = new Room("Info1",
 			"This is the room Info1",
 			"Info1.JPG",
 			"Etage_Info1.jpg");
+
+	/**
+	 * Creation of the room of the ent1
+	 */
 	private Room ent1 = new Room("ENT1",
 			"This is the room ENT1",
 			"ENT1.JPG",
 			"Etage_ENT1.jpg");
+
+	/**
+	 * Creation of the room of the room tp3
+	 */
 	private Room tp3 = new Room("TP3",
 			"This is the room TP3",
 			"TP3.JPG",
 			"Etage_TP3.jpg");
+
+	/**
+	 * Creation of the room ent3
+	 */
 	private Room ent3 = new Room("ENT3",
 			"This is the room ENT3",
 			"ENT3.JPG",
 			"Etage_ENT3.jpg");
+
+	/**
+	 * Creation of the room the aegp
+	 */
 	private Room aegp = new Room("AEGP",
 			"This is the room AEGP",
 			"AEGP.jpg",
 			"Etage_AEGP.jpg");
+
+	/**
+	 * Creation of the room toilet
+	 */
 	private Room toilet = new Room("Toilet", 
 			"This is the toilet",
 			"Toilettes_haut_B2.JPG",
@@ -151,7 +289,6 @@ public class Game {
 	/**
 	 * Creation of all the keys of the game with doors linked to these keys
 	 */
-
 	private Key woodenKey = new Key("Key TD1");
 	private Lock lockTD1 = new Lock(woodenKey);
 	private Door td1_corridor1RDC= new Door(lockTD1, td1, corridor1RDC);
@@ -461,10 +598,10 @@ public class Game {
 	private Enigma dominiqueEnigma = new Enigma("<p>How many engineers does it take to change a lightbulb at Microsoft ?</p>",
 			"0",
 			"<p>Yes it is no one.</p>"
-			+ "<p>Everybody stay in the dark</p>"
-			+ "<p>And Billou decides that is a new standard !</p>",
-			sqlBook);
-	
+					+ "<p>Everybody stay in the dark</p>"
+					+ "<p>And Billou decides that is a new standard !</p>",
+					sqlBook);
+
 	/**
 	 * Creation of all the NPC of the game
 	 */
@@ -498,21 +635,30 @@ public class Game {
 	private NPC dominique = new NPC ("Dominique", dominiqueEnigma);
 
 
-
+	/**
+	 * Constructor for the class Game
+	 * @param name the name of the player
+	 * If it is null, the player will be called "Sherlock"
+	 * The player begin the aegp room
+	 * 
+	 * The constructor will :
+	 * <ul>
+	 * <li>Set doors</li>
+	 * <li>Put items in rooms</li>
+	 * <li> set the killer : Babujhi</li>
+	 * <li>put NPC in room</li>
+	 * </ul>
+	 */
 	public Game(String name) 
 	{
-
-
 		if ((name==null)||(name.isEmpty())) {
-			this.myPlayer = new Player("Sherlock", hall1RDC);
+			this.myPlayer = new Player("Sherlock", aegp);
 		}
 		else
 		{
-			this.myPlayer= new Player(name, hall1RDC);
-
+			this.myPlayer= new Player(name, aegp);
 		}
 		setDoor();
-
 		// Uncomment to put all item in the hall to test
 		//testPutAllIteminHall();
 		putItemsInRoom();
@@ -520,6 +666,9 @@ public class Game {
 		putNPCInRoom();
 	}
 
+	/**
+	 * Method to set Doors
+	 */
 	private void setDoor(){
 		hall1RDC.addDoor("north", hall1RDC_corridor1RDC);
 		hall1RDC.addDoor("up", hall1RDC_hallFloor);
@@ -612,6 +761,10 @@ public class Game {
 		hall1RDC.addItem(astemirInfo);
 
 	}
+	
+	/**
+	 * Method to put items in rooms
+	 */
 	private void putItemsInRoom(){
 		hall1RDC.addItem(woodenKey);
 		meeting.addItem(lighter);
@@ -643,6 +796,9 @@ public class Game {
 	}
 
 
+	/**
+	 * Method to put NPC in rooms
+	 */
 	private void putNPCInRoom(){
 		hall1RDC.addPNJ(steve);
 		hall1RDC.addPNJ(claire);
@@ -677,7 +833,7 @@ public class Game {
 	/**
 	 * Method to set the NPC who is the killer
 	 * The killer cannot be set more than one time
-	 * @param thekiller
+	 * @param thekiller It is the NPC who is the killer
 	 */
 	public void setKiller(NPC thekiller){
 		if (this.killer==null){
@@ -705,6 +861,7 @@ public class Game {
 	/**
 	 * Method to give the name of the killer and to try to win the game
 	 * @param name Name of the PNJ who is the killer
+	 * @throws GameOver if the player given is not the good
 	 */
 	public void giveKiller(String name) throws GameOver{
 		String nameGiven,killerName;

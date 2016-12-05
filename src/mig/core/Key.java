@@ -17,7 +17,6 @@ public class Key extends Item {
 	 * The name as default, if name = null will be "unknown key"
 	 */
 	public Key (String name){
-		//TODO sécurité si name =null 
 		super(name);
 	}
 

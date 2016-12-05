@@ -74,10 +74,18 @@ public class Player extends Personage{
 		return owned.displayNotebook();
 	}
 	
+	/**
+	 * Method to see the inventory
+	 * @return String of the inventory
+	 */
 	public String seeInventory(){
 		return owned.displayInventory();
 	}
 	
+	/**
+	 * Method to see the bunch
+	 * @return String of the bunch
+	 */
 	public String seeBunch(){
 		return owned.displayBunch();
 	}
@@ -88,6 +96,7 @@ public class Player extends Personage{
 	 * Method to add an item in the player inventory
 	 * @param item the item added
 	 * @return a string explaining what it has be done
+	 * @throws InventoryFull if the inventory is fulled 
 	 */
 	public String addItem(Item item) throws InventoryFull{	
 		if (item instanceof Information) {
@@ -116,8 +125,7 @@ public class Player extends Personage{
 	 * Allows to remove an item from the inventory
 	 * It will be let in the current Room
 	 * Only PhysicalObject can be removed from the inventory
-	 * @param name The name of the Object
-	 * @throws ErrorNameGiven Return a mistake if the name given is wrong
+	 * @param obj The PhysicalObject removed
 	 * @see Owned
 	 */
 	public void removePhysicalObject(PhysicalObject obj) {
@@ -133,6 +141,10 @@ public class Player extends Personage{
 		return currentRoom;
 	}
 	
+	/**
+	 * Accessor for the owned of the player
+	 * @return the owned
+	 */
 	public Owned getOwned(){
 		return this.owned;
 	}

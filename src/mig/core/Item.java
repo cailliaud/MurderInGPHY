@@ -41,10 +41,8 @@ public abstract class Item
 		
 	}
 
-
-	
 	/**
-	 * Getter for the name of the item.
+	 * Accessor for the name of the item.
 	 * @return The name of the item (String)
 	 * 
 	 * @see Item#name
@@ -56,7 +54,7 @@ public abstract class Item
 
 	
 	/**
-	 * Getter to know if the object exist.
+	 * Accessor to know if the object exist.
 	 * @return True if the item exist
 	 * 
 	 * @see Item#exist

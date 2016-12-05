@@ -43,11 +43,20 @@ public class Chest {
 
 	/**
 	 * Default Constructor
+	 * @param bolt the Bolt of the chest (Code,Lock,OpenedBolt)
+	 * @see Bolt
+	 * @see Code
+	 * @see Lock
+	 * @see OpenedBolt
 	 */
 	public Chest (Bolt bolt){
 		this.bolt=bolt;
 	}
 
+	/**
+	 * Accesors for the parameter isLocked
+	 * @return true if the chest is locked and false if it is not
+	 */
 	public boolean isLocked(){
 		return bolt.isLocked();
 	}
@@ -82,6 +91,7 @@ public class Chest {
 	/** 
 	 * Method to get the reward contained in the Chest
 	 * @return containt The list of Items in the Chest
+	 * @throws ErrorObjectClosed if the chest is not unlocked
 	 */
 	public ArrayList<Item> getContaintChest() throws ErrorObjectClosed
 	{
@@ -130,7 +140,7 @@ public class Chest {
 	 * Method to get an item from the Chest
 	 * @param name The name of the item needed
 	 * @return the Item from the chest
-	 * 
+	 * @throws ErrorNameGiven if the object asked does not exist in the chest
 	 * The item is removed from the chest 
 	 */
 	public Item getItem(String name)

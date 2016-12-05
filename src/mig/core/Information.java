@@ -1,9 +1,7 @@
 package mig.core;
 /**
  * <b>The class Information represents the informations given by the characters during the game.</b>
- * <p>
-		it uses inheritance from the class EnigmaItem
- * </p>
+ * <p>it uses inheritance from the class EnigmaItem</p>
  * 
  * @see EnigmaItem
  * 

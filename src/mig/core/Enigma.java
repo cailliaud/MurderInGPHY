@@ -13,12 +13,13 @@ import mig.exceptions.FailedResolvEnigma;
  * The reward i an Item </p>
  * <p>This Class contain :</p>
  * <ul> 
- * <li> Item : EnigmaItem </li>
- * <li> Answer : String </li> 
- * <li> Question : String </li>
- * <li> Reward : Item </li>
- * <li> isResolved :boolean </li>
- * <li> itemWaited : boolean </li>
+ * <li> Item : EnigmaItem  = the item waited as answer</li>
+ * <li> Answer : String  = the string waited as answer</li> 
+ * <li> Question : String = the question asked by the enigma </li>
+ * <li> Reward : Item = the item given as reward</li>
+ * <li> NpcText : String = the text said by the NPC after the enigma was resolved </li>
+ * <li> isResolved :boolean = boolean to know if the enigma is resolved </li>
+ * <li> itemWaited : boolean = true if item waited as answer instead of string </li>
  * </ul>
  * 
  * @author Group 8
@@ -100,6 +101,7 @@ public class Enigma {
 	 * Constructor for an Enigma with an Item as answer
 	 * @param quest the question asked by the Enigma
 	 * @param item the item waited to answer the enigme
+	 * @param npctext the text displayed when the enigma will be resolved
 	 * @param reward The item won if the enigma is resolved
 	 * @throws NullPointerException if the item or the reward are null.
 	 * 
@@ -107,8 +109,6 @@ public class Enigma {
 	 * the enigma is set as not resolved.
 	 */
 	public Enigma(String quest,EnigmaItem item,String npctext, Item reward) throws NullPointerException {
-		// Security if the quest String is not correct
-
 		this.question = quest;
 
 		// Security if the item given is null
@@ -117,6 +117,7 @@ public class Enigma {
 		// Security if the reward item given is null
 		if (reward==null) throw new NullPointerException();
 
+		// itemWaited true because the answer is an Item
 		this.itemWaited = true;
 		this.item= item;
 		this.npcText=npctext;
@@ -130,15 +131,14 @@ public class Enigma {
 	 * Constructor for an Enigma with a String as answer
 	 * @param quest the question asked by the Enigma
 	 * @param answer the String waited to answer the Enigma
+	 * @param npctext the text displayed when the enigma will be resolved
 	 * @param reward The item won if the Enigma is resolved
-	 * @throws NullQuestionException if the question String is empty
 	 * @throws NullPointerException if the item or the reward are null.
 	 * 
 	 * The boolean itemWaited will be false because it is a String waited as answer
 	 * the enigma is set as not resolved.
 	 */
 	public Enigma (String quest,String answer,String npctext, Item reward) throws NullPointerException{
-		// Security if the quest String is not correct
 		this.question = quest;
 
 		// Security if the item given is null
@@ -156,7 +156,7 @@ public class Enigma {
 
 
 	/**
-	 * Getter for the question given by the Enigma
+	 * Accessor for the question given by the Enigma
 	 * @return The String of the question
 	 */
 	public String getQuest(){
@@ -165,7 +165,9 @@ public class Enigma {
 
 
 	/**
-	 * 
+	 * Accessor for the npcText given when the enigma is resolved
+	 * @return the string of the text
+	 * @throws FailedResolvEnigma if the enigma is not resolved yet
 	 */
 	public String getNpcText() throws FailedResolvEnigma{
 		if (isResolved) return this.npcText;
@@ -177,6 +179,8 @@ public class Enigma {
 	 * resolve the Enigma if it is a String 
 	 * @param answer
 	 * String answer given by the player
+	 * @throws ErrorTypeAnswer if the answer waited is not a string
+	 * @throws FailedResolvEnigma if the string given is not the same as the string waited
 	 */
 	public void resolveEnigma (String answer) throws FailedResolvEnigma,ErrorTypeAnswer{
 		if (!itemWaited){
@@ -199,6 +203,8 @@ public class Enigma {
 	 * resolve the Enigma if it is a EnigmaItem 
 	 * @param item
 	 * EnigmaItem  given by the player
+	 * @throws ErrorTypeAnswer if the answer waited is an item not a string
+	 * @throws FailedResolvEnigma if it is not the good item
 	 */
 	public void resolveEnigma (EnigmaItem item) throws FailedResolvEnigma,ErrorTypeAnswer{
 		if (itemWaited){
@@ -218,6 +224,7 @@ public class Enigma {
 	 * Method to get the Reward when the Enigma is resolved
 	 * @return Item
 	 * The Item won
+	 * @throws FailedResolvEnigma if the enigma is not resolved
 	 */
 	public Item rewarded() throws FailedResolvEnigma{
 		if (isResolved)
@@ -231,7 +238,7 @@ public class Enigma {
 	}
 
 	/**
-	 * Method to know if this Enigma is already Resolved
+	 * Accessor to know if this Enigma is already Resolved
 	 * @return boolean
 	 * True if it is already resolved
 	 */

@@ -3,7 +3,14 @@ package mig.core;
 /**
  * <b>DirectionWords is a class that contains the directions allowed in the Game Murder in GPHY</b>
  * <p> These are directions authorized : </p>
- * North, east, west, south, up and down
+ * <ul>
+ * <li>North</li>
+ * <li>east</li>
+ *  <li>west</li>
+ *  <li>south</li>
+ *  <li>up</li>
+ *  <li>down</li>
+ * </ul>
  * @author Group8
  * @version 19/11/2016
  * 

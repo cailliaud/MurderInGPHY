@@ -3,7 +3,7 @@ package mig.core;
 /**
  * <b>PNJ is the class representing PNJ present in the game. </b>
  * <p>
- * These class is in inheritence with the class Personage. 
+ * These class is in inheritance with the class Personage. 
  * PNJ is a personage non-player. He is here to help the player, for example to give him clue or item after an enigma, to help to discover the killer. 
  * 
  * </p>
@@ -11,7 +11,7 @@ package mig.core;
  * PNJ contains these elements :
  * </p>
  * <ul>
- * 		<li>A name, fixed when the game is created. In inheritence with personage.</li>
+ * 		<li>A name, fixed when the game is created. In inheritance with personage.</li>
  * 		<li>Is the personage is the killer</li>
  * 		<li>Is the PNJ is use in a room.</li>
  * 		<li>Have an enigma for the player.</li>
@@ -53,6 +53,11 @@ public class NPC extends Personage{
 		if (enigma==null) this.enigma= new Enigma();
 		else this.enigma=enigma;
 	}
+	
+	/**
+	 * Accessor for the NPC enigma
+	 * @return the enigma
+	 */
 	public Enigma getEgnime(){
 		return this.enigma;
 	}

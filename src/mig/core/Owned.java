@@ -48,8 +48,11 @@ public class Owned {
 	 */
 	private ArrayList<PhysicalObject> inventory;
 
-
+	/**
+	 * The size of the inventory
+	 */
 	private final int slots;
+	
 	/**
 	 * Constructor
 	 * @param slots It represents the maximum items contained in the inventory (integer)
@@ -121,10 +124,9 @@ public class Owned {
 
 	/**
 	 * Remove a object from the inventory
-	 * @param name Name of the Object that you want to remove
+	 * @param obj the PhysicalObject that you want to remove from inventory
 	 * There is a test to check if an object in the inventory exist with this name
-	 * @throws ErrorNameGiven 
-	 * 
+	 * @return the PhysicalObject removed from the inventory
 	 * @see Owned#exist(PhysicalObject)
 	 * @see Owned#inventory
 	 * @see PhysicalObject
@@ -132,8 +134,6 @@ public class Owned {
 	public PhysicalObject removeObject (PhysicalObject obj) {
 		inventory.remove(obj);
 		return(obj);
-
-
 	}
 
 
@@ -184,7 +184,7 @@ public class Owned {
 	 * The PhysicalObject is removed from the inventory.
 	 * @see Owned#inventory
 	 * @see PhysicalObject
-	 * @throws ErrorNameGiven
+	 * @throws ErrorNameGiven if there is no items with this name
 	 */
 	public PhysicalObject getObject(String name)
 			throws ErrorNameGiven
@@ -211,7 +211,7 @@ public class Owned {
 	 *
 	 * @see Owned#notebook
 	 * @see Information
-	 * @throws ErrorNameGiven
+	 * @throws ErrorNameGiven if there are no items with the name given
 	 */
 	public Information getInfo(String name)
 			throws ErrorNameGiven
@@ -229,7 +229,10 @@ public class Owned {
 	}
 
 
-
+	/**
+	 * Method to display the notebook in one string
+	 * @return the notebook
+	 */
 	public String displayNotebook(){
 		String str ="This all the information that i have currently in my notebook :\n";
 		for (Information info : notebook) {
@@ -239,6 +242,10 @@ public class Owned {
 		return str;
 	}
 
+	/**
+	 * Method to display the inventory in one string
+	 * @return the inventory
+	 */
 	public String displayInventory(){
 		String str ="This all the Object that i have in my bag :\n";
 		for (PhysicalObject obj : inventory) {
@@ -248,6 +255,10 @@ public class Owned {
 		return str;
 	}
 
+	/**
+	 * Method to display the bunch in one string
+	 * @return the bunch
+	 */
 	public String displayBunch(){
 		String str ="This all the keys that i have currently in my bunch :\n";
 		for (Key key : bunch) {
@@ -257,36 +268,66 @@ public class Owned {
 		return str;
 	}
 
+	/**
+	 * Getter for a PhysicalObject in the  inventory
+	 * @param index the index of the object in the inventory
+	 * @return the PhysicalObject
+	 * It is considered that the index exists 
+	 */
 	public PhysicalObject getObject(int index){
 		return inventory.get(index);
 	}
 	
+
+	/**
+	 * Getter for an Information in the  notebook
+	 * @param index the index of the info in the notebook
+	 * @return the Information
+	 * It is considered that the index exists 
+	 */
 	public Information getInfo(int index){
 		return notebook.get(index);
 	}
-	
+
+
 	/**
-	 * 
-	 * @param name
-	 * @return
+	 * Getter for a Key in the  bunch
+	 * @param idx the index of the key in the bunch
+	 * @return the Key
+	 * It is considered that the index exists 
 	 */
 	public Key getKey(int  idx){
 		return bunch.get(idx);
 	}
 
-
+	/**
+	 * Accessor for the Notebook
+	 * @return ArrayList of the notebook
+	 */
 	public ArrayList<Information> getNotebook(){
 		return this.notebook;
 	}
 
+	/**
+	 * Accessor for the bunch
+	 * @return ArrayList of the bunch
+	 */
 	public ArrayList<Key> getBunch(){
 		return this.bunch;
 	}
 
+	/**
+	 * Accessor for the inventory
+	 * @return ArrayList of the inventory
+	 */
 	public ArrayList<PhysicalObject> getInventory(){
 		return this.inventory;
 	}
 
+	/**
+	 * Method to get the inventory to a table that contains name of object in the inventory
+	 * @return the table of objet's names
+	 */
 	public String[] getInventoryToString(){
 		String[] str = new String[getSize()];
 		int i =0;
@@ -297,6 +338,10 @@ public class Owned {
 		return str;
 	}
 
+	/**
+	 * Method to get the bunch to a table that contains name of key in the inventory
+	 * @return the table of key names
+	 */
 	public String[] getBunchToString(){
 		String[] str = new String[bunch.size()];
 		int i =0;
@@ -307,6 +352,10 @@ public class Owned {
 		return str;
 	}
 	
+	/**
+	 * Method to get the notebook to a table that contains description of info in the inventory
+	 * @return the table of info's descriptions
+	 */
 	public String[] getNotebookToString(){
 		String[] str = new String[notebook.size()];
 		int i =0;
