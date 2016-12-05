@@ -46,7 +46,7 @@ public class EnigmaView extends JDialog {
 		this.npc = npc;
 		this.enigma=npc.getEgnime();
 		this.game=game;
-		this.setSize(700, 400);
+		this.setSize(800, 400);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 

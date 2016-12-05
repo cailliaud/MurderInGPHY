@@ -260,15 +260,18 @@ public class Game {
 	private Enigma claireEnigma = new Enigma("<p>Ah, i’m so tired, I worked until way too late at night yesterday.</p> "
 			+ "<p>Luckily, I got some brioche vendéenne with me!</p><p>You want some? What? Alex, killed?</p> "
 			+ "<p>Oh, you almost got me. You make a good actor you know.</p><p> But I think you shouldn’t joke with those kind of things.</p> "
-			+ "<p>You are really pale, take some to regain strength! If you want your reward, answer this question : </p>"
+			+ "<p>You are really pale, take some to regain strength!</p>"
+			+ "<p>If you want your reward, answer this question : </p>"
 			+ "<p>What is the best department in France ?</p>", 
 			"vendee", "You’re damn right! Take it. My pleasure", 
 			briocheVendeenne);
 
 	private Enigma babujhiEnigma = new Enigma("<p>It’s so sad what happened to Alexandre.</p>"
-			+ "<p>I really want to help you to find the killer. Take that key if you answer my question correctly, "
+			+ "<p>I really want to help you to find the killer.</p>"
+			+ "<p>Take that key if you answer my question correctly,</p> "
 			+ "<p>I don’t know what room it opens but I hope it will help you in your investigation.</p>"
-			+ "<p>If you want your reward, answer this question : “What does GFP mean ?</p>", 
+			+ "<p>If you want your reward, answer this question :</p>"
+			+ "<p> “What does GFP mean ?</p>", 
 			"green fluorescent protein", 
 			"<p>Yeah man, that's right, i love GFP. </p>"
 					+ "<p>This key is for you but keep it for you.</p>", 
