@@ -22,7 +22,7 @@ public class PrincipalWindow extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setResizable(true);
 		
-		selectNom.add(new JLabel("Nom du Joueur :"));
+		selectNom.add(new JLabel("Your name :"));
 		selectNom.add(xField);
 
 

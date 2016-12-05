@@ -123,7 +123,7 @@ public class Game {
 	private Room info1 = new Room("Info1",
 			"This is the room Info1",
 			"Info1.JPG",
-			"Etage_ENT1.jpg");
+			"Etage_Info1.jpg");
 	private Room ent1 = new Room("ENT1",
 			"This is the room ENT1",
 			"ENT1.JPG",
@@ -254,12 +254,12 @@ public class Game {
 	 */
 
 	private Enigma steveEnigma = new Enigma("<p>Hey !</p><p>You come late, there is no more coffee.</p> "
-			+ "<p>Do you want a hot chocolate instead ? it's 40 cents.</p>", fourtyCents , 
+			+ "<p>Do you want a hot chocolate instead ?</p><p>It's 40 cents.</p>", fourtyCents , 
 			"Take it. Beware it's hot", hotChocolate);
 
 	private Enigma claireEnigma = new Enigma("<p>Ah, i’m so tired, I worked until way too late at night yesterday.</p> "
-			+ "<p>Luckily, I got some brioche vendéenne with me! You want some? What? Alex, killed?</p> "
-			+ "<p>Oh, you almost got me. You make a good actor you know. But I think you shouldn’t joke with those kind of things.</p> "
+			+ "<p>Luckily, I got some brioche vendéenne with me!</p><p>You want some? What? Alex, killed?</p> "
+			+ "<p>Oh, you almost got me. You make a good actor you know.</p><p> But I think you shouldn’t joke with those kind of things.</p> "
 			+ "<p>You are really pale, take some to regain strength! If you want your reward, answer this question : </p>"
 			+ "<p>What is the best department in France ?</p>", 
 			"vendee", "You’re damn right! Take it. My pleasure", 
@@ -274,15 +274,18 @@ public class Game {
 					+ "<p>This key is for you but keep it for you.</p>", 
 					silverKey);
 
-	private Enigma delphineEnigma = new Enigma("<p>Hello young detective, if you give me the good answer to this question, </p>"
-			+ "then i will give you a clue. <p>But be careful, for that you will have to get back to your L3 physiology courses"
-			+ "and the answer has to be in hexadecimal :</p><p>  What is the first property of the cardiac function ?</p>", 
+	private Enigma delphineEnigma = new Enigma("<p>Hello young detective, if you give me the good answer to this question.</p>"
+			+ "<p>Then i will give you a clue.</p> <p>But be careful, for that you will have to get back to your L3 physiology courses</p>"
+			+ "<p>he answer has to be in hexadecimal :</p><p>  What is the first property of the cardiac function ?</p>", 
 			"4175746f6d617469736d",
-			"Well done, you are a true physiologist", delphineInfo);
+			"Well done, you are a true physiologist !", delphineInfo);
 
-	private Enigma annieEnigma = new Enigma("<p>Hello, you came for a clue i guess ? Well ok, but i don’t give it that easily !</p>"
-			+ "<p>Here is my question : From which historical character comes from the first computer language you learned in L3 ?</p>", 
-			"ada lovelace", "<p>GOOOOOOD !!!</p><p>I know who is the killer but I am too scared to tell anything.</p>"
+	private Enigma annieEnigma = new Enigma("<p>Hello, you came for a clue i guess ?</p><p>Well ok, but i don’t give it that easily !</p>"
+			+ "<p>Here is my question :</p>"
+			+ "<p>From which historical character comes from the first computer language you learned in L3 ?</p>", 
+			"ada lovelace",
+			"<p>GOOOOOOD !!!</p>"
+					+ "<p>I know who is the killer but I am too scared to tell anything.</p>"
 					+ "<p>The only clue i can give you is that there is only one killer and I spread 8 clues hidden"
 					+ "in 8 different rooms.</p><p>You will have to discover them all and gather them for a vital clue.</p>", 
 					annieInfo);
@@ -298,13 +301,13 @@ public class Game {
 					+ " <p>Now you have to make me a summary of what is Java !</p> ", 
 					patrickInfo);
 
-	private Enigma allanEnigma = new Enigma("<p>Brrr ! It’s so cold outside ! I wish I have something to warm me up !</p> "
+	private Enigma allanEnigma = new Enigma("<p>Brrr ! It’s so cold outside !</p><p>I wish I have something to warm me up !</p> "
 			+ "<p>Do you have something for me ?</p>", 
 			hotChocolate, 
 			"<p>Oooh thank you so much!</p><p>Well, Annie told me you try to find who killed Alexandre.</p> "
 					+ "I don’t know if it will help you but take this. Good luck.", keyTD4);
 
-	private Enigma chloeEnigma = new Enigma("<p>Ahh I’m so hungry !!! Wouldn’t you have something to eat by any chance ???</p>" ,
+	private Enigma chloeEnigma = new Enigma("<p>Ahh I’m so hungry !!!</p><p>Wouldn’t you have something to eat by any chance ???</p>" ,
 			briocheVendeenne, "<p>ALLLLL RIIIIIGHT !!!</p><p>Thank you so much! Well, what can I give you in exchange? </p>"
 					+ "<p>Oh, I know! Do you  know how to open the TD3 room door? </p>"
 					+ "<p>You can open it with a password which is the capital city of Australia. Be sure to write it well.</p>", 
@@ -327,14 +330,17 @@ public class Game {
 			+ "<p>I know you are looking for Alex’s killer.</p><p>It happened that I got a key for you even if I have no freaking idea which door it open.</p> "
 			+ "<p>Just answer this question : Tell me what you can bought at the cafeteria and have a woman name?</p>", 
 			"amandine", 
-			"That’s right! The key is yours.", 
+			"<p>That’s right! The key is yours.</p>", 
 			longKey);
 
-	private Enigma fpEnigma = new Enigma("<p>AAAaaaah, I can’t wait for the holidays !</p><p>I want to travel, it’s been a long time.</p> "
+	private Enigma fpEnigma = new Enigma(
+			"<p>AAAaaaah, I can’t wait for the holidays !</p>"
+			+ "<p>I want to travel, it’s been a long time.</p> "
 			+ "<p>So, now i’m a student again, i won’t go that far.</p><p>I need to choose a place in France to stay.</p> "
-			+ "<p>By the way, do you know with which country the France has its longest border ? You will earn TD 2 key so think well.</p>", 
-			"brasil", 
-			"That’s Correct. Never forget the overseas bro! Take the key. I hope that you will find what you are looking for", 
+			+ "<p>By the way, do you know with which country the France has its longest border ?</p>"
+			+ "<p> You will earn TD 2 key so think well.</p>", 
+			"brazil", 
+			"<p>That’s Correct. Never forget the overseas bro!</p><p> Take the key. I hope that you will find what you are looking for</p>", 
 			keyTD2);
 
 	private Enigma fabienEnigma = new Enigma("<p>Hey you, are you going round and round in circles to find the killer ?</p>"
@@ -344,16 +350,23 @@ public class Game {
 			"<p>Yes… zero… What a shame… </p><p>Anyway, you answered well so take the item.</p>", 
 			bikeWheel);
 
-	private Enigma gcell1Enigma = new Enigma("<p>Oh my god I’m so stressed!</p><p> Will I find a job after my master's degree ?</p>", 
+	private Enigma gcell1Enigma = new Enigma("<p>Oh my god I’m so stressed!</p>"
+			+ "<p>Will I pass my high school exams ?</p>", 
 			"no", 
-			"There is no need to rub salt in the wound! Take that soup carton and leave! I can’t eat one more of this.", 
+			"<p>There is no need to rub salt in the wound!</p>"
+			+ "<p>Take that soup carton and leave!</p>"
+			+ "<p>I can’t eat one more of this.</p>", 
 			cartonOfSoup);
 
 
-	private Enigma marinEnigma = new Enigma("<p>You like Enigmas?</p><p>Answer this one : "
-			+ "In which country there is the biggest amount of redhead people ?</p>", 
+	private Enigma marinEnigma = new Enigma("<p>You like Enigmas?</p><p>Answer this one :</p> "
+			+ "<p>In which country there is the biggest amount of redhead people ?</p>", 
 			"scotland", 
-			"<p>You find the right answer.</p><p> And so  what ? You want a cookie ?</p><p> Get out of here !</p><p> *he throws on you a paper* !</p>", banknote);
+			"<p>You find the right answer.</p>"
+			+ "<p> And so  what ? You want a cookie ?</p>"
+			+ "<p> Get out of here !</p>"
+			+ "<p> *he throws on you a paper* !</p>",
+			banknote);
 
 	private Enigma antoineEnigma = new Enigma("<p>So, do you learned you genetics lesson or you spend the whole night playing video games ?</p> "
 			+ "<p>What is the name of the sequencing technique using the luciferin as a substrate ?</p>", 
@@ -365,8 +378,9 @@ public class Game {
 			+ "<p>What is the radioactive transformation allowing an excited nucleus to go to a weaker energy level</p> "
 			+ "<p>or to join its fundamental state by transferring its excess of energy to an electron ?</p>", 
 			"internal conversion", "<p>Wow! To be honest, I did not expect you to answer that.</p> "
-					+ "<p>Well, I did not see the killer but he or she is necessarily someone from AEGP "
-					+ "because he or she got the key to open the AEGP office.</p><p> I heard him or her open it, "
+					+ "<p>Well, I did not see the killer but he or she is necessarily someone from AEGP</p> "
+					+ "<p>Because he or she got the key to open the AEGP office.</p>"
+					+ "<p> I heard him or her open it, "
 					+ "I was on the other side of the wall.</p>", 
 					nicolasInfo);
 
@@ -411,6 +425,9 @@ public class Game {
 
 		}
 		setDoor();
+
+		// Uncomment to put all item in the hall to test
+		//testPutAllIteminHall();
 		putItemsInRoom();
 		setKiller(babujhi);
 		putNPCInRoom();
@@ -503,6 +520,10 @@ public class Game {
 		hall1RDC.addItem(toiletPaperRoll);
 		hall1RDC.addItem(aegpToiletInfo);
 		hall1RDC.addItem(aegpRoomInfo);
+		hall1RDC.addItem(annieInfo);
+		hall1RDC.addItem(antoineInfo);
+		hall1RDC.addItem(astemirInfo);
+
 	}
 	private void putItemsInRoom(){
 		hall1RDC.addItem(woodenKey);
@@ -545,9 +566,6 @@ public class Game {
 
 	}
 
-	private void initEnigmas(){
-
-	}
 
 	/**
 	 * Method to set the NPC who is the killer
@@ -582,7 +600,10 @@ public class Game {
 	 * @param name Name of the PNJ who is the killer
 	 */
 	public void giveKiller(String name) throws GameOver{
-		if (name.equals(killer.getName())){
+		String nameGiven,killerName;
+		killerName = killer.getName().toLowerCase();
+		nameGiven = name.toLowerCase();
+		if (nameGiven.equals(killerName)){
 			gameWin=true;
 		}else{
 			throw new GameOver();			

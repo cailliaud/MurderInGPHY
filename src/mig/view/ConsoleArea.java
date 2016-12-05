@@ -26,7 +26,7 @@ public class ConsoleArea extends JPanel {
 		this.setLayout( new BorderLayout());
 
 
-		welcome =new JLabel("Bienvenue dans Murder in GPHY " + game.myPlayer.getName(),JLabel.CENTER);
+		welcome =new JLabel("Welcome in the Game : Murder in GPHY " + game.myPlayer.getName(),JLabel.CENTER);
 		sentence = new JLabel(" Are you enought smart to find the killer ? ",JLabel.CENTER);
 		logoGPHY = new JLabel (iconGPHY);
 		logoSFA= new JLabel(iconSFA);

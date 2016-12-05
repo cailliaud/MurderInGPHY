@@ -98,7 +98,7 @@ public class EnigmaView extends JDialog {
 		panInfo = new JPanel();
 		panInfo.setBackground(Color.white);
 		panInfo.setPreferredSize(new Dimension(220, 80));
-		panInfo.setBorder(BorderFactory.createTitledBorder("Choisir une Information"));
+		panInfo.setBorder(BorderFactory.createTitledBorder("Chose an information"));
 		infos = new JComboBox<String>();
 		for (String info : game.myPlayer.getOwned().getNotebookToString()) {
 			infos.addItem(info);

@@ -17,13 +17,8 @@ public class Main {
 	public static PrincipalWindow main;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		main = new PrincipalWindow();
 		
-//		mygame = new Game("Nicolas");
-//		mygame.testGame();
-//		myWindow = new Window(mygame);
-//		
 	}
 }
 
