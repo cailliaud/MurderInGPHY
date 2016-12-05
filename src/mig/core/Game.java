@@ -356,8 +356,10 @@ public class Game {
 			copperKey);
 
 	private Enigma agatheEnigma = new Enigma("<p>Hey there ! How’s it going ?</p><p>I’m so hungryyy !</p><p>I could eat a whole cow !</p> "
-			+ "<p>I know you are looking for Alex’s killer.</p><p>It happened that I got a key for you even if I have no freaking idea which door it open.</p> "
-			+ "<p>Just answer this question : Tell me what you can bought at the cafeteria and have a woman name?</p>", 
+			+ "<p>I know you are looking for Alex’s killer.</p>"
+			+ "<p>It happened that I got a key for you even if I have no freaking idea which door it open.</p> "
+			+ "<p>Just answer this question :</p>"
+			+ "<p>Tell me what you can bought at the cafeteria and have a woman name?</p>", 
 			"amandine", 
 			"<p>That’s right! The key is yours.</p>", 
 			longKey);
@@ -413,7 +415,7 @@ public class Game {
 					nicolasInfo);
 
 	private Enigma gcelll2Enigma = new Enigma(" Leave me alone, I don’t have time for you, I have too much work to do.");
-	private Enigma jeanneEnigma = new Enigma("Another that dies in GPHY, ot should not become usual");
+	private Enigma jeanneEnigma = new Enigma("Another that dies in GPHY, it should not become usual");
 	private Enigma marineGcellEnigma = new Enigma("<p>Hey, i'm bored.</p>"
 			+ "<p>If you answer me correctly i will give you a gift !</p>"
 			+ "<p>What is the latin name of a mice ?</p>",
@@ -630,6 +632,7 @@ public class Game {
 		aegp.addItem(surfBoard);
 		aegp.addItem(boomrang);
 		aegp.addItem(kingCard);
+		aegp.addItem(beerBottle);
 		td1.addItem(goldLouis);
 		corridor2Floor.addItem(highHeel);
 		tp3.addItem(controler);

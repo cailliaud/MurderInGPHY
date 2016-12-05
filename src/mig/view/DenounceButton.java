@@ -54,7 +54,7 @@ public class DenounceButton extends JButton {
 	}
 	public void update(){
 
-		if (game.myPlayer.getOwned().getNotebook().size()>=0){
+		if (game.myPlayer.getOwned().getNotebook().size()>=9){
 			this.setEnabled(true);
 		}
 		else this.setEnabled(false);
