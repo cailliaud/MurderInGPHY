@@ -146,7 +146,7 @@ public class Enigma {
 
 		// Security if the reward item given is null
 		if (reward==null) throw new NullPointerException();
-		this.answer=answer;
+		this.answer=answer.toLowerCase();
 		this.reward=reward;
 		this.npcText=npctext;
 		this.itemWaited = false;
