@@ -25,7 +25,15 @@ import mig.exceptions.InventoryFull;
 
 import javax.swing.JOptionPane;
 
+/**
+ * <b>Enigmaview is the class that display all the window, Jlabel, Jbutton in the game.</b> 
+ * @author Group 8
+ * @version 06/12/2016
+ */
 
+/**
+ * Instantiate all the variables that will need to be display
+ */
 @SuppressWarnings("serial")
 public class EnigmaView extends JDialog {
 	private Enigma enigma;
@@ -40,6 +48,7 @@ public class EnigmaView extends JDialog {
 	private JComboBox<String> items, infos ;
 
 
+	
 	public EnigmaView(JFrame parent, String title, Game game, NPC npc, Window window){
 		super(parent, title);
 		this.window=window;
@@ -56,6 +65,11 @@ public class EnigmaView extends JDialog {
 		this.setVisible(true);
 	}
 
+	/**
+	 * JLabel to display the enigma of an NPC and the different kind of answers the player can give
+	 * The player can answer with a text, giving an object or giving an information
+	 */
+	
 	private void createEnigmaQuestion(){
 
 		this.setLayout( new GridLayout(0, 1));
@@ -160,11 +174,12 @@ public class EnigmaView extends JDialog {
 		content.add(p6, BorderLayout.CENTER);
 		this.add(content);
 
-
-
 		//this.getContentPane().add(content, BorderLayout.CENTER);
 	} 
 
+	/**
+	 * failed messages returned when the player give the wrong text to an NPC
+	 */
 	private void addActions(){
 		okTextBouton.addActionListener(
 				ae ->{
@@ -175,10 +190,15 @@ public class EnigmaView extends JDialog {
 						Item reward= enigma.rewarded();
 						rewardManagement(reward);
 
+						//If the player give the wrong answer
+						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
-						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close to the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
+					
+					
+						//If the player try to give something else than a text answer
 					catch (ErrorTypeAnswer e){
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
@@ -191,6 +211,9 @@ public class EnigmaView extends JDialog {
 
 				);
 
+		/**
+		 * failed messages returned when the player give the object to an NPC
+		 */
 		okItemBouton.addActionListener(
 				ae ->{
 					try {
@@ -200,10 +223,15 @@ public class EnigmaView extends JDialog {
 						Item reward= enigma.rewarded();
 						rewardManagement(reward);
 
+					//If the player give the wrong object
+						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
+					
+					//If the player try to give something else than an object
+					
 					catch (ErrorTypeAnswer e){
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}finally {
@@ -215,6 +243,10 @@ public class EnigmaView extends JDialog {
 
 				);
 
+		/**
+		 * failed messages returned when the player give the wrong information to an NPC
+		 */
+		
 		okInfoBouton.addActionListener(
 				ae ->{
 					try {
@@ -222,11 +254,16 @@ public class EnigmaView extends JDialog {
 						enigma.resolveEnigma((Information)object);
 						Item reward= enigma.rewarded();
 						rewardManagement( reward);
-
+						
+					//If the player give the wrong information
+						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
+					
+					//If the player try to give something else than an information
+					
 					catch (ErrorTypeAnswer e){
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}finally {
@@ -239,6 +276,11 @@ public class EnigmaView extends JDialog {
 				);
 	}
 
+	/**
+	 * method to give the reward to the player if he answered correctly to an enigma
+	 * @param reward
+	 */
+	
 	private void rewardManagement(Item reward){
 		String message;
 		String nameObject;
@@ -256,6 +298,7 @@ public class EnigmaView extends JDialog {
 			message="<html><h1>Well Done !</h1>";
 		}
 
+		//add the object to the inventory of the player
 		try {
 			game.myPlayer.addItem(reward);
 			message += "</br> "
@@ -263,6 +306,9 @@ public class EnigmaView extends JDialog {
 					+ "</html> ";
 			JOptionPane.showMessageDialog(null,message,"Item added in your Inventory" , JOptionPane.INFORMATION_MESSAGE);
 		} catch (InventoryFull e) {
+			
+			//if the inventory of the player if full then the object is let down on the floor and the player can take whenever he please.
+			
 			message += "</br> "
 					+"<p>You are fulled, the reward is let down !"
 					+ "</br> Check to find : "+nameObject+"</p>"

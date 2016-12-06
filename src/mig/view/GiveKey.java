@@ -21,6 +21,11 @@ import mig.core.Item;
 import mig.core.Key;
 import mig.core.PhysicalObject;
 
+/**
+ * <b>GiveKey is the class that manage the opening of the different doors in the game.</b> 
+ * @author Group 8
+ * @version 06/12/2016
+ */
 
 @SuppressWarnings("serial")
 
@@ -33,7 +38,7 @@ public class GiveKey extends JDialog {
 	private JButton select, cancel;
 
 	/**
-	 * Panel that contains the JComboBox with items in the Owned of the Player
+	 * Panel that contains the JComboBox with items in the Owned (=Inventory) of the Player
 	 */
 	private JPanel panItem;
 
@@ -96,7 +101,7 @@ public class GiveKey extends JDialog {
 		panItem.setPreferredSize(new Dimension(400, 120));
 		panItem.setBorder(BorderFactory.createTitledBorder(message));
 
-		// JComboboc instentiation from the inventory Player
+		// JComboboc instantiation from the inventory Player
 		items = new JComboBox<String>();
 		for (String itemName : game.myPlayer.getOwned().getBunchToString()) {
 			items.addItem(itemName);
@@ -106,7 +111,7 @@ public class GiveKey extends JDialog {
 		items.setSelectedIndex(0);
 
 
-		// Instentiation of the JButton select
+		// Instantiation of the JButton select
 		select =new JButton("Select this key");
 
 		// Listener that will call all methods necessary to remove the item selected
@@ -130,7 +135,7 @@ public class GiveKey extends JDialog {
 				}
 				);
 
-		// Instentiation of the button cancel
+		// Instantiation of the button cancel
 		cancel = new JButton ("cancel");
 
 		// Listener to close the JDialog without exiting the program
