@@ -54,7 +54,8 @@ public class DirectionPanel extends JPanel {
 	/**
 	 * Method to display the directions in the interface.
 	 * It exist 5 directions possible: north, east, south, west, up/down.
-	 * 
+	 * @param game The game currently played.
+	 * @param window The window currently played.
 	 */
 
 	public DirectionPanel(Window window, Game game){
@@ -172,6 +173,7 @@ public class DirectionPanel extends JPanel {
 	/**
 	 * Method to open the door if it is closed.
 	 * It is possible to open the door with a code or a lock.
+	 * @param door The door currently played.
 	 */
 	
 	public void openDoor(Door door){
