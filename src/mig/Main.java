@@ -1,9 +1,5 @@
 package mig;
 
-
-
-import javax.swing.JOptionPane;
-
 import mig.view.PrincipalWindow;
 
 
