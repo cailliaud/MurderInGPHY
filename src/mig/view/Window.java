@@ -16,6 +16,7 @@ import mig.core.Game;
 @SuppressWarnings("serial")
 public class Window extends JPanel {
 
+// Displays the main window of the game, with all elements (buttons, pictures, icons, messages) in the right order. 
 	private final URL urlLogoGame = BackPack.class.getResource("resources/murder_120.png");
 	private final ImageIcon logoGame = new ImageIcon(urlLogoGame);
 	private JPanel screen = new JPanel();
@@ -56,7 +57,7 @@ public class Window extends JPanel {
 		//screen.setBorder();
 		screen.setBackground(new Color(107, 106, 104));
 
-		//L'objet servant à positionner les composants
+//The object that put components in good position.
 		GridBagConstraints gbc = new GridBagConstraints();
 
 		gbc.gridx = 0;
@@ -104,8 +105,6 @@ public class Window extends JPanel {
 	    gbc.gridheight = 7;
 	    roomView = new JLabel(game.myPlayer.getCurrentRoom().getImage());
 	    screen.add(roomView,gbc);
-	    
-	   
 		
 		gbc = new GridBagConstraints();
 		gbc.gridx = 2;
@@ -160,19 +159,17 @@ public class Window extends JPanel {
 		gbc.fill = GridBagConstraints.BOTH;
 		screen.add(consoleArea,gbc);
 	    
-		
 	    this.add(screen);
-	    	
-
 
 	}
-	
+// The object that updates the visual renders (main picture and side plan) of the room where the player currently is  
 	private void updateRoomImage(){
 		roomView.setIcon(game.myPlayer.getCurrentRoom().getImage());
 		planView.setIcon(game.myPlayer.getCurrentRoom().getImagePlan()); 
 		prinwindow.updateTitle();
 	}
 	
+// The object that updates the situation of the game after each action made by the player.
 	public void update (){
 		backPack.update();
 		check.update();
@@ -184,12 +181,4 @@ public class Window extends JPanel {
 		consoleArea.update();
 
 	}
-	
-
-	
-
-	
-
-
-
 }
