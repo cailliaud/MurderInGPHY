@@ -40,6 +40,7 @@ public class ConsoleArea extends JPanel {
 	/**
 	 * Method to display the interface.
 	 * The position of each elements is defined in this method.
+	 * @param game The game currently played.
 	 */
 	public ConsoleArea(Game game){
 		this.game = game;

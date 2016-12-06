@@ -41,6 +41,8 @@ public class DenounceButton extends JButton {
 	 * Method to denounce the killer.
 	 * This method indicate if the player won the game.
 	 * If the player does not give the correct answer he loses the game
+	 * 
+	 * @param game The game currently played.
 	 */
 	
 	public DenounceButton(Game game){
