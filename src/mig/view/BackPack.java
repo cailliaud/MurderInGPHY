@@ -25,7 +25,6 @@ import mig.core.PhysicalObject;
  * <p> A picture is displayed of items he has in the top of the window.</p>
  * 
  *  @see Owned
- *  @see PysicalObject
  *  
  * @author Group 8
  * @version 22/11/2016
