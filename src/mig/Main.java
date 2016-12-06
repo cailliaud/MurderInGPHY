@@ -2,6 +2,8 @@ package mig;
 
 
 
+import javax.swing.JOptionPane;
+
 import mig.view.PrincipalWindow;
 
 
@@ -26,6 +28,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		main = new PrincipalWindow();
+		
 		
 	}
 }

@@ -1,6 +1,9 @@
 package mig.view;
 
 
+import java.net.URL;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -23,6 +26,8 @@ import mig.core.Game;
 @SuppressWarnings("serial")
 public class PrincipalWindow extends JFrame {
 	
+	private final URL urlDetective = DenounceButton.class.getResource("resources/detective.png");
+	private final ImageIcon detective = new ImageIcon(urlDetective);
 	/**
 	 * selectNom is a JPanel : create the first window who asked the name of the player
 	 */
@@ -55,7 +60,7 @@ public class PrincipalWindow extends JFrame {
 	
 	public PrincipalWindow(){
 		this.setTitle("Murder in GPHY V0.2");
-		this.setSize(600, 600);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(true);
@@ -80,9 +85,17 @@ public class PrincipalWindow extends JFrame {
 		"               Current Room:" 
 		+ myGame.myPlayer.getCurrentRoom().getName());
 		this.add(window);
+		
 		this.pack();
 
 		this.setVisible(true);	
+		JOptionPane.showMessageDialog(this,
+				"The President of the AEGP Alexandre has been killed\n"
+				+ "You have to find the killer ! \n "
+				+ "You will have to play the detective !\n"
+				+ "Speak and help everyone, maybe they will reward you with an important information.\n ",
+				"A murder was committed in the AEGP !" ,
+				JOptionPane.INFORMATION_MESSAGE,detective );
 	}
 	
 	
@@ -98,4 +111,6 @@ public class PrincipalWindow extends JFrame {
 				"               Current Room:" 
 				+ myGame.myPlayer.getCurrentRoom().getName());
 	}
+	
+
 }

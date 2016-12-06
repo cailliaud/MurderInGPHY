@@ -9,6 +9,7 @@ import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import mig.core.Game;
@@ -169,6 +170,7 @@ public class Window extends JPanel {
 		screen.add(consoleArea,gbc);
 
 		this.add(screen);
+		
 
 	}
 
