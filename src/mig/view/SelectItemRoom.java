@@ -156,7 +156,7 @@ public class SelectItemRoom extends JDialog {
 		select =new JButton("Get this item");
 		
 		// Listener that will call all methods necessary to add the item selected
-		// If the number of items present in the inventory is up to 4, the inventory is full. So the 
+		// If the number of items present in the inventory is up to 4, the inventory is full. So he cannot add a new item
 		select.addActionListener(
 				ae ->{
 					int itemIdx = (int)items.getSelectedIndex();
