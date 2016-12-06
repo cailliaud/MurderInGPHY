@@ -13,6 +13,26 @@ import mig.core.Game;
 import mig.core.Room;
 import mig.exceptions.ErrorObjectClosed;
 
+/**
+* <b>DirectionPanel is a class representing the direction accessible for the played in the game.</b>
+* <b>The player can move in a direction if a door exist in this direction</b>
+* <p>
+* A DirectionPanel contains these elements
+* </p>
+* <ul>
+* <li>The player can move at the direction north</li>
+* <li>The player can move at the direction south</li>
+* <li>The player can move at the direction east</li>
+* <li>The player can move at the direction west</li>7
+* <li>The player can go upstairs</li>
+* <li>The player can go down to the ground floor</li>
+* </ul>
+* 
+* 
+* @author Group 8
+* @version 22/11/2016
+*/
+
 @SuppressWarnings("serial")
 public class DirectionPanel extends JPanel {
 	private JButton north , south, east , west , up_down;
@@ -31,7 +51,11 @@ public class DirectionPanel extends JPanel {
 	private final URL urlUpDown = BackPack.class.getResource("resources/up_arrow.png");
 	private final ImageIcon iconUpDown = new ImageIcon(urlUpDown);
 
-
+	/**
+	 * Method to display the directions in the interface.
+	 * It exist 5 directions possible: north, east, south, west, up/down.
+	 * 
+	 */
 
 	public DirectionPanel(Window window, Game game){
 		this.game =game;
@@ -145,6 +169,11 @@ public class DirectionPanel extends JPanel {
 		this.add(up_down, BorderLayout.CENTER);
 	}
 
+	/**
+	 * Method to open the door if it is closed.
+	 * It is possible to open the door with a code or a lock.
+	 */
+	
 	public void openDoor(Door door){
 		switch (door.getTypeBolt()) {
 		case "Code":
@@ -171,6 +200,11 @@ public class DirectionPanel extends JPanel {
 		updateAccess();
 		this.window.update();
 	}
+	
+	/**
+	 * Method to activated the button of the direction.
+	 * The button is activated if the door is present at the direction.
+	 */
 	
 	public void updateAccess(){
 		Room  currentRoom= game.myPlayer.getCurrentRoom();

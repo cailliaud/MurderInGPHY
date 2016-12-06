@@ -12,6 +12,22 @@ import javax.swing.JTextArea;
 
 import mig.core.Game;
 
+/**
+ * <b>ConsoleArea is a class representing the interface of the game.</b>
+ * <p>
+ * A ConsoleArea contains these elements
+ * </p>
+ * <ul>
+ * <li>A welcome message</li>
+ * <li>The logo</li>
+ * <li>An information message</li>
+ * <li>The condition to denounce the murderer</li>
+ * </ul>
+ * 
+ * 
+ * @author Group 8
+ * @version 22/11/2016
+ */
 
 public class ConsoleArea extends JPanel {
 	private JLabel welcome,sentence,logoGPHY,logoSFA,info;
@@ -21,6 +37,10 @@ public class ConsoleArea extends JPanel {
 	private final URL urlGPHY = BackPack.class.getResource("resources/logoAcceuil.png");
 	private final ImageIcon iconGPHY = new ImageIcon(urlGPHY);
 	
+	/**
+	 * Method to display the interface.
+	 * The position of each elements is defined in this method.
+	 */
 	public ConsoleArea(Game game){
 		this.game = game;
 		this.setLayout( new BorderLayout());
@@ -39,8 +59,12 @@ public class ConsoleArea extends JPanel {
 		this.add(sentence, BorderLayout.CENTER);
 	}
 
+	/**
+	 * Method to display the message for denounce a murderer.
+	 * When the player can denounced someone after discovered 9 information, the message is update.
+	 */	
 	public void update (){
-		if (game.myPlayer.getOwned().getNotebook().size()>=5){
+		if (game.myPlayer.getOwned().getNotebook().size()>=9){
 			info.setText("You can denounce the Killer now ! Be care to not make mistake when you write his/her name !");
 		}
 

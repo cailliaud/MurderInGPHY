@@ -14,6 +14,21 @@ import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 
 
+/**
+* <b>DenounceButton is a class representing the functionality of the button to denounce the killer.</b>
+* <b>The player can denounced the murderer</b>
+* <p>
+* A DenounceButton contains these elements
+* </p>
+* <ul>
+* <li>A message to ask who is the killer</li>
+* <li>A message to indicate if the player has won or lost the game.</li>
+* </ul>
+* 
+* 
+* @author Group 8
+* @version 22/11/2016
+*/
 
 public class DenounceButton extends JButton {
 	private Game game;
@@ -21,6 +36,12 @@ public class DenounceButton extends JButton {
 	private final URL urlGameWin = DenounceButton.class.getResource("resources/underArrest.jpg");
 	private final ImageIcon game_over = new ImageIcon(urlGameOver);
 	private final ImageIcon good_job = new ImageIcon(urlGameWin);
+	
+	/**
+	 * Method to denounce the killer.
+	 * This method indicate if the player won the game.
+	 * If the player does not give the correct answer he loses the game
+	 */
 	
 	public DenounceButton(Game game){
 		this.game= game;
@@ -52,6 +73,12 @@ public class DenounceButton extends JButton {
 				);
 
 	}
+	
+	
+	/**
+	 * Method to activate the button for to denounce the murderer.
+	 * The player can denounced someone when he has discovered 9 information.
+	 */	
 	public void update(){
 
 		if (game.myPlayer.getOwned().getNotebook().size()>=9){
