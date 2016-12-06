@@ -2,7 +2,6 @@ package mig.core;
 
 
 import mig.exceptions.GameOver;
-import mig.exceptions.InventoryFull;
 
 
 
@@ -377,6 +376,7 @@ public class Game {
 	private PhysicalObject adaBook = new PhysicalObject("Ada for Dumbs" , "The best book to learn ada", "ada_for_dumbs.png");
 	private PhysicalObject surfBoard = new PhysicalObject("SurfBoard", "Constance's SurfBoard","surfboard.png" );
 	private PhysicalObject weddingRing = new PhysicalObject("Wedding Ring", "François-Pierre's Wedding Ring", "wedding_ring.png");
+	@SuppressWarnings("unused")
 	private PhysicalObject vendeanFlag = new PhysicalObject("Vendean Flag", "Vendean Flag foreach vendeans", "vendean_flag.png");
 	private PhysicalObject paperClip = new PhysicalObject("Paper Clip", "To avoid abandoned paper","paper_clip.png" );
 	private PhysicalObject goldLouis = new PhysicalObject("Louis d'or", "You have to make pancakes with it" , "louis_dor.png");
@@ -740,6 +740,7 @@ public class Game {
 	 * It is used to test all items
 	 * If their image are correctly displayed
 	 */
+	@SuppressWarnings("unused")
 	private void testPutAllIteminHall(){
 		hall1RDC.addItem(woodenKey);
 		hall1RDC.addItem(lighter);

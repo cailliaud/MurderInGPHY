@@ -11,7 +11,7 @@ import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
+
 
 
 /**
@@ -30,6 +30,7 @@ import javax.swing.ImageIcon;
 * @version 22/11/2016
 */
 
+@SuppressWarnings("serial")
 public class DenounceButton extends JButton {
 	private Game game;
 	private final URL urlGameOver = DenounceButton.class.getResource("resources/killerEscape.jpg");
@@ -58,16 +59,14 @@ public class DenounceButton extends JButton {
 		update();
 		this.addActionListener(
 				ae -> {
-					JOptionPane den = new JOptionPane(), den2 = new JOptionPane();
 
-					String rep = den.showInputDialog(null, message, "Denounce",JOptionPane.QUESTION_MESSAGE);
+					String rep = JOptionPane.showInputDialog(null, message, "Denounce",JOptionPane.QUESTION_MESSAGE);
 					try {
 						game.giveKiller(rep);
-						den2.showMessageDialog(null, message1 , "You Won !" , JOptionPane.INFORMATION_MESSAGE, good_job);
+						JOptionPane.showMessageDialog(null, message1 , "You Won !" , JOptionPane.INFORMATION_MESSAGE, good_job);
 						
 					} catch (GameOver e) {
-						// TODO Auto-generated catch block
-						den2.showMessageDialog(null, message2, "You Failed !" , JOptionPane.INFORMATION_MESSAGE, game_over);
+						JOptionPane.showMessageDialog(null, message2, "You Failed !" , JOptionPane.INFORMATION_MESSAGE, game_over);
 					
 					}		
 					System.exit(0);

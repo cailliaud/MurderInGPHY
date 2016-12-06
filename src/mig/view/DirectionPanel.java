@@ -39,6 +39,7 @@ public class DirectionPanel extends JPanel {
 	private Game game;
 	private Window window;
 	private Door door;
+	@SuppressWarnings("unused")
 	private GiveKey keyGiven;
 	private final URL urlNorth = BackPack.class.getResource("resources/north_arrow.png");
 	private final ImageIcon iconNorth = new ImageIcon(urlNorth);

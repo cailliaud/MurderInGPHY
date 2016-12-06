@@ -1,6 +1,6 @@
 package mig.core;
 
-import mig.exceptions.KeyForgottenException;
+
 
 /**
  * <b>Lock is the class that represents a key can unlocked a lock </b>

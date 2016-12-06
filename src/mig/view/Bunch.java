@@ -23,6 +23,7 @@ import mig.core.Key;
  * @author Group 8
  * @version 22/11/2016
  */
+@SuppressWarnings("serial")
 public class Bunch extends JButton {
 	private JFrame window;
 	private JPanel keydisplayed;

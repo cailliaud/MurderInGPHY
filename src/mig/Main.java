@@ -1,14 +1,14 @@
 package mig;
 
 
-import mig.core.Game;
+
 import mig.view.PrincipalWindow;
-import mig.view.Window;
+
 
 
 /**
  * Main Class to launch the program
- * @author Group^8
+ * @author Group8
  *
  */
 public class Main {

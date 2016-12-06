@@ -37,6 +37,7 @@ import javax.swing.JOptionPane;
 @SuppressWarnings("serial")
 public class EnigmaView extends JDialog {
 	private Enigma enigma;
+	@SuppressWarnings("unused")
 	private NPC npc;
 	private Game game;
 	private Window window;
@@ -44,6 +45,7 @@ public class EnigmaView extends JDialog {
 	private JPanel panTextAnsw, panItem , panInfo, content;
 	private JTextField rep;
 	private JLabel enigme,nomLabel,itemLabel, infoLabel;
+	@SuppressWarnings("unused")
 	private Font font;
 	private JComboBox<String> items, infos ;
 
@@ -193,7 +195,6 @@ public class EnigmaView extends JDialog {
 						//If the player give the wrong answer
 						
 					} catch (FailedResolvEnigma e) {
-						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close to the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
 					
@@ -226,7 +227,6 @@ public class EnigmaView extends JDialog {
 					//If the player give the wrong object
 						
 					} catch (FailedResolvEnigma e) {
-						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
 					
@@ -258,7 +258,6 @@ public class EnigmaView extends JDialog {
 					//If the player give the wrong information
 						
 					} catch (FailedResolvEnigma e) {
-						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
 					
@@ -294,7 +293,6 @@ public class EnigmaView extends JDialog {
 		try {
 			message="<html><h1>Well Done !</h1> <p> "+this.enigma.getNpcText()+"</p>";
 		} catch (FailedResolvEnigma e1) {
-			// TODO Auto-generated catch block
 			message="<html><h1>Well Done !</h1>";
 		}
 

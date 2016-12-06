@@ -1,6 +1,5 @@
 package mig.core;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import mig.core.Code;
 import mig.exceptions.ErrorNameGiven;

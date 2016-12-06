@@ -1,6 +1,6 @@
 package mig.view;
 
-import javax.swing.Box;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -20,6 +20,7 @@ import mig.core.Game;
  * 
  */
 
+@SuppressWarnings("serial")
 public class PrincipalWindow extends JFrame {
 	
 	/**

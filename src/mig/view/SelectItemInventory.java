@@ -14,10 +14,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import mig.core.Enigma;
 import mig.core.Game;
 import mig.core.Item;
-import mig.core.Personage;
 import mig.core.PhysicalObject;
 
 

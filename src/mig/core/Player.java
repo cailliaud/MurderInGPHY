@@ -1,6 +1,6 @@
 package mig.core;
 
-import mig.exceptions.ErrorNameGiven;
+
 import mig.exceptions.InventoryFull;
 
 /**

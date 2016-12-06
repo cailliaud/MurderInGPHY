@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.Point;
 
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -17,9 +16,7 @@ import javax.swing.JPanel;
 
 import mig.core.Door;
 import mig.core.Game;
-import mig.core.Item;
 import mig.core.Key;
-import mig.core.PhysicalObject;
 
 /**
  * <b>GiveKey is the class that manage the opening of the different doors in the game.</b> 

@@ -1,6 +1,6 @@
 package mig.core;
 
-import javax.swing.ImageIcon;
+
 
 /**
  * <b> Class Item </b> 

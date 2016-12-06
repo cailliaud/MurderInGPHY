@@ -1,21 +1,14 @@
 package mig.view;
 
 import java.awt.GridLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import javax.swing.ImageIcon;
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.TransferHandler;
 
 import mig.core.Game;
 import mig.core.Owned;
-import mig.core.PhysicalObject;
 
 /**
  * <b>BackPack class represents the items that the player possesses.</b>
@@ -29,6 +22,7 @@ import mig.core.PhysicalObject;
  * @author Group 8
  * @version 22/11/2016
  */
+@SuppressWarnings("serial")
 public class BackPack extends JPanel {
 	/**
 	 * The JLabel is equal to 4 because the player can have 4 items max.

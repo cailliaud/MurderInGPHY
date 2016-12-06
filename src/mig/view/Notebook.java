@@ -1,6 +1,6 @@
 package mig.view;
 
-import java.awt.BorderLayout;
+
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -12,9 +12,7 @@ import javax.swing.JPanel;
 
 import mig.core.Game;
 import mig.core.Information;
-import mig.core.Key;
-import mig.core.Room;
-import mig.exceptions.ErrorObjectClosed;
+
 
 
 /**
@@ -28,6 +26,7 @@ import mig.exceptions.ErrorObjectClosed;
  */
 
 
+@SuppressWarnings("serial")
 public class Notebook extends JButton {
 	
 	/**

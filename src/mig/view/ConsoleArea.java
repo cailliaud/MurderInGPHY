@@ -1,14 +1,13 @@
 package mig.view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridLayout;
+
 import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+
 
 import mig.core.Game;
 
@@ -29,6 +28,7 @@ import mig.core.Game;
  * @version 22/11/2016
  */
 
+@SuppressWarnings("serial")
 public class ConsoleArea extends JPanel {
 	private JLabel welcome,sentence,logoGPHY,logoSFA,info;
 	private Game game;

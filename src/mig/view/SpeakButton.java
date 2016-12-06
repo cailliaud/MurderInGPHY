@@ -3,9 +3,12 @@ import javax.swing.JButton;
 import mig.core.Game;
 
 
+@SuppressWarnings("serial")
 public class SpeakButton extends JButton {
 	private Game game;
+	@SuppressWarnings("unused")
 	private Window window;
+	@SuppressWarnings("unused")
 	private SelectNPC selectNPC;
 	
 // When clicking the Speak button, a window appears and allows the player to choose the NPC the wants to speak with.
