@@ -3,12 +3,13 @@ import javax.swing.JButton;
 import mig.core.Game;
 
 
-@SuppressWarnings("serial")
+
 /**
  * JButton to manage the actions between the view and the core for Enigma
  * @author group8
  *
  */
+@SuppressWarnings("serial")
 public class SpeakButton extends JButton {
 	/**
 	 * The current Game
