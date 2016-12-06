@@ -10,10 +10,12 @@ import mig.core.Information;
 /**
  * <b>JUnit test for the class Information</b>
  * @see Information
+ * 
  * @author group8
  *
  */
 public class InformationTest {
+	
 	private Information info ;
 	
 	/**
@@ -73,7 +75,7 @@ public class InformationTest {
 	
 	/**
 	 * Method testNotSetNoNameAndNoInfo
-	 * <p> Checks that not set a name and an information of the information is not possible </p>
+	 * <p> Checks that not set a name and an information of the information, is not possible </p>
 	 */
 	@Test
 	public void testNotSetNoNameAndNoInfo() {

@@ -10,6 +10,8 @@ import mig.core.Key;
  * The test class KeyTest.
  * Unit tests of the Key Class.
  * 
+ * @see Key
+ * 
  * @author Group8
  * @version 24/11/2016
  */
@@ -63,7 +65,7 @@ public class KeyTest
 	}
 
 	/**
-	 * The method _ _ _ asserts a key can't exist without a name.
+	 * Test that a key can't exist without a name.
 	 */
 	@Test
 	public void TestObject() {
