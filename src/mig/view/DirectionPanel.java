@@ -23,7 +23,7 @@ import mig.exceptions.ErrorObjectClosed;
 * <li>The player can move at the direction north</li>
 * <li>The player can move at the direction south</li>
 * <li>The player can move at the direction east</li>
-* <li>The player can move at the direction west</li>7
+* <li>The player can move at the direction west</li>
 * <li>The player can go upstairs</li>
 * <li>The player can go down to the ground floor</li>
 * </ul>
