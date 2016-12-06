@@ -10,6 +10,7 @@ import mig.core.DirectionWords;
  * <b>JUnit test for the class DirectionWords</b>
  * @see DirectionWords
  * @author group8
+ * @version 6/12/16
  *
  */
 public class DirectionWordsTest {

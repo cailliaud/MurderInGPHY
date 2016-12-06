@@ -13,12 +13,17 @@ import mig.core.Code;
 
 /**
  * <b>JUnit test for the class Code</b>
+ * 
  * @see Code
  * @author group8
+ * @version 6/12/16
  *
  */
 public class CodeTest 
 {
+	/**
+	 * myCode is a Code 
+	 */
 	private Code myCode;
 	
 	/**
@@ -52,6 +57,7 @@ public class CodeTest
 	
 
 	/**
+	 * Method testCodeDefaultValue
 	 * <p> check that the default code is "42", if the given code is empty
 	 */
 	 @Test
@@ -65,6 +71,11 @@ public class CodeTest
 	 }
 	
 	 
+	 
+	 /**
+	  *  Method ExpectedException
+	  *  <p> Ckeck if we can unlocked the code with a good password </p> 
+	  */
 	 @Rule 
 	 public ExpectedException thrown = ExpectedException.none();
 	 

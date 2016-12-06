@@ -12,21 +12,43 @@ import mig.core.Key;
 
 /**
  * <b>JUnit test for the class Chest</b>
+ * 
  * @see Information
  * @author group8
+ * @version 6/12/16
  *
  */
 public class ChestTest {
+	
+	/**
+	 * key1, key2, key3, key4 are key : Represented the different keys for opened the door
+	 */
 	private Key key1 = new Key("toto"); 
 	private Key key2 = new Key("tata"); 
 	private Key key3  = new Key("t"); 
-	private Key key4  = new Key("roro"); 
+	private Key key4  = new Key("roro");
+	
+	/**
+	 * info5 is an Information 
+	 */
 	private Information info5  = new Information("Nicolas","is the killer"); 
+	
+	/**
+	 * chest1 is a Chest
+	 */
 	private Chest chest1;
+	
+	/**
+	 * bolt_code is a Bolt : it corresponded to a code for opened the door
+	 */
 	private Bolt bolt_code = new Code("vendee");
+	
 	
 	/**
 	 * Default constructor for test class ChestTest
+	 * Added all the keys and the information in the chest
+	 * Create a chest with a code
+	 * 
 	 */
 	public ChestTest()
 	{
@@ -40,7 +62,8 @@ public class ChestTest {
 
 	/**
 	 * Method addItemTest
-	 * <p> Checks if a item is well added to a chest </p>
+	 * <p> Checks if an item is well added to a chest </p>
+	 * 
 	 */
 	@Test 
 	public void addItemTest(){
@@ -53,6 +76,7 @@ public class ChestTest {
 	/**
 	 * Method numberOfItemsTest
 	 * <p> Checks if the number of items in the array is correct </p>
+	 * 
 	 */
 	@Test 
 	public void numberOfItemTest(){ 
@@ -62,7 +86,8 @@ public class ChestTest {
 	
 	/**
 	 * Method removeItemTest
-	 * <p> Checks if a item is well removed from the chest </p>
+	 * <p> Checks if an item is well removed from the chest </p>
+	 * 
 	 */
 	@Test 
 	public void removeItemTest(){
@@ -75,6 +100,7 @@ public class ChestTest {
 	/**
 	 * Method removeTheGoodItem
 	 * <p> Checks if the good item is well removed from the chest </p>
+	 * 
 	 */
 	@Test 
 	public void removeTheGoodItem(){
@@ -85,6 +111,7 @@ public class ChestTest {
 	/**
 	 * Method addItemAlreadyPresent
 	 * <p> Checks if we can add an item already present in the Chest </p>
+	 * 
 	 */
 	@Test
 	public void addItemAlreadyPresent(){
@@ -93,6 +120,11 @@ public class ChestTest {
 		assertEquals(total,chest1.numberOfItems());	
 	}
 	
+	/**
+	 * Method openWithGoodPassChest
+	 * <p> Checks if we can unlocked the chest with the good pass </p>
+	 * 
+	 */
 	@Test
 	public void openWithGoodPassChest(){
 		String pass = "vendee";
@@ -100,6 +132,10 @@ public class ChestTest {
 		assertFalse(chest1.isLocked());
 	}
 	
+	/**
+	 * Method openWithBadPassChest
+	 * <p> Checks if we can unlocked the chest with the bad pass </p>
+	 */
 	@Test
 	public void openWithBadPassChest(){
 		String pass = "toto";
