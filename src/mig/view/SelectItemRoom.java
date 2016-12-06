@@ -29,7 +29,6 @@ import mig.exceptions.InventoryFull;
  * 
  * @see Game
  * @see Item 
- * @see Owned
  * 
  * @author Group8
  * @version 03/12/2016
