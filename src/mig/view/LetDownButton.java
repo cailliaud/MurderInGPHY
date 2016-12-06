@@ -34,7 +34,9 @@ public class LetDownButton extends JButton {
 	}
 
 
-	//Display to the player the list of item he has in his inventory. He can select the one he wants to let down
+	/**
+	 * Display to the player the list of item he has in his inventory. He can select the one he wants to let down
+	 */
 	private void leaveItem(){
 		letDownItem = new SelectItemInventory(null, "Let Down an item", "Item present currently in your inventory!", game, myWindow);
 		myWindow.update();

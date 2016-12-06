@@ -33,6 +33,8 @@ import javax.swing.JOptionPane;
 
 /**
  * Instantiate all the variables that will need to be display
+ * @author group 8
+ * @version 06/12/2016
  */
 @SuppressWarnings("serial")
 public class EnigmaView extends JDialog {
@@ -73,13 +75,17 @@ public class EnigmaView extends JDialog {
 	private void createEnigmaQuestion(){
 
 		this.setLayout( new GridLayout(0, 1));
-		// Asked enigma 
+		/**
+		 * Asked enigma 
+		 */
 		String str = "<html> "+enigma.getQuest()+" </html>";
 		enigme = new JLabel(str);
-		//		font = new Font ("Arial", Font.BOLD,11);
-		//		enigme.setFont(font);
-
-		//text answer
+		
+		/**
+		 * font = new Font ("Arial", Font.BOLD,11)
+		 * enigme.setFont(font)
+		 * text answer
+		 */
 		panTextAnsw = new JPanel();
 		panTextAnsw.setBackground(Color.white);
 		panTextAnsw.setPreferredSize(new Dimension(220, 80));
@@ -91,7 +97,9 @@ public class EnigmaView extends JDialog {
 		panTextAnsw.add(rep);
 		okTextBouton = new JButton("OK");
 
-		//For an item
+		/**
+		 * For an item
+		 */
 		panItem = new JPanel();
 		panItem.setBackground(Color.white);
 		panItem.setPreferredSize(new Dimension(220, 80));
@@ -108,7 +116,9 @@ public class EnigmaView extends JDialog {
 			okItemBouton.setEnabled(false);
 		}else okItemBouton.setEnabled(true);
 
-		//For informations
+		/**
+		 * For informations
+		 */
 		panInfo = new JPanel();
 		panInfo.setBackground(Color.white);
 		panInfo.setPreferredSize(new Dimension(220, 80));
@@ -125,12 +135,16 @@ public class EnigmaView extends JDialog {
 			okInfoBouton.setEnabled(false);
 		}else okInfoBouton.setEnabled(true);
 
-		//Creation of the panel with the 3 fields for the answer
+		/**
+		 * Creation of the panel with the 3 fields for the answer
+		 */
 		content = new JPanel();
 		content.setBackground(Color.white);
 		content.add(enigme); 
 
-		//Creation of the different panels for the buttons
+		/**
+		 * Creation of the different panels for the buttons
+		 */
 		JPanel p2 = new JPanel();
 		JPanel p3 = new JPanel();
 		p3.setPreferredSize(new Dimension(60, 40));
@@ -144,7 +158,9 @@ public class EnigmaView extends JDialog {
 		JPanel p8 = new JPanel(); 
 		p8.setBackground(Color.white);
 
-		//Adding of of the buttons in the panels 
+		/**
+		 * Adding of of the buttons in the panels 
+		 */
 		p3.add(okTextBouton);
 		p3.setBackground(Color.white);
 		p4.add(okItemBouton);
@@ -152,7 +168,9 @@ public class EnigmaView extends JDialog {
 		p5.add(okInfoBouton);
 		p5.setBackground(Color.white);
 
-		//Creation of the GridLayout
+		/**
+		 * Creation of the GridLayout
+		 */
 		p2.setLayout(new GridLayout(3,1));
 		p2.setBackground(Color.white);
 
@@ -174,7 +192,9 @@ public class EnigmaView extends JDialog {
 		content.add(p6, BorderLayout.CENTER);
 		this.add(content);
 
-		//this.getContentPane().add(content, BorderLayout.CENTER);
+		/**
+		 * this.getContentPane().add(content, BorderLayout.CENTER)
+		 */
 	} 
 
 	/**
@@ -190,7 +210,9 @@ public class EnigmaView extends JDialog {
 						Item reward= enigma.rewarded();
 						rewardManagement(reward);
 
-						//If the player give the wrong answer
+						/**
+						 * If the player give the wrong answer
+						 */
 						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
@@ -198,7 +220,9 @@ public class EnigmaView extends JDialog {
 					}
 					
 					
-						//If the player try to give something else than a text answer
+						/**
+						 * If the player try to give something else than a text answer
+						 */
 					catch (ErrorTypeAnswer e){
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
@@ -223,14 +247,18 @@ public class EnigmaView extends JDialog {
 						Item reward= enigma.rewarded();
 						rewardManagement(reward);
 
-					//If the player give the wrong object
+					/**
+					 * If the player give the wrong object
+					 */
 						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
 					
-					//If the player try to give something else than an object
+					/**
+					 * If the player try to give something else than an object
+					 */
 					
 					catch (ErrorTypeAnswer e){
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
@@ -255,14 +283,18 @@ public class EnigmaView extends JDialog {
 						Item reward= enigma.rewarded();
 						rewardManagement( reward);
 						
-					//If the player give the wrong information
+					/**
+					 * If the player give the wrong information
+					 */
 						
 					} catch (FailedResolvEnigma e) {
 						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "I am sorry, You did not answer well this Enigma, you are close the good answer. ", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
 					}
 					
-					//If the player try to give something else than an information
+					/**
+					 * If the player try to give something else than an information
+					 */
 					
 					catch (ErrorTypeAnswer e){
 						JOptionPane.showMessageDialog(null, "I am sorry but I did not expect this type of anwser ...", "Try again !" , JOptionPane.INFORMATION_MESSAGE);
@@ -298,7 +330,9 @@ public class EnigmaView extends JDialog {
 			message="<html><h1>Well Done !</h1>";
 		}
 
-		//add the object to the inventory of the player
+		/**
+		 * add the object to the inventory of the player
+		 */
 		try {
 			game.myPlayer.addItem(reward);
 			message += "</br> "
@@ -307,7 +341,9 @@ public class EnigmaView extends JDialog {
 			JOptionPane.showMessageDialog(null,message,"Item added in your Inventory" , JOptionPane.INFORMATION_MESSAGE);
 		} catch (InventoryFull e) {
 			
-			//if the inventory of the player if full then the object is let down on the floor and the player can take whenever he please.
+			/**
+			 * if the inventory of the player if full then the object is let down on the floor and the player can take whenever he please.
+			 */
 			
 			message += "</br> "
 					+"<p>You are fulled, the reward is let down !"
