@@ -278,7 +278,7 @@ public class EnigmaView extends JDialog {
 
 	/**
 	 * method to give the reward to the player if he answered correctly to an enigma
-	 * @param reward
+	 * @param reward It is the object, key or information given by an NPC when the player answered correctly to an enigma
 	 */
 	
 	private void rewardManagement(Item reward){
