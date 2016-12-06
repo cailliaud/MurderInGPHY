@@ -795,6 +795,7 @@ public class Game {
 		deskAnnie.addItem(adaBook);
 		hall1RDC.addItem(chocolatine);
 		cafet.addItem(fishingPole);
+		meeting.addItem(milkBottle);
 	}
 
 
