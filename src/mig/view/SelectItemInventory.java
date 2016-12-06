@@ -19,7 +19,7 @@ import mig.core.Item;
 import mig.core.PhysicalObject;
 
 
-@SuppressWarnings("serial")
+
 /**
  * <b>SelectItemInventory is class that create a JDialog to let the player chose from its inventory an item that he wants to remove</b>
  * <p>
@@ -28,12 +28,11 @@ import mig.core.PhysicalObject;
  * 
  * @see Game
  * @see Item 
- * @see Owned
  * 
  * @author Group8
  * @version 03/12/2016
  */
-
+@SuppressWarnings("serial")
 public class SelectItemInventory extends JDialog {
 	
 	/**
