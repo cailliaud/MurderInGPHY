@@ -98,20 +98,28 @@ public class GiveKey extends JDialog {
 		panItem.setPreferredSize(new Dimension(400, 120));
 		panItem.setBorder(BorderFactory.createTitledBorder(message));
 
-		// JComboboc instantiation from the inventory Player
+		/**
+		 * JComboboc instantiation from the inventory Player
+		 */
 		items = new JComboBox<String>();
 		for (String itemName : game.myPlayer.getOwned().getBunchToString()) {
 			items.addItem(itemName);
 		}
 
-		// As default its the item with the index 0 which is selected
+		/**
+		 * As default its the item with the index 0 which is selected
+		 */
 		items.setSelectedIndex(0);
 
 
-		// Instantiation of the JButton select
+		/**
+		 * Instantiation of the JButton select
+		 */
 		select =new JButton("Select this key");
 
-		// Listener that will call all methods necessary to remove the item selected
+		/**
+		 * Listener that will call all methods necessary to remove the item selected
+		 */
 		select.addActionListener(
 				ae ->{
 					int keyIdx = (int)items.getSelectedIndex();
@@ -132,10 +140,14 @@ public class GiveKey extends JDialog {
 				}
 				);
 
-		// Instantiation of the button cancel
+		/**
+		 * Instantiation of the button cancel
+		 */
 		cancel = new JButton ("cancel");
 
-		// Listener to close the JDialog without exiting the program
+		/**
+		 * Listener to close the JDialog without exiting the program
+		 */
 		cancel.addActionListener(
 				ae->
 				{
