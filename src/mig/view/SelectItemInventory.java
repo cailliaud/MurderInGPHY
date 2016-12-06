@@ -14,19 +14,30 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import mig.core.Enigma;
 import mig.core.Game;
 import mig.core.Item;
+import mig.core.Personage;
 import mig.core.PhysicalObject;
 
 
 @SuppressWarnings("serial")
 /**
- * Create a JDialog to let the player chose from its inventory
- * Which item he wants to remove
+ * <b>SelectItemInventory is class that create a JDialog to let the player chose from its inventory an item that he wants to remove</b>
+ * <p>
+ * <b>The items are given by the PNJs or found in the different rooms. This inventory list the different items won by the player</b>  
+ * </p>
+ * 
+ * @see Game
+ * @see Item 
+ * @see Owned
+ * 
  * @author Group8
  * @version 03/12/2016
  */
+
 public class SelectItemInventory extends JDialog {
+	
 	/**
 	 * JButton for the actions :
 	 * - Select an item to let down
@@ -40,33 +51,33 @@ public class SelectItemInventory extends JDialog {
 	private JPanel panItem;
 	
 	/**
-	 * The item selected by the Player
+	 * itemgot represents the item selected by the Player
 	 */
 	@SuppressWarnings("unused")
 	private Item itemgot;
 	
 	/**
-	 * The game currently played
+	 * game represents the game currently played
 	 */
 	private Game game;
 	
 	/**
-	 * The JCombobox displaying items in the inventory
+	 * The JCombobox displaying items present in the inventory of the player
 	 */
 	private JComboBox<String> items;
 	
 	/**
-	 * The Window (extends JPanel) of the game
+	 * The Window (extends JPanel) is the global window of the game
 	 */
 	private Window window;
 	
 	/**
-	 * The message displayed in the JDialog component
+	 * message represents the message displayed in the JDialog component
 	 */
 	private String message;
 	
 	/**
-	 * The JLabel with the icon of the item selected with a default image
+	 * objectLabel represents the JLabel with the icon of the item selected with a default image
 	 */
 	private JLabel objectLabel = new JLabel(new ImageIcon ("resources/default_item.png"),JLabel.CENTER);
 
@@ -95,9 +106,9 @@ public class SelectItemInventory extends JDialog {
 	}
 
 	/**
-	 * Method to construct the JDialog
+	 * Method to build the JDialog
 	 * Adding component
-	 * Manage Listener for JButtons
+	 * Manage the different Listener for the JButtons
 	 */
 	private void construct(){
 		panItem = new JPanel();
@@ -105,7 +116,7 @@ public class SelectItemInventory extends JDialog {
 		panItem.setPreferredSize(new Dimension(400, 120));
 		panItem.setBorder(BorderFactory.createTitledBorder(message));
 		
-		// JComboboc instentiation from the inventory Player
+		// JComboboc is instantiate with the inventory Player
 		items = new JComboBox<String>();
 		for (String itemName : game.myPlayer.getOwned().getInventoryToString()) {
 			items.addItem(itemName);
@@ -114,17 +125,17 @@ public class SelectItemInventory extends JDialog {
 		// As default its the item with the index 0 which is selected
 		items.setSelectedIndex(0);
 
-		// Set the image of the item selected 
+		// Set the picture of the item selected 
 		setObjectImage();
 		
-		// Listener for when the player select another item
-		// It will change the label with the image
+		// When the player select another item
+		// This Listener will change the label with the image
 		items.addItemListener(
 				ae->{
 					setObjectImage();
 				});
 
-		// Instentiation of the JButton select
+		// Instantiation of the JButton select
 		select =new JButton("Let down this item");
 
 		// Listener that will call all methods necessary to remove the item selected
@@ -139,10 +150,10 @@ public class SelectItemInventory extends JDialog {
 				}
 				);
 
-		// Instentiation of the button cancel
+		// Instantiation of the button cancel
 		cancel = new JButton ("cancel");
 		
-		// Listener to close the JDialog without exiting the program
+		// Listener to close the JDialog without exiting the main program
 		cancel.addActionListener(
 				ae->
 				{
