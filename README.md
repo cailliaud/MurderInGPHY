@@ -1,10 +1,10 @@
 # MurderInGPHY
 Projet de développement d'un jeu en java dans le cadre de l'unité de formation COOPOO au sein du Master Génie physiologique et Informatique à Poitiers
 
-Langage utilisé : Java IDE : Eclipse Mars
+Langage utilisé : Java IDE : Eclipse Mars & Neon version
 
 Site WEB / JavaDOC : https://cailliaud.github.io/MurderInGPHY/
-
+Le runnable du projet est disponible ! 
 Ce projet est développé par les étudiants :
 
 - Alexandre Cailliaud : Admin & dev
@@ -22,3 +22,5 @@ GitIgnore:
 - .classpath
 - /docs/
 - /doc/
+- .html
+- /resources/
